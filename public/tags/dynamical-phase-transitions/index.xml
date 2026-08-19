@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Dynamical Phase Transitions on 论文库</title>
-		<link>http://localhost:1313/tags/dynamical-phase-transitions/</link>
+		<link>http://localhost:1313/my_paper/tags/dynamical-phase-transitions/</link>
 		<description>Recent content in Dynamical Phase Transitions on 论文库</description>
 		<generator>Hugo</generator>
 		<language>zh-Hans</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/dynamical-phase-transitions/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/my_paper/tags/dynamical-phase-transitions/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Dynamical Phase Transitions in Nonequilibrium Networks</title>
-				<link>http://localhost:1313/paper/dpt/</link>
+				<link>http://localhost:1313/my_paper/paper/dpt/</link>
 				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/paper/dpt/</guid>
+				<guid>http://localhost:1313/my_paper/paper/dpt/</guid>
 				<description></description>
 			</item>
 	</channel>

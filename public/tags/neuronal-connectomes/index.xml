@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Neuronal Connectomes on 论文库</title>
-		<link>http://localhost:1313/tags/neuronal-connectomes/</link>
+		<link>http://localhost:1313/my_paper/tags/neuronal-connectomes/</link>
 		<description>Recent content in Neuronal Connectomes on 论文库</description>
 		<generator>Hugo</generator>
 		<language>zh-Hans</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Wed, 17 Jan 2024 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/neuronal-connectomes/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/my_paper/tags/neuronal-connectomes/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Heavy-tailed neuronal connectivity arises from Hebbian self-organization</title>
-				<link>http://localhost:1313/paper/hebso/</link>
+				<link>http://localhost:1313/my_paper/paper/hebso/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/paper/hebso/</guid>
+				<guid>http://localhost:1313/my_paper/paper/hebso/</guid>
 				<description></description>
 			</item>
 	</channel>

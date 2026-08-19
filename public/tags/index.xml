@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on 论文库</title>
-		<link>http://localhost:1313/tags/</link>
+		<link>http://localhost:1313/my_paper/tags/</link>
 		<description>Recent content in Tags on 论文库</description>
 		<generator>Hugo</generator>
 		<language>zh-Hans</language>
@@ -12,68 +12,68 @@
 		
 			<lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/my_paper/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Dynamical Phase Transitions</title>
-				<link>http://localhost:1313/tags/dynamical-phase-transitions/</link>
+				<link>http://localhost:1313/my_paper/tags/dynamical-phase-transitions/</link>
 				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/dynamical-phase-transitions/</guid>
+				<guid>http://localhost:1313/my_paper/tags/dynamical-phase-transitions/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Hyperbolic Scaling</title>
-				<link>http://localhost:1313/tags/hyperbolic-scaling/</link>
+				<link>http://localhost:1313/my_paper/tags/hyperbolic-scaling/</link>
 				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/hyperbolic-scaling/</guid>
+				<guid>http://localhost:1313/my_paper/tags/hyperbolic-scaling/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Network Evolution</title>
-				<link>http://localhost:1313/tags/network-evolution/</link>
+				<link>http://localhost:1313/my_paper/tags/network-evolution/</link>
 				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/network-evolution/</guid>
+				<guid>http://localhost:1313/my_paper/tags/network-evolution/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Nonequilibrium Statistical Physics</title>
-				<link>http://localhost:1313/tags/nonequilibrium-statistical-physics/</link>
+				<link>http://localhost:1313/my_paper/tags/nonequilibrium-statistical-physics/</link>
 				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/nonequilibrium-statistical-physics/</guid>
+				<guid>http://localhost:1313/my_paper/tags/nonequilibrium-statistical-physics/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Clustering</title>
-				<link>http://localhost:1313/tags/clustering/</link>
+				<link>http://localhost:1313/my_paper/tags/clustering/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/clustering/</guid>
+				<guid>http://localhost:1313/my_paper/tags/clustering/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Heavy-Tailed Connectivity</title>
-				<link>http://localhost:1313/tags/heavy-tailed-connectivity/</link>
+				<link>http://localhost:1313/my_paper/tags/heavy-tailed-connectivity/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/heavy-tailed-connectivity/</guid>
+				<guid>http://localhost:1313/my_paper/tags/heavy-tailed-connectivity/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Hebbian Self-Organization</title>
-				<link>http://localhost:1313/tags/hebbian-self-organization/</link>
+				<link>http://localhost:1313/my_paper/tags/hebbian-self-organization/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/hebbian-self-organization/</guid>
+				<guid>http://localhost:1313/my_paper/tags/hebbian-self-organization/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Neuronal Connectomes</title>
-				<link>http://localhost:1313/tags/neuronal-connectomes/</link>
+				<link>http://localhost:1313/my_paper/tags/neuronal-connectomes/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/neuronal-connectomes/</guid>
+				<guid>http://localhost:1313/my_paper/tags/neuronal-connectomes/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Statistical Physics</title>
-				<link>http://localhost:1313/tags/statistical-physics/</link>
+				<link>http://localhost:1313/my_paper/tags/statistical-physics/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/statistical-physics/</guid>
+				<guid>http://localhost:1313/my_paper/tags/statistical-physics/</guid>
 				<description></description>
 			</item>
 	</channel>
