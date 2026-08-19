@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on 论文库</title>
+		<link>http://localhost:1313/tags/</link>
+		<description>Recent content in Tags on 论文库</description>
+		<generator>Hugo</generator>
+		<language>zh-Hans</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Dynamical Phase Transitions</title>
+				<link>http://localhost:1313/tags/dynamical-phase-transitions/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/dynamical-phase-transitions/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hyperbolic Scaling</title>
+				<link>http://localhost:1313/tags/hyperbolic-scaling/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/hyperbolic-scaling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Network Evolution</title>
+				<link>http://localhost:1313/tags/network-evolution/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/network-evolution/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Nonequilibrium Statistical Physics</title>
+				<link>http://localhost:1313/tags/nonequilibrium-statistical-physics/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/nonequilibrium-statistical-physics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Clustering</title>
+				<link>http://localhost:1313/tags/clustering/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/clustering/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Heavy-Tailed Connectivity</title>
+				<link>http://localhost:1313/tags/heavy-tailed-connectivity/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/heavy-tailed-connectivity/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hebbian Self-Organization</title>
+				<link>http://localhost:1313/tags/hebbian-self-organization/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/hebbian-self-organization/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Neuronal Connectomes</title>
+				<link>http://localhost:1313/tags/neuronal-connectomes/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/neuronal-connectomes/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Statistical Physics</title>
+				<link>http://localhost:1313/tags/statistical-physics/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/statistical-physics/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,68 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Inter','Noto Sans SC',sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="800" height="600" fill="#f8fafc" rx="12"/>
+  
+  <!-- Central node -->
+  <rect x="300" y="20" width="200" height="50" rx="25" fill="#2563eb"/>
+  <text x="400" y="50" text-anchor="middle" fill="white" font-size="14" font-weight="600">安德森转变</text>
+  
+  <!-- Branch: Network -->
+  <line x1="350" y1="70" x2="100" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="20" y="130" width="160" height="40" rx="8" fill="#dbeafe"/>
+  <text x="100" y="155" text-anchor="middle" fill="#1e40af" font-size="12">网络拓扑: 小世界网络</text>
+  
+  <line x1="50" y1="170" x2="50" y2="210" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="10" y="215" width="80" height="30" rx="6" fill="#eff6ff"/>
+  <text x="50" y="234" text-anchor="middle" fill="#3b82f6" font-size="10">Watts-Strogatz</text>
+  
+  <line x1="150" y1="170" x2="180" y2="210" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="120" y="215" width="120" height="30" rx="6" fill="#eff6ff"/>
+  <text x="180" y="234" text-anchor="middle" fill="#3b82f6" font-size="10">随机重连概率 p</text>
+  
+  <!-- Branch: Method -->
+  <line x1="450" y1="70" x2="700" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="600" y="130" width="180" height="40" rx="8" fill="#dbeafe"/>
+  <text x="690" y="155" text-anchor="middle" fill="#1e40af" font-size="12">方法: 精确对角化</text>
+  
+  <line x1="650" y1="170" x2="620" y2="210" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="560" y="215" width="120" height="30" rx="6" fill="#eff6ff"/>
+  <text x="620" y="234" text-anchor="middle" fill="#3b82f6" font-size="10">系统尺寸 L=20-100</text>
+  
+  <line x1="730" y1="170" x2="730" y2="210" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="680" y="215" width="100" height="30" rx="6" fill="#eff6ff"/>
+  <text x="730" y="234" text-anchor="middle" fill="#3b82f6" font-size="10">无序 W=5-20</text>
+  
+  <!-- Branch: Results -->
+  <line x1="300" y1="70" x2="100" y2="350" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="20" y="330" width="160" height="40" rx="8" fill="#dbeafe"/>
+  <text x="100" y="355" text-anchor="middle" fill="#1e40af" font-size="12">关键结果</text>
+  
+  <line x1="50" y1="370" x2="50" y2="410" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="5" y="415" width="90" height="30" rx="6" fill="#dcfce7"/>
+  <text x="50" y="434" text-anchor="middle" fill="#166534" font-size="10">Wc=14.2+-0.3</text>
+  
+  <line x1="150" y1="370" x2="180" y2="410" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="120" y="415" width="120" height="30" rx="6" fill="#dcfce7"/>
+  <text x="180" y="434" text-anchor="middle" fill="#166534" font-size="10">临界指数 nu=1.8</text>
+  
+  <!-- Branch: Significance -->
+  <line x1="500" y1="70" x2="700" y2="350" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="600" y="330" width="180" height="40" rx="8" fill="#dbeafe"/>
+  <text x="690" y="355" text-anchor="middle" fill="#1e40af" font-size="12">科学意义</text>
+  
+  <line x1="650" y1="370" x2="620" y2="410" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="550" y="415" width="140" height="30" rx="6" fill="#fef3c7"/>
+  <text x="620" y="434" text-anchor="middle" fill="#92400e" font-size="10">新普适类</text>
+  
+  <line x1="730" y1="370" x2="730" y2="410" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="670" y="415" width="120" height="30" rx="6" fill="#fef3c7"/>
+  <text x="730" y="434" text-anchor="middle" fill="#92400e" font-size="10">亚扩散动力学</text>
+  
+  <line x1="400" y1="70" x2="400" y2="550" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="300" y="530" width="200" height="40" rx="20" fill="#f0abfc"/>
+  <text x="400" y="555" text-anchor="middle" fill="#86198f" font-size="13" font-weight="600">量子输运新视角</text>
+</svg>

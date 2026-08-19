@@ -1,0 +1,98 @@
+{{ define "main" }}
+<div class="home-hero">
+    <div class="hero-content">
+        <h1 class="hero-title">{{ site.Title }}</h1>
+        <p class="hero-subtitle">学术论文管理与阅读平台</p>
+    </div>
+
+    <div class="search-section">
+        <div class="search-row">
+            <select class="search-field-select" id="fieldSelector">
+                <option value="all">全部</option>
+                <option value="title">标题</option>
+                <option value="authors">作者</option>
+                <option value="venue">刊物</option>
+                <option value="tags">标签</option>
+            </select>
+            <div class="search-input-wrap">
+                <i data-lucide="search" class="si-icon" style="width:18px;height:18px;"></i>
+                <input type="text" id="searchInput" placeholder="搜索论文..." autocomplete="off">
+                <div class="autocomplete-box" id="autocompleteBox"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-stats">
+        {{- $papers := where site.RegularPages "Section" "paper" -}}
+        {{- $tags := site.Taxonomies.tags -}}
+        <a href="/paper/" class="stat-card">
+            <span class="stat-number">{{ len $papers }}</span>
+            <span class="stat-label">篇论文</span>
+        </a>
+        <a href="/tags/" class="stat-card">
+            <span class="stat-number">{{ len $tags }}</span>
+            <span class="stat-label">个标签</span>
+        </a>
+    </div>
+</div>
+
+<script>
+// Paper data as JS literal (NOT JSON.stringify to avoid encoding issues)
+var PAPERS = [
+{{- range $i, $p := (where site.RegularPages "Section" "paper") -}}
+{{- if $i }},{{ end -}}
+{
+    t: "{{ .Title }}",
+    a: [{{- range $j, $aa := .Params.authors -}}{{ if $j }},{{ end }}"{{ $aa }}"{{- end -}}],
+    v: "{{ .Params.venue }}",
+    g: [{{- range $j, $tt := .Params.tags -}}{{ if $j }},{{ end }}"{{ $tt }}"{{- end -}}],
+    u: "{{ .RelPermalink }}"
+}
+{{- end -}}
+];
+
+(function() {
+    var si = document.getElementById("searchInput");
+    var ac = document.getElementById("autocompleteBox");
+    var fs = document.getElementById("fieldSelector");
+    var sf = "all";
+    if (!si || !ac || !fs) return;
+
+    fs.onchange = function() { sf = this.value; si.focus(); };
+
+    si.oninput = function() {
+        var q = this.value.toLowerCase().trim();
+        if (!q) { ac.classList.remove("show"); return; }
+        var r = [];
+        PAPERS.forEach(function(p) {
+            var m = function(v) { return v.toLowerCase().indexOf(q) >= 0; };
+            var ok = false;
+            if (sf === "all") ok = m(p.t) || m(p.v) || p.a.some(m) || p.g.some(m);
+            else if (sf === "title") ok = m(p.t);
+            else if (sf === "authors") ok = p.a.some(m);
+            else if (sf === "venue") ok = m(p.v);
+            else if (sf === "tags") ok = p.g.some(m);
+            if (ok) r.push({t: p.t, u: p.u});
+        });
+        r = r.slice(0, 10);
+        ac.innerHTML = r.map(function(x) { return "<div class=\"ac-item\" data-url=\"".concat(x.u, "\"><span class=\"ac-match\">").concat(x.t, "</span></div>"); }).join("");
+        ac.classList.add("show");
+        var f = ac.querySelector(".ac-item");
+        if (f) f.classList.add("highlight");
+    };
+
+    si.onkeydown = function(e) {
+        var items = ac.querySelectorAll(".ac-item");
+        var active = ac.querySelector(".ac-item.highlight");
+        var idx = active ? Array.from(items).indexOf(active) : -1;
+        if (e.key === "ArrowDown") { e.preventDefault(); var n = Math.min(idx + 1, items.length - 1); items.forEach(function(i) { i.classList.remove("highlight"); }); if (items[n]) items[n].classList.add("highlight"); }
+        else if (e.key === "ArrowUp") { e.preventDefault(); var p = Math.max(idx - 1, 0); items.forEach(function(i) { i.classList.remove("highlight"); }); if (items[p]) items[p].classList.add("highlight"); }
+        else if (e.key === "Enter") { e.preventDefault(); if (active) window.location.href = active.dataset.url; else if (items.length) window.location.href = items[0].dataset.url; }
+        else if (e.key === "Escape") { ac.classList.remove("show"); }
+    };
+
+    document.addEventListener("click", function(e) { if (!e.target.closest(".search-input-wrap")) ac.classList.remove("show"); });
+    ac.onclick = function(e) { var item = e.target.closest(".ac-item"); if (item) window.location.href = item.dataset.url; };
+})();
+</script>
+{{ end }}

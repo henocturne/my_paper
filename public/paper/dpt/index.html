@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamical Phase Transitions in Nonequilibrium Networks | 论文库</title>
+    <meta name="description" content="学术论文管理与阅读平台">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">论文库</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/" class="nav-link">
+                    首页
+                </a>
+                
+                <a href="/paper/" class="nav-link">
+                    论文
+                </a>
+                
+                <a href="/tags/" class="nav-link">
+                    标签
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="paper-single">
+    <div class="paper-header">
+        <h1>Dynamical Phase Transitions in Nonequilibrium Networks</h1>
+        <div class="paper-meta">
+            
+            <span class="meta-item">
+                <i data-lucide="users" style="width:16px;height:16px;"></i>
+                Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="building-2" style="width:16px;height:16px;"></i>
+                Physical Review Letters
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                2025
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="tags" style="width:16px;height:16px;"></i>
+                Dynamical Phase Transitions, Nonequilibrium Statistical Physics, Network Evolution, Hyperbolic Scaling
+            </span>
+            
+        </div>
+    </div>
+
+    <nav class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="citation">
+            <i data-lucide="quote" style="width:16px;height:16px;"></i> 引用
+        </button>
+        <button class="tab-btn" data-tab="authors">
+            <i data-lucide="users" style="width:16px;height:16px;"></i> 作者
+        </button>
+        <button class="tab-btn" data-tab="model">
+            <i data-lucide="cpu" style="width:16px;height:16px;"></i> 模型
+        </button>
+        <button class="tab-btn" data-tab="results">
+            <i data-lucide="bar-chart-3" style="width:16px;height:16px;"></i> 结果
+        </button>
+        <button class="tab-btn" data-tab="figures">
+            <i data-lucide="image" style="width:16px;height:16px;"></i> 图像
+        </button>
+        <button class="tab-btn" data-tab="code">
+            <i data-lucide="code" style="width:16px;height:16px;"></i> 代码
+        </button>
+        <button class="tab-btn" data-tab="mindmap">
+            <i data-lucide="sigma" style="width:16px;height:16px;"></i> 推导过程
+        </button>
+
+        <button class="tab-btn" data-tab="translation">
+            <i data-lucide="languages" style="width:16px;height:16px;"></i> 翻译
+        </button>
+    </nav><div class="tab-content active" id="tab-citation">
+        <div class="citation-block"><h1 id="一论文研究方向所属领域相关研究课题">一、论文研究方向、所属领域、相关研究课题</h1>
+<h2 id="1-所属学科领域">1. 所属学科领域</h2>
+<p>该论文横跨<strong>非平衡统计物理、复杂网络科学、动力学相变理论</strong>三大核心领域，同时交叉计算社会科学、经济物理、系统风险科学、量子多体物理对比研究，属于交叉前沿：</p>
+<ol>
+<li>基础物理：非平衡统计力学、施温格-戴森场论、动力学相变（DPT）；</li>
+<li>网络科学：有向网络演化、三元闭包、聚类、无标度拓扑、网络致密化；</li>
+<li>交叉应用：金融崩盘、社交舆情爆发、电网故障、生态崩溃、人类限时行为动力学；</li>
+<li>对比理论：量子动力学相变与经典复杂系统临界行为统一框架。</li>
+</ol>
+<h2 id="2-核心研究方向">2. 核心研究方向</h2>
+<ol>
+<li><strong>经典网络体系下的动力学相变（DPT）理论构建</strong>
+过往DPT集中于量子系统，本文建立含非线性三元闭包相互作用的有向网络最小模型，证明非线性边耦合可在<strong>有限临界时间$ t_c $</strong> 产生可观测量发散的动力学相变，区分平衡/非平衡两相。</li>
+<li><strong>有限时间奇点普适双曲标度规律解析推导</strong>
+理论复现实证广泛观测的 $ z(t)\sim (t_c-t)^{-1} $ 双曲发散标度，解释社交、经济、金融系统中突发集体行为的统一临界特征。</li>
+<li><strong>网络一阶动力学相变：稀疏-稠密拓扑跃迁</strong>
+定义孤立节点占比作为序参量，证明$ t_c $处网络从稀疏泊松拓扑突变为稠密近完全图，伴随潜热式不连续跳变，属于一阶时间驱动相变。</li>
+<li><strong>临界态网络结构普适临界行为</strong>
+临界时间附近自发生成1/k幂律度分布（无标度网络，无需偏好依附机制）、聚类系数满足$ C(k)\propto 1/k $，三角形密度等高阶子图具备对应临界标度指数。</li>
+<li><strong>施温格-戴森（SD）方程层级求解网络动力学</strong>
+将邻接矩阵视作场量，利用SD无穷层级方程描述子图密度演化，通过微扰截断解析求解平均度动力学，给出修正有效耦合常数。</li>
+<li><strong>经典与量子动力学相变的类比统一</strong>
+对比量子系统演化算符非解析性，提出经典网络演化算子谱可类比量子幺正演化，SD方程可作为统一框架分析两类DPT。</li>
+</ol>
+<h2 id="3-相关前沿研究课题">3. 相关前沿研究课题</h2>
+<ol>
+<li>有限时间临界灾变预测：金融危机、流行病爆发、电网连锁故障、社会动荡预警；</li>
+<li>三元闭包非线性耦合驱动的网络自组织临界行为；</li>
+<li>无偏好依附机制下无标度网络的临界涌现；</li>
+<li>自组织临界（SOC）与有限时间DPT理论边界区分；</li>
+<li>非平衡网络场论、SD方程在复杂网络中的解析应用；</li>
+<li>人类限时行为双曲线贴现、截止日期前行为激增的理论解释；</li>
+<li>量子与经典动力学相变统一理论框架；</li>
+<li>Strauss三角模型、ER随机图、网络致密化、团渗流的瞬态临界拓展；</li>
+<li>自闭症、人类群体交互等社会系统临界标度实证建模。</li>
+</ol>
+<h1 id="二逐条引文发表信息与本文关联引用序号按原文参考文献顺序">二、逐条引文、发表信息、与本文关联（引用序号按原文参考文献顺序）</h1>
+<h2 id="1">[1]</h2>
+<p>发表信息：M. Heyl, Reports on Progress in Physics, 81, 054001 (2018)
+与本文关联：动力学相变（DPT）经典综述，系统梳理量子体系DPT定义、非解析临界行为；本文以该综述为理论基础，提出经典网络体系存在同类DPT，搭建量子DPT与经典网络DPT对比研究框架。</p>
+<h2 id="2">[2]</h2>
+<p>发表信息：M. Eckstein, M. Kollar, P. Werner, Physical Review Letters, 103, 056403 (2009)
+与本文关联：早期量子多体系统动力学相变数值研究，揭示含时观测值在临界时刻非解析特征；本文借鉴其临界可观测量分析思路，拓展至经典网络平均度、聚类系数等拓扑量临界发散分析。</p>
+<h2 id="3">[3]</h2>
+<p>发表信息：J. P. Garrahan and I. Lesanovsky, Physical Review Letters, 104, 160601 (2010)
+与本文关联：非平衡量子系统时间临界点奇异性研究；本文对比其量子非解析特征，突出经典网络DPT独有的可观测量发散双曲标度，区分两类DPT核心差异。</p>
+<h2 id="4">[4]</h2>
+<p>发表信息：S. Diehl, A. Tomadin, A. Micheli, R. Fazio, P. Zoller, Physical Review Letters, 105, 015702 (2010)
+与本文关联：开放量子系统动力学相变研究；本文参考其开放系统含时演化建模思路，构建含边生成/删除的开放有向网络动力学模型。</p>
+<h2 id="5">[5]</h2>
+<p>发表信息：B. Sciolla and G. Biroli, Journal of Statistical Mechanics, P11003(R) (2011)
+与本文关联：无序多体系统有限时间动力学临界理论；文中平均场处理方法为本文SD方程微扰截断、平均度动力学方程推导提供理论工具。</p>
+<h2 id="6">[6]</h2>
+<p>发表信息：B. Sciolla and G. Biroli, Physical Review B, 88, 201110 (2013)
+与本文关联：量子淬火动力学相变标度理论；本文借鉴其临界标度指数分析范式，推导网络度分布、三角密度的临界幂律指数。</p>
+<h2 id="7">[7]</h2>
+<p>发表信息：E. Canovi, P. Werner, M. Eckstein, Physical Review Letters, 113, 265702 (2014)
+与本文关联：强关联量子系统DPT临界行为仿真；本文参考其数值模拟临界态的方案，完成网络临界时间附近拓扑演化仿真验证。</p>
+<h2 id="8">[8]</h2>
+<p>发表信息：A. Maraga, P. Smacchia, A. Silva, Physical Review B, 94, 245122 (2016)
+与本文关联：量子演化算子谱与动力学相变关联理论；支撑本文讨论部分“经典网络演化算子谱类比量子幺正演化”核心观点。</p>
+<h2 id="9">[9]</h2>
+<p>发表信息：J. Zhang, G. Pagano, P. W. Hess, A. Kyprianidis, P. Becker, H. Kaplan, A. V. Gorshkov, Z.-X. Gong, C. Monroe, Nature, 551, 601 (2017)
+与本文关联：冷原子实验观测量子动力学相变；本文以此佐证DPT是跨体系普适临界现象，论证经典复杂网络中观测DPT具备物理合理性。</p>
+<h2 id="10">[10]</h2>
+<p>发表信息：M. Heyl, A. Polkovnikov, S. Kehrein, Physical Review Letters, 110, 135704 (2013)
+与本文关联：量子动力学相变通用路径积分理论；为本文使用施温格-戴森场论描述网络动力学提供场论方法参照。</p>
+<h2 id="11">[11]</h2>
+<p>发表信息：J. Meibohm and M. Esposito, Physical Review Letters, 128, 110603 (2022)
+与本文关联：非平衡系统向平衡弛豫的平均场相变分析；本文对比其“无穷远渐近临界点”，凸显本文模型<strong>有限临界时间$ t_c $</strong> 的创新区别。</p>
+<h2 id="12">[12]</h2>
+<p>发表信息：J. Meibohm and M. Esposito, New Journal of Physics, 25, 023034 (2023)
+与本文关联：弛豫型非平衡相变完整理论推导；本文区分该类参数驱动相变，阐明本文DPT是时间驱动、有限时刻奇点的全新相变类型。</p>
+<h2 id="13">[13]</h2>
+<p>发表信息：Y. Tang, J. Liu, J. Zhang, P. Zhang, Nature Communications, 15, 1117 (2024)
+与本文关联：复杂网络非线性动力学仿真研究；文中数值仿真框架为本文网络演化模拟、临界标度数值验证提供实现参考。</p>
+<h2 id="14">[14]</h2>
+<p>发表信息：L. Xu, D. Patterson, S. A. Levin, J. Wang, PNAS, 120, e2218663120 (2023)
+与本文关联：生态系统崩溃的突发动力学观测；本文将生态灾变作为DPT现实应用场景，解释生态系统骤变是有限时间临界相变的实证案例。</p>
+<h2 id="15">[15]</h2>
+<p>发表信息：H. Fan, L.-W. Kong, X. Wang, A. Hastings, Y.-C. Lai, National Science Review, 8, nwaa269 (2021)
+与本文关联：复杂生态系统临界倾覆研究；支撑本文引言中“宏观复杂系统普遍存在突发动力学突变”的立论。</p>
+<h2 id="16">[16]</h2>
+<p>发表信息：R. H. Heiberger, Physica A, 393A, 376 (2014)
+与本文关联：金融市场崩盘动力学特征；本文将金融危机作为DPT典型实证场景，用双曲标度理论解释崩盘前市场指标激增现象。</p>
+<h2 id="17">[17]</h2>
+<p>发表信息：L. Gao, C. Song, Z. Gao, A.-L. Barabási, J. P. Bagrow, D. Wang, Scientific Reports, 4, 3997 (2014)
+与本文关联：通讯作者宋超明早期金融网络临界标度实证论文；本文理论模型统一解释该文观测到的金融市场双曲发散规律，完成实证-理论闭环。</p>
+<h2 id="18">[18]</h2>
+<p>发表信息：P. Fairley, IEEE Spectrum, 41, 22 (2004)
+与本文关联：电网连锁故障突发现象综述；作为基础设施系统DPT现实案例，说明工程网络同样存在有限时间临界突变。</p>
+<h2 id="19">[19]</h2>
+<p>发表信息：N. F. Johnson, M. Zheng, Y. Vorobyeva, A. Gabriel, H. Qi, N. Velásquez, P. Manrique, D. Johnson, E. Restrepo, C. Song et al., Science, 352, 1459 (2016)
+与本文关联：通讯作者宋超明合作经典实证论文，首次观测社交网络动力学双曲标度发散；本文核心理论目标即为给出该实证标度的完整解析理论解释，是本文最核心实证支撑文献。</p>
+<h2 id="20">[20]</h2>
+<p>发表信息：N. F. Johnson, R. Leahy, N. J. Restrepo, N. Velásquez, M. Zheng, P. Manrique, P. Devkota, S. Wuchty, C. Song, Nature, 573, 261 (2019)
+与本文关联：人类集体行为普适时间临界实证；本文模型复现其观测到的普适$ t_c-t)^{-1} $标度，从理论层面揭示人类群体行为临界涌现机制。</p>
+<h2 id="21">[21]</h2>
+<p>发表信息：P. D. Manrique, M. Zheng, Z. Cao, E. M. Restrepo, N. F. Johnson, C. Song, Physical Review Letters, 121, 048301 (2018)
+与本文关联：宋超明团队前期自适应社交网络有限时间奇点理论前驱工作；本文在其基础上引入三元闭包非线性相互作用，构建可完整解析求解的最小网络DPT模型。</p>
+<h2 id="22">[22]</h2>
+<p>发表信息：N. F. Johnson, N. Velásquez, N. J. Restrepo, R. Leahy, N. Gabriel, S. El Oud, M. Zheng, P. Manrique, S. Wuchty, Y. Lupu, C. Song, Nature, 582, 230 (2020)
+与本文关联：社会动荡前社交媒体临界级联实证；本文理论可定量刻画舆情网络走向临界崩溃的演化过程，为社会风险预警提供理论工具。</p>
+<h2 id="23">[23]</h2>
+<p>发表信息：P. Dasgupta and E. Maskin, American Economic Review, 95, 1290 (2005)
+与本文关联：经济学双曲线贴现理论奠基；本文指出该经济行为标度与网络DPT临界发散遵循同一数学形式，建立经济行为与网络临界统一理论。</p>
+<h2 id="24">[24]</h2>
+<p>发表信息：D. Laibson, Quarterly Journal of Economics, 112, 443 (1997)
+与本文关联：经典双曲线贴现行为经济学模型；本文用有限时间临界标度解释截止日期前学术投稿、任务激增等贴现行为。</p>
+<h2 id="25">[25]</h2>
+<p>发表信息：L. Karp, Journal of Public Economics, 89, 261 (2005)
+与本文关联：时间贴现公共经济模型；支撑本文将人类限时行为纳入DPT跨领域应用场景。</p>
+<h2 id="26">[26]</h2>
+<p>发表信息：P. Diamond and B. Köszegi, Journal of Public Economics, 87, 1839 (2003)
+与本文关联：跨期选择双曲线贴现理论；为本文经济系统临界标度分析提供经济学理论背景。</p>
+<h2 id="27">[27]</h2>
+<p>发表信息：T. Durakiewicz, Physics Today, 69, No. 2, 11 (2016)
+与本文关联：截止日期前学术投稿激增的实证观测；本文DPT双曲标度模型直接复现该现象，提供统一物理解释。</p>
+<h2 id="28">[28]</h2>
+<p>发表信息：P. L. Krapivsky, S. Redner, E. Ben-Naim, A Kinetic View of Statistical Physics (Cambridge University Press, Cambridge, England, 2010)
+与本文关联：非平衡统计物理动力学经典教材；本文线性随机图动力学方程、平均场演化建模均基于该书动力学框架。</p>
+<h2 id="29">[29]</h2>
+<p>发表信息：F. Radicchi, C. Castellano, A. Flammini, M. A. Muñoz, D. Notarmuzi, Physical Review Research, 2, 033171 (2020)
+与本文关联：时变参数驱动网络平衡相变研究；本文对比其参数调控相变，突出本文<strong>时间驱动、有限时刻奇点</strong>DPT的差异化创新。</p>
+<h2 id="30">[30]</h2>
+<p>发表信息：S. Liang, P. De Los Rios, D. M. Busiello, Physical Review Letters, 132, 228402 (2024)
+与本文关联：非平衡网络稳态相变理论；本文区分稳态渐近相变，聚焦瞬态有限时间临界动力学。</p>
+<h2 id="31">[31]</h2>
+<p>发表信息：J. Moran, M. Romeijnders, P. L. Doussal, F. P. Pijpers, U. Weitzel, D. Panja, J.-P. Bouchaud, Nature Physics, 20, 1352 (2024)
+与本文关联：复杂系统非平衡临界标度研究；本文借鉴其多尺度临界分析思路，分析度分布、聚类系数多拓扑量标度行为。</p>
+<h2 id="32">[32]</h2>
+<p>发表信息：P. Bak, How Nature Works: The Science of Self-Organized Criticality (Springer Science &amp; Business Media, New York, 2013)
+与本文关联：自组织临界（SOC）经典专著；本文明确区分SOC无穷远临界点与本文模型有限$ t_c $动力学相变，澄清两类临界现象理论边界。</p>
+<h2 id="33">[33]</h2>
+<p>发表信息：P. Bak, K. Chen, M. Creutz, Nature, 342, 780 (1989)
+与本文关联：沙堆自组织临界奠基论文；本文对比其渐近临界，强调有限时间奇点是全新临界类型。</p>
+<h2 id="34">[34]</h2>
+<p>发表信息：P. Bak, C. Tang, K. Wiesenfeld, Physical Review A, 38, 364 (1988)
+与本文关联：自组织临界原始理论；用于论证现有SOC框架无法解释真实系统有限时间突发灾变，凸显本文理论必要性。</p>
+<h2 id="35">[35]</h2>
+<p>发表信息：B. Vidiella, A. Guillamon, J. Sardanyés, V. Maull, J. Pla, N. Conde, R. Solé, Nature Communications, 12, 4415 (2021)
+与本文关联：生态网络自组织临界仿真；本文对比其无限时间临界，说明DPT更适合描述可观测、短期突发系统突变。</p>
+<h2 id="36">[36]</h2>
+<p>发表信息：D. Garlaschelli, A. Capocci, G. Caldarelli, Nature Physics, 3, 813 (2007)
+与本文关联：网络自组织临界拓扑研究；本文区分SOC与有限时间DPT两种临界机制，完善复杂系统临界现象分类。</p>
+<h2 id="37">[37]</h2>
+<p>发表信息：H. Sun, F. Radicchi, J. Kurths, G. Bianconi, Nature Communications, 14, 1308 (2023)
+与本文关联：三元闭包（三角闭合）网络机制综述；本文核心非线性相互作用项基于三元闭包，该文献为模型物理意义提供网络科学依据。</p>
+<h2 id="38">[38]</h2>
+<p>发表信息：Supplemental Material at <a href="http://link.aps.org/supplemental/10.1103/yls4-kdvj">http://link.aps.org/supplemental/10.1103/yls4-kdvj</a>
+与本文关联：本文配套补充材料；包含SD方程完整推导、度分布生成函数求解、仿真参数、稳态与Strauss模型对应关系，是本文理论推导完整支撑文档。</p>
+<h2 id="39">[39]</h2>
+<p>发表信息：R. Lambiotte, P. L. Krapivsky, U. Bhat, S. Redner, Physical Review Letters, 117, 218301 (2016)
+与本文关联：网络致密化（densification）动力学；本文描述的$ t&gt;t_c $稀疏转稠密拓扑跃迁，属于网络致密化的一类时间驱动临界过程。</p>
+<h2 id="40">[40]</h2>
+<p>发表信息：G. Palla, I. Derényi, I. Farkas, T. Vicsek, Nature, 435, 814 (2005)
+与本文关联：团渗流相变理论；本文一阶稀疏-稠密网络相变与其团簇突现行为相似，但本文相变由有限时间临界点驱动，而非参数调控。</p>
+<h2 id="41">[41]</h2>
+<p>发表信息：A.-L. Barabási, R. Albert, Science, 286, 509 (1999)
+与本文关联：无标度网络偏好依附奠基论文；本文核心创新之一：无需偏好依附，仅靠DPT临界涌现1/k幂律无标度度分布，突破传统无标度生成范式。</p>
+<h2 id="42">[42]</h2>
+<p>发表信息：R. Albert, A.-L. Barabási, Reviews of Modern Physics, 74, 47 (2002)
+与本文关联：无标度网络经典综述；本文对比传统无标度生成机制，提出临界相变驱动无标度拓扑的全新路径。</p>
+<h2 id="43">[43]</h2>
+<p>发表信息：D. J. Watts, S. H. Strogatz, Nature, 393, 440 (1998)
+与本文关联：小世界网络、聚类系数定义奠基；本文推导临界态聚类系数标度$ C(k)\propto 1/k $，以该文聚类定义为基础。</p>
+<h2 id="44">[44]</h2>
+<p>发表信息：A. Allard, M. Á. Serrano, M. Boguñá, Nature Physics, 20, 150 (2024)
+与本文关联：高阶聚类网络理论；支撑本文三角形密度、高阶子图SD方程层级推导。</p>
+<h2 id="45">[45]</h2>
+<p>发表信息：E. Ravasz, A.-L. Barabási, Physical Review E, 67, 026112 (2003)
+与本文关联：层级网络$ C(k)\sim 1/k $标度规律；本文证明该标度无需层级假设，仅DPT临界行为即可自然生成。</p>
+<h2 id="46">[46]</h2>
+<p>发表信息：E. Ravasz, A. L. Somera, D. A. Mongru, Z. N. Oltvai, A.-L. Barabási, Science, 297, 1551 (2002)
+与本文关联：生物层级网络聚类标度实证；本文提出该标度是跨体系临界普适特征，不局限于层级网络。</p>
+<h2 id="47">[47]</h2>
+<p>发表信息：G. Bianconi, R. K. Darst, J. Iacovacci, S. Fortunato, Physical Review E, 90, 042806 (2014)
+与本文关联：三元闭包网络生长模型；该模型仅渐近稳态，无有限时间奇点，本文对比凸显DPT模型独有有限时间临界创新。</p>
+<h2 id="48">[48]</h2>
+<p>发表信息：I. Ispolatov, P. L. Krapivsky, A. Yuryev, Physical Review E, 71, 061911 (2005)
+与本文关联：复制型网络演化模型；无有限时间发散，用于衬托本文非线性耦合带来的独特临界动力学。</p>
+<h2 id="49">[49]</h2>
+<p>发表信息：D. J. Strauss, Biometrika, 62, 467 (1975)
+与本文关联：Strauss三角指数随机图模型；本文证明模型渐近稳态等价Strauss系综，建立瞬态DPT与平衡网络系综理论关联。</p>
+<h2 id="50">[50]</h2>
+<p>发表信息：Z. Burda, J. Jurkiewicz, A. Krzywicki, Physical Review E, 69, 026106 (2004)
+与本文关联：Strauss网络模型场论处理；为本文将邻接矩阵作为场量、SD方程描述三角密度演化提供方法参考。</p>
+<h2 id="51">[51]</h2>
+<p>发表信息：G. Bianconi, Physical Review E, 105, 034310 (2022)
+与本文关联：高阶Strauss网络相变；本文拓展其平衡相变框架，延伸至瞬态有限时间动力学相变。</p>
+<h2 id="52">[52]</h2>
+<p>发表信息：D. Achlioptas, R. M. D’souza, J. Spencer, Science, 323, 1453 (2009)
+与本文关联：网络爆炸相变（explosive percolation）；同为稀疏转稠密一阶网络相变，但该相变由参数调控，本文是时间驱动有限临界时间相变，二者机制不同。</p>
+<h2 id="53">[53]</h2>
+<p>发表信息：R. A. da Costa, S. N. Dorogovtsev, A. V. Goltsev, J. F. F. Mendes, Physical Review Letters, 105, 255701 (2010)
+与本文关联：网络平衡临界标度理论；本文将其平衡标度分析方法迁移至瞬态非平衡临界演化。</p>
+<h2 id="54">[54]</h2>
+<p>发表信息：S. Banerjee and E. Altman, Physical Review B, 95, 134302 (2017)
+与本文关联：量子系统施温格-戴森方程求解DPT；证明SD方程可统一处理量子与经典两类动力学相变，支撑本文讨论部分统一框架观点。</p>
+<h2 id="55">[55]</h2>
+<p>发表信息：J. Liu, N. M. Aden, D. Sarker, C. Song, GitHub repository, 2025, <a href="https://github.com/jay83780323/DPT">https://github.com/jay83780323/DPT</a>
+与本文关联：本文配套开源仿真代码；所有数值模拟、相图、临界标度仿真结果均由该代码实现，是本文数值结果可复现基础。</p>
+</div>
+        
+        
+        <h3 style="margin-bottom:12px;font-size:1.1rem;">摘要</h3>
+        <div class="citation-block" style="background:var(--bg-card);">
+            <p>以下是根据来源对论文**《Dynamical Phase Transitions in Nonequilibrium Networks》**的亮点（Highlights）、方法论（Methodology）、模型定义及推导方法的详细介绍：</p>
+<h3 id="一-论文亮点-highlights"><strong>一、 论文亮点 (Highlights)</strong></h3>
+<ul>
+<li><strong>建立经典DPT理论框架：</strong> 该研究为经典非平衡系统中的动力学相变（DPTs）建立了理论基础，填补了以往此类现象多见于量子系统而经典领域研究不足的空白。</li>
+<li><strong>发现有限时间奇异性：</strong> 证明了在非平衡网络中，动力学相变发生在有限的关键时间 $t_c$，而非渐近极限（$t \rightarrow \infty$）。在该时间点，物理观测值（如网络度 $z$）表现出非解析行为。</li>
+<li><strong>普适的双曲标度律：</strong> 理论预测并证实了网络平均度遵循普适的双曲标度律：$z(t) \sim (t_c - t)^{-1}$，这与在线社交动态和经济活动（如双曲贴现）中的实验观察一致。</li>
+<li><strong>自发产生的关键特征：</strong> 发现网络在接近临界点时会自发产生<strong>无标度特性</strong>（$P(k) \sim k^{-1}$）和<strong>模块化标度律</strong>（$C \sim 1/k$），而无需引入优先连接（Preferential Attachment）等传统机制。</li>
+<li><strong>一阶相变特征：</strong> 明确了从稀疏网络到致密网络（类似完全图）的转变是一阶动力学相变，伴随着序参量 $q$（边比例）在 $t_c$ 处的跳跃（潜热现象）。</li>
+</ul>
+<h3 id="二-方法论-methodology"><strong>二、 方法论 (Methodology)</strong></h3>
+<p>该研究结合了<strong>解析理论建模</strong>与<strong>大规模数值模拟</strong>：</p>
+<ul>
+<li><strong>动力学建模：</strong> 基于二元生灭过程（Birth-death process）模拟边的动态演化，包含自发生成、受相互作用驱动的生成以及随机移除。</li>
+<li><strong>解析求解：</strong> 利用<strong>Schwinger-Dyson (SD) 方程</strong>描述子图密度的演化，并采用微扰截断方案解决无穷方程链问题。</li>
+<li><strong>统计验证：</strong> 运行了包含 $N=2000$ 个节点的网络模拟，并探讨了在热力学极限（$N \rightarrow \infty$）下的收敛情况，以消除有限尺寸效应。</li>
+<li><strong>跨领域对比：</strong> 将模型与平衡态系综（如Strauss型模型）及量子DPT研究工具（如光谱分析）进行关联，建立了统一的分析视角。</li>
+</ul>
+<h3 id="三-模型基本定义"><strong>三、 模型基本定义</strong></h3>
+<p>模型考虑一个由 $N$ 个顶点组成的有向网络，其核心演化规则如下：</p>
+<ol>
+<li><strong>边生成率 (Birth Rate $\gamma^+_{ij}$):</strong> 包含线性项和<strong>非线性相互作用项</strong>：
+$$\gamma^+<em>{ij} = \frac{\alpha}{N} + \beta(A^2)</em>{ij}$$
+其中，$\alpha$ 是自发生成率，$\beta$ 是耦合常数。</li>
+<li><strong>非线性机制：</strong> 关键项 $(A^2)<em>{ij} = \sum_k A</em>{ik}A_{kj}$ 代表**三元闭合（Triadic Closure）**机制，即如果节点 $i$ 和 $j$ 拥有共同邻居 $k$，则它们成边的概率会额外增加。</li>
+<li><strong>边移除率 (Death Rate $\gamma^-$):</strong> 为常数 $\gamma$。</li>
+<li><strong>相变判据：</strong> 当 $\beta &gt; \gamma^2/(4\alpha)$ 时，系统进入非平衡相，并在有限时间 $t_c$ 发生发散；反之则处于平衡相，收敛至稳态。</li>
+</ol>
+<h3 id="四-主要推导方法"><strong>四、 主要推导方法</strong></h3>
+<ul>
+<li><strong>Schwinger-Dyson (SD) 方程：</strong> 论文推导了子图密度 $\rho(G)$ 的演化方程。对于平均度 $z$，其演化遵循：
+$$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta)$$
+其中 $\Delta$ 为三角形密度。</li>
+<li><strong>树状微扰截断 (Tree-level Truncation):</strong> 由于 $\Delta$ 依赖于更高阶的子图，形成无穷级数，研究者忽略了 $O(\beta^3)$ 的高阶项，从而获得 $z(t)$ 的闭合解析解。</li>
+<li><strong>生成函数法 (Generating Function Method):</strong> 用于求解度分布 $P(k, t)$ 的主方程。通过引入生成函数 $G(x, t)$ 并将其转化为偏微分方程，从而精确解析出度分布随时间的演化过程。</li>
+<li><strong>绝热近似 (Adiabatic Approximation):</strong> 用于修正耦合常数（$\beta \rightarrow \beta_0$），通过计入三角形密度的修正来提高理论预测与数值模拟在快速变化阶段的一致性。</li>
+<li><strong>傅里叶逆变换：</strong> 在解析出生成函数后，通过傅里叶逆变换最终确定度分布的数学形式。</li>
+</ul>
+
+        </div>
+        
+    </div><div class="tab-content" id="tab-authors">
+        <div class="prose-content"><p>关于论文**《Dynamical Phase Transitions in Nonequilibrium Networks》**（发表于2025年《物理评论快报》，简称DPT论文）的研究团队，其作者机构、合作网络及近年代表性成果整理如下：</p>
+<h3 id="一-作者机构院系与合作信息"><strong>一、 作者机构、院系与合作信息</strong></h3>
+<p>根据来源资料，该论文的所有作者在发表时均隶属于<strong>迈阿密大学（University of Miami）物理系</strong>。</p>
+<ol>
+<li>
+<p><strong>宋超明 (Chaoming Song) —— 通讯作者</strong></p>
+<ul>
+<li><strong>机构与职位：</strong> 迈阿密大学物理系<strong>副教授</strong>，同时也是该校<strong>弗罗斯特数据科学与计算研究所 (IDSC)</strong> 的成员。</li>
+<li><strong>核心合作者与机构：</strong>
+<ul>
+<li><strong>Albert-László Barabási</strong>（东北大学/哈佛大学）：长期合作研究人类移动性的预测极限与标度律。</li>
+<li><strong>Dashun Wang</strong>（西北大学）：合作研究科学创新与职业生涯的统计特征。</li>
+<li><strong>Neil F. Johnson</strong>（乔治华盛顿大学）：在社交媒体极化和复杂系统领域有深度合作。</li>
+<li><strong>Daniel S. Messinger &amp; Lynn K. Perry</strong>（迈阿密大学心理学系）：开展跨学科合作，将统计物理应用于儿童社交互动研究。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>刘嘉振 (Jiazhen Liu) —— 第一作者（共同一作）</strong></p>
+<ul>
+<li><strong>机构与职位：</strong> <strong>复旦大学</strong>智能复杂体系基础理论与关键技术实验室<strong>助理教授、博士生导师</strong>。他此前在迈阿密大学获得物理学博士学位（导师为宋超明），并曾任清华大学电子工程系博士后。</li>
+<li><strong>核心合作者：</strong> 除了宋超明教授，还与清华大学的<strong>李勇、丁景涛</strong>教授合作，探索非平衡物理与生成式机器学习的结合。</li>
+</ul>
+</li>
+<li>
+<p><strong>Nathaniel M. Aden —— 第一作者（共同一作）</strong></p>
+<ul>
+<li><strong>背景信息：</strong> 迈阿密大学物理系硕士（2019-2020届），曾任助教，主要负责非平衡协同结构的数值模拟。</li>
+<li><strong>注意：</strong> 来源资料特别指出需将其与同名的加州大学伯克利分校环境学者（Dr. Nathaniel Aden）区分，后者主要研究工业脱碳和能源强度。</li>
+</ul>
+</li>
+<li>
+<p><strong>Debasish Sarker —— 作者</strong></p>
+<ul>
+<li><strong>机构：</strong> 迈阿密大学物理系。主要参与了非平衡网络动力学及社会驱动运动的研究。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二-核心作者近年代表性论文-5-10篇"><strong>二、 核心作者近年代表性论文 (5-10篇)</strong></h3>
+<h4 id="1-通讯作者宋超明-chaoming-song"><strong>1. 通讯作者：宋超明 (Chaoming Song)</strong></h4>
+<p>宋教授的研究横跨统计物理、网络科学和计算社会科学。</p>
+<ul>
+<li><strong>&ldquo;Dynamical Phase Transitions in Nonequilibrium Networks&rdquo;</strong> (2025, <em>PRL</em>)：提出非平衡网络中由三元闭合驱动的动力学相变理论。</li>
+<li><strong>&ldquo;Alignment Phase Transition in Socially Driven Motion&rdquo;</strong> (2026, <em>Science Advances</em>)：将活性物质物理应用于人类社交对齐行为。</li>
+<li><strong>&ldquo;Exact 3D Conformal Blocks from Fractional Calculus&rdquo;</strong> (2025, <em>PRL</em>)：利用分数阶微积分推导共形场论中的解析解。</li>
+<li><strong>&ldquo;Universal expansion of human mobility across urban scales&rdquo;</strong> (2025, <em>Nature Cities</em>)：揭示了人类移动模块随家距离子线性扩张的普适规律。</li>
+<li><strong>&ldquo;Zero Curvature Condition for Quantum Criticality&rdquo;</strong> (2025, <em>PRL</em>)：建立量子临界性与期望空间零曲率界限的几何联系。</li>
+<li><strong>&ldquo;Emergence of Polarization in Coevolving Networks&rdquo;</strong> (2023, <em>PRL</em>)：证明了社交媒体中稳定双极化状态的演化机制。</li>
+<li><strong>&ldquo;The online competition between pro- and anti-vaccination views&rdquo;</strong> (2020, <em>Nature</em>)：揭示社交网络中疫苗观点竞争的动力学。</li>
+<li><strong>&ldquo;New online ecology of adversarial aggregates&rdquo;</strong> (2016, <em>Science</em>)：研究在线仇恨言论和极端组织传播的“生态系统”。</li>
+</ul>
+<h4 id="2-第一作者刘嘉振-jiazhen-liu"><strong>2. 第一作者：刘嘉振 (Jiazhen Liu)</strong></h4>
+<p>刘博士的研究侧重于可解析理论模型及其在复杂网络和AI领域的应用。</p>
+<ul>
+<li><strong>&ldquo;Predicting scientific breakthroughs through capacity-based dynamics in citation networks&rdquo;</strong> (2026, <em>PRE</em>)：提出预测学术突破的容量限制模型。</li>
+<li><strong>&ldquo;WeightFlow: Learning Stochastic Dynamics via Evolving Weight of Neural Network&rdquo;</strong> (2025, <em>AAAI</em>)：引入演化权重神经模型捕获非平衡轨迹转换。</li>
+<li><strong>&ldquo;Dynamical Phase Transitions in Nonequilibrium Networks&rdquo;</strong> (2025, <em>PRL</em>)：本研究的第一作者，负责解析求解与模拟。</li>
+<li><strong>&ldquo;Scaling law of real traffic jams under varying travel demand&rdquo;</strong> (2024, <em>EPJ Data Science</em>)：确定了现实交通拥堵空间范围与持续时间的标度行为。</li>
+<li><strong>&ldquo;Human–AI adaptive dynamics drives the emergence of information cocoons&rdquo;</strong> (2023, <em>Nature Machine Intelligence</em>)：利用协同网络分析个性化算法反馈形成的“信息茧房”。</li>
+<li><strong>&ldquo;Emergence of Polarization in Coevolving Networks&rdquo;</strong> (2023, <em>PRL</em>)：共同第一作者，研究社交网络极化动力学。</li>
+<li><strong>&ldquo;Beyond Equilibrium: Non-Equilibrium Foundations Should Underpin Generative Processes&hellip;&rdquo;</strong> (2025, <em>arXiv</em>)：提出生成式AI应基于非平衡物理框架而非传统的平衡态假设。</li>
+</ul>
+<h4 id="3-共同一作nathaniel-m-aden"><strong>3. 共同一作：Nathaniel M. Aden</strong></h4>
+<p>其论文产出主要集中在迈阿密大学期间的复杂网络模拟。</p>
+<ul>
+<li><strong>&ldquo;Dynamical Phase Transitions in Nonequilibrium Networks&rdquo;</strong> (2025, <em>PRL</em>)：论文共同第一作者。</li>
+<li><strong>&ldquo;Emergence of Polarization in Coevolving Networks&rdquo;</strong> (2023, <em>PRL</em>)：作为研究生助教执行了基于超算的大规模数据验证。</li>
+<li><strong>&ldquo;Modelling Universal Order Book Dynamics in Bitcoin Market&rdquo;</strong> (2021, <em>arXiv</em>)：利用随机微分方程预测比特币市场订单簿的波动。</li>
+<li><strong>&ldquo;Emergent dynamics of extremes in a population driven by common information sources&hellip;&rdquo;</strong> (2019, <em>Scientific Reports</em>)：研究社交算法驱动下的极端化动态。</li>
+</ul>
+</div>
+        
+    </div><div class="tab-content" id="tab-model">
+        <div class="prose-content"><p>根据提供的源文件，论文**《Dynamical Phase Transitions in Nonequilibrium Networks》**提出了一套完整的理论框架，用以描述经典非平衡网络中的动力学相变（DPT）。以下是该模型及其数学推导过程的详细介绍：</p>
+<h3 id="一-模型基本定义"><strong>一、 模型基本定义</strong></h3>
+<p>该模型构建了一个拥有 $N$ 个顶点的有向网络，其拓扑结构随时间的演化由边的随机添加和移除驱动。其核心在于引入了<strong>非线性相互作用</strong>，即**三元闭合（Triadic Closure）**机制。</p>
+<ol>
+<li>
+<p><strong>边添加率（Birth Rate）：</strong> 节点 $i$ 向节点 $j$ 建立连接的速率包含线性自发项和非线性项：
+$$W[A_{ij}(0 \to 1)] = \frac{\alpha}{N} + \beta(A^2)_{ij} \tag{2a}$$</p>
+<ul>
+<li><strong>$\alpha$</strong>：自发生成边的速率常数。</li>
+<li><strong>$1/N$</strong>：缩放因子，用于确保在大规模极限下网络的稀疏性。</li>
+<li><strong>$\beta$</strong>：非线性耦合常数。</li>
+<li><strong>$(A^2)<em>{ij} = \sum_k A</em>{ik}A_{kj}$</strong>：代表三元闭合，即如果节点 $i$ 和 $j$ 拥有共同邻居 $k$，它们成边的概率会由于非线性相互作用而额外增加。</li>
+</ul>
+</li>
+<li>
+<p><strong>边移除率（Death Rate）：</strong> 假定为常数 $\gamma$：
+$$W[A_{ij}(1 \to 0)] = \gamma \tag{2b}$$</p>
+</li>
+</ol>
+<h3 id="二-数学推导过程"><strong>二、 数学推导过程</strong></h3>
+<h4 id="1-建立-schwinger-dyson-sd-方程组"><strong>1. 建立 Schwinger-Dyson (SD) 方程组</strong></h4>
+<p>为了描述网络动力学，研究者推导了描述任意连通子图密度 $\rho(G)$ 演化的 <strong>Schwinger-Dyson 方程</strong>。对于最基础的子图——<strong>平均度 $z$</strong>（单条边的密度），其演化方程为：
+$$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta) \tag{3}$$
+其中，$\Delta$ 是<strong>三角形密度</strong>。</p>
+<ul>
+<li><strong>反馈循环</strong>：方程中的 $\beta(z^2 - \Delta)$ 项引入了一个放大集群化的反馈回路。</li>
+<li><strong>无穷方程链</strong>：由于三角形密度 $\Delta$ 的演化取决于四顶点子图密度，而后者又取决于更高阶子图，因此形成了一个无穷方程链。例如，$\Delta$ 的演化遵循：
+$$\frac{d\Delta}{dt} = \beta(z^2 - \Delta) - 3\gamma\Delta + O(\beta^3) \tag{4}$$</li>
+</ul>
+<h4 id="2-树图级截断与解析求解"><strong>2. 树图级截断与解析求解</strong></h4>
+<p>在弱相互作用极限下，应用<strong>微扰截断方案</strong>（忽略 $\Delta \sim O(\beta)$ 项），可以得到 $z(t)$ 的闭合形式。</p>
+<ul>
+<li><strong>临界判据</strong>：当 <strong>$\beta &gt; \gamma^2 / (4\alpha)$</strong> 时，系统进入超临界状态，即非平衡相。</li>
+<li><strong>有限时间奇点</strong>：在此相中，平均度 $z(t)$ 在有限的<strong>临界时间 $t_c$</strong> 处发生<strong>双曲发散</strong>：
+$$z(t) \sim (t_c - t)^{-1} \tag{1, 5}$$
+其中临界时间 $t_c = \omega^{-1} [\text{acot}(2\omega) + \pi/2]$，且 $\omega = \sqrt{|\alpha\beta - \gamma^2/4|}$。</li>
+</ul>
+<h4 id="3-度分布的生成函数法"><strong>3. 度分布的生成函数法</strong></h4>
+<p>为了研究接近临界点时的度分布 $P(k, t)$，研究者使用<strong>生成函数法</strong>求解主方程。</p>
+<ul>
+<li><strong>主方程</strong>：描述度分布随时间变化的方程为：
+$$\frac{\partial P(k, t)}{\partial t} = [\alpha + \beta(k-1)z(t)]P(k-1, t) - [\alpha + \beta k z(t) + \gamma k]P(k, t) + \gamma(k+1)P(k+1, t) \tag{7}$$</li>
+<li><strong>结果</strong>：解析结果表明，当 $t \to t_c$ 时，$P(k, t)$ 会自发形成幂律分布（$P(k) \propto k^{-1}$），使网络展现出<strong>无标度特性</strong>。</li>
+</ul>
+<h4 id="4-序参量与一阶相变"><strong>4. 序参量与一阶相变</strong></h4>
+<p>定义序参量 <strong>$q$</strong> 为边在完全图中的比例。</p>
+<ul>
+<li><strong>稀疏到致密的转变</strong>：在 $t &lt; t_c$ 时，$q=0$；而在 $t &gt; t_c$ 后，网络迅速坍缩成致密核心。</li>
+<li><strong>一阶特征</strong>：$q(t)$ 在 $t_c$ 处表现出非连续的跳跃（潜热），标志着这是一个<strong>一阶动力学相变</strong>。</li>
+<li><strong>相变后动态</strong>：对于 $t \ge t_c$，序参量的演化遵循：
+$$q(t) = [1 - p_0 e^{-\alpha(t-t_c)}]^2 \tag{6}$$
+其中 $p_0$ 是临界时刻孤立顶点的比例。</li>
+</ul>
+<p>这些推导共同证明了，通过引入非线性三元闭合相互作用，经典非平衡网络可以产生与量子系统类似的动力学相变现象，并遵循普适的双曲标度律。</p>
+</div>
+        
+    </div><div class="tab-content" id="tab-results">
+        <div class="prose-content"><p>论文**《Dynamical Phase Transitions in Nonequilibrium Networks》**（2025年发表于《物理评论快报》）的主要研究结果、理论意义及实际价值总结如下：</p>
+<h3 id="一-研究结果"><strong>一、 研究结果</strong></h3>
+<ol>
+<li><strong>发现经典非平衡网络中的动力学相变（DPTs）：</strong> 研究证明，在经典的非平衡网络中，动力学相变发生在一个<strong>有限的临界时间 $t_c$</strong>，而非无限长的时间极限（$t \rightarrow \infty$）。</li>
+<li><strong>普适的双曲标度律：</strong> 论文通过解析证明和数值模拟发现，网络的平均度 $z(t)$ 在接近临界时间 $t_c$ 时遵循普适的双曲标度律：<strong>$z(t) \sim (t_c - t)^{-1}$</strong>。</li>
+<li><strong>自发产生的关键拓扑特征：</strong>
+<ul>
+<li><strong>无标度特性：</strong> 随着系统接近临界点，度分布自发演化为幂律形式 <strong>$P(k) \sim k^{-1}$</strong>，而无需依赖于传统的“优先连接”机制。</li>
+<li><strong>模块化标度律：</strong> 局部聚类系数展现出 <strong>$C \sim 1/k$</strong> 的特征，这在许多具有层次结构的现实世界网络中非常常见。</li>
+</ul>
+</li>
+<li><strong>一阶相变特征：</strong> 序参量 $q$（边在完全图中的比例）在 $t_c$ 处展现出非连续的跳跃，即<strong>潜热</strong>现象，标志着网络从稀疏结构向极度致密结构（如完全图）的一阶动力学相变。</li>
+<li><strong>相图确立：</strong> 确定了由动力学速率（$\alpha, \gamma$）和耦合常数（$\beta$）定义的<strong>平衡相</strong>（系统趋向稳态）与<strong>非平衡相</strong>（系统在有限时间发散）的边界。</li>
+</ol>
+<h3 id="二-理论意义"><strong>二、 理论意义</strong></h3>
+<ol>
+<li><strong>填补经典 DPT 研究空白：</strong> 虽然动力学相变在量子系统中已有深入研究，但在经典物理领域一直研究不足。本研究为理解<strong>经典复杂系统的非平衡临界性</strong>奠定了理论基础。</li>
+<li><strong>揭示非线性相互作用的核心作用：</strong> 研究指出，类似于多体物理，<strong>三元闭合</strong>等非线性相互作用是驱动系统产生集体动力学行为和有限时间奇点的关键。</li>
+<li><strong>统一分析框架：</strong> 论文证明了<strong>Schwinger-Dyson (SD) 方程</strong>可以作为捕捉非平衡动力学的强大工具，成为分析量子与经典 DPTs 的统一理论基础。</li>
+<li><strong>超越传统模型：</strong> 该模型捕捉到了传统“自组织临界性（SOC）”或“时间变化控制参数”模型无法解释的<strong>有限时间奇异性</strong>。</li>
+</ol>
+<h3 id="三-实际价值"><strong>三、 实际价值</strong></h3>
+<ol>
+<li><strong>解释社会与经济现象：</strong>
+<ul>
+<li>该模型预测的双曲标度律解释了经济学中的<strong>双曲贴现</strong>行为，例如截止日期前学术投稿量的激增。</li>
+<li>它为在线社交媒体动态中观察到的<strong>极化、仇恨言论传播</strong>以及观点竞争中的密度发散现象提供了理论支撑。</li>
+</ul>
+</li>
+<li><strong>突发不稳定性预警：</strong> 研究为理解和预测生态系统崩溃、金融危机、电网故障以及社会动荡等<strong>复杂系统的突发性转变</strong>提供了一个物理框架。</li>
+<li><strong>理解瞬态非平衡动态：</strong> 现实世界的复杂系统往往在达到渐近平衡之前就发生了干预或崩溃，本研究强调了<strong>瞬态动力学</strong>在理解这些系统突然不稳定性中的核心地位。</li>
+<li><strong>赋能交叉学科研究：</strong> 通过建立极简模型，该研究展示了如何利用统计物理方法来量化分析包括流行病学、基础设施失效在内的跨领域复杂问题。</li>
+</ol></div>
+        
+    </div><div class="tab-content" id="tab-figures">
+        <div class="prose-content"><p>根据提供的论文及其补充材料（SM），文中的图像主要展示了非平衡网络演化过程、相图以及临界行为。以下是所有图像内容的详细介绍：</p>
+<h3 id="1-论文主图-figures-1-4"><strong>1. 论文主图 (Figures 1-4)</strong></h3>
+<ul>
+<li>
+<p><strong>图 1：网络结构的随时间演化</strong></p>
+<ul>
+<li><strong>内容：</strong> 展示了在耦合常数 $\beta = 0.5$、速率 $\alpha = \gamma = 1$ 且节点数 $N = 300$ 时，网络随时间 $t$ 演化的三个阶段。</li>
+<li><strong>三个阶段：</strong>
+<ul>
+<li><strong>(a) $t &lt; t_c$（临界时间前）：</strong> 网络呈现<strong>稀疏结构</strong>，类似于随机图。</li>
+<li><strong>(b) $t \to t_c$（接近临界时间）：</strong> 网络发生突变，演化为具有中心节点的<strong>无标度拓扑（Scale-free topology）</strong>。</li>
+<li><strong>(c) $t &gt; t_c$（临界时间后）：</strong> 网络迅速致密化，呈现出类似于**完全图（Complete graph）**的致密状态。</li>
+</ul>
+</li>
+<li><strong>下方箭头：</strong> 表示时间轴，$t_c$ 是发生动力学相变的关键点。</li>
+</ul>
+</li>
+<li>
+<p><strong>图 2：平均度 $z(t)$ 与序参量 $q(t)$ 的演化</strong></p>
+<ul>
+<li><strong>图 2(a) 平均度：</strong> 展示了在不同参数下平均度随时间的变化。
+<ul>
+<li><strong>平衡相（绿色三角形）：</strong> 当 $\beta = 1/4$ 时，$z(t)$ 最终趋于常数稳态。</li>
+<li><strong>非平衡相（红色圆圈）：</strong> 当 $\beta = 1/2$ 时，$z(t)$ 遵循双曲标度律并在有限时间 $t_c \approx 5.9$ 处发散。</li>
+</ul>
+</li>
+<li><strong>图 2(b) 序参量 $q$：</strong> 展示了边比例（序参量）的变化。在 $t_c$ 处，$q(t)$ 出现从零到非零值的<strong>非连续跳跃</strong>，标志着一阶动力学相变的发生。</li>
+</ul>
+</li>
+<li>
+<p><strong>图 3：相图（Phase Diagrams）</strong></p>
+<ul>
+<li><strong>图 3(a) 二维相图：</strong> 在 $\alpha/\gamma$ 和 $\beta/\gamma$ 空间内，灰色区域表示<strong>非平衡相</strong>，白色区域表示<strong>平衡相</strong>。
+<ul>
+<li>虚线代表树图级理论预测（$\beta_0 = \beta$），实线代表计入三角形修正后的预测，散点为数值模拟结果，实线与模拟吻合更好。</li>
+</ul>
+</li>
+<li><strong>图 3(b) 三维相图：</strong> 展示了时间 $t$、$\alpha$ 和 $\beta$（均经 $\gamma$ 缩放）构成的空间。彩色曲面作为相边界，将空间划分为**稀疏网络（Sparse Network）<strong>和</strong>致密网络（Dense Network）**两个域。</li>
+</ul>
+</li>
+<li>
+<p><strong>图 4：临界行为（Critical Behavior）</strong></p>
+<ul>
+<li><strong>图 4(a) 和 (b)：</strong> 分别为理论预测和数值模拟的<strong>度分布 $P(k, t)$</strong>。
+<ul>
+<li>双对数坐标显示，当 $t$ 趋近于 $t_c$（例如 $t_c - t = 0.001$）时，$P(k)$ 呈现出斜率为 -1 的幂律形式（$P(k) \propto k^{-1}$），形成无标度网络。</li>
+</ul>
+</li>
+<li><strong>图 4(c)：</strong> 展示了临界点处<strong>孤立顶点比例 $p_0$</strong> 随参数的变化。虚线标示了平衡相与非平衡相的边界。</li>
+<li><strong>图 4(d) 聚类系数：</strong> 展示了接近 $t_c$ 时<strong>聚类系数 $C$ 与度 $k$</strong> 的关系。散点（模拟）与实线（理论预期 $C(k) \propto 1/k$）高度吻合，反映了自发产生的模块化特征。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-补充材料图像-supplemental-figures"><strong>2. 补充材料图像 (Supplemental Figures)</strong></h3>
+<ul>
+<li>
+<p><strong>图 S1：参数依赖性分析</strong></p>
+<ul>
+<li><strong>内容：</strong> 展示了在不同参数组合（如 $\alpha, \beta, \gamma$ 的多种取值）下，序参量 $q(t)$ 随时间演化的曲线。</li>
+<li><strong>结论：</strong> 增大 $\alpha$ 或 $\beta$ 会导致 DPT 提前发生（$t_c$ 减小）且转变更剧烈；增大 $\gamma$ 则会延迟转变。理论曲线（实线）与模拟点（散点）的拟合优度 $R^2$ 均在 0.89 以上。</li>
+</ul>
+</li>
+<li>
+<p><strong>图 S2：有限尺寸效应（Finite-size effects）</strong></p>
+<ul>
+<li><strong>内容：</strong> 展示了在固定控制参数下，不同系统规模 $N$（100, 400, 800）对 $q(t)$ 演化的影响。</li>
+<li><strong>结论：</strong> 随着 $N$ 的增大，相变处的跳跃变得越来越陡峭，模拟曲线逐渐向理论预测的非连续性跳跃（$N \to \infty$ 极限）靠拢。</li>
+</ul>
+</li>
+</ul>
+</div>
+        
+    </div><div class="tab-content" id="tab-code">
+        <div class="prose-content"><a href="https://github.com/henocturne/research_lib/tree/main/dpt">https://github.com/henocturne/research_lib/tree/main/dpt</a></div>
+        
+    </div><div class="tab-content" id="tab-mindmap"><div class="pdf-container" style="grid-template-columns: 1fr;">
+            
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="sigma" style="width:16px;height:16px;"></i>
+                    推导过程
+                </div>
+                <div class="pdf-panel-body">
+                    <embed src="/derivation/dpt.pdf" type="application/pdf" class="pdf-viewer">
+                </div>
+            </div>
+            
+        </div>
+    </div><div class="tab-content" id="tab-translation">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="languages" style="width:16px;height:16px;"></i>
+                    翻译
+                </div>
+                <div class="pdf-panel-body"><p>[第1页，第1段]
+动力学相变（Dynamical Phase Transitions, DPTs）是一种揭示随时间涌现的临界行为的临界现象，代表了非平衡物理（nonequilibrium physics）的新前沿[1–10]。与传统相变（通常由温度或压力等外部参数驱动）不同，DPTs发生在临界时间$t_c$处，此时物理可观测量表现出非解析行为。尽管这些相变已在量子系统中得到广泛研究，但其在经典情境中的作用仍 largely 未被充分探索，仅有的进展来自非平衡弛豫至平衡态的均场分析（mean-field analyses）[11,12]及数值模拟[13]。</p>
+<p>[第1页，第2段]
+有趣的是，近期关于宏观复杂系统的实验，包括生态崩溃（ecological collapse）[14,15]、金融危机（financial crises）[16,17]和电网故障（power grid failures）[18]，均报告了有限时间内发生的突变动力学变化。这些事件虽未被正式归类为DPTs，但具有突然的集体变化等关键特征。这些现象与量子DPTs的惊人相似性表明，临界时间动力学（critical temporal dynamics）可能是复杂系统的普遍特征。这引发了关于其更广泛关联性与潜在普适性的深刻问题。</p>
+<p>[第1页，第3段]
+更近期，关于社交网络（social networks）的研究为经典情境中DPTs的涌现提供了有力证据[19–22]。这些实验揭示，某些物理可观测量$z(t)$在临界时间$t_c$处根据普适双曲标度（hyperbolic scaling）发散：</p>
+<p>[第1页，第4段]
+$$z(t) \sim (t_c - t)^{-1}.$$  (1)</p>
+<p>[第1页，第5段]
+与量子DPTs（非解析性出现但不发散）不同，这种经典双曲标度揭示了时间临界性（temporal criticality）的独特特征，且似乎在不同领域中普遍存在。例如，经济学中观察到的双曲贴现（hyperbolic discounting）[23–26]（可解释拖延行为和截止日期效应）也遵循此标度，这从截止日期前学术投稿量的激增中得到证实[27]。尽管这种现象普遍存在，但其普适性的理论基础仍未被充分理解。</p>
+<p>[第1页，第6段]
+现有的非平衡经典相变理论框架大致分为两类。第一类处理在时变控制参数下出现的不同相，类似于平衡相变[21,28–31]。第二类包含自组织临界性（self-organized criticality）模型[32–36]，其中临界点出现在渐近极限$t \to \infty$而非有限$t_c$处。这两类框架均未能完全捕捉DPTs特有的有限时间奇异性（finite-time singularities），表明需要新的理论方法。</p>
+<p>[第1页，第7段]
+在本快报（Letter）中，我们提出一个预测非平衡网络中DPTs涌现的理论框架。核心洞见在于：非线性相互作用（nonlinear interactions）起着关键作用。类比多体物理（many-body physics），无相互作用的随机图类似于无DPTs的非相互作用粒子系统。然而，一旦引入非线性相互作用，系统的集体动力学（collective dynamics）将发生根本性改变。为证明这一点，我们考虑一个包含二次相互作用的简单模型，其动机源于三角闭合（triangle closure）——</p>
+<p>[第2页，第1段]
+社会网络中普遍存在的机制。在该模型中，边之间的二次相互作用自然产生了动态相变（DPT）。值得注意的是，该模型可以解析求解，再现了公式(1)中表达的普适标度行为。此外，我们证明了关键网络特征，如度分布（degree distribution）和聚类系数（clustering coefficient），在接近$t_c$时表现出临界标度行为。这些结果为理解经典系统中的非平衡临界性（nonequilibrium criticality）奠定了理论基础，并揭示了与量子DPT的相似之处。</p>
+<p>[第2页，第2段]
+<strong>理论框架</strong>——我们考虑一个有向网络，包含$N$个顶点，经历随机边的添加和移除。具体来说，顶点$i$以概率速率$\alpha/N$连接到顶点$j$形成新边，而边以速率$\gamma$被移除。参数$\alpha$和$\gamma$分别表征边形成和移除的速率，因子$1/N$确保了网络的稀疏性。期望平均度$\bar{z}(t) = (1/N) \left\langle \sum_{ij} A_{ij} \right\rangle$的演化，其中$\left\langle \ldots \right\rangle = \int \ldots P(A, t) dA$，遵循线性微分方程，</p>
+<p>[第2页，第3段]
+$$\frac{dz}{dt} = \alpha - \gamma z,$$</p>
+<p>[第2页，第4段]
+其稳态解为$z(t \to \infty) = \alpha/\gamma$。在这种非相互作用场景中，网络保持为随机图，不表现出DPT。</p>
+<p>[第2页，第5段]
+接下来我们将证明，DPT的出现需要非线性相互作用。一种自然的方法是将边添加速率修改为$\alpha/N + U_{\text{int}}$，其中$U_{\text{int}}(A)$表示依赖于布尔邻接矩阵（adjacency matrix）$A$的相互作用项。虽然边移除速率也可以类似修改，但为简单起见，我们保持该参数不变。相互作用项可以展开为$U_{\text{int}}(A) = \beta_0 A + \beta A^2 + O(A^3)$。为了隔离非线性效应，我们忽略线性项，仅保留主要的非线性贡献，得到$U_{\text{int}}(A) \approx \beta A^2$，其中$\beta$是耦合常数（coupling constant）。这些相互作用自然被解释为三角闭合机制（triadic closure mechanism）[37]：两个共享共同邻居的顶点$i$和$j$更可能形成直接连接。这以与$\sum_k A_{ik} A_{kj} = (A^2)_{ij}$成比例的额外速率发生，导致以下网络动力学：</p>
+<p>[第2页，第6段]
+$$W[A_{ij}(0 \to 1)] = \left(\frac{\alpha}{N} + \beta (A^2)_{ij}\right), \tag{2a}$$</p>
+<p>[第2页，第7段]
+$$W[A_{ij}(1 \to 0)] = \gamma. \tag{2b}$$</p>
+<p>[第2页，第8段]
+虽然三角闭合通常与社会网络相关，但我们的理论将其视为主要的非线性相互作用，将其适用性扩展到社会背景之外。</p>
+<p>[第2页，第9段]
+在弱相互作用区域（$\beta$较小），网络表现为随机图，没有DPT。然而，随着$\beta$增加，非线性相互作用显著改变了动力学，导致边聚类（edge clustering）和有限时间奇点（finite-time singularities）。图1展示了所提出模型在$\beta = 0.5$、$\alpha = \gamma = 1$时网络的时间演化，这表明存在一个临界时间$t_c$，此时网络结构发生显著变化。</p>
+<p>[第2页，第10段]
+为了量化这种快速变化，我们推导了任意连通子图（connected subgraph）密度$\rho(G)$的时间演化，这由稀疏性条件下的Schwinger-Dyson（SD）方程给出（见补充材料[38]，第1.1节）。对于最简单的子图，即两个顶点之间的连接，密度对应于平均度$z$，遵循</p>
+<p>[第2页，第11段]
+$$\frac{dz}{dt} = \alpha - \gamma z + \beta (z^2 - \Delta), \tag{3}$$</p>
+<p>[第2页，第12段]
+其中$\Delta = (1/N) \left\langle \sum_{ijk} A_{ij} A_{jk} A_{ik} \right\rangle$测量网络中的三角形密度（triangle density）。动力学项$\alpha - \gamma z$与非相互作用随机图模型相同，而相互作用项$\beta (z^2 - \Delta)$引入了一个放大聚类的反馈回路。</p>
+<p>[第2页，第13段]
+这个微分方程不是封闭的，因为$\Delta$依赖于四顶点矩形形状的数量。这些四顶点矩形形状又依赖于五顶点形状的数量，依此类推。这种层级结构创建了一个无限方程塔，这是SD方程的一个标志。例如，</p>
+<p>[第2页，第14段]
+$$\frac{d\Delta}{dt} = \beta (z^2 - \Delta) - 3\gamma \Delta + O(\beta^3), \tag{4}$$</p>
+<p>[第2页，第15段]
+其中$O(\beta^3)$表示更高阶项，如四顶点形状。对SD方程应用标准的微扰截断方案（perturbative truncation scheme），并注意到$\Delta \sim O(\beta)$，我们可以在公式(3)中忽略它，得到</p>
+<p>[第2页，第16段]
+$$z(t) \sim \begin{cases} \text{常数} &amp; (\beta \leq \frac{\gamma^2}{4\alpha}, t \to \infty), \ 1/(t - t_c) &amp; (\beta &gt; \frac{\gamma^2}{4\alpha}, t \to t_c), \end{cases} \tag{5}$$</p>
+<p>[第3页，第1段]
+其中临界时间 $  t_c  $ 由 $  t_c = \omega^{-1}[\text{acot}(2\omega) + (\pi/2)]  $ 给出，且 $  \omega = \sqrt{\alpha\beta - (\gamma^2/4)}  $。因此，$  t_c  $ 仅通过 $  \omega  $ 依赖于 $  (\alpha, \beta, \gamma)  $，且有限时间奇点仅出现在超临界区域 $  \beta &gt; \gamma^2/(4\alpha)  $（参见补充材料[38]第1.1节）。此外，方程(5)识别出两个不同相：在“平衡相”（equilibrium phase）中，当 $  \beta \leq (\gamma^2/4\alpha)  $ 时，$  z(t)  $ 在 $  t \to \infty  $ 时趋近于常数，表明网络收敛到稳态（stationary state）。在“非平衡相”（nonequilibrium phase）中，当 $  \beta &gt; (\gamma^2/4\alpha)  $ 时，模型预测了动态相变（DPT, dynamical phase transition），其中 $  z(t)  $ 在 $  t \to t_c  $ 时呈双曲发散，与方程(1)中的经验定律一致。重要的是，除平均度（average degree）外的可观测量以不同指数发散，反映了其结构序（structural order）。例如，三角形密度（triangle density）按 $  \Delta \sim z^2 \sim [1/(t_c - t)^2]  $ 标度，捕捉了其次近邻特性。更一般地，高阶子图密度（higher-order subgraph density）以 $  z  $ 的幂次发散，其指数由有效邻域阶数（effective neighborhood order）决定。</p>
+<p>[第3页，第2段]
+上述推导代表了施温格-戴森方程（Schwinger-Dyson equation）无穷级数的一个特例，该方程将邻接矩阵（adjacency matrix）$  A(t)  $ 视为量子场论中的场变量，并忽略了高阶项 $  \square \sim O(\beta^3)  $（参见补充材料[38]第1.1节）。注意，添加高阶项不会改变上述物理图像，但会引入耦合常数（coupling constant）的修正。例如，考虑方程(4)中 $  \Delta  $ 的贡献，同时忽略 $  O(\beta^3)  $ 项并应用绝热近似（adiabatic approximation），得到修正 $  \beta \to \beta&rsquo; := (3\beta\gamma/3\gamma + \beta) = \beta - \beta^2/(3\gamma) + O(\beta^3)  $。这可解释为由高阶修正产生的重整化耦合常数（dressed coupling constant）。将方程(5)中的 $  \beta  $ 替换为重整化值 $  \beta&rsquo;  $，可精确预测 $  z(t)  $，如图2(a)所示。尽管绝热近似在快速变化（尤其是 $  t \to t_c  $ 时）下预期失效，但我们发现即使这种简单近似也与平衡相和非平衡相的数值模拟结果吻合良好。上述理论分析可总结为以 $  \alpha/\gamma  $ 和 $  \beta/\gamma  $ 为变量的相图（phase diagram），其中相边界 $  \beta&rsquo;(\beta)/\gamma = (4\alpha/\gamma)^{-1}  $ 分隔了平衡相和非平衡相。图3(a)比较了我们的理论预测与数值模拟结果，虚线表示树图层次（tree level）的理论预测 $  (\beta&rsquo; = \beta)  $，实线则包含了三角形修正 $  (\beta&rsquo; = (3\beta\gamma/3\gamma + \beta))  $。我们发现两种预测在小 $  \beta  $ 值时均与数值结果吻合良好，而三角形修正即使在相对较大的 $  \beta  $ 值下也与数值结果一致。</p>
+<p>[第3页，第3段]
+令人惊讶的是，我们的理论表明，只要动力学速率（kinetic rate）$  \alpha  $ 足够大，即使很小的 $  \beta  $ 值也能导致非平衡相。这意味着向随机图模型（random graph model）引入任意小的非线性相互作用，可以从根本上改变底层网络演化的性质，并可能引发动态相变。</p>
+<p>[第3页，第4段]
+<strong>图2.</strong> (a) 平均度 $  z(t)  $ 和 (b) 序参量（order parameter）$  q(t)  $ 的理论预测与数值模拟对比，参数为 $  \alpha = 1  $，$  \gamma = 1  $，$  \beta = 1/4  $（绿色）和 $  \beta = 1/2  $（红色）。实线表示理论预测，散点对应 $  N = 2000  $ 的模拟结果。对于 $  \beta = 1/4  $（绿色），平均度 $  z(t)  $ 收敛，而序参量 $  q(t)  $ 趋于零，表明处于平衡相。对于 $  \beta = 1/2  $（红色），$  z(t)  $ 呈现双曲标度并在有限临界时间 $  t_c \approx 5.9  $ 处发散。相应地，$  q(t)  $ 在 $  t_c  $ 处出现尖锐跳变，标志着从稀疏网络到稠密网络的一阶动态相变（first-order DPT）。</p>
+<p>[第3页，第5段]
+<strong>一阶相变（First-order phase transition）</strong>——为进一步表征非平衡相，我们定义序参量 $  q = \lim_{N \to \infty} z/N  $，表示边数相对于完全图（complete graph）的比例。根据定义，$  0 \leq q \leq 1  $。在稀疏图（sparse graph）区域 $  [z \sim O(1)]  $ 中，有 $  q = 0  $，这既适用于平衡相，也适用于非平衡相中临界时间之前 $  t &lt; t_c  $ 的情况。然而，对于</p>
+<p>[第3页，第6段]
+<strong>图3.</strong> (a) 模型在 $  \alpha-\beta  $ 参数空间中的相图，显示两个不同相：平衡相和非平衡相（灰色区域）。曲线表示理论预测，散点对应相边界的模拟结果。(b) 相图展示了从稀疏图相到稠密图相（dense graph phase）的转变。彩色曲面量化了相边界。此处，$  \alpha  $、$  \beta  $ 和 $  t  $ 均通过 $  \gamma  $ 重新标度以使其无量纲化。</p>
+<p>[第4页，第1段]
+当 $  t &gt; t_c  $ 时，网络变得稠密，导致 $  q &gt; 0  $。这种稀疏-稠密网络相变已在理论模型和现实世界系统中被观察到，包括网络致密化（network densification）[39]和团簇渗流（clique percolation）[40]。这些系统共享类似于三角闭合（triangle closure）的聚类机制，当聚类强度超过临界阈值时，稀疏性会崩溃。然而，传统模型展示的相变由外部参数控制。相比之下，在我们的模型中，这种相变由有限临界时间决定，标志着它是一个DPT。方程(5)中 $  t = t_c  $ 处的奇异性表明这是一级相变（first-order phase transition），其特征是 $  q(t = t_c)  $ 从零到非零值的不连续性，即潜热（latent heat）。这种行为如图2(b)所示。</p>
+<p>[第4页，第2段]
+方程(4)中的解析结果仅对 $  (t &lt; t_c)  $ 有效，因为稀疏条件在临界时间之后失效。为了确定 $  t &gt; t_c  $ 时的 $  q(t)  $，我们需要更好地理解所观察到的DPT。对于足够大的耦合，网络初始时是稀疏的，动力学项主导着演化过程。随着连接的增长，由三角闭合驱动的非线性相互作用（nonlinear interaction）变得越来越显著，在动力学项与非线性相互作用之间产生了竞争。一旦非线性相互作用占据主导地位，就会发生边形成的快速级联（rapid cascade），导致DPT。</p>
+<p>[第4页，第3段]
+在DPT之后，网络凝聚成一个紧密连接的核心，形成一个完全图（complete graph），同时伴有少数度为零的孤立顶点（isolated vertex）。假设孤立顶点的比例为 $  p  $，则完全图核心的比例为 $  [1 - p(t)]N  $，因此 $  q(t) = [1 - p(t)]^2  $。一旦一个孤立顶点与核心建立了一条边，它会立即连接到核心中的所有其他顶点，因为共同邻居的数量为 $  O(N)  $，这是发散的。因此，孤立顶点连接到核心中一个顶点的速率会增加。这意味着 $  p(t) = p_0 e^{-a(t-t_c)}  $ 由于与核心的随机连接而呈指数衰减，其中 $  p_0  $ 是 $  t = t_c  $ 时孤立顶点的比例。由此，我们得到</p>
+<p>[第4页，第4段]
+$
+q(t) = \left( 1 - p_0 e^{-a(t-t_c)} \right)^2,
+$</p>
+<p>[第4页，第5段]
+(6)</p>
+<p>[第4页，第6段]
+对于 $  t \geq t_c  $。这一预测与数值模拟结果吻合良好[图2(b)]。潜热 $  q(t_c) = (1 - p_0)^2  $ 与孤立顶点的临界比例 $  p_0  $ 相关，我们将在稍后讨论。</p>
+<p>[第4页，第7段]
+总之，对于平衡相（equilibrium phase），网络在任何 $  t  $ 下都将保持稀疏。对于非平衡相（nonequilibrium phase），临界时间 $  t_c  $ 进一步将状态区分为稀疏网络 $  (t &lt; t_c)  $ 和稠密网络 $  (t &gt; t_c)  $。临界时间 $  t_c  $ 取决于 $  \alpha  $、$  \beta  $ 和 $  \gamma  $，其中相对较大的 $  \beta  $ 对应较小的 $  t_c  $，即系统更早达到临界时间。图3(b)在三维相图中展示了这些发现。着色的相边界曲面将稀疏网络和稠密网络对应的区域分隔开来。</p>
+<p>[第4页，第8段]
+<strong>临界行为（Critical behavior）</strong>——为了研究DPT附近的临界行为，我们特别关注度分布（degree distribution）。对于非相互作用模型（$  \beta = 0  $），度遵循泊松分布（Poisson distribution）。对于有限非线性耦合，在树级近似（tree level）下，我们发现时间依赖的度分布 $  P(k, t)  $ 满足</p>
+<p>[第4页，第9段]
+$
+\frac{\partial}{\partial t} P(k, t) = [\alpha + \beta(k - 1)z(t)]P(k - 1, t) - [\alpha + \beta k z(t) + \gamma k]P(k, t) + \gamma (k + 1)P(k + 1, t).
+$</p>
+<p>[第4页，第10段]
+(7)</p>
+<p>[第4页，第11段]
+该方程可以使用生成函数法（generating function method）解析求解（参见补充材料[38]，第1.2节）。对于非平衡相，当系统接近临界时间 $  t_c  $ 时，度分布变为幂律形式（power-law form），如图4(a)和4(b)所示，其中包含了理论预测和数值模拟结果。最终，$  P(k, t \to t_c) \sim k^{-\gamma}  $ 形成了一个无标度网络（scale-free network）[41,42]，其指数 $  \gamma = 1  $，表明平均度 $  z  $ 发散，这是DPT的信号。这一点特别有趣，因为我们没有使用诸如优先连接（preferential attachment）[41,42]之类的机制来生成无标度性。相反，DPT附近的临界行为自动生成了无标度性，这超越了传统无标度网络的范式。</p>
+<p>[第4页，第12段]
+此外，虽然树级近似仅适用于 $  t \leq t_c  $，但这个解析结果使我们能够计算孤立顶点的比例 $  p_0 = P(0, t_c)  $（参见补充材料[38]，第1.2节）。图4(c)显示了在固定 $  \alpha = \gamma = 1  $ 的情况下，不同耦合常数 $  \beta  $ 下孤立顶点比例 $  p_0  $ 的变化。结果表明，更强的非线性相互作用，即更大的 $  \beta  $，对应更大的 $  p_0  $，从而产生更小的潜热。因此，一级DPT有可能在强耦合极限下转变为连续相变（continuous phase transition）。</p>
+<p>[第4页，第13段]
+临界行为也反映在其他物理量中。例如，考虑顶点 $  i  $ 的局部聚类系数（local clustering coefficient）$  C_i := \sum_{j,k} A_{ij} A_{jk} A_{ki} / k_i (k_i - 1)  $ [43,44]。在 $  t_c  $ 附近，非线性相互作用变得占主导地位。四次相互作用（quartic interaction）意味着新三角形的数量近似随新边的数量线性增加。因此，连接到顶点 $  i  $ 的三角形数量与其度成正比，即 $  \sum_{j,k} A_{ij} A_{jk} A_{ki} \sim k_i  $。等价地，这导致当 $  t \to t_c  $ 时，$  C \sim (1/k)  $。这一理论预测得到了数值模拟的证实，如图4(d)所示。这种标度关系常见于具有模块化结构（modular structure）的网络中，正如许多通常由层次机制（hierarchical mechanism）[45,46]生成的现实世界网络中所观察到的那样。值得注意的是，在不依赖任何这些假设的情况下，</p>
+<p>[第5页，第1段]
+DPT（动力学相变）的临界行为自然遵循相同的规律。</p>
+<p>[第5页，第2段]
+<strong>讨论</strong>——我们在非平衡网络动力学中发现了一种DPT，这种现象在已知的增长模型（如三元闭包模型[47]和复制模型[48]）中并不存在，这些模型未表现出有限时间奇异性。虽然我们主要关注非平衡动力学，但系统在$t \to \infty$时达到的渐近稳态与常见的平衡系综密切相关。在最简单的线性情况（$\beta = 0$）下，稳态分布与Erdős-Rényi系综一致；而在非线性相互作用（$\beta &gt; 0$）下，则与包含三角形项（triangle terms）的Strauss型模型[49–51]相关联（参见补充材料[38]第1.3节）。这些渐近态从稀疏到稠密的转变与Strauss凝聚（Strauss condensation）现象一致。</p>
+<p>[第5页，第3段]
+另一方面，Strauss型模型通常会坍缩为均匀稠密结构，仅在临界点附近表现出异质性。相比之下，在我们的模型中，异质性在达到平衡之前就动态出现，并在临界时间$t_c$处导致有限时间奇异性，这与先前在平衡或增长模型[47–53]中研究的转变有本质区别。</p>
+<p>[第5页，第4段]
+这一视角也阐明了我们的结果对真实系统的适用性。在金融危机、流行病暴发、基础设施故障或社会动荡等情境中，干预通常发生在不稳定性出现之后，因此系统可能永远无法达到其渐近平衡态。实证研究[19]表明，在线社交动力学中的密度类测量（densitylike measures）表现出与方程(1)一致的双曲发散（hyperbolic divergence）。这一观察结果自然可由我们的理论预测（方程(5)）解释，凸显了瞬态非平衡动力学的核心作用以及有限时间奇异性的可能性。更广泛地说，我们的结果表明，动力学网络模型为捕捉复杂系统中的有限时间临界现象提供了自然框架。这种从平衡系综视角无法观察到的行为，可能在理解现实世界中多种领域的突然不稳定性中发挥核心作用。</p>
+<p>[第5页，第5段]
+最后，这种最小经典设定中DPT的出现也暗示了与量子动力学相变（quantum dynamical phase transitions）的有趣相似性。在量子系统中，演化算符（evolution operator）$U = e^{-\int Hdt}$ 是理解相变的核心，它将时间依赖率函数（time-dependent rate function）的非解析性与$U$的特征值联系起来。在经典系统中，尽管缺乏幺正性（unitarity），演化算符的谱可能扮演类似角色。我们的最小模型为经典系统中出现DPT提供了具体实例，揭示了与量子DPT的相似性。SD方程（SD equation）作为捕捉非平衡动力学的强大工具，可能成为分析经典和量子DPT的统一框架，如本快报及量子DPT研究[54]所示。</p>
+<p>[第5页，第6段]
+<strong>致谢</strong>——C. S. 部分受美国国家科学基金会（National Science Foundation）资助（项目编号：2150830和IBSS-1620294）、美国教育科学研究院（Institute of Education Sciences）资助（项目编号：R324A180203）、美国国立卫生研究院（National Institutes of Health）资助（项目编号：R01DC018542）以及西蒙斯基金会自闭症研究计划（Simons Foundation Autism Research Initiative）资助（项目编号：SFI-AR-HUMAN-00004115-01）。</p>
+<p>[第5页，第7段]
+J. L. 和 N. A. 对本文贡献相同。</p>
+<p>[第5页，第8段]
+<strong>数据可用性</strong>——支持本文结论的模拟代码已公开[55]。</p>
+<p>[第5页，第9段]
+[1] M. Heyl, Rep. Prog. Phys. 81, 054001 (2018).
+[2] M. Eckstein, M. Kollar, and P. Werner, Phys. Rev. Lett. 103, 056403 (2009).
+[3] J. P. Garrahan and I. Lesanovsky, Phys. Rev. Lett. 104, 160601 (2010).</p>
+<p>[第6页，第1段]
+[4] S. Diehl, A. Tomadin, A. Micheli, R. Fazio, and P. Zoller, Phys. Rev. Lett. 105, 015702 (2010).
+[5] B. Sciolla and G. Biroli, J. Stat. Mech. (2011) P11003(R).
+[6] B. Sciolla and G. Biroli, Phys. Rev. B 88, 201110 (2013).
+[7] E. Canovi, P. Werner, and M. Eckstein, Phys. Rev. Lett. 113, 265702 (2014).
+[8] A. Maraga, P. Smacchia, and A. Silva, Phys. Rev. B 94, 245122 (2016).
+[9] J. Zhang, G. Pagano, P. W. Hess, A. Kyprianidis, P. Becker, H. Kaplan, A. V. Gorshkov, Z.-X. Gong, and C. Monroe, Nature (London) 551, 601 (2017).
+[10] M. Heyl, A. Polkovnikov, and S. Kehrein, Phys. Rev. Lett. 110, 135704 (2013).
+[11] J. Meibohm and M. Esposito, Phys. Rev. Lett. 128, 110603 (2022).
+[12] J. Meibohm and M. Esposito, New J. Phys. 25, 023034 (2023).
+[13] Y. Tang, J. Liu, J. Zhang, and P. Zhang, Nat. Commun. 15, 1117 (2024).
+[14] L. Xu, D. Patterson, S. A. Levin, and J. Wang, Proc. Natl. Acad. Sci. U.S.A. 120, e2218663120 (2023).
+[15] H. Fan, L.-W. Kong, X. Wang, A. Hastings, and Y.-C. Lai, Natl. Sci. Rev. 8, nwaa269 (2021).
+[16] R. H. Heiberger, Physica (Amsterdam) 393A, 376 (2014).
+[17] L. Gao, C. Song, Z. Gao, A.-L. Barabási, J. P. Bagrow, and D. Wang, Sci. Rep. 4, 3997 (2014).
+[18] P. Fairley, IEEE Spectrum 41, 22 (2004).
+[19] N. F. Johnson, M. Zheng, Y. Vorobyeva, A. Gabriel, H. Qi, N. Velásquez, P. Manrique, D. Johnson, E. Restrepo, C. Song et al., Science 352, 1459 (2016).
+[20] N. F. Johnson, R. Leahy, N. J. Restrepo, N. Velásquez, M. Zheng, P. Manrique, P. Devkota, and S. Wuchty, Nature (London) 573, 261 (2019).
+[21] P. D. Manrique, M. Zheng, Z. Cao, E. M. Restrepo, and N. F. Johnson, Phys. Rev. Lett. 121, 048301 (2018).
+[22] N. F. Johnson, N. Velásquez, N. J. Restrepo, R. Leahy, N. Gabriel, S. El Oud, M. Zheng, P. Manrique, S. Wuchty, and Y. Lupu, Nature (London) 582, 230 (2020).
+[23] P. Dasgupta and E. Maskin, Am. Econ. Rev. 95, 1290 (2005).
+[24] D. Laibson, Q. J. Econ. 112, 443 (1997).
+[25] L. Karp, J. Public Econ. 89, 261 (2005).
+[26] P. Diamond and B. Köszegi, J. Public Econ. 87, 1839 (2003), <a href="https://www.sciencedirect.com/science/article/abs/pii/S0047272702000415">https://www.sciencedirect.com/science/article/abs/pii/S0047272702000415</a>.
+[27] T. Durakiewicz, Phys. Today 69, No. 2, 11 (2016).
+[28] P. L. Krapivsky, S. Redner, and E. Ben-Naim, A Kinetic View of Statistical Physics (Cambridge University Press, Cambridge, England, 2010).
+[29] F. Radicchi, C. Castellano, A. Flammini, M. A. Muñoz, and D. Notarmuzi, Phys. Rev. Res. 2, 033171 (2020).
+[30] S. Liang, P. De Los Ríos, and D. M. Busiello, Phys. Rev. Lett. 132, 228402 (2024).</p>
+<p>[第6页，第2段]
+[31] J. Moran, M. Romeijnders, P. L. Doussal, F. P. Pijpers, U. Weitzel, D. Panja, and J.-P. Bouchaud, Nat. Phys. 20, 1352 (2024).
+[32] P. Bak, How Nature Works: The Science of Self-Organized Criticality (Springer Science &amp; Business Media, New York, 2013).
+[33] P. Bak, K. Chen, and M. Creutz, Nature (London) 342, 780 (1989).
+[34] P. Bak, C. Tang, and K. Wiesenfeld, Phys. Rev. A 38, 364 (1988).
+[35] B. Vidiella, A. Guillamon, J. Sardanyés, V. Maull, J. Pla, N. Conde, and R. Solé, Nat. Commun. 12, 4415 (2021).
+[36] D. Garlaschelli, A. Capocci, and G. Caldarelli, Nat. Phys. 3, 813 (2007).
+[37] H. Sun, F. Radicchi, J. Kurths, and G. Bianconi, Nat. Commun. 14, 1308 (2023).
+[38] 参见补充材料（Supplemental Material），网址：http://link.aps.org/supplemental/10.1103/lys4-kdvj，以获取更多推导和模拟细节。
+[39] R. Lambiotte, P. L. Krapivsky, U. Bhat, and S. Redner, Phys. Rev. Lett. 117, 218301 (2016).
+[40] G. Palla, I. Derényi, I. Farkas, and T. Vicsek, Nature (London) 435, 814 (2005).
+[41] A.-L. Barabási and R. Albert, Science 286, 509 (1999).
+[42] R. Albert and A.-L. Barabási, Rev. Mod. Phys. 74, 47 (2002).
+[43] D. J. Watts and S. H. Strogatz, Nature (London) 393, 440 (1998).
+[44] A. Allard, M. Á. Serrano, and M. Boguñá, Nat. Phys. 20, 150 (2024).
+[45] E. Ravasz and A.-L. Barabási, Phys. Rev. E 67, 026112 (2003).
+[46] E. Ravasz, A. L. Somera, D. A. Mongru, Z. N. Oltvai, and A.-L. Barabási, Science 297, 1551 (2002).
+[47] G. Bianconi, R. K. Darst, J. Iacovacci, and S. Fortunato, Phys. Rev. E 90, 042806 (2014).
+[48] I. Ispolatov, P. L. Krapivsky, and A. Yuryev, Phys. Rev. E 71, 061911 (2005).
+[49] D. J. Strauss, Biometrika 62, 467 (1975).
+[50] Z. Burda, J. Jurkiewicz, and A. Krzywicki, Phys. Rev. E 69, 026106 (2004).
+[51] G. Bianconi, Phys. Rev. E 105, 034310 (2022).
+[52] D. Achlioptas, R. M. D’souza, and J. Spencer, Science 323, 1453 (2009).
+[53] R. A. da Costa, S. N. Dorogovtsev, A. V. Goltsev, and J. F. F. Mendes, Phys. Rev. Lett. 105, 255701 (2010).
+[54] S. Banerjee and E. Altman, Phys. Rev. B 95, 134302 (2017).
+[55] J. Liu, N. M. Aden, D. Sarker, and C. Song, 模拟代码（Simulation code），用于“非平衡网络中的动力学相变”（Dynamical Phase Transitions in Nonequilibrium Networks），GitHub仓库，2025年，https://github.com/jay83780323/DPT。</p>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var tabId = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        document.getElementById('tab-' + tabId).classList.add('active');
+        history.replaceState(null, '', '#tab-' + tabId);
+        lucide.createIcons();
+    });
+});
+
+var hash = window.location.hash.replace('#tab-', '');
+if (hash) {
+    var btn = document.querySelector('.tab-btn[data-tab="' + hash + '"]');
+    if (btn) btn.click();
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 论文库</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+﻿{{ define "main" }}
+<div class="page-header">
+    <h1>标签: {{ .Title }}</h1>
+</div>
+
+<div class="tag-cloud">
+    {{ range .Site.Taxonomies.tags.ByCount }}
+    <a href="{{ .Page.RelPermalink }}">
+        {{ .Page.Title }}
+        <span class="count">({{ .Count }})</span>
+    </a>
+    {{ end }}
+</div>
+
+<div class="filter-bar" id="filterBar">
+    <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
+        <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
+    </button>
+</div>
+
+<div class="filter-info" id="filterInfo">共 {{ len .Pages }} 篇论文</div>
+
+<div class="paper-grid" id="paperGrid">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="paper-card" data-tags="{{ with .Params.tags }}{{ delimit . "," }}{{ end }}">
+        {{ with .Params.tags }}
+        <div class="tags">
+            {{ range . }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.authors }}
+        <div class="authors">{{ delimit . ", " }}</div>
+        {{ end }}
+        {{ with .Params.venue }}
+        <div class="venue">{{ . }}</div>
+        {{ end }}
+        <div class="summary">{{ .Summary | plainify | truncate 200 }}</div>
+        <div class="card-footer">
+            <div class="links">
+                <a href="{{ .RelPermalink }}"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
+                {{ with .Params.pdf }}
+                <a href="{{ . | relURL }}"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
+                {{ end }}
+            </div>
+        </div>
+    </article>
+    {{ end }}
+</div>
+
+<script>
+// Build tag filter from current papers, excluding current tag
+var currentTag = '{{ .Title }}';
+var tags = new Set();
+document.querySelectorAll('.paper-card').forEach(function(card) {
+    (card.dataset.tags || '').split(',').forEach(function(t) { if (t && t !== currentTag) tags.add(t.trim()); });
+});
+
+var filterBar = document.getElementById('filterBar');
+var sortedTags = [...tags].sort();
+sortedTags.forEach(function(tag) {
+    var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
+    var btn = document.createElement('button');
+    btn.className = 'tag-btn';
+    btn.dataset.tag = tag;
+    btn.innerHTML = tag + ' <span class="tag-count">' + count + '</span>';
+    btn.onclick = function() { toggleTag(tag, btn); };
+    filterBar.appendChild(btn);
+});
+
+var selectedTags = new Set();
+
+function toggleTag(tag, btn) {
+    if (selectedTags.has(tag)) { selectedTags.delete(tag); btn.classList.remove('active'); }
+    else { selectedTags.add(tag); btn.classList.add('active'); }
+    applyFilters();
+}
+
+function applyFilters() {
+    document.getElementById('clearFiltersBtn').style.display = selectedTags.size > 0 ? 'inline-block' : 'none';
+    var info = document.getElementById('filterInfo');
+    var visible = 0;
+    document.querySelectorAll('.paper-card').forEach(function(card) {
+        var cardTags = (card.dataset.tags || '').split(',').map(function(t) { return t.trim(); }).filter(function(t) { return t; });
+        var match = selectedTags.size === 0 || [...selectedTags].every(function(t) { return cardTags.indexOf(t) >= 0; });
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+    });
+    info.textContent = selectedTags.size > 0
+        ? '已筛选: ' + [...selectedTags].join(' + ') + ' — 共 ' + visible + ' 篇论文'
+        : '共 ' + document.querySelectorAll('.paper-card').length + ' 篇论文';
+    lucide.createIcons();
+}
+
+function clearFilters() {
+    selectedTags.clear();
+    document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('active'); });
+    applyFilters();
+}
+</script>
+{{ end }}

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Heavy-tailed neuronal connectivity arises from Hebbian self-organization | 论文库</title>
+    <meta name="description" content="学术论文管理与阅读平台">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">论文库</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/" class="nav-link">
+                    首页
+                </a>
+                
+                <a href="/paper/" class="nav-link">
+                    论文
+                </a>
+                
+                <a href="/tags/" class="nav-link">
+                    标签
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="paper-single">
+    <div class="paper-header">
+        <h1>Heavy-tailed neuronal connectivity arises from Hebbian self-organization</h1>
+        <div class="paper-meta">
+            
+            <span class="meta-item">
+                <i data-lucide="users" style="width:16px;height:16px;"></i>
+                Christopher W. Lynn, Caroline M. Holmes, Stephanie E. Palmer
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="building-2" style="width:16px;height:16px;"></i>
+                Nature Physics
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                2024
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="tags" style="width:16px;height:16px;"></i>
+                Hebbian self-organization, Heavy-tailed connectivity, Neuronal connectomes, Statistical physics, Network Evolution, Clustering
+            </span>
+            
+        </div>
+    </div>
+
+    <nav class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="citation">
+            <i data-lucide="quote" style="width:16px;height:16px;"></i> 引用
+        </button>
+        <button class="tab-btn" data-tab="authors">
+            <i data-lucide="users" style="width:16px;height:16px;"></i> 作者
+        </button>
+        <button class="tab-btn" data-tab="model">
+            <i data-lucide="cpu" style="width:16px;height:16px;"></i> 模型
+        </button>
+        <button class="tab-btn" data-tab="results">
+            <i data-lucide="bar-chart-3" style="width:16px;height:16px;"></i> 结果
+        </button>
+        <button class="tab-btn" data-tab="figures">
+            <i data-lucide="image" style="width:16px;height:16px;"></i> 图像
+        </button>
+        <button class="tab-btn" data-tab="code">
+            <i data-lucide="code" style="width:16px;height:16px;"></i> 代码
+        </button>
+        <button class="tab-btn" data-tab="mindmap">
+            <i data-lucide="sigma" style="width:16px;height:16px;"></i> 推导过程
+        </button>
+
+        <button class="tab-btn" data-tab="translation">
+            <i data-lucide="languages" style="width:16px;height:16px;"></i> 翻译
+        </button>
+    </nav><div class="tab-content active" id="tab-citation">
+        <div class="citation-block"><h1 id="一论文研究方向所属领域相关研究课题">一、论文研究方向、所属领域、相关研究课题</h1>
+<h2 id="1-所属领域">1. 所属领域</h2>
+<p>跨学科交叉领域，核心包含<strong>计算神经科学、网络物理学、统计物理、连接组学（Connectomics）、复杂系统自组织理论</strong>，发表于《Nature Physics》，属于物理学顶刊下生物物理/神经物理分支。</p>
+<h2 id="2-研究方向">2. 研究方向</h2>
+<p>围绕神经元网络突触连接的<strong>重尾分布（幂律无标度）、网络聚类两大核心结构特征</strong>，构建极简自组织动力学模型，解释跨物种通用神经布线规律：
+1）实证果蝇、线虫、多毛蠕虫、小鼠视网膜等无脊椎/脊椎动物连接组普遍存在突触强度重尾分布；
+2）提出无神经元活动的极简模型：随机修剪+偏好增长混合动力学，仅单参数p（偏好增长概率）即可解析推导幂律连接强度分布，幂指数γ=1+1/p；
+3）引入神经元活动与赫布可塑性扩展模型，通过神经元活动协方差调控突触生长，自然复现真实神经网络的高聚类三角结构；
+4）证明重尾、聚类两大神经网络核心特征无需物种特异性生物机制，仅依靠通用网络自组织规则即可涌现。</p>
+<h2 id="3-相关研究课题">3. 相关研究课题</h2>
+<ol>
+<li>神经连接组结构统计特性观测：电镜重构全脑/局部神经环路突触分布、功能钙成像神经元活动相关性分布；</li>
+<li>复杂网络偏好依附（富者愈富）无标度网络理论；</li>
+<li>赫布可塑性、时序依赖可塑性（STDP）等突触可塑性动力学建模；</li>
+<li>伊辛平均场模型、涨落耗散定理用于神经元群体活动与协方差解析；</li>
+<li>生物网络稀疏性、异质性、聚类系数等拓扑量化；</li>
+<li>神经网络自组织、脑网络物理与动力学机制。</li>
+</ol>
+<h1 id="二全部参考文献逐条关联说明引用序号发表信息与本文关联">二、全部参考文献逐条关联说明（引用序号、发表信息、与本文关联）</h1>
+<h2 id="1">1</h2>
+<p>发表信息：Ho, V. M., Lee, J.-A. &amp; Martin, K. C. The cell biology of synaptic plasticity. Science 334, 623–628 (2011).
+与本文关联：综述突触可塑性细胞分子机制，为本文赫布可塑性、突触强度增减、修剪/生长动力学提供底层生物实验依据，支撑模型中突触重塑规则的生物学合理性。</p>
+<h2 id="2">2</h2>
+<p>发表信息：Magee, J. C. &amp; Grienberger, C. Synaptic plasticity forms and functions. Annu. Rev. Neurosci. 43, 95–117 (2020).
+与本文关联：系统梳理赫布类可塑性的多样形式与生理功能，是本文构建活动依赖型赫布生长规则的核心理论基础，区分结构可塑性与功能可塑性。</p>
+<h2 id="3">3</h2>
+<p>发表信息：Gómez-Palacio-Schjetnan, A. &amp; Escobar, M. L. Neurotrophins and synaptic plasticity. Curr. Top. Behav. Neurosci. 15, 117–136 (2013).
+与本文关联：补充神经营养因子调控突触可塑性的生物通路，解释真实神经突触修剪、强弱分化的分子诱因，佐证本文随机修剪+偏好生长的动力学具备生物现实基础。</p>
+<h2 id="4">4</h2>
+<p>发表信息：Song, S., Sjöström, P. J., Reigl, M., Nelson, S. &amp; Chklovskii, D. B. Highly nonrandom features of synaptic connectivity in local cortical circuits. PLoS Biol. 3, e68 (2005).
+与本文关联：开创性发现皮层局部环路突触连接高度非随机、存在强连接富集与聚类，是本文“神经连接重尾、高聚类”两大核心观测结论的早期经典实验支撑。</p>
+<h2 id="5">5</h2>
+<p>发表信息：Scheffer, L. K. et al. A connectome and analysis of the adult Drosophila central brain. eLife 9, e57443 (2020).
+与本文关联：提供果蝇成年全脑中枢连接组数据集（21739神经元、1400万突触），是本文图1a、1b核心实验数据来源，用于验证无脊椎动物突触强度重尾分布，并拟合模型参数p。</p>
+<h2 id="6">6</h2>
+<p>发表信息：Feldmeyer, D., Egger, V., Lübke, J. &amp; Sakmann, B. Reliable synaptic connections between pairs of excitatory layer 4 neurones within a single ‘barrel’ of developing rat somatosensory cortex. J. Physiol. 521, 169–190 (1999).
+与本文关联：哺乳动物皮层电生理实验，证明神经元间突触数量存在巨大差异，为脊椎动物突触强度重尾分布提供早期离体实验证据。</p>
+<h2 id="7">7</h2>
+<p>发表信息：Lefort, S., Tomm, C., Sarria, J.-C. F. &amp; Petersen, C. C. The excitatory neuronal network of the C2 barrel column in mouse primary somatosensory cortex. Neuron 61, 301–316 (2009).
+与本文关联：小鼠躯体感觉皮层完整兴奋性环路重构，展示局部神经环路稀疏、强弱突触分化特征，支撑本文脊椎动物连接组同样具备重尾结构的结论。</p>
+<h2 id="8">8</h2>
+<p>发表信息：Ikegaya, Y. et al. Interpyramid spike transmission stabilizes the sparseness of recurrent network activity. Cereb. Cortex 23, 293–304 (2013).
+与本文关联：揭示强突触连接维持循环网络活动稀疏性，解释本文模型中重尾强连接作为神经信息处理主干的生理功能意义。</p>
+<h2 id="9">9</h2>
+<p>发表信息：Loewenstein, Y., Kuras, A. &amp; Rumpel, S. Multiplicative dynamics underlie the emergence of the log-normal distribution of spine sizes in the neocortex in vivo. J. Neurosci. 31, 9481–9488 (2011).
+与本文关联：发现树突棘尺寸对数正态重尾分布，证明脊椎动物突触强度（尺寸层面）天然存在重尾统计，补充本文小鼠视网膜接触面积重尾分布的实验支撑。</p>
+<h2 id="10">10</h2>
+<p>发表信息：Lynn, C. W. &amp; Bassett, D. S. The physics of brain network structure, function and control. Nat. Rev. Phys. 1, 318 (2019).
+与本文关联：本文第一作者撰写的脑网络物理综述，搭建统计物理与脑网络交叉框架，为本文用主方程、伊辛平均场、幂律理论建模神经环路提供学科范式参考。</p>
+<h2 id="11">11</h2>
+<p>发表信息：Dorkenwald, S. et al. Binary and analog variation of synapses between cortical pyramidal neurons. eLife 11, e76120 (2022).
+与本文关联：皮层锥体神经元突触数量、尺寸连续可变，证明脊椎动物突触强度存在连续梯度，支撑本文用连续强度s建模连接权重的合理性。</p>
+<h2 id="12">12</h2>
+<p>发表信息：Kornfeld, J. et al. An anatomical substrate of credit assignment in reinforcement learning. Preprint at bioRxiv <a href="https://doi.org/10.1101/2020.02.18.954354">https://doi.org/10.1101/2020.02.18.954354</a> (2020).
+与本文关联：强化学习神经解剖底物研究，侧面说明强弱分化突触网络是复杂认知计算基础，解释本文重尾连接支撑学习、信息处理的功能价值。</p>
+<h2 id="13">13</h2>
+<p>发表信息：Farashahi, S. et al. Metaplasticity as a neural substrate for adaptive learning and choice under uncertainty. Neuron 94, 401–414 (2017).
+与本文关联：元可塑性调控突触动态重塑，补充本文突触持续修剪、重分配动力学的生物调控机制，解释网络结构长期自组织稳定性。</p>
+<h2 id="14">14</h2>
+<p>发表信息：Xu, W. &amp; Südhof, T. C. A neural circuit for memory specificity and generalization. Science 339, 1290–1295 (2013).
+与本文关联：记忆特异性/泛化神经环路研究，证明差异化强弱突触分工编码记忆，体现本文重尾连接结构的核心认知功能。</p>
+<h2 id="15">15</h2>
+<p>发表信息：Mei-ling, A. J. &amp; Griffith, L. C. CaM kinase II and visual input modulate memory formation in the neuronal circuit controlling courtship conditioning. J. Neurosci. 17, 9384–9391 (1997).
+与本文关联：果蝇视觉依赖记忆可塑性实验，以无脊椎动物模型证明活动调控突触重塑，匹配本文果蝇连接组与赫布活动依赖模型的分析场景。</p>
+<h2 id="16">16</h2>
+<p>发表信息：Lei, Z., Henderson, K. &amp; Keleman, K. A neural circuit linking learning and sleep in Drosophila long-term memory. Nat. Commun. 13, 609 (2022).
+与本文关联：果蝇长期记忆环路可塑性，再次验证无脊椎动物神经环路依赖活动重塑突触，支撑本文跨物种统一自组织机制的论点。</p>
+<h2 id="17">17</h2>
+<p>发表信息：Almeida, R., Barbosa, J. &amp; Compte, A. Neural circuit basis of visuo-spatial working memory precision: a computational and behavioral study. J. Neurophysiol. 114, 1806–1818 (2015).
+与本文关联：计算建模工作记忆环路，说明稀疏、聚类神经拓扑对高精度信息存储的作用，对应本文模型涌现聚类结构的功能意义。</p>
+<h2 id="18">18</h2>
+<p>发表信息：Helmstaedter, M. et al. Connectomic reconstruction of the inner plexiform layer in the mouse retina. Nature 500, 168–174 (2013).
+与本文关联：小鼠视网膜内网层完整连接组数据集，为本文图1f、1g、4i提供脊椎动物实验素材，用于验证突触接触数量、总面积均存在重尾分布。</p>
+<h2 id="19">19</h2>
+<p>发表信息：Takemura, S.-Y. et al. A visual motion detection circuit suggested by Drosophila connectomics. Nature 500, 175–181 (2013).
+与本文关联：果蝇视觉髓质连接组数据，是本文图1c、4f实验来源，拟合得出该环路偏好增长概率p=1，用于对比不同神经环路自组织参数差异。</p>
+<h2 id="20">20</h2>
+<p>发表信息：Murthy, M., Fiete, I. &amp; Laurent, G. Testing odor response stereotypy in the Drosophila mushroom body. Neuron 59, 1009–1023 (2008).
+与本文关联：果蝇蘑菇体嗅觉环路活动实验，证明神经元共发放驱动突触可塑性，为本文赫布协方差调控突触生长提供昆虫实验依据。</p>
+<h2 id="21">21</h2>
+<p>发表信息：Borst, A. &amp; Helmstaedter, M. Common circuit design in fly and mammalian motion vision. Nat. Neurosci. 18, 1067–1076 (2015).
+与本文关联：跨物种运动视觉环路对比，证明无脊椎/脊椎动物共享基础布线规律，支撑本文“重尾、聚类是通用自组织产物，非物种特有”核心结论。</p>
+<h2 id="22">22</h2>
+<p>发表信息：Song, Y.-H. et al. A neural circuit for auditory dominance over visual perception. Neuron 93, 940–954 (2017).
+与本文关联：多感官整合神经环路研究，说明强弱分化突触网络支撑多模态信息整合，拓展本文重尾连接的功能场景。</p>
+<h2 id="23">23</h2>
+<p>发表信息：Sokolowski, M. B. Social interactions in “simple” model systems. Neuron 65, 780–794 (2010).
+与本文关联：简单模式生物社交行为神经环路，侧面印证低等生物神经环路已具备结构化突触分化，说明重尾机制演化保守。</p>
+<h2 id="24">24</h2>
+<p>发表信息：Tootoonian, S., Coen, P., Kawai, R. &amp; Murthy, M. Neural representations of courtship song in the Drosophila brain. J. Neurosci. 32, 787–798 (2012).
+与本文关联：果蝇求偶歌声神经编码实验，展示活动依赖突触重塑调控特异性环路连接，匹配本文果蝇模型的分析场景。</p>
+<h2 id="25">25</h2>
+<p>发表信息：Varshney, L. R., Chen, B. L., Paniagua, E., Hall, D. H. &amp; Chklovskii, D. B. Structural properties of the Caenorhabditis elegans neuronal network. PLoS Comput. Biol. 7, e1001066 (2011).
+与本文关联：秀丽隐杆线虫完整连接组拓扑分析，提供本文图1d、4g实验数据，拟合得到线虫p=0.4，作为低偏好增长比例的典型案例。</p>
+<h2 id="26">26</h2>
+<p>发表信息：Randel, N. et al. Neuronal connectome of a sensory–motor circuit for visual navigation. eLife 3, e02730 (2014).
+与本文关联：多毛蠕虫视觉导航感觉运动环路连接组，本文图1e、4h数据来源，拟合p=1，作为完全偏好增长的环路样本。</p>
+<h2 id="27">27</h2>
+<p>发表信息：Yamada, T. et al. Sensory experience remodels genome architecture in neural circuit to drive motor learning. Nature 569, 708–713 (2019).
+与本文关联：感官经验重塑神经环路的表观遗传机制，解释外界活动输入如何驱动突触长期自组织，支撑本文活动依赖赫布模型。</p>
+<h2 id="28">28</h2>
+<p>发表信息：Piggott, B. J., Liu, J., Feng, Z., Wescott, S. A. &amp; Xu, X. S. The neural circuits and synaptic mechanisms underlying motor initiation in C. elegans. Cell 147, 922–933 (2011).
+与本文关联：线虫运动启动突触机制，以模式生物证明突触强弱差异调控运动输出，佐证本文重尾连接支撑运动控制的生理作用。</p>
+<h2 id="29">29</h2>
+<p>发表信息：Helmstaedter, M. Cellular-resolution connectomics: challenges of dense neural circuit reconstruction. Nat. Methods 10, 501–507 (2013).
+与本文关联：综述细胞级连接组重建技术难点，说明本文获取多物种突触重尾分布数据的实验技术背景，解释大规模电镜重构的必要性。</p>
+<h2 id="30">30</h2>
+<p>发表信息：White, J. G., Southgate, E., Thomson, J. N. &amp; Brenner, S. et al. The structure of the nervous system of the nematode Caenorhabditis elegans. Phil. Trans. R. Soc. Lond. B 314, 1–340 (1986).
+与本文关联：秀丽隐杆线虫初代完整连接组图谱，是文献25数据集原始来源，为本文中线虫神经环路统计分析提供基础原始解剖数据。</p>
+<h2 id="31">31</h2>
+<p>发表信息：Butz, M., Wörgötter, F. &amp; van Ooyen, A. Activity-dependent structural plasticity. Brain Res. Rev. 60, 287–305 (2009).
+与本文关联：活动依赖结构可塑性综述，区分突触数量、突触尺寸两类强度调控方式，对应本文无脊椎动物靠突触数量、脊椎动物靠接触面积强化连接的观测结论。</p>
+<h2 id="32">32</h2>
+<p>发表信息：Stringer, C., Pachitariu, M., Steinmetz, N., Carandini, M. &amp; Harris, K. D. High-dimensional geometry of population responses in visual cortex. Nature 571, 361–365 (2019).
+与本文关联：小鼠视觉皮层双光子钙成像大规模神经元活动记录，为本文图1h功能连接（活动协方差重尾分布）提供全部实验数据。</p>
+<h2 id="33">33</h2>
+<p>发表信息：Dorogovtsev, S. N. &amp; Mendes, J. F. Evolution of networks. Adv. Phys. 51, 1079–1187 (2002).
+与本文关联：复杂网络演化经典综述，系统介绍偏好依附、无标度网络、主方程推导工具，是本文活动无关模型幂律分布解析推导的核心理论来源。</p>
+<h2 id="34">34</h2>
+<p>发表信息：Lynn, C. W., Holmes, C. M. &amp; Palmer, S. E. Emergent scale-free networks. Preprint at arXiv <a href="https://doi.org/10.48550/">https://doi.org/10.48550/</a> arXiv.2210.06453 (2022).
+与本文关联：本文作者前期预印本，完成极简偏好增长网络无标度模型初步推导，是本文活动无关模型的前置理论工作。</p>
+<h2 id="35">35</h2>
+<p>发表信息：Caporale, N. &amp; Dan, Y. Spike timing-dependent plasticity: a Hebbian learning rule. Annu. Rev. Neurosci. 31, 25–46 (2008).
+与本文关联：时序依赖可塑性（STDP）综述，是赫布可塑性的经典形式，本文将其简化为协方差驱动生长，为活动依赖模型提供基础学习规则。</p>
+<h2 id="36">36</h2>
+<p>发表信息：Markram, H., Lübke, J., Frotscher, M. &amp; Sakmann, B. Regulation of synaptic efficacy by coincidence of postsynaptic APs and EPSPs. Science 275, 213–215 (1997).
+与本文关联：STDP开创性实验，证明神经元同步放电增强突触，奠定本文赫布生长（协方差越高越易强化连接）的核心生物原理。</p>
+<h2 id="37">37</h2>
+<p>发表信息：Liu, Y.-Y., Slotine, J.-J. &amp; Barabási, A.-L. Controllability of complex networks. Nature 473, 167–173 (2011).
+与本文关联：复杂网络异质性量化指标来源，本文采用该文献定义的连接异质性衡量重尾分布程度，用于定量对比模型与真实连接组。</p>
+<h2 id="38">38</h2>
+<p>发表信息：Lynn, C. W., Papadopoulos, L., Kahn, A. E. &amp; Bassett, D. S. Human information processing in complex networks. Nat. Phys. 16, 965–973 (2020).
+与本文关联：第一作者前期网络物理研究，提供网络异质性、密度、聚类系数标准化量化流程，统一本文多物种连接组对比指标。</p>
+<h2 id="39">39</h2>
+<p>发表信息：Lynn, C. W. &amp; Bassett, D. S. Quantifying the compressibility of complex networks. Proc. Natl Acad. Sci. USA 118, e2023473118 (2021).
+与本文关联：网络拓扑量化方法，完善本文真实连接组与仿真网络的统计对比标准，支撑图4多参数定量拟合分析。</p>
+<h2 id="40">40</h2>
+<p>发表信息：Yuste, R. From the neuron doctrine to neural networks. Nat. Rev. Neurosci. 16, 487–497 (2015).
+与本文关联：神经网络整体动力学综述，论证不能仅研究单神经元，需从环路层面解释功能，点明本文网络自组织建模的研究必要性。</p>
+<h2 id="41">41</h2>
+<p>发表信息：Bianconi, G. Mean field solution of the Ising model on a Barabási– Albert network. Phys. Lett. A 303, 166–168 (2002).
+与本文关联：无标度网络上伊辛模型平均场解法，为本文神经元活动平均场伊辛近似、协方差矩阵解析求解提供数学工具参考。</p>
+<h2 id="42">42</h2>
+<p>发表信息：Lynn, C. W. &amp; Lee, D. D. in Advances in Neural Information Processing Systems (eds Lee, D. et al.) 2495–2503 (2016).
+与本文关联：作者前期神经网络平均场动力学工作，提供tanh迭代求解神经元稳态活动的数值算法，用于本文活动依赖模型仿真。</p>
+<h2 id="43">43</h2>
+<p>发表信息：Aguilera, M., Moosavi, S. A. &amp; Shimazaki, H. A unifying framework for mean-field theories of asymmetric kinetic Ising systems. Nat. Commun. 12, 1197 (2021).
+与本文关联：非对称动力学伊辛模型统一平均场框架，完善本文神经元活动自洽方程、协方差矩阵推导的理论基础。</p>
+<h2 id="44">44</h2>
+<p>发表信息：Schneidman, E., Berry, M. J., Segev, R. &amp; Bialek, W. Weak pairwise correlations imply strongly correlated network states in a neural population. Nature 440, 1007 (2006).
+与本文关联：神经元群体弱成对相关支撑集体网络态，证明本文采用协方差刻画神经元功能耦合具备生理有效性。</p>
+<h2 id="45">45</h2>
+<p>发表信息：Tkačik, G. et al. Searching for collective behavior in a large network of sensory neurons. PLoS Comput. Biol. 10, e1003408 (2014).
+与本文关联：感觉神经元群体集体动力学实验，验证平均场伊辛模型可精准复现神经元发放相关性，支撑本文活动模型合理性。</p>
+<h2 id="46">46</h2>
+<p>发表信息：Kim, J. Z., Lu, Z., Nozari, E., Pappas, G. J. &amp; Bassett, D. S. Teaching recurrent neural networks to infer global temporal structure from local examples. Nat. Mach. Intell. 3, 316–323 (2021).
+与本文关联：循环神经网络动力学建模，本文神经元活动模型等价于循环网络，该文献为网络迭代仿真提供数值实现思路。</p>
+<h2 id="47">47</h2>
+<p>发表信息：Bentley, B. et al. The multilayer connectome of Caenorhabditis elegans. PLoS Comput. Biol. 12, e1005283 (2016).
+与本文关联：线虫多层连接组拓扑分析，明确神经网络高聚类三角结构是普遍特征，作为本文模型复现聚类拓扑的实验对照。</p>
+<h2 id="48">48</h2>
+<p>发表信息：Bassett, D. S. &amp; Sporns, O. Network neuroscience. Nat. Neurosci. 20, 353–364 (2017).
+与本文关联：网络神经科学奠基综述，统一脑网络拓扑特征（稀疏、重尾、聚类）定义，建立本文分析神经环路的学科标准。</p>
+<h2 id="49">49</h2>
+<p>发表信息：Stiso, J. &amp; Bassett, D. S. Spatial embedding imposes constraints on neuronal network architectures. Trends Cogn. Sci. 22, 1127–1142 (2018).
+与本文关联：脑空间嵌入约束网络拓扑，讨论真实神经环路结构额外生物限制，作为本文简化模型未来拓展方向参考。</p>
+<h2 id="50">50</h2>
+<p>发表信息：Morrison, A., Aertsen, A. &amp; Diesmann, M. Spike-timing-dependent plasticity in balanced random networks. Neural Comput. 19, 1437–1467 (2007).
+与本文关联：平衡随机网络STDP建模，指出传统随机网络模型难以复现真实神经拓扑，凸显本文极简自组织模型的创新价值。</p>
+<h2 id="51">51</h2>
+<p>发表信息：Effenberger, F., Jost, J. &amp; Levina, A. Self-organization in balanced state networks by STDP and homeostatic plasticity. PLoS Comput. Biol. 11, e1004420 (2015).
+与本文关联：STDP+稳态可塑性自组织网络模型，对比本文混合偏好/随机增长动力学，说明本文模型更简洁、可解析求解幂律分布。</p>
+<h2 id="52">52</h2>
+<p>发表信息：Yang, G., Pan, F. &amp; Gan, W.-B. Stably maintained dendritic spines are associated with lifelong memories. Nature 462, 920–924 (2009).
+与本文关联：树突棘长期稳定对应长期记忆，解释本文模型中强连接稳定存在、弱连接持续修剪的生物记忆存储逻辑。</p>
+<h2 id="53">53</h2>
+<p>发表信息：Oh, W. C., Hill, T. C. &amp; Zito, K. Synapse-specific and size- dependent mechanisms of spine structural plasticity accompanying synaptic weakening. Proc. Natl Acd. Sci. USA 110, E305–E312 (2013).
+与本文关联：突触弱化的棘突结构可塑性机制，为本文随机修剪、突触强度衰减动力学提供微观细胞实验支撑。</p>
+<h2 id="54">54</h2>
+<p>发表信息：Brunel, N. Dynamics of sparsely connected networks of excitatory and inhibitory spiking neurons. J. Comput. Neurosci. 8, 183–208 (2000).
+与本文关联：稀疏脉冲神经元网络动力学经典模型，讨论稀疏网络集体发放行为，对应本文神经网络稀疏重尾结构的功能动力学。</p>
+<h2 id="55">55</h2>
+<p>发表信息：Mitchell, S. M., Lange, S. &amp; Brus, H. Gendered citation patterns in international relations journals. Int. Stud. Perspect. 14, 485–492 (2013).
+与本文关联：社科领域引文性别偏差研究，本文引用该系列文献用于说明论文参考文献兼顾性别多样性，体现学术公平。</p>
+<h2 id="56">56</h2>
+<p>发表信息：Dion, M. L., Sumner, J. L. &amp; Mitchell, S. M. Gendered citation patterns across political science and social science methodology fields. Polit. Anal. 26, 312–327 (2018).
+与本文关联：政治学引文性别失衡分析，为本文参考文献多元化筛选提供跨学科参考标准。</p>
+<h2 id="57">57</h2>
+<p>发表信息：Caplar, N., Tacchella, S. &amp; Birrer, S. Quantitative evaluation of gender bias in astronomical publications from citation counts. Nat. Astron. 1, 0141 (2017).
+与本文关联：天文领域引文性别量化评估，本文作者借鉴其量化思路平衡参考文献男女一作/通讯比例。</p>
+<h2 id="58">58</h2>
+<p>发表信息：Dworkin, J. D. et al. The extent and drivers of gender imbalance in neuroscience reference lists. Nat. Neurosci. 23, 918–926 (2020).
+与本文关联：神经科学引文性别失衡专项研究，直接指导本文参考文献筛选，降低性别引用偏差。</p>
+<h2 id="59">59</h2>
+<p>发表信息：Bertolero, M. A. et al. Racial and ethnic imbalance in neuroscience reference lists and intersections with gender. Preprint at bioRxiv <a href="https://doi.org/10.1101/2020.10.12.336230">https://doi.org/10.1101/2020.10.12.336230</a> (2020).
+与本文关联：神经科学引文种族、性别交叉失衡研究，本文在参考文献选取时兼顾多元作者背景。</p>
+<h2 id="60">60</h2>
+<p>发表信息：Teich, E. G. et al. Gendered citation practices in contemporary physics. Nat. Phys. 18, 1161–1170 (2022).
+与本文关联：物理学顶刊引文性别偏差实证，本文发表于《Nature Physics》，参考该文献规范参考文献多样性。</p>
+</div>
+        
+        
+        <h3 style="margin-bottom:12px;font-size:1.1rem;">摘要</h3>
+        <div class="citation-block" style="background:var(--bg-card);">
+            <p>这篇发表在《Nature Physics》上的论文名为《Heavy-tailed neuronal connectivity arises from Hebbian self-organization》，探讨了神经元连接强度呈现**重尾分布（heavy-tailed）**这一普遍现象背后的简洁机制。</p>
+<p>以下是根据来源整理的论文核心亮点、方法论及模型推导过程：</p>
+<h3 id="1-论文核心亮点-highlights">1. 论文核心亮点 (Highlights)</h3>
+<ul>
+<li><strong>普适性发现</strong>：通过分析果蝇、圆线虫、环节动物及小鼠等多种生物的连通图（connectomes），确认神经元连接强度具有类似的**渐近无标度（asymptotically scale-free）**特性，即极少数连接极强，而绝大多数极弱。</li>
+<li><strong>极简解释模型</strong>：提出一个基于<strong>自组织原理</strong>的极简模型。该模型证明，无需复杂的生物物理过程，仅通过随机修剪和“偏好+随机增长”的混合动力学，即可产生真实大脑中的重尾连通性。</li>
+<li><strong>赫布学习解释聚类</strong>：将模型扩展至包含神经元活动及**赫布可塑性（Hebbian plasticity）**后，发现神经科学中另一个基本特征——**网络聚类（Clustering）**也会自然显现。</li>
+<li><strong>统一框架</strong>：为研究神经系统结构的演化提供了一个物理学框架，表明连通性的重尾和聚类特征可能源于普遍的网络自组织原则，而非特定物种的生物学约束。</li>
+</ul>
+<h3 id="2-方法论-methodology">2. 方法论 (Methodology)</h3>
+<ul>
+<li><strong>数据来源</strong>：利用高通量电子显微镜和图像处理生成的多种动物连通图数据，包括果蝇中心脑、果蝇视髓质、C. elegans 全连通图、Platynereis 感觉运动回路及小鼠视网膜数据。</li>
+<li><strong>网络建模</strong>：
+<ul>
+<li><strong>活动无关模型（Activity-independent）</strong>：研究连接强度的统计分布。</li>
+<li><strong>活动相关模型（Activity-dependent）</strong>：结合均值场伊辛模型（mean-field Ising model）模拟神经元活动，通过涨落-耗散定理推导神经元间的协方差（活动相关性）。</li>
+</ul>
+</li>
+<li><strong>参数拟合</strong>：仅使用一到两个自由参数（偏好增长概率 $p$ 和相互作用强度 $\beta$）对真实生物网络进行拟合，验证模型对真实连接分布和聚类系数的预测能力。</li>
+</ul>
+<h3 id="3-模型基本定义">3. 模型基本定义</h3>
+<p>该模型将网络定义为由 $n$ 个神经元组成的矩阵 $A$，其中 $A_{ij}$ 表示从神经元 $i$ 到 $j$ 的有向连接强度。</p>
+<ul>
+<li><strong>更新规则</strong>：
+<ol>
+<li><strong>随机修剪</strong>：在每个时间步，随机选择一个连接将其强度清零（$A_{ij} \rightarrow 0$）。</li>
+<li><strong>强度重新分配</strong>：将被修剪掉的强度单位重新分配给一对新的神经元。
+<ul>
+<li><strong>偏好增长（概率 $p$）</strong>：以与当前连接强度 $A_{ij}$ 成正比的概率选择一个连接进行增长。</li>
+<li><strong>随机增长（概率 $1-p$）</strong>：随机选择一对神经元进行增长。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>赫布扩展</strong>：在活动相关模型中，“偏好增长”被替换为“赫布增长”——即以与两个神经元之间的<strong>活动协方差 $C_{ij}$</strong> 成正比的概率进行增长。</li>
+</ul>
+<h3 id="4-主要推导方法">4. 主要推导方法</h3>
+<ul>
+<li><strong>主方程法（Master Equation）</strong>：
+<ul>
+<li>通过编写描述连接强度分布 $P(s)$ 随时间变化的递归方程，推导出稳态分布。</li>
+<li><strong>稳态分布公式</strong>：$P(s) \propto \frac{\Gamma [s + \bar{s}(\frac{1}{p}-1)]}{\Gamma [s + \bar{s}(\frac{1}{p}-1) + 1 + \frac{1}{p}]}$，其中 $\bar{s}$ 为平均连接强度，$\Gamma$ 为欧拉伽马函数。</li>
+<li><strong>幂律指数</strong>：在强连接极限下（$s \gg \bar{s}/p$），分布呈现幂律形式 $P(s) \approx s^{-\gamma}$，其中幂律指数 <strong>$\gamma = 1 + 1/p$</strong>，这表明重尾的程度仅取决于偏好增长的比例。</li>
+</ul>
+</li>
+<li><strong>涨落-耗散定理（Fluctuation-dissipation Theorem）</strong>：
+<ul>
+<li>为了在活动相关模型中计算 $C_{ij}$，作者使用了统计物理中的涨落-耗散定理。</li>
+<li>推导出协方差矩阵的闭合解：<strong>$C = \beta(I - \beta DA)^{-1}D$</strong>，其中 $D$ 是与神经元平均活动相关的对角矩阵。</li>
+<li>通过对该公式进行弱相互作用展开（$\beta \ll 1$），可以观察到赫布学习在一阶上强化现有连接（等同于偏好增长），而在二阶上形成三角形（形成聚类）。</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+    </div><div class="tab-content" id="tab-authors">
+        <div class="prose-content"><p>根据论文《Heavy-tailed neuronal connectivity arises from Hebbian self-organization》及相关来源信息，该研究由 <strong>Christopher W. Lynn</strong>、<strong>Caroline M. Holmes</strong> 和 <strong>Stephanie E. Palmer</strong> 三位作者共同完成。</p>
+<p>以下是三位作者的机构、院系、合作网络及近年来（2020–2026年）发表的代表性论文汇总：</p>
+<h3 id="1-christopher-w-lynn第一作者通讯作者">1. Christopher W. Lynn（第一作者、通讯作者）</h3>
+<p>Christopher W. Lynn 是耶鲁大学物理系助理教授，专注于从统计物理视角研究大脑结构、功能与认知。</p>
+<ul>
+<li><strong>机构与院系：</strong>
+<ul>
+<li><strong>当前机构：</strong> 耶鲁大学（Yale University）物理系、定量生物学研究所（QBio）及 Wu Tsai 研究所。</li>
+<li><strong>历史机构：</strong> 普林斯顿大学（Princeton University）物理系、纽约城市大学研究生中心（CUNY Graduate Center）理论科学倡议（ITS）。</li>
+</ul>
+</li>
+<li><strong>主要合作者与合作机构：</strong>
+<ul>
+<li><strong>合作者：</strong> Dani S. Bassett（博士导师，宾夕法尼亚大学）、William Bialek（普林斯顿）、Stephanie E. Palmer（芝加哥大学）、David J. Schwab（CUNY）、Caroline M. Holmes（哈佛）、David P. Carcamo、Nicholas J. Weaver、Qiwei Yu、Rich Pang。</li>
+<li><strong>合作机构：</strong> 宾夕法尼亚大学、普林斯顿大学、芝加哥大学、纽约城市大学。</li>
+</ul>
+</li>
+<li><strong>近年代表性论文（2020–2026）：</strong>
+<ol>
+<li><em>Simple input–output dependencies explain neuronal activity</em> (<strong>Nature Physics</strong>, 2026)。</li>
+<li><em>Quantifying the compressibility of the human brain</em> (<strong>PNAS</strong>, 2026)。</li>
+<li><em>Minimax entropy: The statistical physics of optimal models</em> (<strong>Physical Review E</strong>, 2025)。</li>
+<li><em>Exactly solvable statistical physics models for large neuronal populations</em> (<strong>Physical Review Research</strong>, 2025)。</li>
+<li><em>Statistical physics of large-scale neural activity with loops</em> (<strong>PNAS</strong>, 2025)。</li>
+<li><em>Irreversible behavior drives neural flows in the hippocampus</em> (<strong>arXiv</strong>, 2026)。</li>
+<li><em>Heavy-tailed neuronal connectivity arises from Hebbian self-organization</em> (<strong>Nature Physics</strong>, 2024)。</li>
+<li><em>Broken detailed balance and entropy production in the human brain</em> (<strong>PNAS</strong>, 2021)。</li>
+<li><em>Human information processing in complex networks</em> (<strong>Nature Physics</strong>, 2020)。</li>
+<li><em>Abstract representations of events arise from mental errors in learning and memory</em> (<strong>Nature Communications</strong>, 2020)。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="2-caroline-m-holmes共同作者多次担任共同第一作者">2. Caroline M. Holmes（共同作者、多次担任共同第一作者）</h3>
+<p>Caroline M. Holmes 目前是哈佛大学的博士后研究员，研究方向涵盖进化动力学、统计物理和基因组映射。</p>
+<ul>
+<li><strong>机构与院系：</strong>
+<ul>
+<li><strong>当前机构：</strong> 哈佛大学（Harvard University）有机与进化生物学系、NSF-Simons 数学与统计分析生物学中心。</li>
+<li><strong>历史机构：</strong> 普林斯顿大学（Princeton University）物理系（博士期间）。</li>
+</ul>
+</li>
+<li><strong>主要合作者与合作机构：</strong>
+<ul>
+<li><strong>合作者：</strong> Michael M. Desai（博士后导师，哈佛）、William Bialek（博士导师，普林斯顿）、Christopher W. Lynn（耶鲁）、Stephanie E. Palmer（芝加哥大学）、Mikhail Tikhonov（圣路易斯华盛顿大学）、Pankaj Mehta（波士顿大学）。</li>
+<li><strong>合作机构：</strong> 普林斯顿大学、耶鲁大学、芝加哥大学、波士顿大学、圣路易斯华盛顿大学。</li>
+</ul>
+</li>
+<li><strong>近年代表性论文（2020–2026）：</strong>
+<ol>
+<li><em>Inferring genotype–phenotype maps using attention models</em> (<strong>PNAS Nexus</strong>, 2026) - <strong>共同第一作者</strong>。</li>
+<li><em>A simple regulatory architecture allows learning the statistical structure of a changing environment</em> (<strong>eLife</strong>, 2021) - <strong>共同第一作者及共同通讯作者</strong>。</li>
+<li><em>Mapping history dependence along evolutionary trajectories</em> (<strong>bioRxiv</strong>, 2026) - <strong>第一作者</strong>。</li>
+<li><em>Laboratory yeast crosses reveal limited epistasis in the genetic basis of complex traits</em> (<strong>bioRxiv</strong>, 2026)。</li>
+<li><em>Stimulus-invariant aspects of the retinal code drive discriminability of natural scenes</em> (<strong>PNAS</strong>, 2024)。</li>
+<li><em>Emergent scale-free networks</em> (<strong>PNAS Nexus</strong>, 2024)。</li>
+<li><em>Decomposing the local arrow of time in interacting systems</em> (<strong>Physical Review Letters</strong>, 2022)。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="3-stephanie-e-palmer资深作者通讯作者">3. Stephanie E. Palmer（资深作者、通讯作者）</h3>
+<p>Stephanie E. Palmer 是芝加哥大学物理系及有机生物学与解剖学系副教授，专注于理论神经科学和预测性感觉编码。</p>
+<ul>
+<li><strong>机构与院系：</strong>
+<ul>
+<li><strong>机构：</strong> 芝加哥大学（University of Chicago）物理系、生物科学系（BSD）、生命系统物理前沿中心（NSF-PFC）。</li>
+</ul>
+</li>
+<li><strong>主要合作者与合作机构：</strong>
+<ul>
+<li><strong>合作者：</strong> Christopher W. Lynn（耶鲁）、Caroline M. Holmes（哈佛）、Thierry Mora &amp; Aleksandra M. Walczak（巴黎高等师范学院）、Olivier Marre（巴黎视觉研究所）、Marcus R. Kronforst、Jared M. Salisbury、Adam G. Kline。</li>
+<li><strong>合作机构：</strong> 普林斯顿大学、巴黎高等师范学院（ENS Paris）、法国国家科学研究中心（CNRS）、耶鲁大学。</li>
+</ul>
+</li>
+<li><strong>近年代表性论文（2020–2026）：</strong>
+<ol>
+<li><em>A dynamic scale-mixture model of motion in natural scenes</em> (<strong>eLife</strong>, 2025) - <strong>通讯作者</strong>。</li>
+<li><em>Probabilistic Models, Compressible Interactions, and Neural Coding</em> (<strong>PRX Life</strong>, 2026) - <strong>共同通讯作者</strong>。</li>
+<li><em>Preserving predictive information under biologically plausible compression</em> (<strong>PNAS Nexus</strong>, 2026) - <strong>通讯作者</strong>。</li>
+<li><em>Exactly solvable statistical physics models for large neuronal populations</em> (<strong>Physical Review Research</strong>, 2025)。</li>
+<li><em>Spatially displaced excitation contributes to the encoding of interrupted motion by a retinal direction-selective circuit</em> (<strong>eLife</strong>, 2021) - <strong>共同通讯作者</strong>。</li>
+<li><em>Gaussian information bottleneck and the non-perturbative renormalization group</em> (<strong>New Journal of Physics</strong>, 2022) - <strong>通讯作者</strong>。</li>
+<li><em>Learning low-dimensional generalizable natural features from retina using a U-net</em> (<strong>NeurIPS</strong>, 2022) - <strong>通讯作者</strong>。</li>
+<li><em>Coarse-graining reveals collective predictive information in a sensory population</em> (<strong>bioRxiv</strong>, 2025) - <strong>通讯作者</strong>。</li>
+<li><em>Genetic, developmental, and neural changes underlying the evolution of butterfly mate preference</em> (<strong>PLoS Biology</strong>, 2025)。</li>
+<li><em>Stimulus-invariant aspects of the retinal code drive discriminability of natural scenes</em> (<strong>PNAS</strong>, 2024)。</li>
+</ol>
+</li>
+</ul>
+</div>
+        
+    </div><div class="tab-content" id="tab-model">
+        <div class="prose-content"><p>本研究提出了一个关于神经元连接自组织的极简模型，旨在解释真实大脑中普遍存在的**重尾分布（heavy-tailed distribution）<strong>和</strong>聚类（clustering）<strong>特征。该模型分为</strong>活动无关（Activity-independent）<strong>和</strong>活动相关（Activity-dependent/Hebbian）**两个阶段进行数学构建与推导。</p>
+<h3 id="1-模型基本定义">1. 模型基本定义</h3>
+<p>模型考虑一个由 $n$ 个神经元组成的网络，其结构由连接矩阵 $A$ 定义，其中 $A_{ij}$ 表示从神经元 $i$ 到 $j$ 的有向连接强度。网络中总连接强度为 $S = \sum_{ij} A_{ij}$，平均连接强度为 $\bar{s} = S / [n(n-1)]$。</p>
+<p>网络的演化遵循以下核心规则：</p>
+<ul>
+<li><strong>随机修剪（Random Pruning）</strong>：每个时间步随机选择一个现有连接并将其强度清零（$A_{ij} \rightarrow 0$）。</li>
+<li><strong>强度重分配</strong>：被修剪掉的强度单位被重新分配给一对新的神经元。
+<ul>
+<li><strong>偏好增长（概率 $p$）</strong>：以与当前连接强度 $A_{ij}$ 成正比的概率 $A_{ij}/S$ 选择连接进行增长。</li>
+<li><strong>随机增长（概率 $1-p$）</strong>：随机选择一对神经元进行增长。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-活动无关模型的数学推导连接强度的重尾性">2. 活动无关模型的数学推导（连接强度的重尾性）</h3>
+<p>为了理解连接强度分布 $P(s)$ 的演化，作者使用了<strong>主方程法（Master Equation）</strong>。</p>
+<h4 id="概率变化分量推导">概率变化分量推导：</h4>
+<p>在每个更新步中，$P(s)$ 的变化源于三个部分：</p>
+<ol>
+<li><strong>随机修剪</strong>：导致概率平均减少 $\frac{1}{n(n-1)}P_t(s)$。</li>
+<li><strong>偏好增长</strong>：
+<ul>
+<li>强度从 $s-1$ 增加到 $s$ 的概率增量：$\frac{1}{n(n-1)}p(s-1)P_t(s-1)$。</li>
+<li>强度从 $s$ 增加到 $s+1$ 导致的概率减量：$-\frac{1}{n(n-1)}psP_t(s)$。</li>
+</ul>
+</li>
+<li><strong>随机增长</strong>：
+<ul>
+<li>概率增量：$\frac{1}{n(n-1)}\bar{s}(1-p)P_t(s-1)$。</li>
+<li>概率减量：$-\frac{1}{n(n-1)}\bar{s}(1-p)P_t(s)$。</li>
+</ul>
+</li>
+</ol>
+<h4 id="稳态解与分布函数">稳态解与分布函数：</h4>
+<p>将上述项合并得到主方程：
+$P_{t+1}(s) - P_t(s) = \frac{1}{n(n-1)} [-P(s) + p((s-1)P(s-1) - sP(s)) + \bar{s}(1-p)(P(s-1) - P(s))]$</p>
+<p>在稳态下（$P_{t+1} = P_t$），通过求解该递归关系，得到解析分布公式：
+$$P(s) \propto \frac{\Gamma [s + \bar{s}(\frac{1}{p}-1)]}{\Gamma [s + \bar{s}(\frac{1}{p}-1) + 1 + \frac{1}{p}]}$$</p>
+<p>其中 $\Gamma$ 是欧拉伽马函数。在强连接极限（$s \gg \bar{s}/p$）下，该分布渐近服从<strong>幂律分布</strong> $P(s) \approx s^{-\gamma}$，其幂律指数为：
+$$\gamma = 1 + \frac{1}{p}$$
+这证明了<strong>重尾特征仅取决于偏好增长在总增长中所占的比例 $p$</strong>。</p>
+<h3 id="3-活动相关模型的数学推导网络的聚类性">3. 活动相关模型的数学推导（网络的聚类性）</h3>
+<p>为了引入赫布学习（Hebbian plasticity），模型引入了神经元活动。</p>
+<h4 id="神经元活动定义">神经元活动定义：</h4>
+<p>神经元的稳态活动 $x_i$ 由自洽方程定义：
+$$x = \tanh(\beta Ax)$$
+其中 $\beta$ 是相互作用强度（对应统计物理中的逆温度）。该系统等价于平均场伊辛模型。</p>
+<h4 id="协方差推导">协方差推导：</h4>
+<p>利用<strong>涨落-耗散定理（Fluctuation-dissipation Theorem）</strong>，可以推导出神经元活动之间的协方差矩阵 $C$：
+$$C = \beta(I - \beta DA)^{-1}D$$
+其中 $D$ 是对角矩阵，$D_{ii} = 1 - x_i^2$。</p>
+<h4 id="弱相互作用下的级数展开">弱相互作用下的级数展开：</h4>
+<p>在弱相互作用极限（$\beta \ll 1, x=0$）下，$D=I$，协方差可展开为：
+$$C = \beta(I + \beta A + \beta^2 A^2 + \beta^3 A^3 + \dots)$$</p>
+<p>这一推导揭示了赫布学习如何通过协方差驱动网络自组织：</p>
+<ol>
+<li><strong>一阶项（$\beta A$）</strong>：协方差正比于现有连接强度。此时赫布增长等同于偏好增长，从而产生重尾分布。</li>
+<li><strong>二阶项（$\beta^2 A^2$）</strong>：协方差与共享邻居的神经元对相关（长度为2的路径）。赫布增长会强化这些对，从而<strong>形成三角形（聚类特征）</strong>。</li>
+<li><strong>高阶项</strong>：随着 $\beta$ 增加，赫布增长会闭合更长的环路。</li>
+</ol>
+<h3 id="总结">总结</h3>
+<p>该模型通过<strong>主方程法</strong>证明了简单的偏好增长机制足以产生幂律分布的连接强度，并通过<strong>统计物理的级数展开</strong>证明了活动依赖的赫布学习是网络聚类现象的物理根源。</p>
+</div>
+        
+    </div><div class="tab-content" id="tab-results">
+        <div class="prose-content"><p>基于您提供的来源，该研究关于神经元连接自组织机制的<strong>结果</strong>、<strong>理论意义</strong>及<strong>实际价值</strong>总结如下：</p>
+<h3 id="1-主要研究结果-results">1. 主要研究结果 (Results)</h3>
+<ul>
+<li><strong>重尾分布的普适性验证</strong>：研究通过分析果蝇、圆线虫、环节动物和鼠类等多种动物的连通图数据，确认了神经元连接强度普遍呈现**重尾（渐近无标度）**分布特征，即极少数强连接在大量弱连接中占据主导。</li>
+<li><strong>自组织模型成功构建</strong>：
+<ul>
+<li><strong>活动无关模型</strong>：仅通过“随机修剪”和“偏好+随机增长”的简单规则，模型就能产生与真实数据高度一致的幂律分布。推导证明幂律指数仅取决于偏好增长概率 $p$（公式为 $\gamma = 1 + 1/p$）。</li>
+<li><strong>活动相关（赫布）模型</strong>：引入神经元活动和赫布可塑性后，模型不仅保持了连接强度的重尾特性，还自然地产生了**网络聚类（Clustering）**特征。</li>
+</ul>
+</li>
+<li><strong>高精度拟合</strong>：仅利用偏好概率 $p$ 和相互作用强度 $\beta$ 两个参数，该模型就能定量地复现多种生物连通图的连接异质性和聚类系数。</li>
+<li><strong>功能连接的预测</strong>：研究发现小鼠视觉皮层的功能连接（活动协方差）同样呈现重尾分布，模型成功解释了这种功能特征是如何从结构自组织中产生的。</li>
+</ul>
+<h3 id="2-理论意义-theoretical-significance">2. 理论意义 (Theoretical Significance)</h3>
+<ul>
+<li><strong>揭示普适物理原理</strong>：证明了大脑复杂的连通性特征（重尾和聚类）不需要物种特异的复杂生物物理过程，而是可以从<strong>通用的网络自组织原则</strong>中涌现。</li>
+<li><strong>建立结构与功能的统一框架</strong>：通过统计物理学方法（如涨落-耗散定理），该研究提供了一个将微观可塑性规则（如赫布学习）与宏观网络拓扑特征联系起来的数学框架。</li>
+<li><strong>深化对赫布学习的理解</strong>：推导展示了赫布学习在不同阶数上的效应——一阶效应产生重尾连接（类似偏好增长），二阶效应产生三角形结构（形成聚类），这为理解大脑如何平衡连接强度与局部闭环提供了新视角。</li>
+</ul>
+<h3 id="3-实际价值-practical-value">3. 实际价值 (Practical Value)</h3>
+<ul>
+<li><strong>神经科学建模工具</strong>：为研究人员提供了一个极简且高效的工具，仅需极少参数即可预测或模拟大规模神经系统的结构分布，这对由于技术限制无法获得全量数据的研究具有重要参考价值。</li>
+<li><strong>启发人工智能（AI）设计</strong>：由于该模型可直接映射到循环神经网络（RNN），研究结果可能启发开发更符合大脑生物特性的<strong>稀疏且具有重尾特征的人工神经网络</strong>，从而提升信息处理效率。</li>
+<li><strong>疾病研究的潜在基础</strong>：连通性异常与多种神经系统疾病有关。该模型为理解可塑性机制失调如何导致网络结构病变（如连接异质性丧失）提供了理论基准。</li>
+<li><strong>跨学科方法论参考</strong>：展示了如何利用统计物理工具解决生物学复杂系统问题，为生物物理学和网络科学的结合提供了范例。</li>
+</ul></div>
+        
+    </div><div class="tab-content" id="tab-figures">
+        <div class="prose-content"><p>根据提供的来源，论文及其补充材料中的图像内容主要分为以下四大类：</p>
+<h3 id="1-真实生物连通图的重尾特征图-1-与补充图-s1">1. 真实生物连通图的重尾特征（图 1 与补充图 S1）</h3>
+<p>这部分图像展示了不同物种神经元连接强度的统计分布，证明了“重尾”现象的普适性：</p>
+<ul>
+<li><strong>图 1a</strong>：展示了**果蝇中心脑（Drosophila central brain）**中强度排名前 0.1% 的连接所构成的网络图。</li>
+<li><strong>图 1b–g</strong>：分别展示了果蝇中心脑（b）、果蝇视髓质（c）、圆线虫（d）、环节动物（e）以及小鼠视网膜（f, g）的<strong>连接强度分布</strong>。蓝色点代表真实数据，灰色线代表随机分配后的分布（遵循泊松分布），对比显示真实连接具有极强的重尾特征。</li>
+<li><strong>图 1h</strong>：展示了小鼠视觉皮层神经元活动协方差的分布，其形式与结构连接类似，也呈现重尾分布。</li>
+<li><strong>补充图 S1</strong>：进一步展示了这种**功能性连接（协方差）**的普适性，涵盖了不同刺激条件下（自然图像、漂移栅格、自发活动）及不同小鼠的数据。</li>
+</ul>
+<h3 id="2-自组织模型的定义与基本预测图-2">2. 自组织模型的定义与基本预测（图 2）</h3>
+<p>这部分图像解释了论文提出的“偏好+随机增长”模型：</p>
+<ul>
+<li><strong>图 2a</strong>：<strong>模型示意图</strong>。左侧展示随机修剪（Random pruning），上方展示偏好增长（Preferential growth，概率 $p$），下方展示随机增长（Random growth，概率 $1-p$）。</li>
+<li><strong>图 2b–d</strong>：展示了不同偏好概率 $p$ 对<strong>连接强度分布</strong>（b）、<strong>异质性</strong>（c）和<strong>网络密度</strong>（d）的影响。数据点为模拟结果，实线为解析预测。</li>
+<li><strong>图 2e–i</strong>：展示了该模型对五个物种连通图分布的拟合结果，证明单参数 $p$ 即可较好捕捉重尾特征。</li>
+</ul>
+<h3 id="3-活动相关模型与聚类特征图-3">3. 活动相关模型与聚类特征（图 3）</h3>
+<p>这部分图像探讨了赫布可塑性如何产生网络聚类（Clustering）：</p>
+<ul>
+<li><strong>图 3a</strong>：<strong>赫布增长的阶数展开</strong>。一阶（First order）强化现有连接；二阶（Second order）形成三角形（即聚类）；三阶（Third order）闭合更长的环路。</li>
+<li><strong>图 3b</strong>：展示了相互作用强度 $\beta$ 对连接强度分布的影响。当 $\beta$ 过大时，分布的重尾特征会受限。</li>
+<li><strong>图 3c–f</strong>：<strong>相图（Phase diagrams）</strong>。展示了连接异质性（c）、密度（d）、聚类系数（e）以及“聚类减去密度”（f）随 $p$ 和 $\beta$ 变化的规律。</li>
+</ul>
+<h3 id="4-模型对真实网络多重属性的复现图-4-与补充图-s3-s4">4. 模型对真实网络多重属性的复现（图 4 与补充图 S3, S4）</h3>
+<ul>
+<li><strong>图 4a–d</strong>：分析了真实连通图在<strong>异质性-聚类空间</strong>中的位置。图 4c, d 特别展示了真实网络位于“高异质性、高聚类”的特定区域，且模型（有参数 $p$ 和 $\beta$）能精准复现这一点。</li>
+<li><strong>图 4e–i</strong>：展示了在使用 $p$ 和 $\beta$ 同时拟合异质性和聚类后，模型产生的连接强度分布依然与真实数据高度吻合。</li>
+<li><strong>补充图 S3</strong>：对比了五个物种真实网络与其随机化版本在异质性和聚类系数上的差异。</li>
+<li><strong>补充图 S4</strong>：展示了模型能成功预测果蝇脑网络中<strong>连接强度与聚类的关系</strong>以及<strong>节点度分布（Degree distribution）</strong>。</li>
+</ul>
+</div>
+        
+    </div><div class="tab-content" id="tab-code">
+        <div class="prose-content">全局变量、数据结构、输入输出
+运行逻辑、选择循环分支、终止条件</div>
+        
+    </div><div class="tab-content" id="tab-mindmap"><div class="pdf-container" style="grid-template-columns: 1fr;">
+            
+            <div class="mindmap-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p style="font-size:0.95rem;">请将推导过程 PDF 放入 <code>static/derivation/</code></p>
+                <p style="font-size:0.8rem;">命名规则: <code>hebso.pdf</code></p>
+            </div>
+            
+        </div>
+    </div><div class="tab-content" id="tab-translation">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="languages" style="width:16px;height:16px;"></i>
+                    翻译
+                </div>
+                <div class="pdf-panel-body"><p>[第1页，第1段]
+重尾神经元连接源于Hebbian自组织</p>
+<p>[第1页，第2段]
+收稿日期：2022年6月10日<br>
+接收日期：2023年11月13日<br>
+在线发表日期：2024年1月17日<br>
+请检查更新</p>
+<p>[第1页，第3段]
+Christopher W. Lynn 1,2,3,4,5, Caroline M. Holmes 2,6 &amp; Stephanie E. Palmer 7,8</p>
+<p>[第1页，第4段]
+神经元网络中的连接呈重尾（heavy-tailed）分布，少数神经元之间的连接强度远强于绝大多数神经元对。然而，这种重尾连接是否源于简单的底层机制尚不明确。本文提出一个突触自组织（synaptic self-organization）的最小模型：连接被随机修剪，突触强度在偏好性（preferential）与随机性（random）混合动力学下重新排列。在这些通用规则下，网络演化产生的连接强度分布渐近地呈现无标度（scale-free）特性，其幂律（power-law）指数仅取决于偏好性增长（而非随机增长）的概率。将模型扩展至包含神经元活动与Hebbian可塑性（Hebbian plasticity）后，我们发现网络中的聚类（clustering）也会自然涌现。我们在多种动物的连接组（connectome）中验证了这些预测，表明重尾与聚类连接可能源于网络自组织的通用原则，而非特定物种或系统的专属机制。</p>
+<p>[第1页，第5段]
+神经元通过复杂的突触连接网络进行通信与交互。尽管这一布线结构不断变化与重组[1-3]，但其远非随机——突触连接高度集中于少数神经元对[4]。事实上，连接强度分布呈重尾特征[5-9]，稀疏的强连接网络主导着弱相互作用的汪洋。这些强连接构成了神经元回路的骨干，支撑着从学习[11-13]、记忆[14-17]到感知[18-22]、通信[23,24]及运动控制[25-28]等无与伦比的信息处理能力。然而，尽管强连接在引导神经功能中至关重要，关于重尾连接如何在神经元群体中涌现仍存在根本性问题：它是否需要每个物种或神经系统特有的复杂生物物理过程？抑或重尾连接可以通用地从网络自组织原则中涌现？</p>
+<p>[第1页，第6段]
+重尾神经元连接<br>
+为回答这些问题，我们首先比较了多个物种的连接强度分布。收集足够数据以刻画连接强度分布的尾部特征是一项重大挑战，需要大体积神经组织的细胞级分辨率图谱[29]。然而，高通量电子显微镜与图像处理技术的近期进展，已能以前所未有的精度捕捉连接数千至数万个神经元的物理布线快照[5,11,12,18,19,25,26]。基于这些实验进展，现在已有可能探究大规模神经元连接的通用机制。</p>
+<p>[第1页，第7段]
+以果蝇中央脑的部分连接组（图1a）为例：1400万个突触连接超过2.1万个神经元（约占果蝇大脑的四分之一）[5]。尽管突触数量庞大，99%的神经元对仍无连接；即使在已连接的神经元中，50%仅通过单个突触相连（图1b）。与此同时，部分神经元对通过超过一千个突触相连——这些罕见但极强的连接构成了突触连接的重尾（图1b）。相比之下，若将网络中的突触随机化分布，连接强度将呈泊松分布（Poisson distribution）的超指数衰减（图1b），强连接的骨干也随之消失。</p>
+<p>[第2页，第1段]
+消失。我们在果蝇（<em>Drosophila</em>）视髓（optic medulla）（图1c）[19]、秀丽隐杆线虫（<em>Caenorhabditis elegans</em>）的connectome（连接组）（图1d）[25,30]以及环节动物沙蚕（<em>Platynereis</em>）的感觉运动回路（sensory motor circuit）（图1e）[26]中，同样观察到了重尾（heavy-tailed）的连通性（connectivity）。</p>
+<p>[第2页，第2段]
+到目前为止，我们主要关注无脊椎动物的connectome（连接组），在这些动物中，更强的连接是通过平行增加突触（synapse）数量来形成的[2]。而在脊椎动物中，连接则通过同时增加单个突触的数量和大小来增强[5,31]。例如，在小鼠视网膜（mouse retina）中，我们发现神经元之间物理接触（physical contact）数量（作为突触连接的一个代理指标）的分布呈现重尾特征（图1f），但其程度不及无脊椎动物的连通性（图1b–e）[18]。然而，这种统计未能包含单个接触或突触大小的信息，而后者本身已被观察到遵循重尾分布[32]。</p>
+<p>[第3页，第1段]
+（通常为对数正态）分布\textsuperscript{4,9,11}。实际上，如果我们考虑连接的总强度——即神经元之间的总接触面积——我们会发现一种与无脊椎动物中观察到的分布再次相似的分布（图1g）。最后，利用近期大规模神经元活动记录，我们可以检查神经元之间“功能性”连接（或相关性）的强度。在对小鼠视觉皮层响应自然图像的大规模记录中\textsuperscript{32}，我们发现活动协方差的分布反映了神经元之间重尾（heavy-tailed）的结构连接（图1h），这一结果在不同小鼠和不同刺激条件下均得到确认（补充图1）。</p>
+<p>[第3页，第2段]
+<strong>网络自组织模型</strong></p>
+<p>[第3页，第3段]
+上述结果表明，重尾连接是神经元网络的一个普遍特征。因此，人们很自然地寻求一个同样普遍的解释。在复杂系统研究中，重尾分布通常源于优先连接（preferential attachment）或富者愈富（rich-get-richer）机制。然而，现有的网络模型侧重于度（degree）或节点强度（node strength）的分布\textsuperscript{33,34}，而这里我们研究的是连接强度。在突触连接（synaptic connectivity）的背景下，一种优先连接形式已经处于网络形成的核心：赫布可塑性（Hebbian plasticity），其中强连接的神经元更可能反映幂律（power law），其预测指数为 $\gamma = 1 + \frac{1}{p}$，c–d。连接异质性（c）和密度（d）作为 $p$ 的函数，通过数值模拟（数据点）和分析分布（线条）计算得出。连接密度是所有 $n(n-1)$ 个可能连接中非零强度连接的比例。e–i。来自方程（1）的分析模型预测，其中 $\bar{s} = 1$（以匹配面板b–d中的模拟），$p$ 拟合到果蝇中央脑（e）\textsuperscript{5}、果蝇视髓质（f）\textsuperscript{19}、秀丽隐杆线虫连接组（g）\textsuperscript{25,30}、沙蚕感觉运动回路（h）\textsuperscript{26}和小鼠视网膜（i）\textsuperscript{18}的连接分布（方法）。</p>
+<p>[第3页，第4段]
+为了回答这个问题，我们在此提出一个网络形成的最小模型，其中连接在优先和随机动态的混合作用下自组织。具体来说，我们从 $n$ 个神经元开始，它们由 $S$ 个连接强度单位连接（例如，每个单位可以代表一个突触、$1 \mu m^2$ 的接触面积，甚至非整数强度度量）。网络由连接矩阵 $A$ 定义，其中 $A_{ij}$ 是从神经元 $i$ 到神经元 $j$ 的有向连接强度，使得 $\sum_j A_{ij} = S$。在每个时间点，随机选择一个连接进行修剪，导致 $A_{ij} &gt; 0$（图2a，左）。然后，每个修剪后的强度单位独立地重新分配给一对新的神经元（使得 $A_{ij} \rightarrow A_{ij} + 1$），方式有两种：（1）以概率 $p$，一个连接被优先选择用于增长，概率为 $A_{ij}/S$，与其当前强度成正比（图2a，顶部）；或（2）以概率 $1 - p$，随机选择一对神经元用于增长（图2a，底部）。这样，总连接强度 $S$ 保持不变，神经元之间的布线仅随时间重新排列。此外，我们注意到，在指定神经元数量后</p>
+<p>[第4页，第1段]
+n 和总连接强度 $  S  $，该模型仅包含一个参数 $  p  $，表示优先增长（preferential growth）而非随机增长（random growth）的概率。</p>
+<p>[第4页，第2段]
+最终，我们希望理解上述动力学如何影响连接强度 $  s  $ 的分布 $  P(s)  $。利用主方程方法（master equation method）（此前已被用于研究度分布 $ ^{33}  $），可以证明随着网络演化，连接强度趋近于一个解析稳态分布。</p>
+<p>[第4页，第3段]
+$
+P(s) \propto \frac{\Gamma \left[ s + \delta \left( \frac{1}{p} - 1 \right) \right]}{\Gamma \left[ s + \delta \left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p} \right]},
+$</p>
+<p>[第4页，第4段]
+其中 $  \delta = \frac{s}{n(n-1)}  $ 是平均连接强度，$  \Gamma(\cdot)  $ 是欧拉伽马函数（Euler&rsquo;s gamma function）（方法）。在本文中，我们将所有分布归一化到正连接强度 $  s &gt; 0  $（即排除 $  s = 0  $ 的空连接）。在强连接极限 $  s \gg \delta/p  $ 下，上述分布以幂律（power law）$  P(s) \approx s^{-\gamma}  $ 衰减，其无标度指数（scale-free exponent）$  \gamma = 1 + \frac{1}{p}  $ 仅取决于优先增长概率 $  P  $（方法）。我们通过数值模拟（图 2b）确认了方程 (1) 中的解析分布和幂律尾部。</p>
+<p>[第4页，第5段]
+随着优先增长比例 $  p  $ 减小，网络变得更加随机，从而限制了 $  P(s)  $ 的重尾（heavy tail）并增加了指数 $  \gamma  $（图 2b，左）。相反，如果优先增长占主导，强连接更可能变得更强，从而产生更重的尾部和更低的指数 $  \gamma  $（图 2b，右）。为了量化幂律类分布的重尾性，常用度量是异质性（heterogeneity）$  \frac{1}{2} \langle |s - s&rsquo;| \rangle \langle s \rangle  $，其中 $  \langle \cdot \rangle  $ 表示对 $  P(s)  $ 的平均，$  \langle |s - s&rsquo;| \rangle  $ 是连接强度的平均绝对差 $ ^{37-39}  $。虽然幂律分布的方差在 $  \gamma \leq 3  $（或我们模型中的 $  p \geq 0.5  $）时发散，但异质性（归一化到 0 和 1 之间）对所有 $  \gamma &gt; 2  $（即所有 $  p &lt; 1  $ 的值）都有良好定义。随着 $  p  $ 增加，我们看到连接强度变得更加异质（图 2c），而连接密度下降（图 2d）。因此，优先动力学导致形成具有重尾连接强度的稀疏网络——这正是真实连接组（connectomes）中观察到的特征 $ ^{5,11,12,18,19,25,26,29}  $。</p>
+<p>[第4页，第6段]
+我们甚至可以将优先概率 $  p  $（模型中唯一的自由参数）拟合到单个连接组的连接分布；例如，果蝇（Drosophila）中央脑最好被描述为 60% 优先增长和 40% 随机增长的组合（图 2e）。事实上，尽管只拟合了一个参数，我们的简单模型对所有考虑的网络都提供了令人惊讶的良好描述（图 2e–i），优先增长比例从秀丽隐杆线虫（C. elegans）的 40%（图 2g）到果蝇视髓（optic medulla）（图 2f）和沙蚕（Platynereis）感觉运动回路（图 2h）的 100%。考虑到每个网络对网络结构都有不同的遗传约束，我们模型的成功更加令人惊讶。总之，这些结果表明，模型神经元可以在一个最小的“富者愈富”（rich-get-richer）机制下自组织，产生在真实连接组中观察到的稀疏、重尾网络。</p>
+<p>[第4页，第7段]
+<strong>引入神经元活动</strong></p>
+<p>[第4页，第8段]
+上述模型即使不包含神经元活动的影响，也能生成具有现实连接强度的网络。然而，在真实的神经元网络中，突触连接不仅会自行演化，还会响应活动中的相关性——这一过程称为赫布可塑性（Hebbian plasticity）$ ^{2,31,35,36}  $。通过包含这种网络结构与功能之间的反馈，我们将展示神经元连接组的其他属性会自然涌现。为了引入神经元之间的相关性，我们必须从神经元活动模型开始。虽然可以实现不同程度的生物真实性 $ ^{10,40}  $，但为简单起见，这里我们考虑人工神经元，在每次网络更新之间，它们达到由自洽方程 $  x_i = \tanh \left( \beta \sum_j A_{ij} x_j \right)  $ 定义的稳态活动 $  x_i  $，其中 $  \beta \geq 0  $ 参数化相互作用强度，连接 $  A_{ij}  $ 隐式地由 $  N  $ 归一化（方法）。该模型是伊辛模型（Ising model）的平均场近似（mean-field approximation）$ ^{41-43}  $，已被证明能捕捉神经元群体的关键特征 $ ^{44,45}  $。此外，活动 $  x_i  $ 可以直接映射到发放率（firing rates）（方法），使模型等效于人工递归神经网络（recurrent neural network）$ ^{10,43,46}  $。该模型的主要优势在于，如果连接 $  A_{ij}  $ 是对称的（如下文假设），那么我们可以利用涨落-耗散定理（fluctuation–dissipation theorem）推导出协方差（covariances）的简洁解析形式（方法）：$  C = \beta (I - \beta DA)^{-1} D  $，其中 $  D_{ij} = (1 - x_i^2) \delta_{ij}  $ 是对角矩阵，$  I  $ 是单位矩阵。</p>
+<p>[第4页，第9段]
+我们现在准备将网络动力学扩展到包含活动依赖性可塑性（activity-dependent plasticity）。随机修剪（random pruning）（图 2a，左）和随机增长（图 2a，下）保持不变，但我们将优先增长替换为赫布增长（Hebbian growth）：不是以与当前强度 $  A_{ij}  $ 成比例的概率选择连接（图 2a，上），而是以与协方差 $  C_{ij}  $ 成比例的概率选择一对神经元（方法）。为了直观理解这个活动依赖性模型，我们注意到在弱相互作用极限 $  \beta \ll 1  $ 下，$  x_i = 0  $，产生协方差</p>
+<p>[第4页，第10段]
+$
+C = \beta \left( \beta A + \beta^2 A^2 + \beta^3 A^3 + \cdots \right) = \beta \sum_{n=1}^{\infty} \left( \beta A \right)^n \quad \text{对于} \quad i \neq j.
+$</p>
+<p>[第4页，第11段]
+在 $  \beta  $ 的最低阶，协方差与连接强度成正比 $  C \propto A  $，因此赫布可塑性强化了现有连接；也就是说，赫布增长的作用恰好等同于原始模型中的优先增长（图 3a，上）。因此，原始的活动无关动力学（图 2）正是更一般的活动依赖性模型的弱相互作用极限。</p>
+<p>[第4页，第12段]
+在 $  \beta  $ 的次低阶，相关性正比于 $  A^2  $，因此赫布可塑性连接网络中共享共同邻居的神经元（即通过长度为二的路径相互作用的神经元）。在这种情况下，活动依赖性增长导致三角形（triangles）的形成（图 3a，中），正如我们将看到的，这会在连接拓扑中产生聚类（clustering）。一般来说，随着相互作用强度 $  \beta  $ 增加到接近 1（随机网络的临界相互作用强度；补充信息第 3 节），赫布可塑性会强化越来越大的拓扑距离上的相互作用，从而在网络中产生越来越长的环路（图 3a，下）。重要的是，我们预期这些结果（以及下面的结果）会定性推广到其他神经元活动模型。只要神经元之间的相关性随网络中的拓扑距离减小——即对于任何神经元活动模型，直接连接产生最强相关性，长度为二的连接产生较弱相关性，依此类推——我们的赫布可塑性模型仍会强化现有连接（一阶），随后是网络中逐渐变长的环路（图 3a）。</p>
+<p>[第4页，第13段]
+<strong>聚类源于活动依赖性可塑性</strong></p>
+<p>[第4页，第14段]
+模拟上述动力学，我们可以检查赫布可塑性如何影响连接的强度和拓扑。在弱相互作用极限下，由于赫布可塑性变得等同于优先增长，连接强度收敛到方程 (1) 中的重尾分布（图 3b）。此外，由于 $  C \propto A  $，该模型也产生重尾相关性，正如在神经元活动的大规模记录中观察到的那样（图 1h 和补充图 2）。相反，随着 $  \beta  $ 增加，赫布增长未能强化现有连接（图 3a），从而限制了连接强度的重尾（图 3b）。确实，我们发现连接强度的异质性随赫布概率 $  p  $ 增加而增加。</p>
+<p>[第5页，第1段]
+[P1/1]<br>
+a. 弱相互作用极限下的扩张性赫布增长（Hebbian growth）。顶部：在相互作用强度 $\beta$ 的最低阶，赫布增长强化现有连接；中部：在二阶，赫布增长强化长度为二的相互作用，形成三角形；底部：一般而言，在 $l$ 阶，赫布增长强化长度为 $l$ 的相互作用，从而闭合长度为 $l+1$ 的环路。b. 在 $n=10^3$ 个神经元的网络中，不同相互作用强度 $\beta$ 下的连接强度分布，赫布概率 $p=0.5$，平均连接强度 $\bar{s}=1$。实线描绘了方程(1)中解析的活动独立预测，虚线展示了指数 $\gamma=1+\frac{1}{p}=3$ 的幂律（power law）。c. 连接异质性（connection heterogeneity）(c)、连接密度（connection density）(d)、聚类系数（clustering coefficient）(e)以及聚类系数与连接密度之差(f)的相图（phase diagram），作为赫布概率 $p$ 和相互作用强度 $\beta$ 的函数，针对模拟网络（$n=10^3$ 个神经元，平均连接强度 $\bar{s}=1$，方法部分）。左侧：在每个面板中，对于 $\beta=0$，我们绘制了原始活动独立模型（图2）的值。在面板c和f中，虚线表示同时具有重尾（heavy-tailed）连接强度和高聚类拓扑的参数空间区域。</p>
+<p>[第6页，第1段]
+随着相互作用强度 $\beta$ 的增加而减小（图 3c）。相反，连接密度随 $p$ 增加而减小，随 $\beta$ 增加而增大（图 3d），因此，对于较大的 Hebbian 概率（Hebbian probability）和弱到中等强度的相互作用，会出现稀疏且具有重尾（heavy-tailed）特征的连接性。</p>
+<p>[第6页，第2段]
+虽然如上所述，在 $\beta$ 的一阶近似下，Hebbian 可塑性（Hebbian plasticity）会产生重尾连接性，但二阶效应则是三角形（triangle）的形成（图 3a）。值得注意的是，已知真实的神经元网络（neuronal network）具有高密度的三角形，这一特性被称为聚类（clustering）。聚类通常使用神经元三角形数量 $n_a$ 与三元组（triplet）数量 $n_c$（至少有两个连接的三个神经元的集合）的比值 $n_a/n_c$ 来量化。对于随机网络（random network），这个聚类系数（clustering coefficient）与连接密度相同；事实上，我们看到聚类系数（图 3e）在 $p$ 和 $\beta$ 的大部分取值范围内都紧密跟随连接密度（图 3d）。特别是，当相互作用消失时（$\beta \to 0$），原始的与活动无关的动力学（activity-independent dynamics）（图 2）会产生随机网络拓扑（对于所有 $p$ 值），使得聚类系数变得与连接密度相同（图 3f，左）。因此，如果相互作用过强，连接强度会失去其重尾特征（图 3b,c）；如果相互作用过弱，网络则无法形成聚类（图 3f）。然而，对于中等强度的相互作用 $\beta$，依赖于活动的动力学（activity-dependent dynamics）会产生与果蝇中央脑（Drosophila central brain）相同的连接异质性（connection heterogeneity）和聚类系数（减去密度）。为了改进采样，数据点是在相邻参数值上平均得到的。$d$，左上：与 $c$ 相同，但针对果蝇视髓（Drosophila optic medulla）；右上：$c$，线虫（elegans）连接组（connectome）；左下：沙蚕（Platynereis）感觉运动回路（sensory motor circuit）；右下：小鼠视网膜（mouse retina）。</p>
+<p>[第6页，第3段]
+e-i，在依赖于活动的模型中，参数 $p$ 和 $\beta$ 被选择以匹配果蝇中央脑（e）、果蝇视髓（f）、线虫连接组（g）、沙蚕感觉运动回路（h）和小鼠视网膜（i）的异质性和聚类系数（减去连接密度）时的连接强度分布。在所有面板中，为了计算聚类并与模型网络进行比较，真实连接组被对称化，使得连接性由 $A + A^T$ 定义（方法）。</p>
+<p>[第6页，第4段]
+动力学可以同时产生重尾连接强度和高度聚类的拓扑结构（图 3c,f，虚线），这是真实神经元网络的两个基本特征。</p>
+<p>[第6页，第5段]
+依赖于活动的动力学能够生成真实的网络特征，但它们能否定量地再现特定神经元连接组的特性呢？例如，在果蝇中央脑（图 1a,b）中，我们发现连接比可比较的随机网络更具异质性（图 4a）和聚类性（图 4b）；并且我们在图 1 中分析的所有连接组中都确认了相同的结果（补充图 3）。使用与果蝇中央脑相同的平均连接强度 $\bar{s}$ 模拟网络时，原始的与活动无关的模型（图 2）可以捕捉到数据中观察到的连接异质性（图 4a），但由于其随机拓扑结构，无法产生真实的聚类（图 4b）。然而，通过推广到依赖于活动的动力学，网络可以同时达到在果蝇连接组中观察到的连接异质性和聚类（图 4c）。事实上，仅通过拟合两个参数（Hebbian 概率 $p$ 和相互作用强度 $\beta$），依赖于活动的动力学就能定量地再现所有被分析连接组中的连接异质性和聚类（图 4d）。此外，对于相同的 $p$ 和 $\beta$ 值，我们发现</p>
+<p>[第7页，第1段]
+该活动依赖模型准确预测了真实网络中连接强度的分布（图4e–i）。因此，通过将网络动力学扩展到包含Hebbian可塑性（Hebbian plasticity），神经元之间的连接会自组织产生不仅具有重尾分布（heavy-tailed）的连接强度，还形成了真实网络中观察到的聚类（clustering）现象。</p>
+<p>[第7页，第2段]
+讨论
+在多种不同物种中，神经元连接强度均呈现相似的重尾分布（图1），这表明存在共同的潜在机制。然而，通过简单规则生成具有真实特征的神经元连接是众所周知的难题\textsuperscript{50,51}。在此，我们开发了一个最小模型（minimal model），其中突触连接在优先增长（preferential growth）和随机动力学（random dynamics）的混合作用下自组织。由此产生的网络展现出渐近无标度（scale-free）的连接强度分布，其指数 $\gamma = 1 + \frac{1}{p}$ 仅取决于优先增长的比例 $p$（图2）。此外，通过将模型推广至包含Hebbian（活动依赖）可塑性，网络动力学自然产生了聚类现象（图3），这是神经元连接的另一个显著特征（图4）。</p>
+<p>[第7页，第3段]
+鉴于该模型的简洁性，未来工作可以立即开始纳入更真实的可塑性机制，这进而可能产生在神经元连接组（connectomes）中观察到的其他特性。例如，可以基于等时相关性（equal-time correlations）更新突触连接，而是进一步推广活动依赖模型以包含脉冲时间依赖可塑性（spike-time-dependent plasticity），其中突触基于时间延迟相关性（time-delayed correlations）进行更新\textsuperscript{2,35}。这些时间不对称性将自然产生连接本身的不对称性，这是真实连接组的一个核心属性\textsuperscript{4–9,11,12,18,19,25,26,47}。此外，为简化起见，我们的网络动力学（1）包含了关于总连接强度 $S$ 的全局信息，（2）假设修剪任何给定连接的概率是均匀的（图2a左），并且（3）允许神经元之间的所有可能连接。未来工作可以通过限制为网络拓扑的局部信息、考虑非均匀修剪以及约束允许的连接——这是真实神经元可塑性的三个特征\textsuperscript{52,53}——来引入额外的生物学真实性。</p>
+<p>[第7页，第4段]
+除了新的可塑性机制，还可以在活动依赖模型中直接实现更具生物物理真实性的神经元活动模型\textsuperscript{40}。在此，为了便于解析推导，我们专注于一个递归非线性动力学（recurrent nonlinear dynamics）的统计物理模型。像这样的Ising模型（Ising models）能够再现真实神经元群体中观察到的发放率（firing rates）和相关性（correlations）\textsuperscript{44,45}。这些最大熵模型（maximum entropy models）主要应用于静态网络拓扑，为动态连接性的研究打开了大门。或者，在未来工作中，可以研究更具生物学启发性的脉冲活动（spiking activity）或神经振荡（neural oscillations）模型\textsuperscript{10,54}。重要的是，对于任何神经元间相关性随网络距离减小的模型，我们的框架仍应能产生同时具有重尾连接强度分布和高聚类系数的网络（图3）。这些结果共同展示了连接组的两个基本特征——重尾连接性和聚类——如何从简单的网络动力学中产生，为未来研究神经元连接的自组织提供了框架。</p>
+<p>[第7页，第5段]
+在线内容
+任何方法、额外参考文献、Nature Portfolio报告摘要、源数据、扩展数据、补充信息、致谢、同行评审信息；作者贡献和利益冲突的详细信息；以及数据和代码可用性声明，均可访问 <a href="https://doi.org/10.1038/s41567-023-02332-9">https://doi.org/10.1038/s41567-023-02332-9</a> 获取。</p>
+<p>[第7页，第6段]
+参考文献</p>
+<ol>
+<li>Ho, V. M., Lee, J.-A. &amp; Martin, K. C. 突触可塑性的细胞生物学. <em>Science</em> 334, 623–628 (2011).</li>
+</ol>
+<p>[第7页，第7段]
+2. Magee, J. C. &amp; Grienberger, C. 突触可塑性的形式与功能. <em>Annu. Rev. Neurosci.</em> 43, 95–117 (2020).</p>
+<p>[第7页，第8段]
+3. Gómez-Palacio-Schjetnan, A. &amp; Escobar, M. L. 神经营养因子与突触可塑性. <em>Curr. Top. Behav. Neurosci.</em> 15, 117–136 (2013).</p>
+<p>[第7页，第9段]
+4. Song, S., Sjöström, P. J., Reigl, M., Nelson, S. &amp; Chklovskii, D. B. 局部皮层回路中突触连接的高度非随机特征. <em>PLoS Biol.</em> 3, e68 (2005).</p>
+<p>[第7页，第10段]
+5. Scheffer, L. K. 等. 成年果蝇中枢脑的连接组与分析. <em>eLife</em> 9, e57443 (2020).</p>
+<p>[第7页，第11段]
+6. Feldmeyer, D., Egger, V., Lübke, J. &amp; Sakmann, B. 发育中大鼠体感皮层单个“桶”内兴奋性第4层神经元对之间的可靠突触连接. <em>J. Physiol.</em> 521, 169–190 (1999).</p>
+<p>[第7页，第12段]
+7. Lefort, S., Tomm, C., Sarria, J.-C. F. &amp; Petersen, C. C. 小鼠初级体感皮层C2桶柱的兴奋性神经元网络. <em>Neuron</em> 61, 301–316 (2009).</p>
+<p>[第7页，第13段]
+8. Ikegaya, Y. 等. 锥体间脉冲传输稳定了递归网络活动的稀疏性. <em>Cereb. Cortex</em> 23, 293–304 (2013).</p>
+<p>[第7页，第14段]
+9. Loewenstein, Y., Kuras, A. &amp; Rumpel, S. 乘法动力学是体内新皮层棘大小对数正态分布出现的基础. <em>J. Neurosci.</em> 31, 9481–9488 (2011).</p>
+<p>[第7页，第15段]
+10. Lynn, C. W. &amp; Bassett, D. S. 脑网络结构、功能与控制的物理学. <em>Nat. Rev. Phys.</em> 1, 318 (2019).</p>
+<p>[第7页，第16段]
+11. Dorkenwald, S. 等. 皮层锥体神经元之间突触的二元与模拟变异. <em>eLife</em> 11, e76120 (2022).</p>
+<p>[第7页，第17段]
+12. Kornfeld, J. 等. 强化学习中信用分配的解剖学基础. 预印本于 <em>bioRxiv</em> <a href="https://doi.org/10.1101/2020.02.18.954354">https://doi.org/10.1101/2020.02.18.954354</a> (2020).</p>
+<p>[第7页，第18段]
+13. Farashahi, S. 等. 元可塑性作为不确定性下适应性学习与选择的神经基础. <em>Neuron</em> 94, 401–414 (2017).</p>
+<p>[第7页，第19段]
+14. Xu, W. &amp; Südhof, T. C. 记忆特异性和泛化的神经回路. <em>Science</em> 339, 1290–1295 (2013).</p>
+<p>[第7页，第20段]
+15. Mei-ling, A. J. &amp; Griffith, L. C. CaM激酶II和视觉输入调节控制求偶条件化的神经回路中的记忆形成. <em>J. Neurosci.</em> 17, 9384–9391 (1997).</p>
+<p>[第7页，第21段]
+16. Lei, Z., Henderson, K. &amp; Keleman, K. 连接果蝇长期记忆中学习与睡眠的神经回路. <em>Nat. Commun.</em> 13, 609 (2022).</p>
+<p>[第7页，第22段]
+17. Almeida, R., Barbosa, J. &amp; Compte, A. 视觉空间工作记忆精度的神经回路基础：计算与行为研究. <em>J. Neurophysiol.</em> 114, 1806–1818 (2015).</p>
+<p>[第7页，第23段]
+18. Helmstaedter, M. 等. 小鼠视网膜内丛状层的连接组重建. <em>Nature</em> 500, 168–174 (2013).</p>
+<p>[第7页，第24段]
+19. Takemura, S.-Y. 等. 果蝇连接组学提示的视觉运动检测回路. <em>Nature</em> 500, 175–181 (2013).</p>
+<p>[第7页，第25段]
+20. Murthy, M., Fiete, I. &amp; Laurent, G. 测试果蝇蘑菇体中气味反应的刻板性. <em>Neuron</em> 59, 1009–1023 (2008).</p>
+<p>[第7页，第26段]
+21. Borst, A. &amp; Helmstaedter, M. 果蝇与哺乳动物运动视觉中的共同回路设计. <em>Nat. Neurosci.</em> 18, 1067–1076 (2015).</p>
+<p>[第7页，第27段]
+22. Song, Y.-H. 等. 听觉主导视觉感知的神经回路. <em>Neuron</em> 93, 940–954 (2017).</p>
+<p>[第7页，第28段]
+23. Sokolowski, M. B. “简单”模型系统中的社会互动. <em>Neuron</em> 65, 780–794 (2010).</p>
+<p>[第7页，第29段]
+24. Tootoonian, S., Coen, P., Kawai, R. &amp; Murthy, M. 果蝇脑中求偶鸣声的神经表征. <em>J. Neurosci.</em> 32, 787–798 (2012).</p>
+<p>[第7页，第30段]
+25. Varshney, L. R., Chen, B. L., Paniagua, E., Hall, D. H. &amp; Chklovskii, D. B. 秀丽隐杆线虫神经元网络的结构特性. <em>PLoS Comput. Biol.</em> 7, e1001066 (2011).</p>
+<p>[第7页，第31段]
+26. Randel, N. 等. 视觉导航感觉运动回路的神经元连接组. <em>eLife</em> 3, e02730 (2014).</p>
+<p>[第8页，第1段]
+27. Yamada, T. 等. 感觉经验重塑神经回路中的基因组结构以驱动运动学习. <em>Nature</em> 569, 708–713 (2019).
+28. Piggott, B. J., Liu, J., Feng, Z., Wescott, S. A. &amp; Xu, X. S. 秀丽隐杆线虫运动起始的神经回路和突触机制. <em>Cell</em> 147, 922–933 (2011).
+29. Helmstaedter, M. 细胞分辨率连接组学：密集神经回路重建的挑战. <em>Nat. Methods</em> 10, 501–507 (2013).
+30. White, J. G., Southgate, E., Thomson, J. N. &amp; Brenner, S. 等. 线虫秀丽隐杆线虫神经系统的结构. <em>Phil. Trans. R. Soc. Lond. B</em> 314, 1–340 (1986).
+31. Butz, M., Wörgötter, F. &amp; van Ooyen, A. 活动依赖性结构可塑性. <em>Brain Res. Rev.</em> 60, 287–305 (2009).
+32. Stringer, C., Pachitariu, M., Steinmetz, N., Carandini, M. &amp; Harris, K. D. 视觉皮层群体响应的高维几何. <em>Nature</em> 571, 361–365 (2019).
+33. Dorogovtsev, S. N. &amp; Mendes, J. F. 网络的演化. <em>Adv. Phys.</em> 51, 1079–1187 (2002).
+34. Lynn, C. W., Holmes, C. M. &amp; Palmer, S. E. 涌现的无标度网络. <em>Preprint at arXiv</em> <a href="https://doi.org/10.48550/arXiv.2210.06453">https://doi.org/10.48550/arXiv.2210.06453</a> (2022).
+35. Caporale, N. &amp; Dan, Y. 脉冲时序依赖可塑性：一种Hebbian学习规则. <em>Annu. Rev. Neurosci.</em> 31, 25–46 (2008).
+36. Markram, H., Lübke, J., Frotscher, M. &amp; Sakmann, B. 突触后动作电位与兴奋性突触后电位重合对突触效能的调控. <em>Science</em> 275, 213–215 (1997).
+37. Liu, Y.-Y., Slotine, J.-J. &amp; Barabási, A.-L. 复杂网络的可控性. <em>Nature</em> 473, 167–173 (2011).
+38. Lynn, C. W., Papadopoulos, L., Kahn, A. E. &amp; Bassett, D. S. 复杂网络中的人类信息处理. <em>Nat. Phys.</em> 16, 965–973 (2020).
+39. Lynn, C. W. &amp; Bassett, D. S. 量化复杂网络的可压缩性. <em>Proc. Natl Acad. Sci. USA</em> 118, e2023473118 (2021).
+40. Yuste, R. 从神经元学说（neuron doctrine）到神经网络（neural networks）. <em>Nat. Rev. Neurosci.</em> 16, 487–497 (2015).
+41. Bianconi, G. Barabási–Albert网络上Ising模型（Ising model）的平均场解. <em>Phys. Lett. A</em> 303, 166–168 (2002).
+42. Lynn, C. W. &amp; Lee, D. D. 载于 <em>Advances in Neural Information Processing Systems</em> (eds Lee, D. 等) 2495–2503 (2016).
+43. Aguilera, M., Moosavi, S. A. &amp; Shimazaki, H. 非对称动力学Ising系统平均场理论的统一框架. <em>Nat. Commun.</em> 12, 1197 (2021).</p>
+<p>[第8页，第2段]
+44. Schneidman, E., Berry, M. J., Segev, R. &amp; Bialek, W. 弱成对相关性意味着神经群体中强相关的网络状态. <em>Nature</em> 440, 1007 (2006).
+45. Tkačik, G. 等. 在大规模感觉神经元网络中搜索集体行为. <em>PLoS Comput. Biol.</em> 10, e1003408 (2014).
+46. Kim, J. Z., Lu, Z., Nozari, E., Pappas, G. J. &amp; Bassett, D. S. 训练循环神经网络从局部示例推断全局时间结构. <em>Nat. Mach. Intell.</em> 3, 316–323 (2021).
+47. Bentley, B. 等. 秀丽隐杆线虫的多层连接组（multilayer connectome）. <em>PLoS Comput. Biol.</em> 12, e1005283 (2016).
+48. Bassett, D. S. &amp; Sporns, O. 网络神经科学（network neuroscience）. <em>Nat. Neurosci.</em> 20, 353–364 (2017).
+49. Stiso, J. &amp; Bassett, D. S. 空间嵌入对神经元网络架构施加约束. <em>Trends Cogn. Sci.</em> 22, 1127–1142 (2018).
+50. Morrison, A., Aertsen, A. &amp; Diesmann, M. 平衡随机网络中的脉冲时序依赖可塑性. <em>Neural Comput.</em> 19, 1437–1467 (2007).
+51. Effenberger, F., Jost, J. &amp; Levina, A. 通过STDP（spike-timing-dependent plasticity）和稳态可塑性在平衡态网络中的自组织. <em>PLoS Comput. Biol.</em> 11, e1004420 (2015).
+52. Yang, G., Pan, F. &amp; Gan, W.-B. 稳定维持的树突棘与终生记忆相关. <em>Nature</em> 462, 920–924 (2009).
+53. Oh, W. C., Hill, T. C. &amp; Zito, K. 伴随突触减弱的树突棘结构可塑性的突触特异性和大小依赖性机制. <em>Proc. Natl Acad. Sci. USA</em> 110, E305–E312 (2013).
+54. Brunel, N. 稀疏连接的兴奋性和抑制性脉冲神经元网络的动力学. <em>J. Comput. Neurosci.</em> 8, 183–208 (2000).</p>
+<p>[第8页，第3段]
+<strong>出版商注</strong> Springer Nature对于已出版地图中的管辖权主张及机构归属保持中立。</p>
+<p>[第8页，第4段]
+Springer Nature或其许可方（例如学会或其他合作伙伴）根据与作者或其他权利持有者签订的出版协议，拥有本文的专有权；作者对本文已接受手稿版本的自行存档仅受此类出版协议条款和适用法律的约束。</p>
+<p>[第8页，第5段]
+© 作者，根据Springer Nature Limited 2024的独家许可，2024年更正版</p>
+<p>[第9页，第1段]
+方法</p>
+<p>[第9页，第2段]
+神经元连接数据</p>
+<p>[第9页，第3段]
+本文分析的数据集均先前已发表并可公开访问\cite{5,18,19,25,26,32}。所有连接组（connectome）均通过电子显微镜（electron microscopy）在神经元层面进行切片和成像\cite{5,18,19,25,26}。随后，使用手动标记和自动化图像处理相结合的方法追踪神经元和突触（synapse）（或小鼠视网膜中的接触点）。关于果蝇中央脑（图1a,b）\cite{5}、果蝇视髓质（图1c）\cite{19}、秀丽隐杆线虫（图1d）\cite{25,30}、沙蚕感觉运动回路（图1e）\cite{26}和小鼠视网膜（图1f,g）\cite{18}的进一步实验细节，请参见相应参考文献。我们已将神经元及其连接列表以通用格式公开提供（&lsquo;数据可用性&rsquo;）。</p>
+<p>[第9页，第4段]
+在与活动无关模型（activity-independent model）（图1和2）进行比较时，连接$A_{ij}$是有向的，反映了从一个神经元$i$到另一个神经元$j$的突触数量（或对于小鼠视网膜，为接触面积）。对于小鼠视网膜，我们将每个连接的总面积四舍五入到最接近的$\mu m^2$，以创建连接强度的离散单位。在与活动依赖模型（activity-dependent model）（图4）进行比较时，我们使用连接组的对称化版本，其中连接$A + A^I$反映了两个方向上神经元之间的突触数量（或接触面积）。在表1中，我们列出了不同连接组的有向和对称化版本的网络属性。</p>
+<p>[第9页，第5段]
+为了研究神经元活动的协方差（covariance）（图1h和补充图1），我们研究了一个先前发表的数据集，该数据集包含清醒小鼠视觉皮层中大型神经元群体的双光子钙成像记录\cite{32}。为了解释神经元之间荧光强度的变化，我们对预处理后的活动迹线进行二值化，以反映在每个时间点神经元是高于还是低于其平均活动。关于实验设置和数据处理的更多细节，请参见参考文献32。</p>
+<p>[第9页，第6段]
+模拟活动无关模型</p>
+<p>[第9页，第7段]
+在活动无关模型（图2）中，我们从$n$个神经元、$S = \sum_{ij} A_{ij}$个连接强度单位（平均连接强度为$s = \frac{S}{n(n-1)}$）和优先增长概率$p$开始。然后，网络按照正文中的描述进行演化。在整篇论文中，我们模拟具有$n = 10^3$个神经元的网络，总共有$n(n-1) \approx 10^6$个可能的有向连接，并且（除非另有说明）平均连接强度为$s = 1$。我们通过将强度$S$随机分配到可能的连接中来初始化每个网络。在计算分布（如图2b）或感兴趣的量（如图2c,d）时，我们取100个网络样本；在每个样本之间，我们修剪$n(n-1)$个不同的连接，使得每个有向神经元对平均被修剪一次。在采集任何样本之前，我们还会对每个连接平均修剪50次以进行预烧（burn-in）。在实践中，为了加快计算速度，可以并行运行多个网络更新；这里我们一次修剪1%的可能连接，并同时重新分配所有被修剪的强度。我们确认这种并行化不会影响模拟的准确性（图2b）。在图3和4中，为了与活动依赖模型进行比较，我们研究对称网络（而不是有向网络）。在实践中，模拟的唯一区别在于有$n(n-1)/2$个可能的连接（神经元对）而不是$n(n-1)$个有向对，因此总突触强度由$S = \frac{1}{2} \sum_{ij} A_{ij}$给出。模拟活动无关模型的代码已公开提供（&lsquo;代码可用性&rsquo;）。</p>
+<p>[第9页，第8段]
+推导连接强度分布</p>
+<p>[第9页，第9段]
+当网络根据活动无关动力学演化时，连接强度收敛到方程(1)中定义的稳态分布$P(s)$。为了推导$P(s)$，我们首先写出主方程（master equation），描述从动力学的一个时间步$t$到下一步的连接强度分布变化$P_{t+1}(s) - P_t(s)$。在每次网络更新期间，一个随机连接被修剪，导致概率平均减少$-\frac{1}{n(n-1)} P_t(s)$。平均而言，修剪移除了$s$个连接强度单位。对于每个被修剪的强度单位，我们以概率$p$执行优先增长（preferential growth），以概率$S$选择每个强度为$s$的连接。平均而言，这种优先增长导致概率增加$sp \frac{s-1}{s} P_t(s-1) = \frac{1}{n(n-1)} p(s-1) P_t(s-1)$和减少$-sp \frac{s}{s} P_t(s) = -\frac{1}{n(n-1)} psP_t(s)$。最后，对于每个被修剪的强度单位，我们以概率$1-p$执行随机增长（random growth），平均导致概率增加$\frac{1}{n(n-1)} s(1-p) P_t(s-1)$和减少$-\frac{1}{n(n-1)} s(1-p) P_t(s)$。</p>
+<p>[第9页，第10段]
+结合上述贡献，我们得到以下主方程，</p>
+<p>[第9页，第11段]
+$$P_{t+1}(s) - P_t(s) = \frac{1}{n(n-1)} [-P_t(s) + p((s-1)P_t(s-1) - sp(s)) + s(1-p)(P_t(s-1) - P_t(s))]$$ \hspace{1cm} (3)</p>
+<p>[第9页，第12段]
+随着网络的演化，连接强度趋近于稳态分布$P_{t+1}(s) = P_t(s) = P(s)$，这将方程(3)转化为以下递归关系：</p>
+<p>[第9页，第13段]
+$$P(s) = \frac{p(s-1) + s(1-p)}{1 + ps + s(1-p)} P(s-1).$$ \hspace{1cm} (4)</p>
+<p>[第9页，第14段]
+求解$P(s)$，我们得到方程(1)中的分布，我们注意到在整篇论文中，该分布被归一化以覆盖正连接强度$s &gt; 0$（即排除强度为零的连接）。在强连接极限$s \gg s/p$下，我们有近似</p>
+<p>[第9页，第15段]
+$$\Gamma \left[ s + s \left( \frac{1}{p} - 1 \right) \right] \approx \Gamma(s) s^{\left( \frac{1}{p} - 1 \right)} \text{ 和 } \Gamma \left[ s + s \left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p} \right] \approx \Gamma(s) s^{\left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p}}.$$</p>
+<p>[第9页，第16段]
+因此，分布$P(s)$渐近地按$s^\gamma$缩放，其中$\gamma = 1 + \frac{1}{p}$。方程(1)中的解析稳态分布和幂律尾部（power-law tail）在图2b中得到数值确认。为了计算最能描述给定连接组的优先概率$p$（如图2e–i所示），我们在对数概率的均方根误差上运行梯度下降（gradient descent）（使用方程(1)中的解析分布）。</p>
+<p>[第9页，第17段]
+神经元活动中的协方差</p>
+<p>[第9页，第18段]
+为了研究活动依赖可塑性（activity-dependent plasticity），我们实现了模型神经元，这些神经元在每次网络更新之间达到由非线性方程$x = \tanh[\beta(Ax + b)]$定义的稳态活动$x_i$，其中$\beta$是相互作用强度，$b$是偏置（这里假设为零以简化），并且$\tanh(\cdot)$是逐分量应用的。此外，如常见做法，我们隐式地将连接$A_{ij}$除以$ns$进行归一化，使得对于大型网络，每个神经元的总相互作用强度趋近于一。该系统等价于一个平均场伊辛模型（mean-field Ising model），具有逆温度$\beta$、相互作用$A_{ij}$和外场$b_i = 0$。此外，我们可以将该模型映射到一个等价系统$\tilde{x} = \sigma[\beta(\tilde{A}\tilde{x} + \tilde{b})]$，其中状态$\tilde{x}<em>i = (x_i + 1)/2 \in [0, 1]$代表发放率，$\sigma(\cdot)$是逻辑函数（logistic function），新参数由$\tilde{A}</em>{ij} = 4A_{ij}$和$\tilde{b}<em>i = 2(b_i - \sum_j A</em>{ij})$给出。</p>
+<p>[第9页，第19段]
+对于对称连接$A = A^T$，可以使用涨落-耗散定理（fluctuation–dissipation theorem）计算活动中的协方差，</p>
+<p>[第9页，第20段]
+$$C_{ij} = \frac{dx_i}{db_j} = \beta \text{sech} \left[ \beta \left( \sum_k A_{ik} x_k + b_i \right) \right]^2 \left( \sum_k A_{ik} \frac{dx_k}{db_j} + \delta_{ij} \right)$$ \hspace{1cm} (5)</p>
+<p>[第9页，第21段]
+$$= \beta(1 - x_i^2) \left( \sum_k A_{ik} C_{kj} + \delta_{ij} \right)$$</p>
+<p>[第9页，第22段]
+给定网络活动的稳定解$x$，可以求解协方差$C = \beta(I - \beta DA)^{-1}D$，其中$D_{ij} = (1 - x_i^2)\delta_{ij}$，$I$是单位矩阵。</p>
+<p>[第9页，第23段]
+上述协方差表达式适用于任意相互作用强度$\beta$和偏置$b$。然而，对于零偏置$b = 0$，情况有所不同。</p>
+<p>[第10页，第1段]
+进一步简化：当相互作用足够弱时，即 $\beta &lt; \rho(A)$，其中 $\rho(\cdot)$ 为谱半径（即最大特征值的模长），自洽方程的唯一解为 $x = 0$。此时有 $D = I$，从而得到弱相互作用展开式。</p>
+<p>[第10页，第2段]
+$$C = \beta(I - \beta A)^{-1} = \beta \sum_{n=0}^{\infty} (\beta A)^n = \beta (I + \beta A + \beta^2 A^2 + \ldots). \tag{6}$$</p>
+<p>[第10页，第3段]
+当相互作用强度 $\beta$ 趋近于 $\rho(A)$ 时，解 $x = 0$ 变得不稳定，且方程(6)中的协方差发散；在此意义上，$\rho(A)$ 定义了临界相互作用强度。例如，若连接强度 $S$ 随机分布，则可证明在极限 $n \to \infty$ 下 $\rho(A) = 1$（补充信息第3节）。因此，对于随机连接性，弱相互作用展开对所有 $\beta &lt; 1$ 均成立。</p>
+<p>[第10页，第4段]
+<strong>模拟活动依赖性模型</strong></p>
+<p>[第10页，第5段]
+在活动依赖模型中，网络演化过程与活动独立模型（对称连接）完全相同，唯有一个关键差异：在优先生长阶段，我们不再以连接强度$A_{ij}$成比例的概率选择连接，而是以神经元对协方差$C_{ij}$成比例的概率选择神经元对。我们将这一新规则称为赫布生长（Hebbian growth）或赫布可塑性（Hebbian plasticity）。在每次动力学迭代前，需按前述方法计算协方差矩阵$C$，这进一步要求求解神经元平均活动的解$x$。通过初始化$x = -1$并迭代非线性方程$x \leftarrow \tanh(\beta Ax)$直至收敛，可高效完成计算。仿真中，我们考虑包含$n = 10^3$个神经元的网络，共有$n(n-1)/2 \approx 5 \times 10^5$条可能的无向连接，平均连接强度$S = 1$（除非另有说明）。与活动独立模型相同，每次计算记录100个样本，样本间每条可能连接平均被修剪一次，样本前每条可能连接经50次修剪作为预烧期（burn-in）。在图3c–f的相图（phase diagram）中，为改善$p \geq 0.7$时的采样效果，每个数据点取十次仿真的平均值。活动依赖模型的仿真代码已公开（代码可用性，Code Availability）。</p>
+<p>[第10页，第6段]
+引用多样性</p>
+<p>[第10页，第7段]
+近期多个科学领域（尤其是物理学）的研究发现，引用偏差（citation bias）对女性及其他少数群体造成了负面影响。本文旨在主动考虑选择能反映领域多样性的参考文献，涵盖思想、贡献形式、性别及其他因素。排除（包含）对当前作者的自我引用后，我们的参考文献中女性第一作者占比43%（41%），女性资深作者占比36%（39%）。</p>
+<p>[第10页，第8段]
+<strong>数据可用性</strong></p>
+<p>[第10页，第9段]
+本文分析的神经元数据公开可获取于github.com/ChrisWLynn/Heavy_tailed_connectivity。</p>
+<p>[第10页，第10段]
+<strong>代码可用性</strong></p>
+<p>[第10页，第11段]
+本文用于执行分析的代码已在 github.com/ChrisWLynn/Heavy_tailed_connectivity 上公开提供。</p>
+<p>[第10页，第12段]
+<strong>参考文献</strong></p>
+<p>[第10页，第13段]
+55. Mitchell, S. M., Lange, S. &amp; Brus, H. 国际关系期刊中的性别化引用模式（Gendered citation patterns in international relations journals）。<em>Int. Stud. Perspect.</em> <strong>14</strong>, 485–492 (2013)。</p>
+<p>[第10页，第14段]
+56. Dion, M. L., Sumner, J. L. &amp; Mitchell, S. M. 政治学与社会科学方法论领域中的性别化引用模式（Gendered citation patterns across political science and social science methodology fields）。<em>政治分析（Polit. Anal.）</em> <strong>26</strong>, 312–327 (2018)。</p>
+<p>[第10页，第15段]
+57. Caplar, N., Tacchella, S. &amp; Birrer, S. 基于引用次数的天文出版物中性别偏见的定量评估. <em>Nat. Astron.</em> <strong>1</strong>, 0141 (2017).</p>
+<p>[第10页，第16段]
+58. Dworkin, J. D. 等人. 神经科学参考文献列表中性别失衡的程度及驱动因素. <em>Nat. Neurosci.</em> <strong>23</strong>, 918–926 (2020).</p>
+<p>[第10页，第17段]
+59. Bertolero, M. A. 等人。神经科学参考文献列表中的种族与民族失衡及其与性别的交叉。预印本于 <em>bioRxiv</em> <a href="https://doi.org/10.1101/2020.10.12.336230">https://doi.org/10.1101/2020.10.12.336230</a> (2020)。</p>
+<p>[第10页，第18段]
+60. Teich, E. G. 等. 当代物理学中的引用不平等与性别化引用实践. <em>Nat. Phys.</em> <strong>18</strong>, 1161–1170 (2022).</p>
+<p>[第10页，第19段]
+<strong>致谢</strong></p>
+<p>[第10页，第20段]
+我们感谢D. J. Schwab和L. Papadopoulos的讨论与反馈，以及P. Kratsios在插图绘制方面的协助。本研究部分得到以下资助：美国国家科学基金会（National Science Foundation）通过生物功能物理学中心（Center for the Physics of Biological Function, PHY-1734030）及研究生研究奖学金（Graduate Research Fellowship, C.M.H.）的支持；詹姆斯·S·麦克唐纳基金会（James S. McDonnell Foundation）通过博士后奖学金（Postdoctoral Fellowship Award, C.W.L.）的支持；以及美国国立卫生研究院（National Institutes of Health）BRAIN计划（RO1EB026943）的支持。</p>
+<p>[第10页，第21段]
+<strong>作者贡献</strong></p>
+<p>[第10页，第22段]
+C.W.L.和S.E.P.构思了该项目。C.W.L.设计了模型，C.W.L.和C.M.H.在S.E.P.的指导下进行了分析。C.W.L.撰写了论文和补充信息（Supplementary Information），C.M.H.和S.E.P.对论文和补充信息进行了编辑。</p>
+<p>[第10页，第23段]
+<strong>利益冲突</strong></p>
+<p>[第10页，第24段]
+作者声明无利益冲突。</p>
+<p>[第11页，第1段]</p>
+<h2 id="附加信息">附加信息</h2>
+<p>[第11页，第2段]
+补充信息 在线版本包含补充材料，可访问 <a href="https://doi.org/10.1038/s41567-023-02332-9">https://doi.org/10.1038/s41567-023-02332-9</a> 获取。</p>
+<p>[第11页，第3段]
+通信和材料请求应发送至 Christopher W. Lynn。</p>
+<p>[第11页，第4段]
+同行评审信息 《自然·物理学》感谢 Manfred Kitzbichler、Dietmar Plenz 及其他匿名审稿人对本工作的同行评审所做的贡献。</p>
+<p>[第11页，第5段]
+重印和许可信息可访问 <a href="https://www.nature.com/reprints">www.nature.com/reprints</a> 获取。</p>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var tabId = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        document.getElementById('tab-' + tabId).classList.add('active');
+        history.replaceState(null, '', '#tab-' + tabId);
+        lucide.createIcons();
+    });
+});
+
+var hash = window.location.hash.replace('#tab-', '');
+if (hash) {
+    var btn = document.querySelector('.tab-btn[data-tab="' + hash + '"]');
+    if (btn) btn.click();
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 论文库</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

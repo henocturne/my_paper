@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tags | Paper Library</title>
+    <meta name="description" content="Academic Paper Management and Reading Platform">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/en/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">Paper Library</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/en/" class="nav-link">
+                    Home
+                </a>
+                
+                <a href="/en/paper/" class="nav-link">
+                    Papers
+                </a>
+                
+                <a href="/en/tags/" class="nav-link">
+                    Tags
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="page-header">
+    <h1>Tags</h1>
+    
+</div><div class="filter-bar" id="filterBar">
+    <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
+        <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
+    </button>
+</div>
+
+
+
+<div class="filter-info" id="filterInfo">共 0 篇论文</div>
+
+<div class="paper-grid" id="paperGrid">
+    
+</div>
+
+<script>
+<script>
+<script>
+var selectedTags = new Set();
+
+function toggleTag(tag, btn) {
+    if (selectedTags.has(tag)) { selectedTags.delete(tag); btn.classList.remove("active"); }
+    else { selectedTags.add(tag); btn.classList.add("active"); }
+    applyFilters();
+}
+
+function applyFilters() {
+    var info = document.getElementById("filterInfo");
+    var clearBtn = document.getElementById("clearFiltersBtn");
+    var visible = 0;
+    document.querySelectorAll(".paper-card").forEach(function(card) {
+        var cardTags = (card.dataset.tags || "").split(",").map(function(t) { return t.trim(); }).filter(Boolean);
+        var match = selectedTags.size === 0 || Array.from(selectedTags).every(function(t) { return cardTags.indexOf(t) >= 0; });
+        card.style.display = match ? "flex" : "none";
+        if (match) visible++;
+    });
+    var tagInfo = selectedTags.size > 0 ? Array.from(selectedTags).join(" + ") + " — " : "";
+    info.textContent = tagInfo ? "已筛选: " + tagInfo + "共 " + visible + " 篇论文" : "共 " + document.querySelectorAll(".paper-card").length + " 篇论文";
+    clearBtn.style.display = selectedTags.size > 0 ? "inline-block" : "none";
+    lucide.createIcons();
+}
+
+function clearFilters() {
+    selectedTags.clear();
+    document.querySelectorAll(".tag-btn").forEach(function(b) { b.classList.remove("active"); });
+    applyFilters();
+}
+
+
+(function() {
+    var tags = new Set();
+    document.querySelectorAll(".paper-card").forEach(function(card) {
+        (card.dataset.tags || "").split(",").forEach(function(t) { if (t) tags.add(t.trim()); });
+    });
+    var filterBar = document.getElementById("filterBar");
+    Array.from(tags).sort().forEach(function(tag) {
+        var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
+        var btn = document.createElement("button");
+        btn.className = "tag-btn";
+        btn.dataset.tag = tag;
+        btn.innerHTML = tag + ' <span class="tag-count">' + count + "</span>";
+        btn.onclick = function() { toggleTag(tag, btn); };
+        filterBar.appendChild(btn);
+    });
+})();
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Paper Library</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

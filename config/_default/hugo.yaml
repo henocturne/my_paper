@@ -1,0 +1,21 @@
+# Hugo configuration for Paper Library
+title: '论文库'
+baseURL: 'http://localhost:1313/'
+
+defaultContentLanguage: zh
+hasCJKLanguage: true
+
+enableGitInfo: false
+summaryLength: 60
+pagination:
+  pagerSize: 20
+enableEmoji: true
+enableRobotsTXT: false
+disableAliases: true
+
+taxonomies:
+  tag: tags
+
+markup:
+  highlight:
+    lineNos: false

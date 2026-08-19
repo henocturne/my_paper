@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamical Phase Transitions | 论文库</title>
+    <meta name="description" content="学术论文管理与阅读平台">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">论文库</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/" class="nav-link">
+                    首页
+                </a>
+                
+                <a href="/paper/" class="nav-link">
+                    论文
+                </a>
+                
+                <a href="/tags/" class="nav-link">
+                    标签
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="page-header">
+    <h1>标签: Dynamical Phase Transitions</h1>
+</div>
+
+<div class="tag-cloud">
+    
+    <a href="/tags/network-evolution/">
+        Network Evolution
+        <span class="count">(2)</span>
+    </a>
+    
+    <a href="/tags/clustering/">
+        Clustering
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/dynamical-phase-transitions/">
+        Dynamical Phase Transitions
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/heavy-tailed-connectivity/">
+        Heavy-Tailed Connectivity
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/hebbian-self-organization/">
+        Hebbian Self-Organization
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/hyperbolic-scaling/">
+        Hyperbolic Scaling
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/neuronal-connectomes/">
+        Neuronal Connectomes
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/nonequilibrium-statistical-physics/">
+        Nonequilibrium Statistical Physics
+        <span class="count">(1)</span>
+    </a>
+    
+    <a href="/tags/statistical-physics/">
+        Statistical Physics
+        <span class="count">(1)</span>
+    </a>
+    
+</div>
+
+<div class="filter-bar" id="filterBar">
+    <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
+        <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
+    </button>
+</div>
+
+<div class="filter-info" id="filterInfo">共 1 篇论文</div>
+
+<div class="paper-grid" id="paperGrid">
+    
+    <article class="paper-card" data-tags="Dynamical Phase Transitions,Nonequilibrium Statistical Physics,Network Evolution,Hyperbolic Scaling">
+        
+        <div class="tags">
+            
+            <span class="tag">Dynamical Phase Transitions</span>
+            
+            <span class="tag">Nonequilibrium Statistical Physics</span>
+            
+            <span class="tag">Network Evolution</span>
+            
+            <span class="tag">Hyperbolic Scaling</span>
+            
+        </div>
+        
+        <h3><a href="/paper/dpt/">Dynamical Phase Transitions in Nonequilibrium Networks</a></h3>
+        
+        <div class="authors">Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song</div>
+        
+        
+        <div class="venue">Physical Review Letters</div>
+        
+        <div class="summary"></div>
+        <div class="card-footer">
+            <div class="links">
+                <a href="/paper/dpt/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
+                
+                <a href="/pdf/dpt.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
+                
+            </div>
+        </div>
+    </article>
+    
+</div>
+
+<script>
+
+var currentTag = 'Dynamical Phase Transitions';
+var tags = new Set();
+document.querySelectorAll('.paper-card').forEach(function(card) {
+    (card.dataset.tags || '').split(',').forEach(function(t) { if (t && t !== currentTag) tags.add(t.trim()); });
+});
+
+var filterBar = document.getElementById('filterBar');
+var sortedTags = [...tags].sort();
+sortedTags.forEach(function(tag) {
+    var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
+    var btn = document.createElement('button');
+    btn.className = 'tag-btn';
+    btn.dataset.tag = tag;
+    btn.innerHTML = tag + ' <span class="tag-count">' + count + '</span>';
+    btn.onclick = function() { toggleTag(tag, btn); };
+    filterBar.appendChild(btn);
+});
+
+var selectedTags = new Set();
+
+function toggleTag(tag, btn) {
+    if (selectedTags.has(tag)) { selectedTags.delete(tag); btn.classList.remove('active'); }
+    else { selectedTags.add(tag); btn.classList.add('active'); }
+    applyFilters();
+}
+
+function applyFilters() {
+    document.getElementById('clearFiltersBtn').style.display = selectedTags.size > 0 ? 'inline-block' : 'none';
+    var info = document.getElementById('filterInfo');
+    var visible = 0;
+    document.querySelectorAll('.paper-card').forEach(function(card) {
+        var cardTags = (card.dataset.tags || '').split(',').map(function(t) { return t.trim(); }).filter(function(t) { return t; });
+        var match = selectedTags.size === 0 || [...selectedTags].every(function(t) { return cardTags.indexOf(t) >= 0; });
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+    });
+    info.textContent = selectedTags.size > 0
+        ? '已筛选: ' + [...selectedTags].join(' + ') + ' — 共 ' + visible + ' 篇论文'
+        : '共 ' + document.querySelectorAll('.paper-card').length + ' 篇论文';
+    lucide.createIcons();
+}
+
+function clearFilters() {
+    selectedTags.clear();
+    document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('active'); });
+    applyFilters();
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 论文库</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

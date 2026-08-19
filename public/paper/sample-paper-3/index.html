@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quantum Machine Learning: A Survey | 论文库</title>
+    <meta name="description" content="学术论文管理与阅读平台">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">论文库</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/" class="nav-link">
+                    首页
+                </a>
+                
+                <a href="/paper/" class="nav-link">
+                    论文
+                </a>
+                
+                <a href="/tags/" class="nav-link">
+                    标签
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="paper-single">
+    <div class="paper-header">
+        <h1>Quantum Machine Learning: A Survey</h1>
+        <div class="paper-meta">
+            
+            <span class="meta-item">
+                <i data-lucide="users" style="width:16px;height:16px;"></i>
+                Smith J., Johnson M.
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="building-2" style="width:16px;height:16px;"></i>
+                ACM Comput. Surv., 2025
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                2025
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="tags" style="width:16px;height:16px;"></i>
+                quantum machine learning, NISQ
+            </span>
+            
+        </div>
+    </div>
+
+    <nav class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="citation">
+            <i data-lucide="quote" style="width:16px;height:16px;"></i> 引用
+        </button>
+        <button class="tab-btn" data-tab="authors">
+            <i data-lucide="users" style="width:16px;height:16px;"></i> 作者
+        </button>
+        <button class="tab-btn" data-tab="model">
+            <i data-lucide="cpu" style="width:16px;height:16px;"></i> 模型
+        </button>
+        <button class="tab-btn" data-tab="results">
+            <i data-lucide="bar-chart-3" style="width:16px;height:16px;"></i> 结果
+        </button>
+        <button class="tab-btn" data-tab="figures">
+            <i data-lucide="image" style="width:16px;height:16px;"></i> 图像
+        </button>
+        <button class="tab-btn" data-tab="code">
+            <i data-lucide="code" style="width:16px;height:16px;"></i> 代码
+        </button>
+        <button class="tab-btn" data-tab="mindmap">
+            <i data-lucide="git-branch" style="width:16px;height:16px;"></i> 思维导图
+        </button>
+
+        <button class="tab-btn" data-tab="translation">
+            <i data-lucide="languages" style="width:16px;height:16px;"></i> 翻译
+        </button>
+    </nav><div class="tab-content active" id="tab-citation">
+        <div class="citation-block">Smith, J., &amp; Johnson, M. (2025). Quantum ML Survey. <em>ACM Comput. Surv.</em>, 58(2).</div>
+        
+        
+        <h3 style="margin-bottom:12px;font-size:1.1rem;">摘要</h3>
+        <div class="citation-block" style="background:var(--bg-card);">
+            Survey of quantum machine learning.
+        </div>
+        
+    </div><div class="tab-content" id="tab-authors">
+        <div class="prose-content"><table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Affiliation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>James Smith</td>
+          <td>MIT</td>
+      </tr>
+      <tr>
+          <td>Maria Johnson</td>
+          <td>Stanford</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+        
+    </div><div class="tab-content" id="tab-model">
+        <div class="prose-content"><table>
+  <thead>
+      <tr>
+          <th>Property</th>
+          <th>Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Model</td>
+          <td>VQE</td>
+      </tr>
+      <tr>
+          <td>Hardware</td>
+          <td>IBM Eagle</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+        
+    </div><div class="tab-content" id="tab-results">
+        <div class="prose-content"><table>
+  <thead>
+      <tr>
+          <th>Metric</th>
+          <th>Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Accuracy</td>
+          <td>94.2%</td>
+      </tr>
+      <tr>
+          <td>Speedup</td>
+          <td>2-5x</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+        
+    </div><div class="tab-content" id="tab-figures">
+        <div class="prose-content"><h3 id="main-figures">Main Figures</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Figure</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Fig. 1</td>
+          <td>QML taxonomy</td>
+      </tr>
+      <tr>
+          <td>Fig. 2</td>
+          <td>Variational quantum circuit</td>
+      </tr>
+      <tr>
+          <td>Fig. 3</td>
+          <td>Performance comparison</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+        
+    </div><div class="tab-content" id="tab-code">
+        <div class="prose-content"><h3 id="core-code">Core Code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pennylane <span style="color:#66d9ef">as</span> qml
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dev <span style="color:#f92672">=</span> qml<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#39;default.qubit&#39;</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@qml.qnode</span>(dev)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">quantum_circuit</span>(x, weights):
+</span></span><span style="display:flex;"><span>    qml<span style="color:#f92672">.</span>AmplitudeEmbedding(x, wires<span style="color:#f92672">=</span>range(<span style="color:#ae81ff">4</span>), normalize<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> layer <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>            qml<span style="color:#f92672">.</span>RY(weights[layer, i], wires<span style="color:#f92672">=</span>i)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [qml<span style="color:#f92672">.</span>expval(qml<span style="color:#f92672">.</span>PauliZ(i)) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>)]
+</span></span></code></pre></div></div>
+        
+    </div><div class="tab-content" id="tab-mindmap"><div class="mindmap-container">
+            
+            <div class="mindmap-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p style="font-size:0.95rem;">请将思维导图文件放入 <code>static/mindmap/</code></p>
+                <p style="font-size:0.8rem;">命名规则: <code>sample-paper-3.svg</code> 或 <code>.png</code></p>
+            </div>
+            
+        </div>
+    </div><div class="tab-content" id="tab-translation">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="languages" style="width:16px;height:16px;"></i>
+                    翻译
+                </div>
+                <div class="pdf-panel-body">Translation of the QML survey.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var tabId = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        document.getElementById('tab-' + tabId).classList.add('active');
+        history.replaceState(null, '', '#tab-' + tabId);
+        lucide.createIcons();
+    });
+});
+
+var hash = window.location.hash.replace('#tab-', '');
+if (hash) {
+    var btn = document.querySelector('.tab-btn[data-tab="' + hash + '"]');
+    if (btn) btn.click();
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 论文库</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+# Languages
+zh:
+  locale: zh-Hans
+  contentDir: content
+  title: 论文库
+  params:
+    description: "学术论文管理与阅读平台"
+  menu:
+    main:
+      - name: 首页
+        url: '/'
+        weight: 10
+      - name: 论文
+        url: '/paper/'
+        weight: 20
+      - name: 标签
+        url: '/tags/'
+        weight: 30
+
+en:
+  locale: en-us
+  title: Paper Library
+  params:
+    description: "Academic Paper Management and Reading Platform"
+  menu:
+    main:
+      - name: Home
+        url: '/'
+        weight: 10
+      - name: Papers
+        url: '/paper/'
+        weight: 20
+      - name: Tags
+        url: '/tags/'
+        weight: 30

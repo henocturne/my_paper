@@ -1,0 +1,100 @@
+﻿{{ define "main" }}
+<div class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+
+{{- $papers := .Pages.ByDate.Reverse -}}
+
+<div class="filter-bar" id="filterBar">
+    <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
+        <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
+    </button>
+</div>
+
+
+
+<div class="filter-info" id="filterInfo">共 {{ len $papers }} 篇论文</div>
+
+<div class="paper-grid" id="paperGrid">
+    {{ range $papers }}
+    <article class="paper-card" data-tags="{{ with .Params.tags }}{{ delimit . "," }}{{ end }}">
+        {{ with .Params.tags }}
+        <div class="tags">
+            {{ range . }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.authors }}
+        <div class="authors">{{ delimit . ", " }}</div>
+        {{ end }}
+        {{ with .Params.venue }}
+        <div class="venue">{{ . }}</div>
+        {{ end }}
+        <div class="summary">{{ .Summary | plainify | truncate 200 }}</div>
+        <div class="card-footer">
+            <div class="links">
+                <a href="{{ .RelPermalink }}"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
+                {{ with .Params.pdf }}
+                <a href="{{ . | relURL }}"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
+                {{ end }}
+            </div>
+        </div>
+    </article>
+    {{ end }}
+</div>
+
+<script>
+<script>
+<script>
+var selectedTags = new Set();
+
+function toggleTag(tag, btn) {
+    if (selectedTags.has(tag)) { selectedTags.delete(tag); btn.classList.remove("active"); }
+    else { selectedTags.add(tag); btn.classList.add("active"); }
+    applyFilters();
+}
+
+function applyFilters() {
+    var info = document.getElementById("filterInfo");
+    var clearBtn = document.getElementById("clearFiltersBtn");
+    var visible = 0;
+    document.querySelectorAll(".paper-card").forEach(function(card) {
+        var cardTags = (card.dataset.tags || "").split(",").map(function(t) { return t.trim(); }).filter(Boolean);
+        var match = selectedTags.size === 0 || Array.from(selectedTags).every(function(t) { return cardTags.indexOf(t) >= 0; });
+        card.style.display = match ? "flex" : "none";
+        if (match) visible++;
+    });
+    var tagInfo = selectedTags.size > 0 ? Array.from(selectedTags).join(" + ") + " — " : "";
+    info.textContent = tagInfo ? "已筛选: " + tagInfo + "共 " + visible + " 篇论文" : "共 " + document.querySelectorAll(".paper-card").length + " 篇论文";
+    clearBtn.style.display = selectedTags.size > 0 ? "inline-block" : "none";
+    lucide.createIcons();
+}
+
+function clearFilters() {
+    selectedTags.clear();
+    document.querySelectorAll(".tag-btn").forEach(function(b) { b.classList.remove("active"); });
+    applyFilters();
+}
+
+// Build tag filter buttons
+(function() {
+    var tags = new Set();
+    document.querySelectorAll(".paper-card").forEach(function(card) {
+        (card.dataset.tags || "").split(",").forEach(function(t) { if (t) tags.add(t.trim()); });
+    });
+    var filterBar = document.getElementById("filterBar");
+    Array.from(tags).sort().forEach(function(tag) {
+        var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
+        var btn = document.createElement("button");
+        btn.className = "tag-btn";
+        btn.dataset.tag = tag;
+        btn.innerHTML = tag + ' <span class="tag-count">' + count + "</span>";
+        btn.onclick = function() { toggleTag(tag, btn); };
+        filterBar.appendChild(btn);
+    });
+})();
+</script>
+{{ end }}

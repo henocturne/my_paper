@@ -1,0 +1,27 @@
+# Hugo Blox Configuration
+hugoblox:
+  schema: "2.0"
+
+  content:
+    math:
+      enable: false
+    toc:
+      enable: true
+    reading_time:
+      enable: true
+    citations:
+      style: apa
+
+  header:
+    enable: true
+    style: navbar
+    sticky: true
+    align: center
+    search: true
+    theme_toggle: true
+
+  footer:
+    style: minimal
+
+  search:
+    enable: true
