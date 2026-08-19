@@ -25,11 +25,11 @@
     <div class="home-stats">
         {{- $papers := where site.RegularPages "Section" "paper" -}}
         {{- $tags := site.Taxonomies.tags -}}
-        <a href="{{ "/paper/" | absURL }}" class="stat-card">
+        <a href="/my_paper/paper/" class="stat-card">
             <span class="stat-number">{{ len $papers }}</span>
             <span class="stat-label">篇论文</span>
         </a>
-        <a href="{{ "/tags/" | absURL }}" class="stat-card">
+        <a href="/my_paper/tags/" class="stat-card">
             <span class="stat-number">{{ len $tags }}</span>
             <span class="stat-label">个标签</span>
         </a>
