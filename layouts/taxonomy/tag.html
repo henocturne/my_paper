@@ -5,7 +5,7 @@
 
 <div class="tag-cloud">
     {{ range .Site.Taxonomies.tags.ByCount }}
-    <a href="{{ .Page.RelPermalink | absURL }}">
+    <a href="{{ .Page.RelPermalink }}">
         {{ .Page.Title }}
         <span class="count">({{ .Count }})</span>
     </a>
@@ -30,7 +30,7 @@
             {{ end }}
         </div>
         {{ end }}
-        <h3><a href="{{ .RelPermalink | absURL }}">{{ .Title }}</a></h3>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         {{ with .Params.authors }}
         <div class="authors">{{ delimit . ", " }}</div>
         {{ end }}
@@ -40,7 +40,7 @@
         <div class="summary">{{ .Summary | plainify | truncate 200 }}</div>
         <div class="card-footer">
             <div class="links">
-                <a href="{{ .RelPermalink  | absURL }}"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
+                <a href="{{ .RelPermalink }}"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
                 {{ with .Params.pdf }}
                 <a href="{{ . | relURL }}"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
                 {{ end }}
