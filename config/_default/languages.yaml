@@ -8,13 +8,13 @@ zh:
   menu:
     main:
       - name: 首页
-        url: '/'
+        url: 'my_paper/'
         weight: 10
       - name: 论文
-        url: '/paper/'
+        url: 'my_paper/paper/'
         weight: 20
       - name: 标签
-        url: '/tags/'
+        url: 'my_paper/tags/'
         weight: 30
 
 en:
@@ -25,11 +25,11 @@ en:
   menu:
     main:
       - name: Home
-        url: '/'
+        url: 'my_paper/'
         weight: 10
       - name: Papers
-        url: '/paper/'
+        url: 'my_paper/paper/'
         weight: 20
       - name: Tags
-        url: '/tags/'
+        url: 'my_paper/tags/'
         weight: 30

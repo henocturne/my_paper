@@ -1,11 +1,11 @@
 # Navigation Links for Paper Library
 main:
   - name: 首页
-    url: '/'
+    url: 'my_paper/'
     weight: 10
   - name: 论文
-    url: '/paper/'
+    url: 'my_paper/paper/'
     weight: 20
   - name: 标签
-    url: '/tags/'
+    url: 'my_paper/tags/'
     weight: 30
