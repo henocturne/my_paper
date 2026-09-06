@@ -11,7 +11,7 @@ tags:
   - "Heavy-tailed connectivity"
   - "Neuronal connectomes"
   - "Statistical physics"
-  - "Network Evolution"
+  - "Scale-free networks"
   - "Clustering" 
 pdf: "/pdf/hebso.pdf"
 draft: false

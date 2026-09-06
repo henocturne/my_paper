@@ -8,9 +8,10 @@ authors:
   - "Chaoming Song"
 venue: "Physical Review Letters"
 tags:
-  - "Dynamical Phase Transitions"
-  - "Nonequilibrium Statistical Physics"
-  - "Network Evolution"
+  - "Dynamical Phase Transitions (DPTs)"
+  - "Nonequilibrium Networks"
+  - "Statistical Physics"
+  - "Triadic Closure"
   - "Hyperbolic Scaling"
 pdf: "/pdf/dpt.pdf"
 draft: false
