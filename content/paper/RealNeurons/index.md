@@ -1,6 +1,6 @@
 ---
 title: "Extended Mean-Field Theories for Networks of Real Neurons" 
-date: 2026-06-30 doi: "10.1103/nr71-phqw" 
+date: 2026-06-30 
 authors: 
   - "Luca Di Carlo" 
   - "Francesca Mignacco" 
