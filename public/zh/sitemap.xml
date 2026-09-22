@@ -2,66 +2,96 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/my_paper/tags/dynamical-phase-transitions/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/tags/computational-neuroscience/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/paper/dpt/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/tags/criticality/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/hyperbolic-scaling/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/paper/realneurons/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/network-evolution/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/tags/maximum-entropy-models/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/nonequilibrium-statistical-physics/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/tags/mean-field-theory/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/tags/statistical-physics/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-Hans"
-                href="http://localhost:1313/my_paper/tags/"
+                href="http://127.0.0.1:1313/my_paper/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/my_paper/en/tags/"
+                href="http://127.0.0.1:1313/my_paper/en/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/my_paper/</loc>
-    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <loc>http://127.0.0.1:1313/my_paper/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-Hans"
-                href="http://localhost:1313/my_paper/"
+                href="http://127.0.0.1:1313/my_paper/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/my_paper/en/"
+                href="http://127.0.0.1:1313/my_paper/en/"
                 />
   </url><url>
-    <loc>http://localhost:1313/my_paper/paper/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/paper/</loc>
+    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/dynamical-phase-transitions-dpts/</loc>
     <lastmod>2025-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/clustering/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/paper/dpt/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/hyperbolic-scaling/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/nonequilibrium-networks/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/triadic-closure/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/clustering/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/heavy-tailed-connectivity/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/tags/heavy-tailed-connectivity/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/paper/hebso/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/paper/hebso/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/hebbian-self-organization/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/tags/hebbian-self-organization/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/neuronal-connectomes/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/tags/neuronal-connectomes/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/my_paper/tags/statistical-physics/</loc>
+    <loc>http://127.0.0.1:1313/my_paper/tags/scale-free-networks/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/coevolving-networks/</loc>
+    <lastmod>2023-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/paper/empolarization/</loc>
+    <lastmod>2023-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/opinion-dynamics/</loc>
+    <lastmod>2023-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://127.0.0.1:1313/my_paper/tags/polarization/</loc>
+    <lastmod>2023-01-20T00:00:00+00:00</lastmod>
   </url>
 </urlset>

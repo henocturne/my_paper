@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head><script src="/my_paper/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my_paper/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emergence of Polarization in Coevolving Networks | 论文库</title>
+    <meta name="description" content="学术论文管理与阅读平台">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/my_paper/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/my_paper/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">论文库</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/my_paper/" class="nav-link">
+                    首页
+                </a>
+                
+                <a href="/my_paper/paper/" class="nav-link">
+                    论文
+                </a>
+                
+                <a href="/my_paper/tags/" class="nav-link">
+                    标签
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="paper-single">
+    <div class="paper-header">
+        <h1>Emergence of Polarization in Coevolving Networks</h1>
+        <div class="paper-meta">
+            
+            <span class="meta-item">
+                <i data-lucide="users" style="width:16px;height:16px;"></i>
+                Jiazhen Liu, Shengda Huang, Nathaniel M. Aden, Neil F. Johnson, Chaoming Song
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="building-2" style="width:16px;height:16px;"></i>
+                Physical Review Letters
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                2023
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="tags" style="width:16px;height:16px;"></i>
+                Polarization, Coevolving Networks, Opinion Dynamics, Statistical Physics
+            </span>
+            
+        </div>
+    </div>
+
+    <nav class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="citation">
+            <i data-lucide="quote" style="width:16px;height:16px;"></i> 引用
+        </button>
+        <button class="tab-btn" data-tab="authors">
+            <i data-lucide="users" style="width:16px;height:16px;"></i> 作者
+        </button>
+        <button class="tab-btn" data-tab="model">
+            <i data-lucide="cpu" style="width:16px;height:16px;"></i> 模型
+        </button>
+        <button class="tab-btn" data-tab="results">
+            <i data-lucide="bar-chart-3" style="width:16px;height:16px;"></i> 结果
+        </button>
+        <button class="tab-btn" data-tab="figures">
+            <i data-lucide="image" style="width:16px;height:16px;"></i> 图像
+        </button>
+        <button class="tab-btn" data-tab="code">
+            <i data-lucide="code" style="width:16px;height:16px;"></i> 代码
+        </button>
+        <button class="tab-btn" data-tab="mindmap">
+            <i data-lucide="sigma" style="width:16px;height:16px;"></i> 推导过程
+        </button>
+
+        <button class="tab-btn" data-tab="translation">
+            <i data-lucide="languages" style="width:16px;height:16px;"></i> 翻译
+        </button>
+    </nav><div class="tab-content active" id="tab-citation">
+        <div class="citation-block"><h2 id="二全部参考文献逐条解析">二、全部参考文献逐条解析</h2>
+<p>格式：<strong>引用编号｜发表信息｜简要内容｜与本文关联</strong></p>
+<p>[1]｜A. Bramson, P. Grim, D. J. Singer, S. Fisher, W. Berger, G. Sack, and C. Flocken, <em>J. Math. Sociol.</em> 40, 80 (2016).｜数学社会学综述，系统梳理观点极化的定义、度量方式，区分极化、碎片化、共识等不同舆论状态，讨论极化的量化指标。｜本文的研究背景基础，帮助界定“观点极化”概念；本文目标就是解释该文献中提到的现实双极极化现象。</p>
+<p>[2]｜P. DiMaggio, J. Evans, and B. Bryson, <em>Am. J. Sociology</em> 102, 690 (1996).｜社会学经典实证论文，研究美国公众政治态度极化，讨论社会极化的现实表现、社会分层与意见分化。｜提供社会学层面现实极化的经验证据，说明双极极化是真实社会现象，是本文模型需要复现的现实观测。</p>
+<p>[3]｜A. Matakos, E. Terzi, and P. Tsaparas, <em>Data Min. Knowl. Discovery</em> 31, 1480 (2017).｜数据挖掘视角，研究社交媒体观点极化，讨论算法、推荐系统如何加剧极化，给出极化计算方法。｜承接社交媒体极化的实证研究，为本文使用社交媒体数据集、量化极化提供参照。</p>
+<p>[4]｜P. D. Manrique and N. F. Johnson, <em>Phys. Rev. E</em> 97, 032311 (2018).｜社会物理学工作，用复杂网络建模社会群体极端化、群体意见偏移，研究群体向极端观点漂移的动力学。｜同为社会物理建模工作，和本文共同作者Neil F.Johnson相关；提供极端观点涌现的建模思路，作为本文研究的前期物理建模基础。</p>
+<p>[5]｜E. Bakshy, S. Messing, and L. A. Adamic, <em>Science</em> 348, 1130 (2015).｜Facebook经典实证研究，分析社交平台内容分享，区分政治硬内容、非政治软内容；观测到政治内容双极分化，非政治内容呈中性分布。｜<strong>本文两大实证数据集来源</strong>；论文直接使用该文献FBHC/FBSC数据集，实证观测U型/M型分布是本文标度律的实证来源。</p>
+<p>[6]｜M. Cinelli, G. D. F. Morales, A. Galeazzi, W. Quattrociocchi, and M. Starnini, <em>Proc. Natl. Acad. Sci. U.S.A.</em> 118 (2021).｜PNAS论文，实证研究社交媒体回音室效应，验证同质性、相似用户聚集，分析极化的形成条件。｜支撑本文两大核心机制之一：<strong>同质性聚类homophily clustering</strong>；提供回音室的现实证据。</p>
+<p>[7]｜M. Del Vicario, A. Bessi, F. Zollo, F. Petroni, A. Scala, G. Caldarelli, H. E. Stanley, and W. Quattrociocchi, <em>Proc. Natl. Acad. Sci. U.S.A.</em> 113, 554 (2016).｜PNAS，研究社交媒体信息传播，证实回音室、同质性驱动观点分化，分析信息选择性接触。｜再次实证回音室效应；为本文“观点‑网络双向耦合”假设提供现实依据。</p>
+<p>[8]｜K. Garimella, G. D. F. Morales, A. Gionis, and M. Mathioudakis, <em>ACM Trans. Social Comput.</em> 1, 1 (2018).｜ACM社会计算综述，总结社交媒体极化测量方法，评估回音室、过滤气泡的检测手段。｜为本文量化极化、联合边分布、标度指数的测量提供方法学参考。</p>
+<p>[9]｜M. Del Vicario, G. Vivaldo, A. Bessi, F. Zollo, A. Scala, G. Caldarelli, and W. Quattrociocchi, <em>Sci. Rep.</em> 6, 37825 (2016).｜Scientific Reports，实证研究观点极端化，分析用户接触对立信息如何改变观点。｜实证观点动态演化现象，支撑本文“观点趋同”机制的现实合理性。</p>
+<p>[10]｜J. Borge‑Holthoefer, W. Magdy, K. Darwish, and I. Weber, <em>Proceedings of the 18th ACM Conference on Computer Supported Cooperative Work &amp; Social Computing</em> (ACM, New York, 2015), pp. 700‑711.｜CSCW会议论文，推特平台政治极化实证，分析用户立场与社交连接关系。｜社交媒体极化的又一实证案例，丰富本文现实背景。</p>
+<p>[11]｜K. Garimella, G. De Francisci Morales, A. Gionis, and M. Mathioudakis, <em>Proceedings of the 2018 World Wide Web Conference</em> (ACM, New York, 2018), pp. 913‑922.｜WWW会议，研究如何识别社交媒体回音室，量化同质性带来的群体隔离。｜回音室识别算法与实证，支撑本文同质性聚类机制。</p>
+<p>[12]｜W. Cota, S. C. Ferreira, R. Pastor‑Satorras, and M. Starnini, <em>EPJ Data Sci.</em> 8, 1 (2019).｜EPJ Data Science综述，总结观点极化、回音室的模型与实证研究。｜综述类文献，帮助定位本文在整个极化研究领域的位置。</p>
+<p>[13]｜D. Lazer, A. Pentland, L. Adamic, S. Aral, A‑L. Barabási, D. Brewer, N. Christakis, N. Contractor, J. Fowler, M. Gutmann et al., <em>Science</em> 323, 721 (2009).｜Science，社会计算经典综述，讨论社交网络如何塑造人类行为与观点。｜为整个观点‑网络耦合研究提供学科大背景。</p>
+<p>[14]｜P. Holme and M. E. J. Newman, <em>Phys. Rev. E</em> 74, 056108 (2006).｜PR‑E，经典协同演化网络模型：节点状态改变，同时网络边动态重连；研究网络社群形成。｜早期协同演化网络奠基工作；本文继承其“网络‑节点状态共同演化”框架，但指出该类旧模型难以得到稳定双极极化。</p>
+<p>[15]｜G. Iniguez, J. Kertész, K. K. Kaski, and R. A. Barrio, <em>Phys. Rev. E</em> 80, 066119 (2009).｜PR‑E，协同演化观点动力学模拟，研究同质性带来的网络分裂。｜同类协同演化仿真工作；本文指出这类旧模型无法解析得到稳定双极极化相。</p>
+<p>[16]｜F. Vazquez, J. C. González‑Avella, V. M. Eguíluz, and M. San Miguel, <em>Phys. Rev. E</em> 76, 046120 (2007).｜PR‑E，观点‑网络协同演化模型，研究共识与分裂。｜早期协同演化仿真，作为本文的对比基线。</p>
+<p>[17]｜A. Flache and M. W. Macy, <em>J. Math. Sociol.</em> 35, 146 (2011).｜数学社会学，仿真研究“同质性”如何造成网络分裂，讨论极化涌现。｜社会学仿真研究，对比本文物理解析模型。</p>
+<p>[18]｜F. Baumann, P. Lorenz‑Spreen, I. M. Sokolov, and M. Starnini, <em>Phys. Rev. Lett.</em> 124, 048301 (2020).｜PRL，提出强化模型RM（Reinforced Model），协同演化网络极化模型。｜<strong>本文最核心对比基准模型</strong>。RM模型只能得到单极极化、全局共识；双极极化只是瞬态，很快退化，依赖初值；本文就是为解决RM模型的缺陷。</p>
+<p>[19]｜F. Baumann, P. Lorenz‑Spreen, I. M. Sokolov, and M. Starnini, <em>Phys. Rev. X</em> 11, 011012 (2021).｜PRX，强化模型RM的扩展深入研究，分析模型相图。｜RM模型完整理论；本文反复指出RM的局限，突出本文模型的创新：得到<strong>解析稳定双极极化相</strong>。</p>
+<p>[20]｜M. Starnini, M. Frasca, and A. Baronchelli, <em>Sci. Rep.</em> 6, 31834 (2016).｜Scientific Reports，观点动力学模型，研究邻居交互驱动观点收敛。｜支撑本文第一个核心机制：<strong>观点趋同 homogenization</strong>。</p>
+<p>[21]｜K. Sasahara, W. Chen, H. Peng, G. L. Ciampaglia, A. Flammini, and F. Menczer, <em>J. Comput. Soc. Sci.</em> 4, 381 (2021).｜计算社会科学，研究社交网络观点动态、回音室仿真。｜观点动力学仿真参考。</p>
+<p>[22]｜P. Clifford and A. Sudbury, <em>Biometrika</em> 60, 581 (1973).｜Clifford‑Sudbury模型，投票模型（voter model），经典随机观点交互模型。｜本文最小模型的线性观点动力学的理论源头；论文中观点交互力F(s,s&rsquo;)借鉴投票模型思想。</p>
+<p>[23]｜R. A. Holley and T. M. Liggett, <em>Ann. Probab.</em> 3, 643 (1975).｜严格数学证明投票模型的动力学性质。｜为本文观点动力学随机过程提供数学基础。</p>
+<p>[24]｜D. Black, <em>J. Polit. Econ.</em> 56, 23 (1948).｜政治科学经典，中位数投票者理论，讨论个体观点偏好。｜社会选择理论背景，用于理解连续观点空间设定。</p>
+<p>[25]｜L. A. Adamic and N. Glance, <em>Proceedings of the 3rd International Workshop on Link Discovery</em> (ACM, New York, 2005), pp. 36‑43.｜LinkDD会议，博客圈博客网络数据集，区分自由派/保守派博客链接网络。｜<strong>本文第二个实证数据源博客圈（blogosphere）的原始出处</strong>，用于验证双极网络结构。</p>
+<p>[26]｜Supplemental Material，APS补充材料｜包含数据集细节、解析推导、最小模型推导、与RM模型对比。｜本文的补充材料，所有推导、参数拟合、更多仿真结果放在此处。</p>
+<p>[27]｜S. Maslov and K. Sneppen, <em>Science</em> 296, 910 (2002).｜Science，生物网络，归一化联合分布，消除度分布影响的统计方法。｜本文使用归一化联合观点分布R(s,s&rsquo;)的统计方法来源，用于消除节点度的干扰，度量同质性。</p>
+<p>[28]｜G. Deffuant, D. Neau, F. Amblard, and G. Weisbuch, <em>Adv. Complex Syst.</em> 03, 87 (2000).｜Deffuant模型，经典有界信任观点动力学。｜经典观点交互模型，作为本文观点动力学的参考。</p>
+<p>[29]｜M. H. DeGroot, <em>J. Am. Stat. Assoc.</em> 69, 118 (1974).｜DeGroot观点共识模型，个体被邻居观点加权平均。｜经典观点更新规则，本文观点趋同机制的重要参考。</p>
+<p>[30]｜N. E. Friedkin and E. C. Johnsen, <em>J. Math. Sociol.</em> 15, 193 (1990).｜Friedkin‑Johnsen观点动力学模型，社会影响理论。｜社会影响驱动观点变化的理论来源。</p>
+<p>[31]｜V. Sood and S. Redner, <em>Phys. Rev. Lett.</em> 94, 178701 (2005).｜PRL，投票模型在网络上的动力学。｜网络上观点交互的物理建模基础。</p>
+<p>[32]｜Y. Kuramoto, <em>Proceedings of the International Symposium on Mathematical Problems in Theoretical Physics</em> (Springer, New York, 1975), pp. 420‑422.｜Kuramoto振子模型，耦合振子同步。｜本文讨论模型拓展方向：变量替换 $s_i=\cos\theta_i$，可以映射到非线性耦合振子系统。</p>
+<p>[33]｜R. Sepulchre, D. A. Paley, and N. E. Leonard, <em>IEEE Trans. Autom. Control</em> 52, 811 (2007).｜耦合振子、群体协同控制。｜作为模型拓展应用方向参考。</p>
+<p>[34]｜K. Wiesenfeld, P. Colet, and S. H. Strogatz, <em>Phys. Rev. E</em> 57, 1563 (1998).｜耦合振子动力学研究。｜作为模型拓展应用方向参考。</p>
+<blockquote>
+<p>说明：参考文献[26]是论文补充材料，不属于外部文献，是本文内部附件。</p>
+</blockquote>
+<p>如果你需要，我可以进一步把以上内容整理成Markdown表格格式，或者生成一份该论文的中文精读摘要。
+该论文文献梳理工作量大，工作任务模式可以帮你批量整理参考文献BibTeX、生成论文综述笔记，是否要使用？</p>
+</div>
+        
+        
+        <h3 style="margin-bottom:12px;font-size:1.1rem;">摘要</h3>
+        <div class="citation-block" style="background:var(--bg-card);">
+            <p>介绍论文的highlight 和 methodology
+模型的基本定义，主要推导方法</p>
+<p>这篇论文《Emergence of Polarization in Coevolving Networks》在复杂网络和舆论动力学领域具有里程碑式的意义。以下为您详细梳理其核心亮点（Highlights）、方法论（Methodology）以及数学模型与主要推导方法：</p>
+<h2 id="研究方向所属领域">研究方向、所属领域</h2>
+<h3 id="所属领域">所属领域</h3>
+<p>该论文属于<strong>统计物理‑复杂网络‑社会动力学交叉领域</strong>，横跨多个子学科：</p>
+<ol>
+<li><strong>理论物理/统计物理</strong>：非平衡统计力学、协同演化网络、相变与标度律、随机过程（朗之万/维纳过程）；</li>
+<li><strong>复杂网络科学</strong>：网络‑观点协同演化（coevolving networks）、同质性（homophily）、网络拓扑与个体状态耦合；</li>
+<li><strong>计算社会科学</strong>：观点极化、回音室效应、社交媒体舆论动力学；</li>
+<li><strong>社会物理学（Sociophysics）</strong>：用物理建模、解析解、相图方法刻画人类社会舆论现象。</li>
+</ol>
+<h3 id="核心研究方向">核心研究方向</h3>
+<ol>
+<li><strong>观点‑网络协同演化动力学</strong>：个体观点持续变化，同时社交连接也随观点动态调整，二者双向耦合；</li>
+<li><strong>社会观点极化的相变与普适标度律</strong>：解释社会系统如何自发形成稳定双极极化（bipolarization）；</li>
+<li><strong>解析可解的协同演化网络模型</strong>：克服过往模型只能数值模拟、无法产生<strong>稳定双极极化</strong>的缺陷；</li>
+<li><strong>实证‑理论对照</strong>：利用Facebook、博客圈真实社交数据校验模型，划分<strong>极化、部分极化、去极化</strong>三个稳定相。</li>
+</ol>
+<h3 id="相关研究课题">相关研究课题</h3>
+<ol>
+<li>社交媒体回音室效应、过滤气泡、信息茧房的生成机制；</li>
+<li>观点动力学经典模型：DeGroot、Clifford‑Sudbury、Deffuant模型；</li>
+<li>协同演化网络（边随节点状态动态增删）；</li>
+<li>社会系统的相变、序参量、普适标度指数；</li>
+<li>同质性（homophily）与观点趋同（opinion homogenization）的耦合效应；</li>
+<li>舆论极端用户的网络枢纽现象（极端观点个体成为网络hub）；</li>
+<li>对比已有强化模型RM（Reinforced Model）的缺陷；</li>
+<li>从物理模型拓展到振荡器、群体动力学，对接政治学、传播学实证结果。</li>
+</ol>
+<blockquote>
+<p>核心科学痛点：<strong>已有协同演化网络模型只能得到单极极化或全局共识，不能解析复现真实世界稳定双极极化现象</strong>。本文提出理论框架，给出解析解、标度律、相图，匹配真实社交媒体数据。</p>
+</blockquote>
+<p>论文：<em>Emergence of Polarization in Coevolving Networks</em>，<strong>Phys. Rev. Lett. 130, 037401 (2023)</strong></p>
+<blockquote>
+<p>作者列表：<strong>Jiazhen Liu（刘家臻，共一）, Shengda Huang（黄盛达，共一）, Nathaniel M. Aden, Neil F. Johnson, Chaoming Song（宋超明，通讯作者）</strong>
+标注：Jiazhen Liu、Shengda Huang为共同第一作者；Chaoming Song为通讯作者（$ * $）。</p>
+</blockquote>
+<h3 id="一-论文的-highlights核心亮点与贡献">一、 论文的 Highlights（核心亮点与贡献）</h3>
+<ol>
+<li><strong>首次提出能解析求解且产生稳定双极化结构的共演网络模型</strong>：以往的共演模型（如强化模型 RM）通常只能生成单极化（所有人都倒向同一个极端）或全局一致的平庸共识，即使产生双极化也极不稳定且迅速退化。<strong>本研究首次从理论上解析预测并数值模拟出了稳定的双极化（Bipolarized）社区结构。</strong></li>
+<li><strong>发现并证实了舆论分布的普适标度律</strong>：通过分析 Facebook（硬内容与软内容）以及政治博客圈（Blogosphere）的真实数据集，作者发现舆论分布在趋于极端值 $ \pm 1\ $ 时满足幂律分布 $ P(s) \sim (1 \mp s)^{\delta}\ $。</li>
+<li><strong>定量推导并绘制了三相相图</strong>：模型不仅给出了确切的解析解，还定量划分出三大稳定相：<strong>极化相（Polarization）</strong>、<strong>部分极化相（Partial Polarization）<strong>以及</strong>去极化相（Depolarization）</strong>，并准确预测了相变临界点。真实数据集在相图中的位置与理论预测高度一致。</li>
+</ol>
+<hr>
+<h3 id="二-methodology-与模型基本定义model-definitions">二、 Methodology 与模型基本定义（Model Definitions）</h3>
+<p>为了刻画舆论与网络结构的共同演化（Coevolution），模型定义了一个由 $ N\ $ 个个体组成的网络，其连接关系由邻接矩阵 $ A\ $（$ A_{ij}=1\ $ 或 $ 0\ $）表示，每个个体 $ i\ $ 持有在区间 $ [-1, 1]\ $ 内连续变化的舆论观点 $ s_i\ $。该模型基于两个核心物理机制的耦合：</p>
+<h4 id="1-舆论同质化机制-opinion-homogenization">1. 舆论同质化机制 (Opinion Homogenization)</h4>
+<p>个体的观点受邻居影响并倾向于向邻居靠拢。个体 $ i\ $ 的观点动力学由如下随机微分方程（SDE）描述：
+$ ds_i = \mu(s_i, \vec{s}, A)dt + \sigma(s_i)dW_t\ $
+其中：</p>
+<ul>
+<li>$ W_t\ $ 是标准维纳过程。</li>
+<li><strong>漂移项 $ \mu_i\ $</strong> 控制观点的平均变化，由邻居之间的相互作用力 $ F(s_i, s_j)\ $ 决定：
+$ \mu_i = \sum_{j=1}^N A_{ij} F(s_i, s_j)\ $
+同质化要求满足 $ F(s, s) = 0\ $ 且 $ \partial_{s&rsquo;} F(s, s&rsquo;) &gt; 0\ $（即邻居观点偏右时，会拉动自己往右靠）。在**最小模型（Minimal Model）**中，相互作用力被简化为线性形式：$ F(s, s&rsquo;) = \lambda(s&rsquo; - s)\ $。</li>
+<li><strong>扩散项 $ D(s) \equiv \sigma(s)^2 / 2\ $</strong> 控制观点的涨落。为了保证观点在边界 $ [-1, 1]\ $ 的有界性，扩散项在边界处必须归零，即 $ D(s = \pm 1) = 0\ $。对其进行泰勒展开，一阶近似为：$ D(s) \approx \frac{\sigma_0^2}{2} (1 - s^2)\ $。</li>
+</ul>
+<p>这引导出单粒子观点分布 $ P(s, t)\ $ 随时间的演化方程：
+$ \frac{\partial P(s, t)}{\partial (\alpha t)} = -\frac{\partial}{\partial s} \left[ \int_{-1}^1 F(s, s&rsquo;) Q(s, s&rsquo;, t) ds&rsquo; \right] + \frac{\partial^2}{\partial s^2} [D(s) P(s, t)]\ $
+（其中 $ Q(s, s&rsquo;, t)\ $ 是网络边上的联合舆论分布）。</p>
+<h4 id="2-同质聚类机制-homophily-clustering">2. 同质聚类机制 (Homophily Clustering)</h4>
+<p>网络连接也会随着时间演化，观点相似的个体更容易建立连接，观点不同的个体更容易断开连接。</p>
+<ul>
+<li><strong>建边率</strong>：未连接的个体 $ i\ $ 和 $ j\ $ 之间建立新边的概率速率为 $ \frac{\gamma_+(s_i, s_j)}{N}\ $。</li>
+<li><strong>断边率</strong>：已连接的个体之间断开连接的概率速率为 $ \gamma_-(s_i, s_j)\ $。
+在<strong>最小模型</strong>中，这一速率被定义为：$ \gamma_{\pm}(s, s&rsquo;) = r_{\pm}(1 + J_{\pm} s s&rsquo;)\ $，其中参数 $ |J_{\pm}| \le 1\ $ 控制了基于观点的同质聚类强度。</li>
+</ul>
+<hr>
+<h3 id="三-主要推导方法-main-derivation-methods">三、 主要推导方法 (Main Derivation Methods)</h3>
+<p>论文之所以能够实现理论上的突破，关键在于采用了一套巧妙的解析物理方法：</p>
+<h4 id="1-绝热近似-adiabatic-approximation">1. 绝热近似 (Adiabatic Approximation)</h4>
+<p>在真实社交网络中，网络关系的变化（如建边、删边）往往比个体观点的改变要快得多。因此，作者引入参数 $ \alpha\ $ 来表征舆论更新相对于网络演化的速率。
+在 <strong>$ \alpha \to 0\ $ 的极限下（即网络演化是绝热的）</strong>，联合舆论分布 $ Q(s, s&rsquo;, t)\ $ 的时间演化满足：
+$ \frac{\partial Q(s, s&rsquo;, t)}{\partial t} = \gamma_+(s, s&rsquo;) P(s, t) P(s&rsquo;, t) - \gamma_-(s, s&rsquo;) Q(s, s&rsquo;, t) + O(\alpha)\ $
+略去高阶项 $ O(\alpha)\ $，使得观点和网络连接在动力学上实现了解耦。</p>
+<h4 id="2-稳态精确求解-stationary-solution">2. 稳态精确求解 (Stationary Solution)</h4>
+<p>在稳态下（$ \frac{\partial Q}{\partial t} = 0\ $），可以得到精确的稳态联合舆论分布关系：
+$ Q_{\text{st}}(s, s&rsquo;) = \frac{\gamma_+(s, s&rsquo;)}{\gamma_-(s, s&rsquo;)} P_{\text{st}}(s) P_{\text{st}}(s&rsquo;)\ $
+将此代入舆论演化方程的稳态形式，经过积分推导，可以将复杂的共演动力学方程转化为一个关于稳态观点分布 $ P_{\text{st}}(s)\ $ 的自洽积分方程：
+$ \int_{-1}^1 K(s, s&rsquo;) P_{\text{st}}(s&rsquo;) ds&rsquo; = \ln[D(s) P_{\text{st}}(s)]\ $
+其中，积分核定义为：$ K(s, s&rsquo;) \equiv \int \frac{\gamma_+(s, s&rsquo;) F(s, s&rsquo;)}{\gamma_-(s, s&rsquo;) D(s)} ds\ $。</p>
+<h4 id="3-普适标度律与指数--delta--的导出">3. 普适标度律与指数 $ \delta\ $ 的导出</h4>
+<p>当观点逼近边界（$ s \to \pm 1\ $）时，利用渐近分析，上式可化简为：
+$ \left[ \int_{-1}^1 \kappa_{\pm}(s&rsquo;) P_{\text{st}}(s&rsquo;) ds&rsquo; \right] \ln(1 \mp s) \sim \ln[(1 \mp s) P_{\text{st}}(s)]\ $
+由此精确证明了幂律分布：$ P_{\text{st}}(s) \sim (1 \mp s)^{\delta_{\pm}}\ $，并给出了指数的解析表达式：
+$ \delta_{\pm} = \int_{-1}^1 \kappa_{\pm}(s&rsquo;) P_{\text{st}}(s&rsquo;) ds&rsquo; - 1\ $
+（其中 $ \kappa_{\pm}(s&rsquo;) \equiv \frac{\gamma_+(\pm 1, s&rsquo;) F(\pm 1, s&rsquo;)}{\gamma_-(\pm 1, s&rsquo;) \sigma_0^2}\ $）。这表明极化指数由微观动力学参数和全局观点分布的积分共同决定。</p>
+<h4 id="4-相变边界条件分析-phase-transition-analysis">4. 相变边界条件分析 (Phase Transition Analysis)</h4>
+<p>为了描绘相图，作者定义了序参量 $ s_{\text{max}} = |\arg\max_s P(s)|\ $：</p>
+<ul>
+<li><strong>极化相与部分极化相的相变临界线 ($ g_*\ $</strong>：对应于指数 $ \delta = 0\ $ 的时刻（由 U 形分布转为 M 形分布）。代入积分方程得到临界条件：
+$ g_*^{-1} + (J_+ - J_-) f(J_-) = 1\ $</li>
+<li><strong>部分极化相与去极化相的相变临界线 ($ g_{</strong>}\ $<strong>：对应于 $ P(s)\ $ 分布在 $ s=0\ $ 处的二阶导数改变符号的时刻，即 $ P&rsquo;&rsquo;<em>{\text{st}}(0) = 0\ $（由 M 形分布转为单峰的逆内 U 形分布）。这给出了临界条件：
+$ g</em>{</strong>}^{-1} + (J_+ - J_-) \langle s^2 \rangle = 1\ $
+（其中 $ \langle s^2 \rangle\ $ 为观点的方差）。</li>
+</ul>
+<p>这些严谨的物理推导为定量理解在线社交网络中的“信息茧房”和“回音室效应”提供了坚实的解析理论基础。</p>
+<hr>
+<p>🎨 <strong>您想让我为您绘制一张这三个相（极化相、部分极化相、去极化相）的观点分布随参数变化的动态对比图表，或是为您生成一份关于该模型的精简研究报告吗？</strong></p>
+
+        </div>
+        
+    </div><div class="tab-content" id="tab-authors">
+        <div class="prose-content"><h1 id="emergence-of-polarization-in-coevolving-networks作者完整信息">《Emergence of Polarization in Coevolving Networks》作者完整信息</h1>
+<h1 id="论文emergence-of-polarization-in-coevolving-networks研究方向所属领域相关课题与全部参考文献关联分析">论文《Emergence of Polarization in Coevolving Networks》研究方向、所属领域、相关课题与全部参考文献关联分析</h1>
+<p>论文信息：<em>Emergence of Polarization in Coevolving Networks</em>, <strong>Physical Review Letters 130, 037401 (2023)</strong>
+DOI：10.1103/PhysRevLett.130.037401</p>
+<h2 id="全部作者机构院系主要合作者合作机构">全部作者机构、院系、主要合作者&amp;合作机构</h2>
+<h3 id="1-jiazhen-liu-刘家臻共一作者">1 Jiazhen Liu 刘家臻（共一作者）</h3>
+<ul>
+<li><strong>原始论文所属机构</strong>：Department of Physics，University of Miami（迈阿密大学，美国），博士阶段</li>
+<li><strong>当前任职</strong>：复旦大学，智能复杂体系基础理论与关键技术实验室，助理教授（准聘研究员），博士生导师</li>
+<li><strong>研究方向</strong>：统计物理、复杂网络、社会动力学、非平衡复杂系统、科学创新动力学、人‑AI交互动力学</li>
+<li><strong>核心合作者</strong>：Chaoming Song（博士导师）、Ying Li（李映）、Jingtao Ding（丁景涛）、D. Wang、K. Tamang</li>
+<li><strong>合作机构</strong>：美国迈阿密大学、清华大学、复旦大学</li>
+</ul>
+<h3 id="2-shengda-huang-黄盛达共一作者">2 Shengda Huang 黄盛达（共一作者）</h3>
+<ul>
+<li><strong>机构</strong>：Department of Physics，University of Miami（迈阿密大学），Chaoming Song课题组，博士研究生，该论文出自其博士学位论文《Continuous Time Opinion Dynamics with Opinion‑Network Coevolution》</li>
+<li><strong>研究方向</strong>：协同演化网络、观点极化动力学、社会复杂系统</li>
+<li><strong>核心合作者</strong>：Chaoming Song、Jiazhen Liu、Neil F. Johnson、Lynn K. Perry、Daniel Messinger</li>
+<li><strong>合作机构</strong>：乔治华盛顿大学、德国开姆尼茨工业大学</li>
+</ul>
+<h3 id="3-nathaniel-m-aden">3 Nathaniel M. Aden</h3>
+<ul>
+<li><strong>机构</strong>：Department of Physics，University of Miami（迈阿密大学），前研究生助理</li>
+<li><strong>研究方向</strong>：协同演化网络、非平衡网络相变</li>
+<li><strong>核心合作者</strong>：Chaoming Song、Jiazhen Liu、Shengda Huang</li>
+<li><strong>合作机构</strong>：仅迈阿密大学；公开产出较少，主要以该PRL以及另一篇PRL为主要发表记录</li>
+</ul>
+<h3 id="4-neil-f-johnson">4 Neil F. Johnson</h3>
+<ul>
+<li><strong>机构</strong>：Physics Department，George Washington University（乔治华盛顿大学GWU）；Dynamic Online Networks Laboratory；曾任职迈阿密大学物理系、牛津大学物理系</li>
+<li><strong>研究方向</strong>：复杂系统、社交媒体冲突、群体行为、AI群体动力学、极端群体、网络极化</li>
+<li><strong>核心合作者</strong>：Chaoming Song、Pedro D. Manrique、Minzhang Zheng、Frank Huo、Lucia Illari</li>
+<li><strong>合作机构</strong>：迈阿密大学、圣母大学、迈阿密大学国际研究系</li>
+</ul>
+<h3 id="5-chaoming-song-宋超明通讯作者">5 Chaoming Song 宋超明（通讯作者）</h3>
+<ul>
+<li><strong>机构</strong>：Department of Physics，University of Miami（迈阿密大学），Associate Professor副教授；ORCID：0000‑0002‑3048‑7046，邮箱：c.song@miami.edu</li>
+<li><strong>研究方向</strong>：统计物理、复杂网络、人类移动性、社会动力学、非平衡系统、生物物理</li>
+<li><strong>核心合作者</strong>：Albert‑László Barabási、Neil F. Johnson、Jiazhen Liu、Shengda Huang、D. Wang</li>
+<li><strong>过往任职</strong>：哈佛大学、东北大学；合作机构：东北大学、哈佛大学、清华大学</li>
+</ul>
+<hr>
+<h2 id="二第一共一通讯作者近年代表论文20202026每人510篇">二、第一/共一、通讯作者近年代表论文（2020‑2026，每人5‑10篇）</h2>
+<h3 id="-jiazhen-liu-刘家臻共一">✅ Jiazhen Liu 刘家臻（共一）</h3>
+<ol>
+<li>Liu J, Huang S, Aden N M, Johnson N F, Song C. <em>Emergence of Polarization in Coevolving Networks</em>. <strong>Physical Review Letters</strong>, 2023, 130(3):037401.（目标论文）</li>
+<li>Piao J#, Liu J#, Zhang F, et al. Human‑AI adaptive dynamics drives the emergence of information cocoons. <strong>Nature Machine Intelligence</strong>, 2023, 5(11):1214‑1224.（共同一作）</li>
+<li>Liu J, Aden N M, Sarker D, Song C. Dynamical Phase Transitions in Nonequilibrium Networks. <strong>Physical Review Letters</strong>, 2025,135(16):167402.</li>
+<li>Liu J, Tamang K, Wang D, Song C. Predicting scientific breakthroughs through capacity‑based dynamics in citation networks. <strong>Physical Review E</strong>, 2026,113(3):034315.</li>
+<li>Liu J, Li R, Wang H, et al. Beyond equilibrium: Non‑equilibrium foundations should underpin generative processes in complex dynamical systems. arXiv preprint arXiv:2505.18621, 2025.</li>
+<li>Li R, Liu J, Wang H, et al. Weightflow: Learning stochastic dynamics via evolving weight of neural network. <strong>AAAI‑2026</strong>, 2026:641‑649.</li>
+<li>Liu J, Kunal T, Wang D, Song C. Correlated Impact Dynamics in Science. arXiv:2303.03646, 2023.</li>
+</ol>
+<h3 id="-shengda-huang-黄盛达共一">✅ Shengda Huang 黄盛达（共一）</h3>
+<ol>
+<li>Liu J, Huang S, Aden N M, Johnson N F, Song C. <em>Emergence of Polarization in Coevolving Networks</em>. <strong>Physical Review Letters</strong>, 2023,130(3):037401.（目标论文）</li>
+<li>Messinger D S, Prince E B, Zheng M, Martin K, Mitsven S G, <strong>Huang S</strong>, et al. Continuous measurement of dynamic classroom social interactions. <strong>International Journal of Behavioral Development</strong>, 2019,43(3):263‑270.</li>
+<li>Huang S. Continuous Time Opinion Dynamics with Opinion‑Network Coevolution. PhD Dissertation, University of Miami, 2023.（博士学位论文）</li>
+<li>Shi F, Huang S. Modelling Universal Order Book Dynamics in Bitcoin Market. arXiv preprint,2021.</li>
+<li>Zheng M, Cao Z, Vorobyeva Y, Manrique P D, <strong>Huang S</strong>, Aden N M, Song C, Johnson N F. Emergent dynamics of extremes in a population driven by common information sources and new social media algorithms. <strong>Scientific Reports</strong>,2019,9(1):1‑14.</li>
+</ol>
+<h3 id="-chaoming-song-宋超明通讯作者">✅ Chaoming Song 宋超明（通讯作者）</h3>
+<ol>
+<li>Liu J, Huang S, Aden N M, Johnson N F, <strong>Song C</strong>*. <em>Emergence of Polarization in Coevolving Networks</em>. <strong>Physical Review Letters</strong>, 2023,130(3):037401.（目标通讯论文）</li>
+<li>Zhang Y, Perry L K, <strong>Song C</strong>*. Alignment phase transition in socially driven motion. <strong>Science Advances</strong>, 2026,12(12):eadz6890.（通讯）</li>
+<li>Liu J, Aden N M, Sarker D, <strong>Song C</strong>*. Dynamical Phase Transitions in Nonequilibrium Networks. <strong>Physical Review Letters</strong>, 2025, 135(16):167402.（通讯）</li>
+<li>Wang D, <strong>Song C</strong>, Barabási A‑L. Quantifying long‑term scientific impact. <strong>Science</strong>, 2013,342(6154):127‑132.</li>
+<li>Song C, Qu Z, Blumm N, Barabási A‑L. Limits of predictability in human mobility. <strong>Science</strong>,2010,327(5968):1018‑1021.</li>
+<li>Zhong L, Dong L, Wang Q, <strong>Song C</strong>, Gao J. Switching exploration modes in human mobility. arXiv:2503.10969,2025.</li>
+<li>Yu L, Cui P, <strong>Song C</strong>, et al. A temporally heterogeneous survival framework with application to social behavior dynamics. <strong>KDD 2017</strong>:1295‑1304.</li>
+</ol>
+<h3 id="-neil-f-johnson合作作者非一作通讯供参考">✅ Neil F. Johnson（合作作者，非一作/通讯，供参考）</h3>
+<ol>
+<li>Manrique P D, Huo F Y, El Oud S, Zheng M, Illari L, <strong>Johnson N F</strong>. Shockwave‑like behavior across social media. <strong>Physical Review Letters</strong>, 2023,130(23):237401.</li>
+<li>Tkacova K, Idler A, Lopez E, <strong>Johnson N F</strong>. Explaining conflict violence in terms of conflict actor dynamics. <strong>Scientific Reports</strong>,2023,13:21187.</li>
+<li>Illari L, Restrepo N J, <strong>Johnson N F</strong>. Rise of post‑pandemic resilience across the distrust ecosystem. <strong>Scientific Reports</strong>,2023,13:15640.</li>
+<li>Gabriel N A, Broniatowski D A, <strong>Johnson N F</strong>. Inductive detection of Influence Operations via Graph Learning. <strong>Scientific Reports</strong>,2023,13:22571.</li>
+<li>Verma A, Sear R F, Restrepo N J, <strong>Johnson N F</strong>. Transnational and trans‑topic web‑of‑influence ahead of U.K. city riots. <strong>Applied Network Science</strong>,2026,11(1):3.</li>
+</ol>
+<blockquote>
+<p>Nathaniel M. Aden公开独立发表论文数量不足5篇，主要为共同署名，故不做单独列表。</p>
+</blockquote>
+</div>
+        
+    </div><div class="tab-content" id="tab-model">
+        <div class="prose-content"><p>论文提出了一套严谨的统计物理分析框架，用于描述网络结构与观点动力学的共同演化过程。以下为您详细拆解该模型的基本定义、控制方程，以及如何通过数学推导得出解析稳态解和相变临界条件的完整过程。</p>
+<hr>
+<h3 id="一-模型的基本定义">一、 模型的基本定义</h3>
+<p>模型在一个由 $ N\ $ 个交互代理（个体）组成的网络中展开。每个代理 $ i\ $ 拥有一个在区间 $ [-1, 1]\ $ 内连续变化的舆论观点 $ s_i\ $。网络拓扑由邻接矩阵 $ A\ $ 描述，$ A_{ij} = 1\ $ 表示个体 $ i\ $ 与 $ j\ $ 之间存在社交连接，反之 $ A_{ij} = 0\ $。</p>
+<p>系统动力学由<strong>观点同质化</strong>与<strong>同质聚类</strong>这两个核心机制的耦合驱动：</p>
+<h4 id="1-观点同质化动力学-opinion-homogenization">1. 观点同质化动力学 (Opinion Homogenization)</h4>
+<p>个体 $ i\ $ 的观点变化满足如下随机微分方程（SDE）：
+$ ds_i = \mu(s_i, \vec{s}, A)dt + \sigma(s_i)dW_t\ $</p>
+<ul>
+<li><strong>漂移项 $ \mu\ $</strong>：控制观点的平均演化方向。它由该个体与其邻居之间的相互作用力 $ F(s_i, s_j)\ $ 之和决定：
+$ \mu_i = \sum_{j=1}^N A_{ij} F(s_i, s_j)\ $
+其中同质化要求满足 $ F(s,s) = 0\ $ 且 $ \partial_s F(s, s&rsquo;=s) &lt; 0\ $。</li>
+<li><strong>扩散项 $ \sigma(s_i)\ $</strong>：刻画观点的涨落行为。为了约束观点不超出边界 $ [-1, 1]\ $，扩散项在边界处必须归零，即 $ D(s = \pm 1) \equiv \sigma(\pm 1)^2 / 2 = 0\ $。对其进行一阶泰勒展开，扩散系数可表示为：
+$ D(s) \approx \frac{\sigma_0^2}{2} (1 - s^2)\ $</li>
+</ul>
+<p>通过求解上述随机微分方程，可以导出单代理观点的概率密度分布 $ P(s, t)\ $ 随时间的演化方程（福克-普朗克方程）：
+$ \frac{\partial P(s,t)}{\partial (\alpha t)} = -\frac{\partial}{\partial s} \left[ \int_{-1}^1 F(s,s&rsquo;) Q(s,s&rsquo;,t) ds&rsquo; \right] + \frac{\partial^2}{\partial s^2} [D(s)P(s,t)]\ $
+这里，$ Q(s,s&rsquo;,t)\ $ 代表连接两个观点的“边”的联合概率密度分布，它隐式地依赖于网络的邻接矩阵 $ A\ $。</p>
+<h4 id="2-同质聚类动力学-homophily-clustering">2. 同质聚类动力学 (Homophily Clustering)</h4>
+<p>网络连接的演化取决于个体观点的相似度，其边建立与断开的速率分别满足：
+$ dP[A_{ij}(0 \to 1)] = \frac{\gamma_+(s_i, s_j)}{N} dt\ $
+$ dP[A_{ij}(1 \to 0)] = \gamma_-(s_i, s_j) dt\ $
+其中，新边建立的速率除以 $ N\ $ 是为了确保网络在热力学极限下的稀疏性。</p>
+<hr>
+<h3 id="二-核心数学推导过程">二、 核心数学推导过程</h3>
+<p>由于网络结构与观点演化深度交织（观点决定了连边的变化，连边反过来控制观点的漂移），这是一个多体非平衡态动力学问题，通常极难求解。作者通过以下步骤实现了自洽解析求解：</p>
+<h4 id="step-1-绝热近似-adiabatic-approximation">Step 1: 绝热近似 (Adiabatic Approximation)</h4>
+<p>在真实社交媒体中，个体的观点变化（天到月尺度）往往慢于关注、取关等社交连接的变化（分钟到小时尺度）。为了量化这种时间尺度差异，作者引入了观点更新速率因子 $ \alpha\ $（即令观点的漂移与扩散均正比于 $ \alpha\ $）。
+联合观点分布 $ Q(s, s&rsquo;, t)\ $ 的时间演化可以展开为：
+$ \frac{\partial Q(s, s&rsquo;, t)}{\partial t} = \gamma_+(s,s&rsquo;) P(s,t) P(s&rsquo;, t) - \gamma_-(s, s&rsquo;) Q(s,s&rsquo;,t) + O(\alpha)\ $
+在<strong>绝热极限 $ \alpha \to 0\ $</strong> 下，可以忽略高阶项 $ O(\alpha)\ $，使得网络演化对观点演化来说是顺时的，两者在动力学上实现了解耦。</p>
+<h4 id="step-2-稳态联合观点分布求解">Step 2: 稳态联合观点分布求解</h4>
+<p>在系统达到稳态时，令上式 $ \frac{\partial Q}{\partial t} = 0\ $，可以直接求得精确的<strong>稳态联合观点分布 $ Q_{st}(s, s&rsquo;)\ $</strong>：
+$ Q_{st}(s, s&rsquo;) = \frac{\gamma_+(s, s&rsquo;)}{\gamma_-(s, s&rsquo;)} P_{st}(s) P_{st}(s&rsquo;)\ $</p>
+<h4 id="step-3-积分方程的自洽变换">Step 3: 积分方程的自洽变换</h4>
+<p>将 $ Q_{st}(s, s&rsquo;)\ $ 的结果代入稳态福克-普朗克方程（即令演化方程 (4) 的左端为 0）：
+$ -\frac{d}{ds} \left[ \int_{-1}^1 F(s, s&rsquo;) Q_{st}(s, s&rsquo;) ds&rsquo; \right] + \frac{d^2}{ds^2} [D(s) P_{st}(s)] = 0\ $
+假设边界处的流（Flux）为零，对上式进行一次积分，可得：
+$ \frac{d}{ds} [D(s) P_{st}(s)] = \int_{-1}^1 F(s, s&rsquo;) \frac{\gamma_+(s, s&rsquo;)}{\gamma_-(s, s&rsquo;)} P_{st}(s) P_{st}(s&rsquo;) ds&rsquo;\ $
+方程两边同时除以 $ D(s) P_{st}(s)\ $：
+$ \frac{1}{D(s) P_{st}(s)} \frac{d}{ds} [D(s) P_{st}(s)] = \int_{-1}^1 \frac{\gamma_+(s, s&rsquo;) F(s, s&rsquo;)}{\gamma_-(s, s&rsquo;) D(s)}  P_{st}(s&rsquo;) ds&rsquo;\ $
+注意到左边是 $ \frac{d}{ds} \ln [D(s) P_{st}(s)]\ $。因此，两边再次对 $ s\ $ 进行积分，即可将原本复杂的动力学方程转化为一个关于稳态观点分布 $ P_{st}(s)\ $ 的<strong>自洽积分方程</strong>：
+$ \ln[D(s) P_{st}(s)] = \int_{-1}^1 K(s, s&rsquo;) P_{st}(s&rsquo;) ds&rsquo;\ $
+其中，<strong>自洽积分核 $ K(s, s&rsquo;)\ $</strong> 定义为：
+$ K(s, s&rsquo;) \equiv \int \frac{\gamma_+(s, s&rsquo;) F(s, s&rsquo;)}{\gamma_-(s, s&rsquo;) D(s)} ds\ $</p>
+<hr>
+<h3 id="三-普适标度律与指数--delta--的导出">三、 普适标度律与指数 $ \delta\ $ 的导出</h3>
+<p>为了证明真实数据中发现的标度律，需要分析当观点 $ s\ $ 趋于极值边界（即 $ s \to \pm 1\ $）时方程的渐近行为。
+在边界处，由于 $ D(s) \approx \frac{\sigma_0^2}{2} (1 - s^2)\ $，当 $ s \to \pm 1\ $ 时，积分核具有如下渐近形式：
+$ K(s, s&rsquo;) \sim \kappa_{\pm}(s&rsquo;) \ln(1 \mp s)\ $
+其中，引入边界常数 $ \kappa_{\pm}(s&rsquo;) \equiv \frac{\gamma_+(\pm 1, s&rsquo;) F(\pm 1, s&rsquo;)}{\gamma_-(\pm 1, s&rsquo;) \sigma_0^2}\ $。
+将渐近核代入积分自洽方程：
+$ \ln[(1 \mp s) P_{st}(s)] \sim \left[ \int_{-1}^1 \kappa_{\pm}(s&rsquo;) P_{st}(s&rsquo;) ds&rsquo; \right] \ln(1 \mp s)\ $
+去对数后，便精确导出了<strong>幂律标度律形式</strong> $ P_{st}(s) \sim (1 \mp s)^{\delta_{\pm}}\ $，其中<strong>标度指数 $ \delta_{\pm}\ $</strong> 的解析表达式为：
+$ \delta_{\pm} = \int_{-1}^1 \kappa_{\pm}(s&rsquo;) P_{st}(s&rsquo;) ds&rsquo; - 1\ $
+这一结论说明，不论微观物理细节如何变化，只要满足同质化和同质聚类机制，边界处必定产生普适的幂律标度行为。</p>
+<hr>
+<h3 id="四-最小模型及其相变边界的解析">四、 最小模型及其相变边界的解析</h3>
+<p>为了将理论与实证结合，论文引入了一个线性观点动力学与双线性连边速率的<strong>最小模型（Minimal Model）</strong>：</p>
+<ul>
+<li><strong>线性相互作用力</strong>：$ F(s, s&rsquo;) = \lambda(s&rsquo; - s)\ $</li>
+<li><strong>双线性连边与断边率</strong>：$ \gamma_{\pm}(s, s&rsquo;) = r_{\pm}(1 + J_{\pm} s s&rsquo;)\ $</li>
+</ul>
+<p>此时，积分核表达式化为：
+$ K(s, s&rsquo;) = g \int \frac{1+J_+ s s&rsquo;}{1+J_- s s&rsquo;} \frac{2(s&rsquo; - s)}{1 - s^2} ds\ $
+其中控制整个共演系统状态的无量纲关键参数定义为 <strong>$ g \equiv \frac{\lambda}{\sigma_0^2} \frac{r_+}{r_-}\ $</strong>。
+基于对称观点分布（即均值 $ \langle s \rangle = 0\ $）的情形，作者解析推导出了三相之间的精确相变临界线：</p>
+<h4 id="1-极化相--to--部分极化相的相变临界线--g_-">1. 极化相 $ \to\ $ 部分极化相的相变临界线 ($ g_*\ $</h4>
+<p>该相变发生在观点分布在边界处由发散转为收敛的临界点（即分布曲线由底部的 U 形开始塌缩，指数 $ \delta = 0\ $）。
+令 $ \delta = 0\ $，带入方程得到精确的临界条件：
+$ g_*^{-1} + (J_+ - J_-) f(J_-) = 1\ $
+其中辅助函数为 $ f(J_-) = (1+J_-) \int_{-1}^1 \frac{s&rsquo;^2}{1 - J_-^2 s&rsquo;^2} P_{st}(s&rsquo;) ds&rsquo;\ $。</p>
+<h4 id="2-部分极化相--to--去极化相的相变临界线--g_-">2. 部分极化相 $ \to\ $ 去极化相的相变临界线 ($ g_{**}\ $</h4>
+<p>该相变对应于观点分布由双峰的 M 形转为单峰的倒 U 形，即在中立观点 $ s = 0\ $ 处的二阶导数符号发生改变的时刻（临界点满足 $ P_{st}&rsquo;&rsquo;(0) = 0\ $）。
+将条件 $ P&rsquo;<em>{st}(0) = 0\ $ 和 $ P&rsquo;&rsquo;</em>{st}(0) = 0\ $ 代入稳态福克-普朗克方程，经过积分推导，得出精确相变临界条件：
+$ g_{**}^{-1} + (J_+ - J_-) \langle s^2 \rangle = 1\ $
+其中 $ \langle s^2 \rangle = \int_{-1}^1 s^2 P_{st}(s) ds\ $ 是观点分布的二阶矩（方差）。</p>
+<hr>
+</div>
+        
+    </div><div class="tab-content" id="tab-results">
+        <div class="prose-content"><p>这篇论文在理论研究和实证分析上均取得了突破性进展，其主要研究结果、理论意义和实际价值详细阐述如下：</p>
+<h3 id="一-主要研究结果-main-results">一、 主要研究结果 (Main Results)</h3>
+<ol>
+<li><strong>发现舆论极端化的普适标度律</strong>：
+通过分析 Facebook（政治与非政治内容）及政治博客圈（Blogosphere）的真实数据，作者发现当个体的舆论观点 $ s\ $ 趋于极值边界 $ \pm 1\ $ 时，观点分布 $ P(s)\ $ 表现出显著的<strong>幂律标度律行为</strong>（$ P(s) \sim (1 \mp s)^{\delta}\ $）。
+<ul>
+<li>对于<strong>政治性硬内容（FBHC）和政治博客圈</strong>，其标度指数 $ \delta &lt; 0\ $，舆论分布呈 <strong>U 形</strong>，表明系统处于<strong>极化相</strong>，人群高度对立且越极端的观点持有者数量越多；</li>
+<li>对于<strong>非政治性软内容（FBSC）</strong>，其标度指数 $ \delta &gt; 0\ $，分布呈<strong>倒 U 形</strong>，表明系统处于<strong>去极化相</strong>，大部分人保持中立。</li>
+</ul>
+</li>
+<li><strong>揭示“极端观点持有者即网络枢纽”的规律</strong>：
+实证测量发现，个体的平均连接度（Degree）会随着其观点的极端化而增加。换言之，<strong>持有越极端政治观点的人，在社交网络中越容易成为连接大量用户的“枢纽节点（Hubs）”</strong>。</li>
+<li><strong>成功构建共演网络动力学模型并实现解析求解</strong>：
+论文将“观点同质化”（相互影响靠拢）和“同质聚类”（倾向与志同道合者建边、与异见者断边）这两种微观机制在同一个动力学框架下耦合。利用<strong>绝热近似（Adiabatic Approximation）</strong>，在网络连接演化快于观点变化的极限下（$ \alpha \to 0\ $），将高维非平衡态动力学方程成功简化为了<strong>可解析精确求解的自洽积分方程</strong>。</li>
+<li><strong>定量绘制三相相图与预测相变</strong>：
+论文不仅精确拟合了实证数据，还通过调节耦合控制参数 $ g\ $（融合了舆论同质化速率与网络连边诞生-死亡比的复合参数），在理论和模拟中定量重现并划分了三大稳定相：<strong>极化相（Polarization）</strong>、<strong>部分极化相（Partial Polarization）</strong> 和 <strong>去极化相（Depolarization）</strong>，并给出了精准的相变临界条件。</li>
+</ol>
+<hr>
+<h3 id="二-理论意义-theoretical-significance">二、 理论意义 (Theoretical Significance)</h3>
+<ol>
+<li><strong>攻克了“稳定双极化结构”无法解析建模的长期难题</strong>：
+在复杂网络领域，传统的舆论动力学共演模型（如强化模型 RM）极难维持稳定的两极分化状态，在数值模拟中双极化往往只是暂时的，系统会迅速退化为所有人都倒向一侧的“单极化”或人人相同的“全局共识”。<strong>本研究是学术界首个从理论上解析证明、并经数值模拟与实证数据双重验证，能产生稳定双极化（Bipolarized）群落结构的共演网络模型</strong>。</li>
+<li><strong>颠覆了传统的同步化（Synchronization）建模范式</strong>：
+以往的极化模型本质上是同步化模型的变体，即当系统有序时，所有人同步到单一状态。本论文指出，要刻画真实的双极化，必须摒弃同步范式，改用观点与拓扑结构双向耦合的非平衡态共演框架，这为计算社会科学和统计物理学提供了<strong>全新的建模范式</strong>。</li>
+<li><strong>证明了标度律的微观无关性（Universality）</strong>：
+推导表明，当观点接近边界时，幂律标度行为是由自洽方程的渐近性质决定的，<strong>这意味着极化标度律在很大程度上独立于网络的微观细节</strong>，具有普适的统计物理学意义。</li>
+<li><strong>提供了极具拓展性的普适数学框架</strong>：
+该模型不局限于社会学舆论。由于其数学结构的普适性，该动力学方程稍微变形后（例如令观点 $ s_i = \cos(\theta_i)\ $），便可以直接用于对**包含背景环境变化的非线性耦合振子同步化（如 Kuramoto 模型等经典物理问题）**进行理论建模。</li>
+</ol>
+<hr>
+<h3 id="三-实际价值-practical-value--applications">三、 实际价值 (Practical Value / Applications)</h3>
+<ol>
+<li><strong>定量诊断在线社交媒体的极化程度</strong>：
+通过该研究给出的标度指数 $ \delta\ $，平台管理者和政策制定者可以获得一个<strong>量化的物理指标</strong>。只要提取平台上用户的行为数据，计算出指数 $ \delta\ $，就能精准诊断当前社交网络是处于健康的“去极化相”，还是已经滑入了危险的“极端极化相”。</li>
+<li><strong>深度解释了“信息茧房”和“回音室”的形成根源</strong>：
+该研究从动力学角度证明，<strong>观点更新缓慢、社交圈子更替频繁（$ g\ $ 较小）是导致“回音室效应”无法自愈的根本动力学原因</strong>。它完美解释了为什么像政治话题（政治博客和 Facebook 政治 hard contents）极易陷入相互隔绝的死循环，而娱乐、生活等软内容（soft contents）却能保持群体观点的温和与多元。</li>
+<li><strong>为“去极化”政策和推荐算法设计提供科学指导</strong>：
+在模型中，控制系统极化状态的关键在于复合参数 $ g \equiv \frac{\lambda}{\sigma_0^2} \frac{r_+}{r_-}\ $（观点融合速率、个体涨落、网络建边与删边速率的比例）。这一发现为社交平台算法干预提供了抓手：
+<ul>
+<li>平台如果想要减少极化（将网络从极化相黄色区域推向去极化相蓝色区域）：
+<ul>
+<li>可以设法<strong>降低异见者之间的断边率 $ r_-\ $</strong>（例如在推荐算法中增加跨圈层的温和观点推送，防止用户一味取关异见者）；</li>
+<li>或者<strong>提高观点同质化速率 $ \lambda\ $</strong>（例如鼓励理性、建设性的双向公共对话，加速信息流动与观点折中）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol></div>
+        
+    </div><div class="tab-content" id="tab-figures">
+        <div class="prose-content"><p>论文中共有 <strong>4 张核心图像（Figure 1 至 Figure 4）</strong>，它们直观地展示了实证数据分析结果、共演网络模型的模拟效果、系统随动力学参数发生的相变过程以及最终的理论相图。以下是每张图像的详细内容和科学含义介绍：</p>
+<hr>
+<h3 id="1-figure-1-极化网络结构对比图-polarized-networks">1. Figure 1: 极化网络结构对比图 (Polarized Networks)</h3>
+<p>这张图展示了真实世界与模型模拟生成的极化社交网络拓扑结构：</p>
+<ul>
+<li><strong>Figure 1(a) Blogosphere (政治博客圈网络实证图)</strong>：展示了由 1490 个博客和约 1.9 万条引用组成的网络。图中的节点颜色代表政治倾向（<strong>蓝色代表自由派，红色代表保守派</strong>）。可以清晰地看到网络分裂成两个高度对立且内部连接紧密的群落，直观呈现了**“回音室效应”（Echo Chamber）**。</li>
+<li><strong>Figure 1(b) Minimal Model (模型模拟网络图)</strong>：展示了由研究团队提出的“共演最小模型”在极化相（Polarization phase）下数值模拟生成的网络（含 2000 个节点）。其两极分化的群落结构与真实博客圈网络 在拓扑上高度相似。</li>
+</ul>
+<hr>
+<h3 id="2-figure-2-实证测量与理论预测的对比-empirical-measures-and-theoretical-predictions">2. Figure 2: 实证测量与理论预测的对比 (Empirical Measures and Theoretical Predictions)</h3>
+<p>该图通过六个子图，定量对比了真实数据集（Facebook 和博客圈）与该论文理论模型的吻合度：</p>
+<ul>
+<li><strong>Fig. 2(a) - 2(c) 舆论观点分布曲线 $ P(s)\ $</strong>：
+<ul>
+<li><strong>2(a) Facebook Hard Contents (政治等硬内容)</strong>：呈现典型的 <strong>U 形分布</strong>，表明人群观点极度分裂对立（极化）。</li>
+<li><strong>2(b) Facebook Soft Contents (娱乐等软内容)</strong>：呈现<strong>倒 U 形分布</strong>，观点多集中在 0（中立）附近，表明处于去极化状态。</li>
+<li><strong>2(c) Blogosphere (政治博客圈)</strong>：同样呈现显著的 <strong>U 形分布</strong>。</li>
+<li><em>注：子图中的插图（Insets）是在双对数坐标下绘制的 $ P(s)\ $ 与 $ 1 \mp s\ $ 的关系，证实了舆论在逼近边界时满足<strong>幂律标度律（Power-law scaling laws）</strong>，绿色实线为模型的理论解析预测，与实证散点完美拟合</em>。</li>
+</ul>
+</li>
+<li><strong>Fig. 2(d) 节点度与观点的相关性 $ k(s)\ $</strong>：展示了博客圈网络中个体的平均度（连接数）随其政治观点的变化。曲线呈 <strong>U 形</strong>，表明<strong>持有越极端政治观点的用户（靠近 $ \pm 1\ $），在网络中越容易成为连接数众多的枢纽节点（Hubs）</strong>。</li>
+<li><strong>Fig. 2(e) 联合舆论分布实证热图 (Experiment)</strong>：横纵坐标分别为连接两端个体的观点 $ s\ $ 和 $ s&rsquo;\ $。高亮区域集中在左下角（双保守连接）和右上角（双自由连接），表明相同观点的个体极易相连，体现了<strong>同质聚类（Homophily Clustering）</strong>。</li>
+<li><strong>Fig. 2(f) 联合舆论分布理论热图 (Theory)</strong>：展示了论文模型推导出的联合舆论分布 $ R(s, s&rsquo;)\ $ 预测热图，其高亮分布特征与图 2(e) 的实证热图高度契合。</li>
+</ul>
+<hr>
+<h3 id="3-figure-3-舆论分布的相变过程-phase-transitions">3. Figure 3: 舆论分布的相变过程 (Phase Transitions)</h3>
+<p>这张图展示了系统在固定同质聚类强度（$ J_+ = 0.7, J_- = -0.8\ $）下，随着观点更新速率与网络演化速率之比 $ g\ $（代表动力学耦合强度）的变化而发生的相变过程：</p>
+<ul>
+<li><strong>Fig. 3(a) 极化相 (Polarization, $ g = 0.9\ $</strong>：$ g\ $ 较小时，系统处于极化相，观点分布 $ P(s)\ $ 呈现 <strong>U 形</strong>，观点集中在极端的 $ \pm 1\ $。</li>
+<li><strong>Fig. 3(b) 部分极化相 (Partial Polarization, $ g = 1.5\ $</strong>：随着 $ g\ $ 增大，系统发生第一次相变，分布曲线由 U 形变为 <strong>M 形</strong>，最可能的观点（峰值位置）向中间收缩。</li>
+<li><strong>Fig. 3(c) 去极化相 (Depolarization, $ g = 2.4\ $</strong>：当 $ g\ $ 足够大时，发生第二次相变，分布曲线变为单峰的<strong>倒 U 形</strong>，大部分人回归中立观点。</li>
+<li><strong>Fig. 3(d) 序参量 $ s_{\max}\ $ 随参数 $ g\ $ 的变化曲线</strong>：定义 $ s_{\max}\ $ 为最可能持有的观点位置。
+<ul>
+<li>在<strong>黄色区域（极化相）</strong>，$ s_{\max} = 1\ $。</li>
+<li>在临界点 $ g_* \approx 1.3\ $ 处，系统进入<strong>绿色区域（部分极化相）</strong>，$ s_{\max}\ $ 开始从 1 逐渐下降。</li>
+<li>在临界点 $ g_{<strong>} \approx 1.78\ $ 处，系统进入</strong>蓝色区域（去极化相）**，$ s_{\max}\ $ 归零（单峰居中）。</li>
+<li><em>散点代表数值模拟结果，实线代表理论解析解，两者完全一致</em>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-figure-4-系统的二维相图-phase-diagram">4. Figure 4: 系统的二维相图 (Phase Diagram)</h3>
+<p>这张图描绘了系统在参数空间中的完整动力学行为，揭示了不同相之间的边界：</p>
+<ul>
+<li><strong>坐标轴</strong>：横轴为网络同质聚类倾向的相对强度 $ J_+ - J_-\ $，纵轴为动力学参数 $ g\ $。</li>
+<li><strong>三个相区</strong>：
+<ul>
+<li><strong>黄色区域（下部）</strong>：极化相（Polarization）。</li>
+<li><strong>绿色区域（中部）</strong>：部分极化相（Partial Polarization）。</li>
+<li><strong>蓝色区域（上部）</strong>：去极化相（Depolarization）。</li>
+</ul>
+</li>
+<li><strong>边界线</strong>：实线是模型理论推导的<strong>精确相变线</strong>，虚线是解析近似线。</li>
+<li><strong>实证数据的定位</strong>：
+<ul>
+<li><strong>Facebook 政治等硬内容（FBHC，红色方块）</strong> 和 <strong>政治博客圈（Blogosphere，紫色方块）</strong> 均落在底部的<strong>黄色极化相区</strong>，解释了为什么政治话题极易产生严重分化。</li>
+<li><strong>Facebook 软内容（FBSC，红色三角）</strong> 落在顶部的<strong>蓝色去极化相区</strong>，对应了非政治性话题中人们多持中立和多元化观点的现象。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>💡 <strong>您想更深入探讨其中某张特定图表（例如 Figure 3 的相变机制或 Figure 4 的相变边界公式推导）的数学细节吗？</strong></p>
+</div>
+        
+    </div><div class="tab-content" id="tab-code">
+        <div class="prose-content">全局变量、数据结构、输入输出
+运行逻辑、选择循环分支、终止条件</div>
+        
+    </div><div class="tab-content" id="tab-mindmap"><div class="pdf-container" style="grid-template-columns: 1fr;">
+            
+            <div class="mindmap-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p style="font-size:0.95rem;">请将推导过程 PDF 放入 <code>static/derivation/</code></p>
+                <p style="font-size:0.8rem;">命名规则: <code>EMPolarization.pdf</code></p>
+            </div>
+            
+        </div>
+    </div><div class="tab-content" id="tab-translation">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="languages" style="width:16px;height:16px;"></i>
+                    翻译
+                </div>
+                <div class="pdf-panel-body"><p>[第1页，第1段]
+协同演化网络中极化的涌现</p>
+<p>[第1页，第2段]
+刘佳珍，黄圣达，Nathaniel M. Aden，Neil F. Johnson，以及宋超明</p>
+<p>[第1页，第3段]
+迈阿密大学物理系，科勒尔盖布尔斯，佛罗里达州33142，美国
+乔治华盛顿大学物理系，华盛顿特区20052，美国</p>
+<p>[第1页，第4段]
+（2022年5月26日收稿；2022年9月21日修订；2022年11月18日录用；2023年1月18日发布）</p>
+<p>[第1页，第5段]
+极化是社会系统中一种普遍存在的现象。实证研究记录了社交媒体上大量关于观点极化的证据，显示出一种典型的双极化模式，将个体划分为持有相反观点的两个群体。尽管已有共同演化网络模型被提出用于理解极化现象，但现有工作无法生成稳定的双极化结构。此外，一个能够捕捉支配极化动态的通用机制的定量且全面的理论框架仍未得到解决。在本快报中，我们发现了一个观点分布的普适标度律，其特征由一组标度指数描述。这些指数将社会系统分类为双极化相和去极化相。我们发现了支配极化动态的两个通用机制，并提出一个同时考虑观点动态和网络演化的共同演化框架。在对社会互动的若干通用假设下，我们发现稳定的双极化社群结构会自然地从共同演化动态中涌现。我们的理论解析地预测了两次相变，跨越三个不同的极化相，这与Facebook和博客圈数据集的实证观察一致。我们的理论不仅解释了实证观察到的标度律，还使我们能够定量预测标度指数。</p>
+<p>[第1页，第6段]
+DOI: 10.1103/PhysRevLett.130.037401</p>
+<p>[第1页，第7段]
+近期发表的关于观点极化的讨论受到了广泛关注，极化是指观点对立程度随时间增加的过程[1–4]。实证研究观察到一种典型的两极化模式，即个体被分为观点截然对立的两组。例如，自由派与保守派政党之间的政治分歧反映了政治取向上的观点异质性。这些不同态度在社交媒体上被观察到[5–10]，发现最常分享的政治观点与大部分自由派或保守派人群一致，即观点两极化。另一方面，实证数据也显示某些系统存在去极化阶段，其中非政治领域的观点分布在中立状态附近达到峰值，并伴随显著方差[5]。</p>
+<p>[第1页，第8段]
+实证研究表明，回音室效应是社会网络中观点极化的基础[6,7,11,12]，提示志同道合的用户倾向于互动[5,6,13]。确实，观点极化与网络结构的共存意味着观点动态与网络动态之间的相互作用在极化中起着关键作用。尽管已有增长型共演化模型被提出以理解观点与网络结构之间的相互影响，但这些研究并未专门聚焦于观点极化[14–17]。</p>
+<p>[第1页，第9段]
+最近，有人提出了一种强化共演化模型来解释网络极化现象[18,19]。该强化模型（reinforcement model, RM）生成两种状态：一种是稳定的单极化（monopolarized）阶段，其中所有人都倾向于单边观点；另一种是全球共识（global consensus）阶段，所有人都持有相同的中立观点。尽管在数值上观察到了亚稳态的双极化（bipolarized）模式，但它仅暂时出现，并迅速退化为单极化模式。此外，其出现高度依赖于初始状态。</p>
+<p>[第1页，第10段]
+尽管RM模型的部分成功暗示了极化模式可能源于共同演化动力学，但现有模型与经验观察到的稳定两极分化模式之间的差异有着深刻的根源。实际上，现有的极化建模框架是同步模型的一种变体，其中当系统进入有序相时，个体同步到单一状态。然而，要捕捉两极分化结构，则需要不同的框架。此外，共同演化网络模型因观点与网络结构之间复杂的相互作用而著称地难以求解。因此，现有模型大多依赖数值模拟和定性近似，而一个能够解释经验观察到的两极分化模式的定量模型仍然缺失。</p>
+<p>[第1页，第11段]
+在本信中，我们报告了一个由一组标度指数刻画的普适标度律，用于经验性观点分布。这些指数将社会系统划分为极化（polarization）和去极化（depolarization）相。为解释这一发现，我们提出了两种普遍存在的极化动力学机制。（1）观点同质化（homogenization）：个体的观点受到其邻居的影响。</p>
+<p>[第2页，第1段]
+在社会网络中，个体倾向于趋同于相似观点[20–24]。(2) 同质性聚类（Homophily clustering）：社会连接随时间演化，个体倾向于与信念相似者建立联系。因此，相似个体聚集成簇[6–8,11]。</p>
+<p>[第2页，第2段]
+这两种机制导致网络演化与观点动力学相互纠缠。因此，我们提出了一个通用的共演化框架（coevolving framework），以捕捉观点动力学与网络演化之间的相互作用。我们找到了所提建模框架的精确解，并从解析上预测了实证数据中观察到的普适标度律。我们解析计算了所提模型的相图，预测了三个新的稳定相：(i) 极化（polarization）、(ii) 部分极化（partial polarization）和 (iii) 去极化（depolarization），其中极化和部分极化相均呈现稳定的双极化模式。据我们所知，我们是首个从解析上预测稳定双极化模式的共演化网络模型，并通过数值模拟和实证测量加以验证。</p>
+<p>[第2页，第3段]
+实验观测.—我们使用两个数据集来揭示极化现象。第一个数据集包含Facebook上分享最多的500个在线域名[5]，这些域名被分类为硬内容（FBHC）或软内容（FBSC）。第二个数据集包含博客圈中的1490个博客和19090条引用[25]。我们计算每个域名或博客的政治倾向平均得分$s$，其中$s$的范围从$-1$（自由派）到1（保守派）[详见补充材料（SM）[26]]。图1(a)描绘了博客圈网络，表明该网络极化为两个对立的社群，这一现象被称为回音室（echo chamber）[6,7,11,12,18]。</p>
+<p>[第2页，第4段]
+为量化所观察到的极化现象，图2中的散点图描绘了所有三个实证数据集的意见分布$P(s)$。我们发现两个与政治相关的数据集（FBHC和博客圈）中的意见分布呈U形，表明存在极化相。相比之下，FBSC数据集中的意见呈倒U形分布，表明存在去极化相。为研究人口规模与意见极端性之间的标度关系，我们在图2(a)–2(c)的插图中绘制了$P(s)$作为$1 \pm s$的函数，其中$1 \pm s$衡量意见偏离最极端$\pm 1$的程度。我们发现</p>
+<p>[第2页，第5段]
+<img src="image" alt="图1. 极化网络。(a) 博客圈网络。颜色代表政治观点，即蓝色为自由派，红色为保守派。(b) 通过我们模型在极化相的数值模拟生成的社会网络。"></p>
+<p>[第2页，第6段]
+$
+P(s) \sim \begin{cases} (1 - s)^{\delta_+} &amp; s \to 1, \ (1 + s)^{\delta_-} &amp; s \to -1, \end{cases} \tag{1}
+$</p>
+<p>[第2页，第7段]
+满足幂律（power laws），其中$\delta_\pm$表征当意见$s$趋近$\pm 1$时的幂律指数。负指数值表明人口随意见极端性增加而增长，并在意见得分$s$达到极限值$\pm 1$时发散。相反，正的$\delta_\pm$指数表明$P(s)$在0附近达到峰值。因此，指数$\delta_\pm$表征极化，即$\delta_\pm &lt; 0$和$&gt; 0$分别对应极化系统和去极化系统。</p>
+<p>[第2页，第8段]
+为探究意见极化对网络结构的影响，我们测量了博客圈数据集中平均度$\bar{k}$作为意见$s$的函数。图2(d)中的散点图显示$\bar{k}$随意见得分$s$的极端性增加而增大，表明持有极端政治观点的用户更可能成为网络的枢纽节点。我们进一步测量了博客圈网络每条边上的联合意见分布$Q(s, s&rsquo;)$，该分布计算边的数量</p>
+<p>[第2页，第9段]
+<img src="image" alt="图2. 实证测量与理论预测。(a)–(c) FBHC、FBSC和博客圈的实证（点）和理论结果（绿色曲线）的意见分布。插图散点图表明实证意见分布遵循幂律。实线代表我们模型的理论预测。(d) 博客圈网络度与意见相关性的实证结果和理论预测。(e) 和 (f) 实证和理论归一化联合意见分布的热图。"></p>
+<p>[第3页，第1段]
+从一个持有观点 $s$ 的个体连接到持有 $s&rsquo;$ 的另一个体的连边概率相关。图2(e)绘制了归一化的联合观点分布 $R(s, s&rsquo;) = (Q(s, s&rsquo;)) / (P(s)P(s&rsquo;))$，用于衡量与无关联分布的偏差 [27]。我们发现，持有相似观点的两个连接个体数量显著增强，而持有不同观点的两个连接个体数量受到抑制，这表明真实社交网络中存在同质性聚类（homophily clustering）[图1(a)]。</p>
+<p>[第3页，第2段]
+<strong>建模框架（Modeling framework）。</strong>—为了解释实证观察结果，我们考虑一个由 $N$ 个交互智能体（agent）组成的共演化网络（coevolving network），每个智能体具有一个在 $-1$ 到 $1$ 之间连续变化的观点 $s$。智能体之间的连接由邻接矩阵（adjacency matrix）$A$ 描述，其中矩阵元素 $A_{ij} = 1$ 或 $0$ 分别表示智能体 $i$ 与 $j$ 相连或不相连。智能体的观点及其之间的连接均在连续时间 $t$ 内演化。此外，我们要求观点动力学与网络演化相互耦合，满足两个内在机制：(1) <em>观点同质化（opinion homogenization）</em>，即智能体观点的变化受其邻居观点的影响，并倾向于向相似观点转变；(2) <em>同质性聚类</em>，描述当智能体持有相似观点时，社交连接更有可能建立。这两种机制通过观点与社交连接的共演化动态耦合。下面我们详细讨论所提出的共演化动力学。</p>
+<p>[第3页，第3段]
+<strong>观点同质化。</strong>—为了对观点同质化进行建模，我们假设观点动力学遵循</p>
+<p>[第3页，第4段]
+$$ds_i = \mu(s_i, \bar{s}, A)dt + \sigma(s_i)dW_i, \tag{2}$$</p>
+<p>[第3页，第5段]
+其中 $\bar{s} = (s_1, s_2, \ldots, s_N)$ 表示所有智能体的观点集合，$s_i$ 是智能体 $i$ 的观点。$A$ 是智能体的邻接矩阵，$W_i$ 是标准维纳过程（Wiener process）。$\mu$ 是漂移项（drift term），控制观点的平均变化；$\sigma$ 是扩散项（diffusion term），控制观点动力学的方差。此外，我们假设观点漂移 $\mu$ 依赖于智能体 $i$ 及其邻居的观点，满足</p>
+<p>[第3页，第6段]
+$$\mu_i = \sum_{\langle i,j \rangle} F(s_i, s_j) = \sum_{j=1}^{N} A_{ij} F(s_i, s_j), \tag{3}$$</p>
+<p>[第3页，第7段]
+其中 $\langle i,j \rangle$ 表示对 $i$ 的所有邻居的交互求和 [22,23,28–31]。成对作用力（pairwise force）$F(s_i, s_j)$ 量化了个体 $i$ 和 $j$ 之间的交互。观点同质化要求 $F(s, s) = 0$ 且 $\partial_s F(s, s&rsquo;) = s &lt; 0$。另一方面，扩散项 $D(s) \equiv \sigma(s)^2 / 2$ 仅依赖于每个智能体自身的观点 $s$。观点的有界性要求在边界处扩散消失，即 $D(s = \pm 1) = 0$，这意味着泰勒展开（Taylor expansion）为 $D(s) = (\sigma(s)^2 / 2) = (\sigma_0^2 / 2)(1 - s^2) + O[(1 - s^2)^2]$。求解方程(2)可得到单智能体观点的时间演化</p>
+<p>[第3页，第8段]
+$$\frac{\partial P(s;t)}{\partial(\alpha t)} = -\frac{\partial}{\partial s} \int_{-1}^{1} F(s, s&rsquo;) Q(s, s&rsquo;;t) ds&rsquo; + \frac{\partial^2}{\partial s^2} [D(s)P(s;t)], \tag{4}$$</p>
+<p>[第3页，第9段]
+其中积分项捕捉了邻居交互的影响，因为 $Q(s, s&rsquo;;t)$ 隐式依赖于底层网络 $A$。</p>
+<p>[第3页，第10段]
+<strong>同质性聚类。</strong>—为了对同质性聚类进行建模，我们假设持有相似观点的智能体更有可能建立连接。具体而言，智能体 $i$ 将以概率速率 $\gamma_+(s_i, s_j) / N$ 连接到一个未链接的智能体 $j$ 以构建新边，其中 $s_i$ 和 $s_j$ 分别是智能体 $i$ 和 $j$ 的观点。因子 $1 / N$ 保证了网络的稀疏性。同时，智能体 $i$ 将以概率速率 $\gamma_-(s_i, s_j)$ 与已链接的智能体 $j$ 断开连接，从而消除一条现有边。即，</p>
+<p>[第3页，第11段]
+$$dP[A_{ij}(0 \rightarrow 1)] = \frac{\gamma_+(s_i, s_j)}{N} dt, \tag{5a}$$</p>
+<p>[第3页，第12段]
+$$dP[A_{ij}(1 \rightarrow 0)] = \gamma_-(s_i, s_j)dt. \tag{5b}$$</p>
+<p>[第3页，第13段]
+为了捕捉同质性聚类，我们假设 $\gamma_+$ 依赖于智能体 $i$ 及其邻居 $j$ 的观点。这种依赖性导致网络演化与观点动力学相耦合。</p>
+<p>[第3页，第14段]
+然而，我们注意到在大多数社交媒体中，观点变化比网络演化慢得多。为了量化它们各自的相对时间尺度，我们将观点漂移 $F \rightarrow \alpha F$ 和扩散 $D \rightarrow \alpha D$ 乘以一个表征观点更新速率相对于网络演化的因子 $\alpha$ 进行重标度。根据 $\alpha$ 的幂展开，我们发现联合观点分布 $Q(s, s&rsquo;;t)$ 的时间演化满足</p>
+<p>[第3页，第15段]
+$$\frac{\partial Q(s, s&rsquo;;t)}{\partial t} = \gamma_+(s, s&rsquo;) P(s;t) P(s&rsquo;;t) - \gamma_-(s, s&rsquo;) Q(s, s&rsquo;;t) + O(\alpha), \tag{6}$$</p>
+<p>[第3页，第16段]
+其中 $O(\alpha)$ 项捕捉了高阶修正。我们将在下面的讨论中保持在 $\alpha \rightarrow 0$ 的极限，即网络绝热演化（adiabatically），在此绝热近似（adiabatic approximation）下 $O(\alpha)$ 将被省略。</p>
+<p>[第3页，第17段]
+<strong>稳态解（Stationary solution）。</strong>—下面我们将聚焦于所提出框架的稳态解。方程(6)导出了稳态联合观点分布 $Q_{st}(s, s&rsquo;) = (\gamma_+(s, s&rsquo;) / \gamma_-(s, s&rsquo;)) P_{st}(s) P_{st}(s&rsquo;)$，其中 $P_{st}(s)$ 是稳态观点分布。将其代入方程(4)可得 $\int_{-1}^{1} K(s, s&rsquo;) P_{st}(s&rsquo;) ds&rsquo; = \ln[D(s) P_{st}(s)]$，其中核（kernel）$K(s, s&rsquo;) \equiv \int(\gamma_+(s, s&rsquo;) F(s, s&rsquo;) / \gamma_-(s, s&rsquo;) D(s)) ds$。当 $s \rightarrow \pm 1$ 时，我们发现 $[\int_{-1}^{1} \kappa_+(s&rsquo;) P_{st}(s&rsquo;) ds&rsquo;] \ln(1 \mp s) \sim \ln[(1 \mp s) P_{st}(s)]$，其中 $\kappa_+(s&rsquo;) \equiv (\gamma_+(s, s&rsquo;) F(\pm 1, s&rsquo;) / \gamma_-(s, s&rsquo;) \sigma_0^2)$。因此，我们的理论预测了普适的</p>
+<p>[第4页，第1段]
+标度律 $P_{\text{st}}(s) \sim (1 \mp s)^{\delta_{\pm}}$，其中指数 $\delta_{\pm} = \int_{-1}^{1} \kappa_{\pm}(s&rsquo;) P_{\text{st}}(s&rsquo;) ds&rsquo; - 1$，与在真实世界网络（real-world networks）中发现的标度律（1）一致（见补充材料 [26]，解析解）。这一发现表明，该普适标度律对于共演化网络（coevolving networks）而言相当普遍，并且在很大程度上独立于微观细节。</p>
+<p>[第4页，第2段]
+<strong>观点-拓扑关联（Opinion topology correlation）。</strong> 方程（6）揭示了网络结构与观点之间的潜在关联（见补充材料 [26]，解析解）。将方程（4）和（5）与方程（6）结合，可得到归一化联合观点分布 $R(s, s&rsquo;) = (Q(s, s&rsquo;)) / (P(s)P(s&rsquo;)) = (\gamma_{+}(s, s&rsquo;)) / (\gamma_{-}(s, s&rsquo;))$。由于联合观点分布 $Q(s, s&rsquo;)$ 统计的是观点分别为 $s$ 和 $s&rsquo;$ 的两个智能体（agent）之间连接的边数，因此，观点为 $s$ 的智能体的期望度（expected degree）为 $\bar{k}(s) = \int_{-1}^{1} Q(s&rsquo;|s) ds&rsquo; = \int_{-1}^{1} (Q(s, s&rsquo;)) / (P(s)) ds&rsquo; = \int_{-1}^{1} ds&rsquo; P_{\text{st}}(s&rsquo;) (\gamma_{+}(s&rsquo;, s)) / (\gamma_{-}(s&rsquo;, s))$，这使我们能够预测网络度量 $\bar{k}$ 与观点 $s$ 之间的关联。</p>
+<p>[第4页，第3段]
+<strong>最小模型（Minimal model）。</strong> 为了将我们的理论与实证数据进行比较，下面我们将聚焦于所提出框架的一个最小实现。具体而言，我们采用线性观点动力学模型 [22,23]，$F(s, s&rsquo;) = \lambda(s&rsquo; - s)$，其中 $\lambda$ 是控制观点变化速率的常数。我们还假设边的出生率和死亡率满足 $\gamma_{\pm}(s, s&rsquo;) = r_{\pm}(1 + J_{\pm}ss&rsquo;)$，其中 $|J_{\pm}| \leq 1$ 量化了同质性聚类（homophily clustering）的强度，即相似个体建立联系的趋势。我们找到了该最小模型的核（kernel）$K(s, s&rsquo;) = g \int ((1 + J_{\pm}ss&rsquo;) / (1 + J_{-}ss&rsquo;)) ((2(s&rsquo; - s)) / (1 - s^2)) ds$ 的显式形式，其中参数 $g \equiv (\lambda / \sigma_0^2)(r_{+} / r_{-})$。这里，$\lambda / \sigma_0^2$ 代表观点同质化速率（opinion homogenization rate），$r_{+} / r_{-}$ 是网络连接的出生-死亡比率（birth-death ratio）。参数 $g$ 整合了观点动力学和网络动力学的相互作用强度。结合方程（4）和（6），我们求解了最小模型（$\langle s \rangle \neq 0$）的 $P(s)$，发现我们的预测与实证数据吻合 [图 2(a)–2(c)，见补充材料 [26]，最小模型]。需要注意的是，最小模型也能生成如图 2(a)–2(c) 所示的不对称 $P(s)$ 分布。然而，在实证数据上测得的平均观点 $\langle s \rangle$ 非常接近于零，这意味着相应的 $P(s)$ 可以用对称分布很好地近似。为简便起见，在下面的讨论中我们将只关注对称情形（$\langle s \rangle = 0$）。</p>
+<p>[第4页，第4段]
+为了探索不同的相（phase），我们在固定 $J_{+}$ 和 $J_{-}$ 的情况下，对不同 $g$ 值进行了数值模拟。图 1(b) 展示了一个包含 2000 个节点的模拟最小模型，与图 1(a) 所示的实证网络在定性上具有相似性。图 3(a) 显示，在较小的 $g$ 值（$g \approx 0.9$）下，会出现双极化的 U 形观点分布 $P(s)$。通过逐渐增加观点变化速率，我们发现 $P(s)$ 从 U 形转变为 M 形，这表明出现了部分极化（partial polarization）。当 $g$ 值足够大时（$g \approx 2.4$），$P(s)$ 转变为去极化（depolarized）的倒 U 形分布。为了量化不同的相，我们定义了一个序参量（order parameter）$s_{\text{max}} = |\arg \max_s P(s)|$ 作为最可能的观点。我们发现，在去极化相中 $s_{\text{max}} = 0$ [图 3(c)]，在极化相中 $s_{\text{max}} = 1$ [图 3(a)]。对于部分极化相，$s_{\text{max}}$ 的取值范围在 0 到 1 之间 [图 3(b)]。图 3(d) 绘制了 $s_{\text{max}}$ 作为 $g$ 的函数，表明存在两个相变（phase transition）。第一个相变发生在 $g_* \approx 1.3$ 处，此时 $s_{\text{max}}$ 偏离 1，表明系统从极化转变为部分极化。第二个相变发生在 $g_{**} \approx 1.78$ 处，此时 $s_{\text{max}}$ 消失，表明系统在部分极化和去极化之间发生转变。总体而言，减小 $g$ 会使系统趋向极化。事实上，较小的观点同质化速率会使观点远离同质化状态，从而走向极化。另一方面，较大的出生-死亡比率会降低不同智能体之间建立连接的机会；因此，相似的智能体倾向于聚集在一起，其观点趋于同质化，从而导致极化。</p>
+<p>[第4页，第5段]
+为了探索观点-拓扑关联，我们在图 2(f) 中绘制了预测的归一化联合观点分布 $R(s, s&rsquo;) = (\gamma_{+}(s, s&rsquo;)) / (\gamma_{-}(s, s&rsquo;)) = (r_{+}(1 + J_{+}ss&rsquo;)) / (r_{-}(1 + J_{-}ss&rsquo;))$，显示出在左下角和右上角附近存在两个相反的聚集域，这与实证观察一致 [图 2(e)]。图 2(d) 描绘了 $\bar{k}(s)$ 的解析预测，与实证测量结果相符。需要注意的是，实证数据显示中性个体存在一个小峰值，这意味着这些用户的期望度比我们的理论预测要大。这种差异可能是由于存在一小部分政治中立但吸引了来自双方大量连接的独立媒体所致。</p>
+<p>[第5页，第1段]
+我们将把对这一现象的研究留待未来工作。这一预测表明，我们的模型生成了两个高度极化的簇[图1(b)]，其枢纽节点表现出显著的极端性，这与现实世界中的极化网络[图1(a)]一致。</p>
+<p>[第5页，第2段]
+<strong>相图（Phase diagram）。</strong>—由于我们的理论成功捕捉了极化相和去极化相，人们可能会想知道建模参数如何控制不同的相。为简化起见，我们仅关注对称情形，即$ \langle s \rangle = 0 $。如上所述，指数$ \delta &lt; 0 $对应极化相，而$ \delta &gt; 0 $对应部分极化相和去极化相。因此，当指数$ \delta = 0 $时出现极化与部分极化之间的转变，由此得到$ g_s^{-1} + (J_+ - J_-)f(J_-) = 1 $，其中$ f(J_-) = (1 + J_-) \int_{-1}^{1} ds&rsquo; (s&rsquo;^2 / (1 - J_-^2 s&rsquo;^2)) P_{st}(s&rsquo;) $。</p>
+<p>[第5页，第3段]
+对于部分极化相与去极化相之间的转变，由于对称性，在$ s = 0 $处的一阶导数消失，即$ P&rsquo;(0) = 0 $。然而，对于M形的$ P(s) $，二阶导数$ P&rsquo;&rsquo;<em>{st}(0) &gt; 0 $，而对于倒U形的$ P(s) $，$ P&rsquo;&rsquo;</em>{st}(0) &lt; 0 $。因此，当二阶导数消失时发生转变，即$ P&rsquo;&rsquo;<em>{st}(0) = 0 $。将$ P&rsquo;</em>{st}(0) = 0 $和$ P&rsquo;&rsquo;<em>{st}(0) = 0 $代入方程(4)，我们得到$ g</em>{s*}^{-1} + (J_+ - J_-) \langle s^2 \rangle = 1 $，其中$ \langle s^2 \rangle $是意见分布的方差。图4绘制了由我们的模型预测的相图。实曲线分隔了对应于不同相的区域。我们根据从数据拟合得到的建模参数，在图中标出了经验数据集。该图显示，博客圈（blogosphere）和FBHC位于极化相，而FBSC位于去极化相。</p>
+<p>[第5页，第4段]
+总之，我们从经验上发现了意见分布的普适标度律（scaling law），该定律由一组标度指数刻画，使我们能够量化真实社会系统的不同极化相。我们提出了一个共演化网络极化动力学的通用框架，其中意见动力学和网络演化基于两个要素耦合。与现有的RM模型相比，我们的模型预测了稳定的双极化相和去极化相。特别是，我们的理论解析地找到了双极化的意见分布和网络结构，这与经验观察一致。此外，我们的框架提供了共演化网络动力学的精确解，这不仅解释了观察到的标度律，还预测了包含三个不同相的相应相图。</p>
+<p>[第5页，第5段]
+另一方面，我们的解析解是在绝热近似（adiabatic approximation）下得到的。我们将寻求一般解留待未来研究。我们的理论提供了一个可应用于其他领域的通用框架。例如，通过引入$ s_i = \cos(\theta_i) $，该框架能够对涉及背景变化的非线性耦合振子进行建模[32–34]。最重要的是，我们的结果可能对跨学科理解人类社会产生影响，包括社会科学和政治学。</p>
+<p>[第5页，第6段]
+C. S.部分受美国国家科学基金会（National Science Foundation）资助，项目编号为2150830和IBSS-1620294，以及教育科学研究所（Institute of Education Sciences）资助，项目编号为R324A180203，和美国国立卫生研究院（National Institutes of Health）资助，项目编号为R01DC018542。N. F. J.由AFOSR资助，项目编号为FA9550-20-1-0382和FA9550-20-1-0383。</p>
+<p>[第5页，第7段]
+J. L.和S. H.对这项工作贡献相同。</p>
+<p>[第6页，第1段]</p>
+<ul>
+<li><a href="mailto:c.song@miami.edu">c.song@miami.edu</a></li>
+</ul>
+<p>[第6页，第2段]
+[1] A. Bramson, P. Grim, D. J. Singer, S. Fisher, W. Berger, G. Sack, 和 C. Flocken, J. Math. Sociol. <strong>40</strong>, 80 (2016).</p>
+<p>[第6页，第3段]
+[2] P. DiMaggio, J. Evans, 和 B. Bryson, Am. J. Sociology <strong>102</strong>, 690 (1996).</p>
+<p>[第6页，第4段]
+[3] A. Matakos, E. Terzi, 和 P. Tsaparas, Data Min. Knowl. Discovery <strong>31</strong>, 1480 (2017).</p>
+<p>[第6页，第5段]
+[4] P. D. Manrique 和 N. F. Johnson, Phys. Rev. E <strong>97</strong>, 032311 (2018).</p>
+<p>[第6页，第6段]
+[5] E. Bakshy, S. Messing, 和 L. A. Adamic, Science <strong>348</strong>, 1130 (2015).</p>
+<p>[第6页，第7段]
+[6] M. Cinelli, G. D. F. Morales, A. Galeazzi, W. Quattrociocchi, 和 M. Starnini, Proc. Natl. Acad. Sci. U.S.A. <strong>118</strong> (2021).</p>
+<p>[第6页，第8段]
+[7] M. Del Vicario, A. Bessi, F. Zollo, F. Petroni, A. Scala, G. Caldarelli, H. E. Stanley, 和 W. Quattrociocchi, Proc. Natl. Acad. Sci. U.S.A. <strong>113</strong>, 554 (2016).</p>
+<p>[第6页，第9段]
+[8] K. Garimella, G. D. F. Morales, A. Gionis, 和 M. Mathioudakis, ACM Trans. Social Comput. <strong>1</strong>, 1 (2018).</p>
+<p>[第7页，第1段]
+[9] M. Del Vicario, G. Vivaldo, A. Bessi, F. Zollo, A. Scala, G. Caldarelli, 和 W. Quattrociocchi, Sci. Rep. 6, 37825 (2016)。</p>
+<p>[第7页，第2段]
+[10] J. Borge-Holthoefer, W. Magdy, K. Darwish, 和 I. Weber，载于《第18届ACM计算机支持协同工作与社会计算会议论文集》(Association for Computing Machinery (ACM)，纽约，2015)，第700–711页，10.1145/2675133.2675163。</p>
+<p>[第7页，第3段]
+[11] K. Garimella, G. De Francisci Morales, A. Gionis, 和 M. Mathioudakis，载于《2018年万维网会议论文集》(Association for Computing Machinery (ACM)，纽约，2018)，第913–922页，10.1145/3178876.3186139。</p>
+<p>[第7页，第4段]
+[12] W. Cota, S. C. Ferreira, R. Pastor-Satorras, 和 M. Starnini, EPJ Data Sci. 8, 1 (2019)。</p>
+<p>[第7页，第5段]
+[13] D. Lazer, A. Pentland, L. Adamic, S. Aral, A.-L. Barabási, D. Brewer, N. Christakis, N. Contractor, J. Fowler, M. Gutmann 等，Science 323, 721 (2009)。</p>
+<p>[第7页，第6段]
+[14] P. Holme 和 M. E. J. Newman, Phys. Rev. E 74, 056108 (2006)。</p>
+<p>[第7页，第7段]
+[15] G. Iniguez, J. Kertész, K. K. Kaski, 和 R. A. Barrio, Phys. Rev. E 80, 066119 (2009)。</p>
+<p>[第7页，第8段]
+[16] F. Vazquez, J. C. González-Avella, V. M. Eguíluz, 和 M. San Miguel, Phys. Rev. E 76, 046120 (2007)。</p>
+<p>[第7页，第9段]
+[17] A. Flache 和 M. W. Macy, J. Math. Sociol. 35, 146 (2011)。</p>
+<p>[第7页，第10段]
+[18] F. Baumann, P. Lorenz-Spreen, I. M. Sokolov, 和 M. Starnini, Phys. Rev. Lett. 124, 048301 (2020)。</p>
+<p>[第7页，第11段]
+[19] F. Baumann, P. Lorenz-Spreen, I. M. Sokolov, 和 M. Starnini, Phys. Rev. X 11, 011012 (2021)。</p>
+<p>[第7页，第12段]
+[20] M. Starnini, M. Frasca, 和 A. Baronchelli, Sci. Rep. 6, 31834 (2016)。</p>
+<p>[第7页，第13段]
+[21] K. Sasahara, W. Chen, H. Peng, G. L. Ciampaglia, A. Flammini, 和 F. Menczer, J. Comput. Soc. Sci. 4, 381 (2021)。</p>
+<p>[第7页，第14段]
+[22] P. Clifford 和 A. Sudbury, Biometrika 60, 581 (1973)。</p>
+<p>[第7页，第15段]
+[23] R. A. Holley 和 T. M. Liggett, Ann. Probab. 3, 643 (1975)。</p>
+<p>[第7页，第16段]
+[24] D. Black, J. Polit. Econ. 56, 23 (1948)。</p>
+<p>[第7页，第17段]
+[25] L. A. Adamic 和 N. Glance，载于《第3届链接发现国际研讨会论文集》(Association for Computing Machinery (ACM)，纽约，2005)，第36–43页，10.1145/1134271.1134277。</p>
+<p>[第7页，第18段]
+[26] 参见补充材料，网址：http://link.aps.org/supplemental/10.1103/PhysRevLett.130.037401，了解更多关于数据描述和处理、所提出框架及最小模型的解析推导，以及与现有模型的比较的详细信息。</p>
+<p>[第7页，第19段]
+[27] S. Maslov 和 K. Sneppen, Science 296, 910 (2002)。</p>
+<p>[第7页，第20段]
+[28] G. Deffuant, D. Neau, F. Amblard, 和 G. Weisbuch, Adv. Complex Syst. 03, 87 (2000)。</p>
+<p>[第7页，第21段]
+[29] M. H. DeGroot, J. Am. Stat. Assoc. 69, 118 (1974)。</p>
+<p>[第7页，第22段]
+[30] N. E. Friedkin 和 E. C. Johnsen, J. Math. Sociol. 15, 193 (1990)。</p>
+<p>[第7页，第23段]
+[31] V. Sood 和 S. Redner, Phys. Rev. Lett. 94, 178701 (2005)。</p>
+<p>[第7页，第24段]
+[32] Y. Kuramoto，载于《理论物理中的数学问题国际研讨会论文集》(Springer，纽约，1975)，第420–422页。</p>
+<p>[第7页，第25段]
+[33] R. Sepulchre, D. A. Paley, 和 N. E. Leonard, IEEE Trans. Autom. Control 52, 811 (2007)。</p>
+<p>[第7页，第26段]
+[34] K. Wiesenfeld, P. Colet, 和 S. H. Strogatz, Phys. Rev. E 57, 1563 (1998)。</p>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var tabId = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        document.getElementById('tab-' + tabId).classList.add('active');
+        history.replaceState(null, '', '#tab-' + tabId);
+        lucide.createIcons();
+    });
+});
+
+var hash = window.location.hash.replace('#tab-', '');
+if (hash) {
+    var btn = document.querySelector('.tab-btn[data-tab="' + hash + '"]');
+    if (btn) btn.click();
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 论文库</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+

@@ -13,7 +13,7 @@
         })();
     </script>
     
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/my_paper/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@
             
             <span class="meta-item">
                 <i data-lucide="tags" style="width:16px;height:16px;"></i>
-                Dynamical Phase Transitions, Nonequilibrium Statistical Physics, Network Evolution, Hyperbolic Scaling
+                Dynamical Phase Transitions (DPTs), Nonequilibrium Networks, Statistical Physics, Triadic Closure, Hyperbolic Scaling
             </span>
             
         </div>
@@ -446,60 +446,67 @@ $$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta)$$
 </div>
         
     </div><div class="tab-content" id="tab-model">
-        <div class="prose-content"><p>根据提供的源文件，论文**《Dynamical Phase Transitions in Nonequilibrium Networks》**提出了一套完整的理论框架，用以描述经典非平衡网络中的动力学相变（DPT）。以下是该模型及其数学推导过程的详细介绍：</p>
+        <div class="prose-content"><p>根据提供的源文件，论文**《Dynamical Phase Transitions in Nonequilibrium Networks》**提出了一个解释经典非平衡网络动力学相变（DPT）的理论框架。以下是该模型的详细定义及其数学推导过程：</p>
 <h3 id="一-模型基本定义"><strong>一、 模型基本定义</strong></h3>
-<p>该模型构建了一个拥有 $N$ 个顶点的有向网络，其拓扑结构随时间的演化由边的随机添加和移除驱动。其核心在于引入了<strong>非线性相互作用</strong>，即**三元闭合（Triadic Closure）**机制。</p>
+<p>模型考虑一个拥有 $N$ 个顶点的有向网络，其演化由边缘（edges）的随机添加和移除驱动。</p>
 <ol>
 <li>
-<p><strong>边添加率（Birth Rate）：</strong> 节点 $i$ 向节点 $j$ 建立连接的速率包含线性自发项和非线性项：
-$$W[A_{ij}(0 \to 1)] = \frac{\alpha}{N} + \beta(A^2)_{ij} \tag{2a}$$</p>
+<p><strong>边添加率 (Birth Rate $\gamma^+_{ij}$):</strong> 包含自发生成项和由相互作用驱动的非线性项：
+$$\gamma^+<em>{ij} = \frac{\alpha}{N} + \beta(A^2)</em>{ij} \tag{S6, 10}$$</p>
 <ul>
-<li><strong>$\alpha$</strong>：自发生成边的速率常数。</li>
-<li><strong>$1/N$</strong>：缩放因子，用于确保在大规模极限下网络的稀疏性。</li>
-<li><strong>$\beta$</strong>：非线性耦合常数。</li>
-<li><strong>$(A^2)<em>{ij} = \sum_k A</em>{ik}A_{kj}$</strong>：代表三元闭合，即如果节点 $i$ 和 $j$ 拥有共同邻居 $k$，它们成边的概率会由于非线性相互作用而额外增加。</li>
+<li>$\alpha$：自发边生成的速率常数。</li>
+<li>$1/N$：确保网络稀疏性的缩放因子。</li>
+<li>$\beta$：非线性耦合常数。</li>
+<li>$(A^2)<em>{ij} = \sum_k A</em>{ik}A_{kj}$：代表**三元闭合（Triadic Closure）**机制，即节点 $i$ 和 $j$ 如果拥有共同邻居 $k$，则成边概率增加。</li>
 </ul>
 </li>
 <li>
-<p><strong>边移除率（Death Rate）：</strong> 假定为常数 $\gamma$：
-$$W[A_{ij}(1 \to 0)] = \gamma \tag{2b}$$</p>
+<p><strong>边移除率 (Death Rate $\gamma^-$):</strong> 假定为常数 $\gamma$：
+$$\gamma^-_{ij} = \gamma \tag{10, S6}$$</p>
 </li>
 </ol>
 <h3 id="二-数学推导过程"><strong>二、 数学推导过程</strong></h3>
-<h4 id="1-建立-schwinger-dyson-sd-方程组"><strong>1. 建立 Schwinger-Dyson (SD) 方程组</strong></h4>
-<p>为了描述网络动力学，研究者推导了描述任意连通子图密度 $\rho(G)$ 演化的 <strong>Schwinger-Dyson 方程</strong>。对于最基础的子图——<strong>平均度 $z$</strong>（单条边的密度），其演化方程为：
-$$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta) \tag{3}$$
-其中，$\Delta$ 是<strong>三角形密度</strong>。</p>
+<h4 id="1-基础演化方程-master-equations"><strong>1. 基础演化方程 (Master Equations)</strong></h4>
+<p>推导从描述边状态（$s=0$ 或 $1$）切换的生灭过程开始。对于任何物理观测值 $O(A)$，其期望值的演化遵循以下通用方程：
+$$\frac{d\langle O(A)\rangle}{dt} = \sum_{e \in E} \langle [(1-A_e)\gamma^+_e(A) - A_e\gamma^-_e(A)] (O(A|A_e=1) - O(A|A_e=0)) \rangle \tag{S4}$$</p>
+<h4 id="2-schwinger-dyson-sd-方程的推导"><strong>2. Schwinger-Dyson (SD) 方程的推导</strong></h4>
+<p>为了量化网络的结构变化，研究者推导了连通子图密度 $\rho(G)$ 的演化方程。</p>
 <ul>
-<li><strong>反馈循环</strong>：方程中的 $\beta(z^2 - \Delta)$ 项引入了一个放大集群化的反馈回路。</li>
-<li><strong>无穷方程链</strong>：由于三角形密度 $\Delta$ 的演化取决于四顶点子图密度，而后者又取决于更高阶子图，因此形成了一个无穷方程链。例如，$\Delta$ 的演化遵循：
-$$\frac{d\Delta}{dt} = \beta(z^2 - \Delta) - 3\gamma\Delta + O(\beta^3) \tag{4}$$</li>
+<li>
+<p>对于最简单的子图——<strong>平均度 $z$</strong>（即单条边的密度），其演化方程为：
+$$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta) \tag{11, S10}$$
+其中，$\Delta$ 是<strong>三角形密度</strong>。非线性项 $\beta(z^2 - \Delta)$ 引入了一个放大集群化的反馈循环。</p>
+</li>
+<li>
+<p>由于 $\Delta$ 的演化又取决于更高阶的四顶点子图密度，产生了一个无穷方程链（SD 方程的特征）。三角形密度的演化大致遵循：
+$$\frac{d\Delta}{dt} = \beta(z^2 - \Delta) - 3\gamma\Delta + O(\beta^3) \tag{12, S14}$$</p>
+</li>
 </ul>
-<h4 id="2-树图级截断与解析求解"><strong>2. 树图级截断与解析求解</strong></h4>
-<p>在弱相互作用极限下，应用<strong>微扰截断方案</strong>（忽略 $\Delta \sim O(\beta)$ 项），可以得到 $z(t)$ 的闭合形式。</p>
+<h4 id="3-树图级截断与解析解-tree-level-truncation"><strong>3. 树图级截断与解析解 (Tree-level Truncation)</strong></h4>
+<p>在弱相互作用极限下，应用微扰截断方案，忽略三角形密度 $\Delta$ 的贡献（即 $\Delta \sim O(\beta)$）。</p>
 <ul>
-<li><strong>临界判据</strong>：当 <strong>$\beta &gt; \gamma^2 / (4\alpha)$</strong> 时，系统进入超临界状态，即非平衡相。</li>
-<li><strong>有限时间奇点</strong>：在此相中，平均度 $z(t)$ 在有限的<strong>临界时间 $t_c$</strong> 处发生<strong>双曲发散</strong>：
-$$z(t) \sim (t_c - t)^{-1} \tag{1, 5}$$
-其中临界时间 $t_c = \omega^{-1} [\text{acot}(2\omega) + \pi/2]$，且 $\omega = \sqrt{|\alpha\beta - \gamma^2/4|}$。</li>
+<li>当处于非平衡相（$\beta &gt; \gamma^2/4\alpha$）时，平均度 $z(t)$ 的解析解为：
+$$z(t) = \frac{\gamma}{2\beta} + \frac{\omega}{\beta} \cot(\omega(t_c - t)) \tag{S15}$$
+其中 $\omega = \sqrt{|\alpha\beta - \gamma^2/4|}$。</li>
+<li>这导致了在<strong>有限临界时间 $t_c$</strong> 处的<strong>双曲发散</strong>（Hyperbolic Divergence）：
+$$z(t) \sim (t_c - t)^{-1} \tag{4, 14}$$
+临界时间 $t_c$ 定义为 $t_c = \omega^{-1}[\text{acot}(2\omega) + \pi/2]$。</li>
 </ul>
-<h4 id="3-度分布的生成函数法"><strong>3. 度分布的生成函数法</strong></h4>
-<p>为了研究接近临界点时的度分布 $P(k, t)$，研究者使用<strong>生成函数法</strong>求解主方程。</p>
+<h4 id="4-度分布的解析求解-generating-function-method"><strong>4. 度分布的解析求解 (Generating Function Method)</strong></h4>
+<p>为了研究临界点附近的度分布 $P(k, t)$，研究者使用<strong>生成函数法</strong>求解主方程。</p>
 <ul>
-<li><strong>主方程</strong>：描述度分布随时间变化的方程为：
-$$\frac{\partial P(k, t)}{\partial t} = [\alpha + \beta(k-1)z(t)]P(k-1, t) - [\alpha + \beta k z(t) + \gamma k]P(k, t) + \gamma(k+1)P(k+1, t) \tag{7}$$</li>
-<li><strong>结果</strong>：解析结果表明，当 $t \to t_c$ 时，$P(k, t)$ 会自发形成幂律分布（$P(k) \propto k^{-1}$），使网络展现出<strong>无标度特性</strong>。</li>
+<li>定义生成函数 $G(x, t) = \sum_k x^k P(k, t)$，将其转化为偏微分方程：
+$$\frac{\partial G(x, t)}{\partial t} = (x-1) \left( \alpha G(x, t) - (\gamma - \beta z(t)x) \frac{\partial G(x, t)}{\partial x} \right) \tag{S17}$$</li>
+<li>通过变量替换和积分，求得 $G(x, t)$ 的显式解。</li>
+<li>当 $t \to t_c$ 时，对生成函数进行逆傅里叶变换，证明了度分布会自发演化为<strong>无标度形式</strong>：
+$$P(k, t \to t_c) \sim k^{-1} \tag{23, 53}$$</li>
 </ul>
-<h4 id="4-序参量与一阶相变"><strong>4. 序参量与一阶相变</strong></h4>
-<p>定义序参量 <strong>$q$</strong> 为边在完全图中的比例。</p>
+<h3 id="三-模型的进一步修正与验证"><strong>三、 模型的进一步修正与验证</strong></h3>
 <ul>
-<li><strong>稀疏到致密的转变</strong>：在 $t &lt; t_c$ 时，$q=0$；而在 $t &gt; t_c$ 后，网络迅速坍缩成致密核心。</li>
-<li><strong>一阶特征</strong>：$q(t)$ 在 $t_c$ 处表现出非连续的跳跃（潜热），标志着这是一个<strong>一阶动力学相变</strong>。</li>
-<li><strong>相变后动态</strong>：对于 $t \ge t_c$，序参量的演化遵循：
-$$q(t) = [1 - p_0 e^{-\alpha(t-t_c)}]^2 \tag{6}$$
-其中 $p_0$ 是临界时刻孤立顶点的比例。</li>
+<li><strong>耦合常数重整化：</strong> 考虑三角形密度的修正后，引入“穿衣”耦合常数（dressed coupling constant） $\beta_0 \approx \beta - \beta^2/3\gamma$，这显著提高了理论预测与模拟的一致性。</li>
+<li><strong>一阶相变特征：</strong> 定义序参量 $q$（边占完全图比例），发现其在 $t_c$ 处从 $0$ 跃迁至非零值，表现出类似“潜热”的一阶相变特征。</li>
+<li><strong>热力学极限：</strong> 模拟表明，随着系统规模 $N$ 增大，相变变得更加陡峭，最终收敛于理论预测的非连续性跳跃。</li>
 </ul>
-<p>这些推导共同证明了，通过引入非线性三元闭合相互作用，经典非平衡网络可以产生与量子系统类似的动力学相变现象，并遵循普适的双曲标度律。</p>
 </div>
         
     </div><div class="tab-content" id="tab-results">
@@ -612,7 +619,7 @@ $$q(t) = [1 - p_0 e^{-\alpha(t-t_c)}]^2 \tag{6}$$
 </div>
         
     </div><div class="tab-content" id="tab-code">
-        <div class="prose-content"><a href="https://github.com/henocturne/research_lib/tree/main/dpt">https://github.com/henocturne/research_lib/tree/main/dpt</a></div>
+        <div class="prose-content"><a href="https://github.com/henocturne/reproduce_phasetransition/tree/main/dpt">https://github.com/henocturne/reproduce_phasetransition/tree/main/dpt</a></div>
         
     </div><div class="tab-content" id="tab-mindmap"><div class="pdf-container" style="grid-template-columns: 1fr;">
             
@@ -621,7 +628,7 @@ $$q(t) = [1 - p_0 e^{-\alpha(t-t_c)}]^2 \tag{6}$$
                     <i data-lucide="sigma" style="width:16px;height:16px;"></i>
                     推导过程
                 </div>
-                <div class="pdf-panel-body">
+                <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
                     <embed src="/my_paper/derivation/dpt.pdf" type="application/pdf" class="pdf-viewer">
                 </div>
             </div>

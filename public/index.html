@@ -14,7 +14,7 @@
         })();
     </script>
     
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/my_paper/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -89,12 +89,12 @@
         </div>
     </div>
 
-    <div class="home-stats"><a href="/paper/" class="stat-card">
-            <span class="stat-number">2</span>
+    <div class="home-stats"><a href="/my_paper/paper/" class="stat-card">
+            <span class="stat-number">4</span>
             <span class="stat-label">篇论文</span>
         </a>
-        <a href="/tags/" class="stat-card">
-            <span class="stat-number">9</span>
+        <a href="/my_paper/tags/" class="stat-card">
+            <span class="stat-number">17</span>
             <span class="stat-label">个标签</span>
         </a>
     </div>
@@ -103,17 +103,29 @@
 <script>
 
 var PAPERS = [{
+    t: "Extended Mean-Field Theories for Networks of Real Neurons",
+    a: ["Luca Di Carlo","Francesca Mignacco","Christopher W. Lynn","William Bialek"],
+    v: "Physical Review Letters",
+    g: ["Statistical Physics","Mean-Field Theory","Computational Neuroscience","Maximum Entropy Models","Criticality"],
+    u: "\/my_paper\/paper\/realneurons\/"
+},{
     t: "Dynamical Phase Transitions in Nonequilibrium Networks",
     a: ["Jiazhen Liu","Nathaniel M. Aden","Debasish Sarker","Chaoming Song"],
     v: "Physical Review Letters",
-    g: ["Dynamical Phase Transitions","Nonequilibrium Statistical Physics","Network Evolution","Hyperbolic Scaling"],
+    g: ["Dynamical Phase Transitions (DPTs)","Nonequilibrium Networks","Statistical Physics","Triadic Closure","Hyperbolic Scaling"],
     u: "\/my_paper\/paper\/dpt\/"
 },{
     t: "Heavy-tailed neuronal connectivity arises from Hebbian self-organization",
     a: ["Christopher W. Lynn","Caroline M. Holmes","Stephanie E. Palmer"],
     v: "Nature Physics",
-    g: ["Hebbian self-organization","Heavy-tailed connectivity","Neuronal connectomes","Statistical physics","Network Evolution","Clustering"],
+    g: ["Hebbian self-organization","Heavy-tailed connectivity","Neuronal connectomes","Statistical physics","Scale-free networks","Clustering"],
     u: "\/my_paper\/paper\/hebso\/"
+},{
+    t: "Emergence of Polarization in Coevolving Networks",
+    a: ["Jiazhen Liu","Shengda Huang","Nathaniel M. Aden","Neil F. Johnson","Chaoming Song"],
+    v: "Physical Review Letters",
+    g: ["Polarization","Coevolving Networks","Opinion Dynamics","Statistical Physics"],
+    u: "\/my_paper\/paper\/empolarization\/"
 }];
 
 (function() {

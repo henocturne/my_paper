@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Criticality on 论文库</title>
+		<link>http://127.0.0.1:1313/my_paper/tags/criticality/</link>
+		<description>Recent content in Criticality on 论文库</description>
+		<generator>Hugo</generator>
+		<language>zh-Hans</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://127.0.0.1:1313/my_paper/tags/criticality/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Extended Mean-Field Theories for Networks of Real Neurons</title>
+				<link>http://127.0.0.1:1313/my_paper/paper/realneurons/</link>
+				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/paper/realneurons/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

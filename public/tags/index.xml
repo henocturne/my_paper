@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on 论文库</title>
-		<link>http://localhost:1313/my_paper/tags/</link>
+		<link>http://127.0.0.1:1313/my_paper/tags/</link>
 		<description>Recent content in Tags on 论文库</description>
 		<generator>Hugo</generator>
 		<language>zh-Hans</language>
@@ -10,70 +10,126 @@
 		
 		
 		
-			<lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/my_paper/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://127.0.0.1:1313/my_paper/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Dynamical Phase Transitions</title>
-				<link>http://localhost:1313/my_paper/tags/dynamical-phase-transitions/</link>
-				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/dynamical-phase-transitions/</guid>
+				<title>Computational Neuroscience</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/computational-neuroscience/</link>
+				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/computational-neuroscience/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>Hyperbolic Scaling</title>
-				<link>http://localhost:1313/my_paper/tags/hyperbolic-scaling/</link>
-				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/hyperbolic-scaling/</guid>
+				<title>Criticality</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/criticality/</link>
+				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/criticality/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>Network Evolution</title>
-				<link>http://localhost:1313/my_paper/tags/network-evolution/</link>
-				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/network-evolution/</guid>
+				<title>Maximum Entropy Models</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/maximum-entropy-models/</link>
+				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/maximum-entropy-models/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>Nonequilibrium Statistical Physics</title>
-				<link>http://localhost:1313/my_paper/tags/nonequilibrium-statistical-physics/</link>
-				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/nonequilibrium-statistical-physics/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Clustering</title>
-				<link>http://localhost:1313/my_paper/tags/clustering/</link>
-				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/clustering/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Heavy-Tailed Connectivity</title>
-				<link>http://localhost:1313/my_paper/tags/heavy-tailed-connectivity/</link>
-				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/heavy-tailed-connectivity/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Hebbian Self-Organization</title>
-				<link>http://localhost:1313/my_paper/tags/hebbian-self-organization/</link>
-				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/hebbian-self-organization/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Neuronal Connectomes</title>
-				<link>http://localhost:1313/my_paper/tags/neuronal-connectomes/</link>
-				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/neuronal-connectomes/</guid>
+				<title>Mean-Field Theory</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/mean-field-theory/</link>
+				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/mean-field-theory/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Statistical Physics</title>
-				<link>http://localhost:1313/my_paper/tags/statistical-physics/</link>
+				<link>http://127.0.0.1:1313/my_paper/tags/statistical-physics/</link>
+				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/statistical-physics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dynamical Phase Transitions (DPTs)</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/dynamical-phase-transitions-dpts/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/dynamical-phase-transitions-dpts/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hyperbolic Scaling</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/hyperbolic-scaling/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/hyperbolic-scaling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Nonequilibrium Networks</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/nonequilibrium-networks/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/nonequilibrium-networks/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Triadic Closure</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/triadic-closure/</link>
+				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/triadic-closure/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Clustering</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/clustering/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/my_paper/tags/statistical-physics/</guid>
+				<guid>http://127.0.0.1:1313/my_paper/tags/clustering/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Heavy-Tailed Connectivity</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/heavy-tailed-connectivity/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/heavy-tailed-connectivity/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hebbian Self-Organization</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/hebbian-self-organization/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/hebbian-self-organization/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Neuronal Connectomes</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/neuronal-connectomes/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/neuronal-connectomes/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Scale-Free Networks</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/scale-free-networks/</link>
+				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/scale-free-networks/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Coevolving Networks</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/coevolving-networks/</link>
+				<pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/coevolving-networks/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Opinion Dynamics</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/opinion-dynamics/</link>
+				<pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/opinion-dynamics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Polarization</title>
+				<link>http://127.0.0.1:1313/my_paper/tags/polarization/</link>
+				<pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+				<guid>http://127.0.0.1:1313/my_paper/tags/polarization/</guid>
 				<description></description>
 			</item>
 	</channel>

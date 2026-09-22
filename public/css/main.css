@@ -450,6 +450,18 @@ a:hover { color: var(--primary-light); }
     line-height: 1.8;
 }
 
+.pdf-panel-body--pdf-viewer {
+    padding: 0;
+    overflow: hidden;
+    max-height: none;
+}
+
+#tab-mindmap.active {
+    width: min(1152px, calc(100vw - 48px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
 .pdf-panel-body p {
     margin-bottom: 12px;
 }

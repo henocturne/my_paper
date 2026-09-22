@@ -13,7 +13,7 @@
         })();
     </script>
     
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/my_paper/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@
             
             <span class="meta-item">
                 <i data-lucide="tags" style="width:16px;height:16px;"></i>
-                Hebbian self-organization, Heavy-tailed connectivity, Neuronal connectomes, Statistical physics, Network Evolution, Clustering
+                Hebbian self-organization, Heavy-tailed connectivity, Neuronal connectomes, Statistical physics, Scale-free networks, Clustering
             </span>
             
         </div>
@@ -607,14 +607,14 @@ $$C = \beta(I + \beta A + \beta^2 A^2 + \beta^3 A^3 + \dots)$$</p>
         
     </div><div class="tab-content" id="tab-mindmap"><div class="pdf-container" style="grid-template-columns: 1fr;">
             
-            <div class="mindmap-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                <p style="font-size:0.95rem;">请将推导过程 PDF 放入 <code>static/derivation/</code></p>
-                <p style="font-size:0.8rem;">命名规则: <code>hebso.pdf</code></p>
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="sigma" style="width:16px;height:16px;"></i>
+                    推导过程
+                </div>
+                <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
+                    <embed src="/my_paper/derivation/hebso.pdf" type="application/pdf" class="pdf-viewer">
+                </div>
             </div>
             
         </div>

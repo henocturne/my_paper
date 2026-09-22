@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head><script src="/my_paper/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my_paper/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Extended Mean-Field Theories for Networks of Real Neurons | 论文库</title>
+    <meta name="description" content="学术论文管理与阅读平台">
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="/my_paper/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/my_paper/">
+                    <span class="brand-icon">📚</span>
+                    <span class="brand-text">论文库</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                
+                <a href="/my_paper/" class="nav-link">
+                    首页
+                </a>
+                
+                <a href="/my_paper/paper/" class="nav-link">
+                    论文
+                </a>
+                
+                <a href="/my_paper/tags/" class="nav-link">
+                    标签
+                </a>
+                
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+<div class="paper-single">
+    <div class="paper-header">
+        <h1>Extended Mean-Field Theories for Networks of Real Neurons</h1>
+        <div class="paper-meta">
+            
+            <span class="meta-item">
+                <i data-lucide="users" style="width:16px;height:16px;"></i>
+                Luca Di Carlo, Francesca Mignacco, Christopher W. Lynn, William Bialek
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="building-2" style="width:16px;height:16px;"></i>
+                Physical Review Letters
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                2026
+            </span>
+            
+            
+            <span class="meta-item">
+                <i data-lucide="tags" style="width:16px;height:16px;"></i>
+                Statistical Physics, Mean-Field Theory, Computational Neuroscience, Maximum Entropy Models, Criticality
+            </span>
+            
+        </div>
+    </div>
+
+    <nav class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="citation">
+            <i data-lucide="quote" style="width:16px;height:16px;"></i> 引用
+        </button>
+        <button class="tab-btn" data-tab="authors">
+            <i data-lucide="users" style="width:16px;height:16px;"></i> 作者
+        </button>
+        <button class="tab-btn" data-tab="model">
+            <i data-lucide="cpu" style="width:16px;height:16px;"></i> 模型
+        </button>
+        <button class="tab-btn" data-tab="results">
+            <i data-lucide="bar-chart-3" style="width:16px;height:16px;"></i> 结果
+        </button>
+        <button class="tab-btn" data-tab="figures">
+            <i data-lucide="image" style="width:16px;height:16px;"></i> 图像
+        </button>
+        <button class="tab-btn" data-tab="code">
+            <i data-lucide="code" style="width:16px;height:16px;"></i> 代码
+        </button>
+        <button class="tab-btn" data-tab="mindmap">
+            <i data-lucide="sigma" style="width:16px;height:16px;"></i> 推导过程
+        </button>
+
+        <button class="tab-btn" data-tab="translation">
+            <i data-lucide="languages" style="width:16px;height:16px;"></i> 翻译
+        </button>
+    </nav><div class="tab-content active" id="tab-citation">
+        <div class="citation-block"><h1 id="extended-meanfield-theories-for-networks-of-real-neurons">Extended Mean‑Field Theories for Networks of Real Neurons</h1>
+<h2 id="一论文研究方向所属领域相关研究课题">一、论文研究方向、所属领域、相关研究课题</h2>
+<h3 id="所属领域">所属领域</h3>
+<p><strong>交叉学科：计算神经科学 + 统计物理（理论生物物理）</strong>，细分方向：神经群体统计力学、最大熵模型、平均场理论、临界脑假说、高维系统统计推断。
+涉及子领域：</p>
+<ol>
+<li>统计物理：Ising自旋模型、平均场理论、鞍点近似、相变与临界现象、配分函数、自由能、大N渐近；</li>
+<li>计算神经科学：大规模神经元群体放电统计、群体编码、神经活动的稳态分布；</li>
+<li>机器学习/信息论：最大熵推断、高维约束下模型构建。</li>
+</ol>
+<h3 id="核心研究方向">核心研究方向</h3>
+<p>针对<strong>真实生物神经元网络</strong>，传统简单平均场理论失效；本文提出<strong>扩展平均场理论（Extended Mean‑Field Theory）</strong>。</p>
+<ol>
+<li>传统成对最大熵Ising模型受困于数据量限制：神经元数量N增大、记录时长T有限，成对相关矩阵秩不足，无法使用$O(N^2)$条约束；</li>
+<li>朴素平均场（仅匹配群体总活动的均值、方差）会错误预测双峰分布，系统靠近一级相变，与真实神经数据不符；</li>
+<li>本文方案：约束<strong>投影方向上完整的概率分布</strong>（不只约束均值、方差），构造带非简谐势$U(\varphi)$的最大熵模型，发展对应的大N平均场鞍点求解；</li>
+<li>实验结果：小鼠海马、视网膜、Neuropixels多脑区数据表明真实神经网络接近<strong>二阶相变临界点</strong>；单投影约束即可复现部分成对相关性，不需要显式拟合全部$N^2$耦合。</li>
+</ol>
+<blockquote>
+<p>核心科学问题：如何用$$ O(N) $$量级约束刻画大规模神经元群体的高维统计结构。</p>
+</blockquote>
+<h3 id="相关研究课题">相关研究课题</h3>
+<ol>
+<li>神经群体的最大熵建模：从成对Ising模型，向低维投影、集体变量、仅匹配分布的模型拓展；</li>
+<li>脑的临界性假说：神经群体是否工作在相变临界点附近，临界行为的实验证据；</li>
+<li>高维神经数据统计推断：数据有限（T≪N）下如何降维、选择约束，规避维数灾难；</li>
+<li>现代Hopfield/稠密联想记忆网络统计力学，潜变量/隐场模型描述神经群体；</li>
+<li>群体行为统计物理（鸟群）与神经群体的跨系统类比；</li>
+<li>未来方向：把该框架拓展到多个投影、时间轨迹，捕捉动力学临界信号（关联时间发散）。</li>
+</ol>
+<hr>
+<h2 id="二全部参考文献逐条解析引用序号发表信息与本文关联">二、全部参考文献逐条解析（引用序号｜发表信息｜与本文关联）</h2>
+<blockquote>
+<p>严格对应原文参考文献编号[1]‑[34]</p>
+</blockquote>
+<ul>
+<li>[1]｜L. Meshulam and W. Bialek, Rev. Mod. Phys. 97, 045002 (2025).｜综述，梳理统计物理应用于大规模神经群体的完整领域背景，包含最大熵模型、临界现象、实验数据验证；本文大量基础思想、实验范式均来自该综述，多次引用其结论。</li>
+<li>[2]｜J. J. Hopfield, Proc. Natl. Acad. Sci. U.S.A. 79, 2554 (1982).｜Hopfield联想记忆模型奠基工作，Ising自旋刻画神经元、成对相互作用实现记忆存储；本文将其作为神经网络统计物理的历史起点。</li>
+<li>[3]｜J. J. Hopfield and D. W. Tank, Biol. Cybern. 52, 141 (1985).｜Hopfield‑Tank连续神经动力学，把离散Hopfield拓展到连续时间动力学；用于回顾基于自旋的神经网络模型发展脉络。</li>
+<li>[4]｜J. J. Hopfield and D. W. Tank, Science 233, 625 (1986).｜Hopfield网络用于计算、求解优化问题；回顾Hopfield模型家族，作为本文模型的历史参照。</li>
+<li>[5]｜D. H. Ackley, G. E. Hinton, and T. J. Sejnowski, Cogn. Sci. 9, 4 (1985).｜Boltzmann机，基于Ising自旋、最大熵思想的生成模型；本文对比Boltzmann机与成对最大熵Ising模型。</li>
+<li>[6]｜E. Schneidman, M. J. Berry II, R. Segev, and W. Bialek, Nature (London) 440, 1007 (2006).｜经典：从实验数据拟合成对Ising最大熵模型，证明弱成对关联可产生强群体状态；本文的成对最大熵模型$P_{pairs}(s)$直接继承该文范式。</li>
+<li>[7]｜E. T. Jaynes, Phys. Rev. 106, 620 (1957).｜Jaynes最大熵原理原始论文；本文全部最大熵模型（成对、群体、投影分布模型）的理论根基。</li>
+<li>[8]｜E. T. Jaynes, Proc. IEEE 70, 939 (1982).｜最大熵原理在推断中的综述；支撑本文“给定约束下构造最无偏分布”的方法论。</li>
+<li>[9]｜W. Bialek, A. Cavagna, I. Giardina, T. Mora, E. Silvestri, M. Viale, and A. M. Walczak, Proc. Natl. Acad. Sci. U.S.A. 109, 4786 (2012).｜鸟群集体行为最大熵建模：只用近邻（$ O(N) $）约束重构系统；类比神经网络：当数据不足时不需要全部两两约束，只需要$ O(N) $约束。</li>
+<li>[10]｜A. Cavagna, L. Del Castello, S. Dey, I. Giardina, S. Melillo, L. Parisi, M. Viale, Phys. Rev. E 92, 012705 (2015).｜鸟群系统局部约束下的统计推断；进一步佐证：不需要$O(N^2)$约束，局部/少量集体约束即可刻画复杂集体系统，为本文$ O(N) $约束提供跨系统参照。</li>
+<li>[11]｜M. Okun, P. Yger, S. L. Marguet, F. Gerard‑Mercier, A. Benucci, S. Katzner, L. Busse, M. Carandini, and K. D. Harris, JNeurosci 32, 17108 (2012).｜实验神经科学：神经群体总活动$\phi=\sum s_n$作为集体变量；引出本文朴素群体平均场模型的出发点。</li>
+<li>[12]｜G. Tkačik, O. Marre, T. Mora, D. Amodei, M. J. Berry II, and W. Bialek, J. Stat. Mech. (2013) P03011.｜视网膜神经元群体的集体活动统计；提供群体总活动作为集体变量的实验背景。</li>
+<li>[13]｜C. Gardella, O. Marre, and T. Mora, eNeuro 3, 4 (2016).｜神经群体总活动的统计特征；支撑把总放电和作为集体序参量的研究直觉。</li>
+<li>[14]｜G. Parisi, Statistical Field Theory (Frontiers in Physics, Addison‑Wesley, 1988).｜统计场论教材；本文群体平均场配分函数、大N鞍点积分、自由能计算的理论来源。</li>
+<li>[15]｜J. Sethna, Statistical Mechanics: Entropy, Order Parameters, and Complexity (Oxford University Press, Oxford, 2021).｜统计力学教材，相变、平均场、自由能；用于理解铁磁平均场模型、相变判据。</li>
+<li>[16]｜S. A. Kivelson, J. M. Jiang, and J. Chang, Statistical Mechanics of Phases and Phase Transitions (Princeton University Press, Princeton, 2024).｜相变教材，辅助理解一级、二级相变判据。</li>
+<li>[17]｜M. Sahani, Ph.D. thesis, California Institute of Technology, Pasadena, CA (1999).｜神经群体隐场（latent field）早期理论；本文的辅助场/隐场平均场思想与之呼应。</li>
+<li>[18]｜M. R. Whiteway and D. A. Butts, Curr. Opin. Neurobiol. 58, 86 (2019).｜综述神经群体的隐潜变量模型；本文“涌现的隐场”与该领域研究方向对比。</li>
+<li>[19]｜S. Cocco, R. Monasson, and V. Sessak, Phys. Rev. E 83, 051123 (2011).｜基于投影协方差约束的最大熵平均场理论；本文“匹配均值与投影协方差”的广义平均场模型直接建立在该文基础上，熵公式(16)来自此文。</li>
+<li>[20]｜See Supplemental Material at <a href="http://link.aps.org/supplemental/10.1103/nr71">http://link.aps.org/supplemental/10.1103/nr71</a>‑phqw for technical details and derivations.｜本文补充材料，存放推导、数值细节；正文多处复杂推导指向补充材料。</li>
+<li>[21]｜L. Di Carlo, F. Mignacco, C. W. Lynn, and W. Bialek, arXiv:2508.02633.｜本文预印本长版本；正文很多模型推导、数值实验、对比实验均来自该预印本。</li>
+<li>[22]｜J. P. Cunningham and B. M. Yu, Nat. Neurosci. 17, 1500 (2014).｜神经群体低维流形综述；本文“高维动力学被少数投影方向主导”的领域背景。</li>
+<li>[23]｜J. A. Gallego, M. G. Perich, L. E. Miller, and S. A. Solla, Neuron 94, 978 (2017).｜运动皮层神经群体低维流形实验；支撑“神经活动落在低维流形”的领域共识。</li>
+<li>[24]｜E. H. Nieh, M. Schottdorf, N. W. Freeman, R. J. Low, S. Lewallen, S. A. Koay, L. Pinto, J. L. Gauthier, C. D. Brody, and D. W. Tank, Nature (London) 595, 80 (2021).｜小鼠海马神经群体低维动力学实验；作为真实神经存在低维集体方向的实验证据。</li>
+<li>[25]｜D. J. Amit, H. Gutfreund, and H. Sompolinsky, Ann. Phys. (N.Y.) 173, 30 (1987).｜饱和附近Hopfield网络平均场理论；本文说明当投影数K正比N时需要更复杂平均场，引用该文类比。</li>
+<li>[26]｜D. Krotov and J. J. Hopfield, in Advances in Neural Information Processing Systems, edited by D. Lee, M. Sugiyama, U. Luxburg, I. Guyon, and R. Garnett (Curran Associates, Inc., Barcelona Spain, 2016), Vol. 29, pp. 1172–1180.｜现代Hopfield（稠密联想记忆网络）；本文$E_{dist}(s)$模型与现代Hopfield网络的联系。</li>
+<li>[27]｜G. Tkačik, O. Marre, D. Amodei, E. Schneidman, W. Bialek, and M. J. Berry II, PLoS Comput. Biol. 10, e1003408 (2014).｜视网膜神经元阵列记录数据集；图1中橙色点（N=160视网膜神经元）实验数据来源。</li>
+<li>[28]｜J. L. Gauthier and D. W. Tank, Neuron 99, 179 (2018).｜小鼠海马CA1钙成像记录；本文海马神经元数据集来源。</li>
+<li>[29]｜L. Meshulam, J. L. Gauthier, C. D. Brody, D. W. Tank, and W. Bialek, Phys. Rev. Lett. 123, 178103 (2019).｜海马群体标度行为实验；本文海马数据，同时提供粗粒化下临界行为的佐证。</li>
+<li>[30]｜Allen Institute MindScope Program Allen Brain Observatory, Neuropixels visual coding (dataset), 2019, https://brain‑map.org/explore/circuits.｜Neuropixels 2.0公开数据集；图1蓝、绿色点（小鼠单脑区、跨多脑区）实验数据来源。</li>
+<li>[31]｜L. Meshulam, J. L. Gauthier, C. D. Brody, D. W. Tank, and W. Bialek, arXiv:2112.14735.｜海马群体随N变化的标度分析；本文图2，改变神经元数量N的分析方案来自此文。</li>
+<li>[32]｜C. W. Lynn, Q. Yu, R. Pang, S. E. Palmer, and W. Bialek, Phys. Rev. E 111, 054411 (2025).｜大N神经群体极小极大熵模型；支撑N变化、有限尺寸标度的数值分析。</li>
+<li>[33]｜P. C. Hohenberg and B. I. Halperin, Rev. Mod. Phys. 49, 777 (1977).｜临界现象与动力学临界行为综述；本文未来方向：将框架拓展到时间轨迹，研究动力学临界信号（关联时间发散）引用此综述。</li>
+<li>[34]｜Allen Institute MindScope Program Allen Brain Observatory, Neuropixels Visual Coding (Dataset) (2019), https://brain‑map.org/explore/circuits.｜Allen研究所公开数据集，数据可用性声明中可获取的公开实验数据。</li>
+</ul>
+</div>
+        
+        
+        <h3 style="margin-bottom:12px;font-size:1.1rem;">摘要</h3>
+        <div class="citation-block" style="background:var(--bg-card);">
+            <p>这篇发表于 <em>Physical Review Letters</em> 的论文 <strong>《Extended Mean-Field Theories for Networks of Real Neurons》</strong>（作者：Luca Di Carlo, Francesca Mignacco, Christopher W. Lynn, William Bialek）探讨了如何使用统计物理学中的平均场理论来精确建模真实大规模神经网络的集体活动。</p>
+<hr>
+<h3 id="一-论文-highlights核心亮点与主要发现">一、 论文 Highlights（核心亮点与主要发现）</h3>
+<ol>
+<li><strong>揭示朴素平均场理论（Naïve Mean-Field Theory）在真实神经网络中的失效</strong><br>
+论文表明，仅匹配网络总体活动 $ \phi\ $ 的均值与方差（或仅约束某些投影的方差）的传统朴素平均场模型，在拟合真实神经元数据（如小鼠海马体、视网膜及 Neuropixels 记录）时会彻底失效。真实神经元活动的涨落（磁化率 $ \chi\ $）普遍突破了朴素平均场理论所允许的上限。</li>
+<li><strong>发现数据迫使朴素模型产生假相变（Spurious Phase Transition）</strong><br>
+当尝试使用朴素模型匹配实验数据的均值与方差时，模型的局部自由能曲线出现两个极其接近简并的极小值，表现出<strong>一阶相变</strong>的特征。这会导致模型错误地预测神经总体活动呈双峰分布，与实际观察严重不符。</li>
+<li><strong>成功构建扩展平均场理论（Extended Mean-Field Theory）</strong><br>
+作者提出了突破性的扩展平均场框架：<strong>同时约束单个神经元的平均活动以及沿着特定低维投影（Projection）的完整活动概率分布</strong>。该模型消除了假的双峰相变问题，精准重现了神经元活动沿投影的分布（包括非高斯的重尾现象）以及未被直接约束的非平凡两点相关性矩阵。</li>
+<li><strong>证明真实神经网络处于“临界点边缘”（Poised near a critical point）</strong><br>
+沿着相关矩阵最大特征值方向进行投影分析时，扩展平均场理论的稳定条件指标 $ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta\ $ 极其接近 0（处于临界线约 8% 的范围内）。若对数据进行时间随机打乱以弱化相关性，系统就会远离临界线，这证明真实生物神经网络系统处于接近临界状态的平衡点。</li>
+</ol>
+<hr>
+<h3 id="二-methodology方法论">二、 Methodology（方法论）</h3>
+<ul>
+<li><strong>超越成对相互作用与有限阶矩约束</strong>：以往的最大熵模型（如 Ising 模型或 Boltzmann 机器）依赖 $ O(N^2)\ $ 个成对相关性参数，在数据时间长度 $ T\ $ 较短、神经元数 $ N\ $ 极大时会出现满秩失效。扩展平均场方法只需 $ O(N)\ $ 个约束，通过引入<strong>非线性势能函数 $ U(\varphi)\ $</strong> 匹配投影的完整概率分布 $ P_{\exp}(\varphi)\ $，捕获高阶集体效应。</li>
+<li><strong>低维宏观投影与隐变量场（Latent Fields）的结合</strong>：将高维神经活动映射到低维流形投影上，利用标量/辅助场解耦神经元之间的复杂相互作用，将高维统计物理推导转化为可精确求解的鞍点近似（Saddle-point approximation）问题。</li>
+</ul>
+<hr>
+<h3 id="三-模型的基本定义basic-definitions">三、 模型的基本定义（Basic Definitions）</h3>
+<ol>
+<li><strong>神经元状态</strong>：<br>
+网络包含 $ N\ $ 个神经元，每个神经元在短时间窗口内的活动简化为二进制自旋变量 $ s_n \in {+1, -1}\ $（$ +1\ $ 表示放电，$ -1\ $ 表示静息）。总体状态为组态矢量 $ \mathbf{s} = {s_1, s_2, \dots, s_N}\ $。</li>
+<li><strong>低维投影（Projection）</strong>：<br>
+定义活动在加权方向 $ \mathbf{W}\ $ 上的投影为：
+$ \varphi = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n\ $
+其中 $ W_n\ $ 为投影权重（通常选择相关矩阵主特征向量）。</li>
+<li><strong>最大熵能量函数（Energy Function）</strong>：<br>
+在满足所有单神经元平均放电率 $ \langle s_n \rangle_{\text{exp}}\ $ 以及投影分布 $ P_{\exp}(\varphi)\ $ 的约束下，最大熵分布为玻尔兹曼分布，其能量函数定义为：
+$ E_{\text{dist}}(\mathbf{s}) = -\sum_{n=1}^N h_n s_n + N U(\varphi)\ $
+<ul>
+<li>$ h_n\ $：局部外场，用于精确匹配单神经元平均放电率 $ \langle s_n \rangle\ $。</li>
+<li>$ U(\varphi)\ $：非线性势能函数（Potential），用于匹配观察到的投影分布 $ P_{\exp}(\varphi)\ $。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四-主要推导方法与方程derivation-steps">四、 主要推导方法与方程（Derivation Steps）</h3>
+<h4 id="1-配分函数的场积分表象">1. 配分函数的场积分表象</h4>
+<p>配分函数定义为：
+$ Z_{\text{dist}} = \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N h_n s_n - N U\left( \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \right]\ $</p>
+<p>为了解耦非线性势能 $ U(\varphi)\ $ 对自旋组态 $ \mathbf{s}\ $ 的依赖，引入 Dirac delta 函数并使用傅里叶积分变换 $ \delta(x) = \int \frac{dz}{2\pi} e^{-i z x}\ $：
+$ Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi , \exp\left[ -N f_{\text{dist}}(\varphi, z) \right]\ $</p>
+<p>得到**有效自由能（Effective Free Energy）**表达式：
+$ f_{\text{dist}}(\varphi, z) = U(\varphi) + \frac{1}{N} \left[ i z \varphi - \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) \right]\ $</p>
+<h4 id="2-鞍点近似saddle-point-approximation与参数求解">2. 鞍点近似（Saddle-Point Approximation）与参数求解</h4>
+<p>在 $ N \to \infty\ $ 极限下，积分由鞍点 $ \varphi_{\text{sp}}, z_{\text{sp}})\ $ 统治。求极值条件 $ \frac{\partial f_{\text{dist}}}{\partial \varphi} = 0, \frac{\partial f_{\text{dist}}}{\partial z} = 0\ $ 得到鞍点方程：
+$ \varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right)\ $
+$ z_{\text{sp}} = i N U&rsquo;(\varphi_{\text{sp}})\ $</p>
+<p>利用规范变换（Gauge transformation）设 $ U&rsquo;(\varphi_{\text{sp}}) = 0\ $，固定鞍点处 $ z_{\text{sp}} = 0\ $：</p>
+<ul>
+<li><strong>局部外场直接由平均活动显式确定</strong>：
+$ \langle s_n \rangle = \tanh h_n \implies h_n = \text{atanh}(\langle s_n \rangle_{\text{exp}})\ $</li>
+<li><strong>反解非线性势能 $ U(\varphi)\ $</strong>：<br>
+沿投影的概率分布满足 $ P(\varphi) \propto \exp[-N f_{\text{dist}}(\varphi, z^<em>(\varphi))]\ $，其中 $ z^</em>(\varphi)\ $ 是数值求解方程 $ \frac{1}{\sqrt{N}} \sum_n W_n \tanh\left( h_n + \frac{i W_n z^<em>(\varphi)}{\sqrt{N}} \right) = \varphi\ $ 的解。结合实验测量的 $ P_{\exp}(\varphi)\ $ 可反推得出势能 $ U(\varphi)\ $：
+$ N U(\varphi) = \ln P_{\exp}(\varphi) - i \varphi z^</em>(\varphi) + \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z^*(\varphi) W_n}{\sqrt{N}} \right)\ $</li>
+</ul>
+<h4 id="3-临界性条件与熵的计算">3. 临界性条件与熵的计算</h4>
+<ul>
+<li><strong>相变临界条件</strong>：对自由能展开计算 Hessian 矩阵的行列式 $ \det H = 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta\ $。当曲率消失时（$ \det H = 0\ $），系统发生相变。其临界条件为：
+$ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta = 0\ $
+其中 $ \Delta = \frac{1}{N} \sum_{n=1}^N W_n^2 (1 - \langle s_n \rangle^2)\ $ 为独立神经元假设下的投影方差。</li>
+<li><strong>扩展平均场下的熵（Entropy）</strong>：
+模型相对于独立神经元模型（熵为 $ S_0\ $）的熵减为：
+$ S_{\text{dist}} - S_0 \approx N \left( \langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) \right) - \frac{1}{2} \ln \left[ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \right]\ $</li>
+</ul>
+
+        </div>
+        
+    </div><div class="tab-content" id="tab-authors">
+        <div class="prose-content"><h1 id="extended-meanfield-theories-for-networks-of-real-neurons作者完整调研">《Extended Mean‑Field Theories for Networks of Real Neurons》作者完整调研</h1>
+<p>论文信息：<em>Phys. Rev. Lett.</em>, 137, 018401 (2026)；作者：<strong>Luca Di Carlo, Francesca Mignacco, Christopher W. Lynn, William Bialek</strong>。</p>
+<blockquote>
+<p>注：该PRL论文<strong>无明确标注通讯作者</strong>，该方向通常William Bialek为课题组通讯；arXiv预印本版本也未单独标注通讯，4位作者中William Bialek为资深PI，Christopher W. Lynn为独立PI，Luca Di Carlo、Francesca Mignacco为博士后/青年研究员。</p>
+</blockquote>
+<h2 id="一全部作者机构院系主要合作人合作机构">一、全部作者机构、院系、主要合作人&amp;合作机构</h2>
+<h3 id="1-luca-di-carlo第一作者">1. Luca Di Carlo（第一作者）</h3>
+<ul>
+<li><strong>所属机构</strong>
+<ol>
+<li>Joseph Henry Laboratories of Physics，普林斯顿大学（Princeton University）物理系；Lewis‑Sigler Institute，普林斯顿大学，美国新泽西州普林斯顿。</li>
+<li>Initiative for the Theoretical Sciences，纽约城市大学研究生院（CUNY Graduate Center），美国纽约。</li>
+</ol>
+</li>
+<li><strong>身份</strong>：博士后研究员，Bialek课题组。</li>
+<li><strong>主要合作者</strong>：William Bialek、Francesca Mignacco、Christopher W. Lynn；实验合作者：M. J. Berry II, C. D. Brody, J. L. Gauthier, D. W. Tank（神经实验）。</li>
+<li><strong>合作机构</strong>：普林斯顿大学、纽约城市大学研究生院、耶鲁大学Wu Tsai研究所；实验合作来自Allen脑科学研究所。</li>
+<li><strong>说明</strong>：青年研究者，主要集中于大规模神经元群体统计物理，代表产出集中在与Bialek团队合作的预印本与PRL 2026论文，公开独立论文较少。</li>
+</ul>
+<h3 id="2-francesca-mignacco共一">2. Francesca Mignacco（共一）</h3>
+<ul>
+<li><strong>所属机构</strong>
+<ol>
+<li>Joseph Henry Laboratories of Physics，普林斯顿大学物理系；Lewis‑Sigler Institute，普林斯顿大学。</li>
+<li>Initiative for the Theoretical Sciences，纽约城市大学研究生院（CUNY Graduate Center），纽约，美国。</li>
+</ol>
+</li>
+<li><strong>身份</strong>：博士后研究员；此前在巴黎萨克雷大学（Paris‑Saclay）完成博士，方向统计物理、机器学习理论、神经网络统计力学。</li>
+<li><strong>核心合作者</strong>：William Bialek、Luca Di Carlo、Christopher W. Lynn；Lenka Zdeborová, Florent Krzakala, Pierfrancesco Urbani, SueYeon Chung, G. Biroli（机器学习统计物理）。</li>
+<li><strong>合作机构</strong>：普林斯顿大学、CUNY研究生院；巴黎萨克雷大学、EPFL、Flatiron研究所。</li>
+</ul>
+<h3 id="3-christopher-w-lynn共一">3. Christopher W. Lynn（共一）</h3>
+<ul>
+<li><strong>所属机构</strong>
+<ol>
+<li>耶鲁大学（Yale University）<strong>物理系</strong>；Quantitative Biology Institute；<strong>Wu Tsai Institute（吴蔡脑科学研究所）</strong>，美国康涅狄格州纽黑文；助理教授、Wu Tsai Investigator，Lynn Lab负责人。</li>
+<li>兼职：Initiative for the Theoretical Sciences，纽约城市大学研究生院；普林斯顿大学（原）。</li>
+</ol>
+</li>
+<li><strong>身份</strong>：独立PI，研究方向脑网络统计物理、复杂系统、最大熵模型、神经群体编码。</li>
+<li><strong>核心合作者</strong>：William Bialek, Luca Di Carlo, Francesca Mignacco；Danielle S. Bassett, David P. Carcamo, Q. Yu, S. E. Palmer等。</li>
+<li><strong>合作机构</strong>：耶鲁大学、普林斯顿大学、CUNY研究生院、宾夕法尼亚大学。</li>
+</ul>
+<h3 id="4-william-bialek资深作者课题组pi">4. William Bialek（资深作者，课题组PI）</h3>
+<ul>
+<li><strong>所属机构</strong>
+<ol>
+<li>Joseph Henry Laboratories of Physics，普林斯顿大学物理系；Lewis‑Sigler Institute，普林斯顿大学。</li>
+<li>Initiative for the Theoretical Sciences，纽约城市大学研究生院（CUNY Graduate Center），纽约，美国；兼任洛克菲勒大学客座。</li>
+</ol>
+</li>
+<li><strong>身份</strong>：理论生物物理领域权威教授；研究方向：神经编码、统计物理、生命系统信息论、群体行为物理。</li>
+<li><strong>核心合作者</strong>：Luca Di Carlo, Francesca Mignacco, Christopher W. Lynn；M. J. Berry II, D.W. Tank, L. Meshulam, G. Tkačik, A. Cavagna等实验与理论合作者。</li>
+<li><strong>合作机构</strong>：普林斯顿大学、CUNY研究生院；奥地利IST、罗马CNR、Allen脑研究所。</li>
+</ul>
+<h2 id="二第一共一资深pi近年代表论文20202026每人510篇">二、第一/共一/资深PI近年代表论文（2020‑2026，每人5‑10篇）</h2>
+<h3 id="-luca-di-carlo第一作者">✍️ Luca Di Carlo（第一作者）</h3>
+<blockquote>
+<p>公开可检索论文偏少，以合作产出为主</p>
+</blockquote>
+<ol>
+<li>Di‑Carlo L, Mignacco F, Lynn C W, Bialek W. Extended Mean‑Field Theories for Networks of Real Neurons. <em>Phys. Rev. Lett.</em>, 137, 018401 (2026).</li>
+<li>Di‑Carlo L, Mignacco F, Lynn C W, Bialek W. Large‑N maximum‑entropy models for neural populations with O(N) constraints. arXiv:2508.02633 (2025)（PRL补充长文）.</li>
+<li>Lynn C W, Yu Q, Pang R, Palmer S E, <strong>Di‑Carlo L</strong>, Bialek W. Exact minimax entropy models of large‑scale neuronal activity. arXiv:2402.00007 (2024).</li>
+<li>Meshulam L, Gauthier J L, Brody C D, Tank D W, <strong>Di‑Carlo L</strong>, Bialek W. Scaling of correlations in large neural populations. arXiv:2112.14735 (2021).</li>
+<li>Meshulam L, Gauthier J L, Brody C D, Tank D W, <strong>Di‑Carlo L</strong>, Bialek W. Collective dynamics of large hippocampal assemblies. <em>Phys. Rev. Lett.</em> 123,178103 (2019).</li>
+</ol>
+<h3 id="-francesca-mignacco共一">✍️ Francesca Mignacco（共一）</h3>
+<ol>
+<li>Di‑Carlo L, <strong>Mignacco F</strong>, Lynn C W, Bialek W. Extended Mean‑Field Theories for Networks of Real Neurons. <em>Phys. Rev. Lett.</em>, 137,018401 (2026).</li>
+<li><strong>Mignacco F</strong>, Chou C‑N, Chung S Y. Nonlinear classification of neural manifolds with contextual information. <em>Phys. Rev. E</em>, 111, 035302 (2025).</li>
+<li>Mori F, Mannelli S S, <strong>Mignacco F</strong>. Optimal protocols for continual learning via statistical physics and control theory. ICLR (2025).</li>
+<li>Tiberi L, <strong>Mignacco F</strong>, Irie K, Sompolinsky H. Dissecting the interplay of attention paths in a statistical mechanics theory of transformers. NeurIPS (2024).</li>
+<li>Mori F, <strong>Mignacco F</strong>. Analytic theory of dropout regularization. <em>Phys. Rev. E</em>,112,045301 (2025).</li>
+<li>Bonnaire T, Ghio D, Krishnamurthy K, <strong>Mignacco F</strong>, Yamamura A, Biroli G. High‑dimensional non‑convex landscapes and gradient descent dynamics. <em>J. Stat. Mech.</em>, 104007 (2024).</li>
+<li><strong>Mignacco F</strong>, Urbani P. The effective noise of stochastic gradient descent. <em>J. Stat. Mech.</em>, 083405 (2022).</li>
+<li>Cornacchia E, <strong>Mignacco F</strong>, Veiga R, Gerbelot C, Loureiro B, Zdeborová L. Learning curves for multi‑class teacher‑student perceptron. <em>Mach. Learn.: Sci. Technol.</em>, 4,015019 (2023).</li>
+</ol>
+<h3 id="-christopher-w-lynn共一独立pi">✍️ Christopher W. Lynn（共一，独立PI）</h3>
+<ol>
+<li>Di‑Carlo L, Mignacco F, <strong>Lynn C W</strong>, Bialek W. Extended Mean‑Field Theories for Networks of Real Neurons. <em>Phys. Rev. Lett.</em>,137,018401 (2026).</li>
+<li><strong>Lynn C W</strong>. Simple input‑output dependencies explain neuronal activity. <em>Nature Physics</em> (2026).</li>
+<li>Weaver N J, Faskowitz J I, Betzel R F, <strong>Lynn C W</strong>. Quantifying the compressibility of the human brain. <em>PNAS</em> (2026).</li>
+<li>Carcamo D P, <strong>Lynn C W</strong>. Statistical physics of large‑scale neural activity with loops. <em>PNAS</em>,122(42):e2426926122 (2025).</li>
+<li><strong>Lynn C W</strong>, Yu Q, Pang R, Palmer S E, Bialek W. Exact minimax entropy models of large‑scale neuronal activity. arXiv:2402.00007 (2024).</li>
+<li><strong>Lynn C W</strong>, Holmes C M, Bialek W, Schwab D J. Decomposing the local arrow of time in interacting systems. <em>Phys. Rev. Lett.</em>,129,118101 (2022).</li>
+<li><strong>Lynn C W</strong>, Bassett D S. Quantifying the compressibility of complex networks. <em>PNAS</em>,118(32):e2023473118 (2021).</li>
+<li><strong>Lynn C W</strong>, Papadopoulos L, Kahn A E, Bassett D S. Human information processing in complex networks. <em>Nature Physics</em>, 16, 1168‑1176 (2020).</li>
+</ol>
+<h3 id="-william-bialek资深pi">✍️ William Bialek（资深PI）</h3>
+<ol>
+<li>Di‑Carlo L, Mignacco F, Lynn C W, <strong>Bialek W</strong>. Extended Mean‑Field Theories for Networks of Real Neurons. <em>Phys. Rev. Lett.</em>,137,018401 (2026).</li>
+<li>Meshulam L, <strong>Bialek W</strong>. Statistical physics of large‑scale neural populations. <em>Rev. Mod. Phys.</em>, 97,045002 (2025)（综述）.</li>
+<li><strong>Bialek W</strong>. On the dimensionality of behavior. <em>PNAS</em>,119(18):e2021860119 (2022).</li>
+<li><strong>Bialek W</strong>, Shaevitz J W. Long timescales, individual differences, and scale invariance in animal behavior. <em>Phys. Rev. Lett.</em>, 132, 048401 (2024).</li>
+<li>Chen X, <strong>Bialek W</strong>. Searching for long time scales without fine tuning. arXiv:2008.11674 (2024).</li>
+<li>Meshulam L, Gauthier J L, Brody C D, Tank D W, <strong>Bialek W</strong>. Collective dynamics of large hippocampal assemblies. <em>Phys. Rev. Lett.</em>,123,178103 (2019).</li>
+<li><strong>Bialek W</strong>, Cavagna A, Giardina I, Mora T, Silvestri E, Viale M, Walczak A M. Statistical mechanics for natural flocks of birds. <em>PNAS</em>,109,4786‑4791 (2012).</li>
+<li>Schneidman E, Berry M J, Segev R, <strong>Bialek W</strong>. Weak pairwise correlations imply strongly correlated network states in a neural population. <em>Nature</em>,440,1007‑1012 (2006)（奠基经典）。</li>
+</ol>
+<h2 id="三补充说明">三、补充说明</h2>
+<ol>
+<li>论文实验合作者：M.J. Berry II（视网膜）、J.L. Gauthier &amp; D.W. Tank（小鼠海马Ca²⁺成像）、Allen Institute（Neuropixels）为该文提供实验数据来源，不属于论文署名作者。</li>
+<li>Luca Di Carlo产出以团队合作的理论论文、arXiv预印本为主，独立第一作者期刊较少。</li>
+<li>Francesca Mignacco横跨<strong>机器学习统计物理</strong>与<strong>神经群体统计物理</strong>两个方向；Christopher Lynn独立后同时开展脑网络、统计场论、最大熵模型；William Bialek为理论生物物理领域奠基人。</li>
+</ol>
+</div>
+        
+    </div><div class="tab-content" id="tab-model">
+        <div class="prose-content"><p>论文提出了<strong>扩展平均场理论（Extended Mean-Field Theory）</strong>，旨在解决朴素平均场理论无法建模真实神经网络高维集体活动的问题。以下是该模型的基本数学定义、完整推导过程及临界性判据的详细推导。</p>
+<hr>
+<h3 id="一-模型的基本定义与最大熵框架">一、 模型的基本定义与最大熵框架</h3>
+<ol>
+<li>
+<p><strong>神经元状态与低维投影</strong><br>
+考虑由 $ N\ $ 个二进制神经元组成的网络，每个神经元在短时间窗口内的状态为 $ s_n \in {+1, -1}\ $（$ +1\ $ 表示放电，$ -1\ $ 表示静息），网络组态矢量记为 $ \mathbf{s} = {s_1, s_2, \dots, s_N}\ $。<br>
+定义网络沿权重矢量 $ \mathbf{W} = (W_1, \dots, W_N)\ $ 的低维投影变量为：
+$ \varphi = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n\ $</p>
+</li>
+<li>
+<p><strong>约束条件与最大熵原理</strong><br>
+根据最大熵原理（Maximum Entropy Principle），在满足以下两项实验约束的条件下构造概率分布 $ P(\mathbf{s})\ $：</p>
+<ul>
+<li>匹配每个神经元的平均放电率：$ \langle s_n \rangle_P = \langle s_n \rangle_{\text{exp}}\ $；</li>
+<li>匹配投影变量的完整实验概率分布：$ P(\varphi)<em>P = P</em>{\text{exp}}(\varphi)\ $。</li>
+</ul>
+</li>
+<li>
+<p><strong>能量函数与玻尔兹曼分布</strong><br>
+满足上述约束的最大熵分布为玻尔兹曼分布：
+$ P(\mathbf{s}) = \frac{1}{Z_{\text{dist}}} \exp[-E_{\text{dist}}(\mathbf{s})]\ $
+能量函数定义为：
+$ E_{\text{dist}}(\mathbf{s}) = -\sum_{n=1}^N h_n s_n + N U(\varphi)\ $
+其中：</p>
+<ul>
+<li>$ h_n\ $ 为局部外场（拉格朗日乘子），用于精确匹配各神经元的平均放电率 $ \langle s_n \rangle\ $；</li>
+<li>$ U(\varphi)\ $ 为非线性势能函数（Potential），用于匹配投影分布 $ P_{\text{exp}}(\varphi)\ $；因子 $ N\ $ 保证势能在热力学极限下保持 $ O(1)\ $ 量级。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二-配分函数--z_textdist--的场积分表象推导">二、 配分函数 $ Z_{\text{dist}}\ $ 的场积分表象推导</h3>
+<p>配分函数的原始定义为对所有 $ 2^N\ $ 种自旋组态求和：
+$ Z_{\text{dist}} = \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N h_n s_n - N U\left( \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \right]\ $</p>
+<h4 id="step-1-引入-delta-函数解耦非线性势能">Step 1: 引入 Delta 函数解耦非线性势能</h4>
+<p>为解耦自旋组态 $ \mathbf{s}\ $ 与非线性势能 $ U(\varphi)\ $，引入 Dirac Delta 函数：
+$ Z_{\text{dist}} = \sum_{\mathbf{s}} \int d\varphi , \delta\left( \varphi - \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \exp\left[ \sum_{n=1}^N h_n s_n - N U(\varphi) \right]\ $</p>
+<h4 id="step-2-傅里叶变换引入隐场--z-">Step 2: 傅里叶变换引入隐场 $ z\ $</h4>
+<p>使用 Delta 函数的傅里叶积分表示 $ \delta(x) = \int \frac{dz}{2\pi} e^{-i z x}\ $（其中 $ z\ $ 为辅助场/隐场）：
+$ Z_{\text{dist}} = \int \frac{dz}{2\pi} \int d\varphi , \exp[-N U(\varphi) - i z \varphi] \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N \left( h_n + \frac{i z W_n}{\sqrt{N}} \right) s_n \right]\ $</p>
+<h4 id="step-3-对自旋组态显式求和">Step 3: 对自旋组态显式求和</h4>
+<p>由于指数项对各个自旋 $ s_n \in {+1, -1}\ $ 已完全解耦，可直接求和：
+$ \sum_{s_n = \pm 1} \exp\left[ \left( h_n + \frac{i z W_n}{\sqrt{N}} \right) s_n \right] = 2 \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right)\ $</p>
+<p>将求和结果代回配分函数，得到配分函数的场积分精确表达式：
+$ Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi , \exp\left[ -N f_{\text{dist}}(\varphi, z) \right]\ $
+其中<strong>有效自由能（Effective Free Energy）</strong> $ f_{\text{dist}}(\varphi, z)\ $ 定义为：
+$ f_{\text{dist}}(\varphi, z) = U(\varphi) + \frac{1}{N} \left[ i z \varphi - \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) \right]\ $</p>
+<hr>
+<h3 id="三-鞍点近似saddle-point-approximation与模型参数求解">三、 鞍点近似（Saddle-Point Approximation）与模型参数求解</h3>
+<p>在热力学极限 $ N \to \infty\ $ 下，配分函数积分由鞍点 $ \varphi_{\text{sp}}, z_{\text{sp}})\ $ 统治：
+$ \ln Z_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}})\ $</p>
+<h4 id="step-1-鞍点方程组">Step 1: 鞍点方程组</h4>
+<p>对自由能求偏导数并令其为 0：</p>
+<ol>
+<li>$ \frac{\partial f_{\text{dist}}}{\partial \varphi} = 0 \implies U&rsquo;(\varphi_{\text{sp}}) + \frac{i z_{\text{sp}}}{N} = 0 \implies z_{\text{sp}} = i N U&rsquo;(\varphi_{\text{sp}})\ $；</li>
+<li>$ \frac{\partial f_{\text{dist}}}{\partial z} = 0 \implies i \varphi_{\text{sp}} - \sum_{n=1}^N \frac{i W_n}{\sqrt{N}} \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) = 0\ $：
+$ \varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right)\ $</li>
+</ol>
+<h4 id="step-2-规范变换与局部外场--h_n--的确定">Step 2: 规范变换与局部外场 $ h_n\ $ 的确定</h4>
+<p>能量函数 $ E_{\text{dist}}(\mathbf{s})\ $ 在规矩变换 $ U(\varphi) \to U(\varphi) - \varphi U&rsquo;(\varphi_{\text{sp}})\ $ 和 $ h_n \to h_n + \frac{W_n}{\sqrt{N}} N U&rsquo;(\varphi_{\text{sp}})\ $ 下保持不变。<br>
+利用该规范对称性，可固定 $ U&rsquo;(\varphi_{\text{sp}}) = 0\ $，从而使得鞍点处的隐场 $ z_{\text{sp}} = 0\ $。</p>
+<p>在此规范下，单个神经元的平均活动简化为：
+$ \langle s_n \rangle = \frac{\partial \ln Z_{\text{dist}}}{\partial h_n} = \tanh(h_n) \implies h_n = \text{atanh}(\langle s_n \rangle_{\text{exp}})\ $
+这表明局部外场 $ h_n\ $ 仅由单个神经元的平均放电率直接决定，形式与独立神经元模型完全相同！</p>
+<h4 id="step-3-反演反解势能函数--uvarphi-">Step 3: 反演反解势能函数 $ U(\varphi)\ $</h4>
+<p>沿着投影方向的概率分布在鞍点近似下表示为：
+$ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \right]\ $
+对任意给定的 $ \varphi\ $，$ z^</em>(\varphi)\ $ 为下述实数代数方程的解：
+$ \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i W_n z^*(\varphi)}{\sqrt{N}} \right) = \varphi\ $</p>
+<p>结合实验测量的分布 $ P_{\text{exp}}(\varphi)\ $，代回自由能表达式即可显式计算出非线性势能 $ N U(\varphi)\ $：
+$ N U(\varphi) = \ln P_{\text{exp}}(\varphi) - i \varphi z^<em>(\varphi) + \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z^</em>(\varphi) W_n}{\sqrt{N}} \right)\ $</p>
+<hr>
+<h3 id="四-涨落-hessian-矩阵与临界性判据">四、 涨落 Hessian 矩阵与临界性判据</h3>
+<p>为了确定鞍点解的稳定性及系统的相变临界点，计算自由能 $ f_{\text{dist}}(\varphi, z)\ $ 关于 $ \varphi, z)\ $ 的二阶导数矩阵（Hessian 矩阵） $ H\ $：
+$ H = \begin{pmatrix} \frac{\partial^2 f}{\partial \varphi^2} &amp; \frac{\partial^2 f}{\partial \varphi \partial z} \ \frac{\partial^2 f}{\partial z \partial \varphi} &amp; \frac{\partial^2 f}{\partial z^2} \end{pmatrix} = \begin{pmatrix} U&rsquo;&rsquo;(\varphi_{\text{sp}}) &amp; \frac{i}{N} \ \frac{i}{N} &amp; \frac{1}{N^2} \sum_{n=1}^N W_n^2 \left[ 1 - \tanh^2\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) \right] \end{pmatrix}\ $</p>
+<p>在 $ z_{\text{sp}} = 0\ $ 鞍点处，计算 Hessian 矩阵的行列式（代表自由能曲率）：
+$ \det H = U&rsquo;&rsquo;(\varphi_{\text{sp}}) \cdot \frac{1}{N^2} \sum_{n=1}^N W_n^2 [1 - \langle s_n \rangle^2] - \left( \frac{i}{N} \right)^2 = \frac{1}{N} \left[ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \right]\ $
+其中 $ \Delta\ $ 定义为神经元互相独立假定下的投影活动方差：
+$ \Delta = \frac{1}{N} \sum_{n=1}^N W_n^2 \left( 1 - \langle s_n \rangle^2 \right)\ $</p>
+<h4 id="临界点条件与磁化率susceptibility">临界点条件与磁化率（Susceptibility）</h4>
+<ol>
+<li><strong>连续相变临界条件</strong>：当自由能曲率消失（$ \det H = 0\ $）时，鞍点失去稳定性，系统发生二阶相变：
+$ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta = 0 \implies N U&rsquo;&rsquo;(\varphi_{\text{sp}}) = -\Delta^{-1}\ $</li>
+<li><strong>涨落磁化率 $ \chi\ $</strong>：网络总体响应易受性/磁化率与 Hessian 矩阵的逆成正比：
+$ \chi = \frac{\Delta}{1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta}\ $
+当指标 $ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \to 0\ $ 时，磁化率 $ \chi \to \infty\ $，反映出系统处于临界发散边缘。</li>
+</ol>
+<hr>
+<h3 id="五-模型的熵entropy推导">五、 模型的熵（Entropy）推导</h3>
+<p>基于熵的定义 $ S_{\text{dist}} = \ln Z_{\text{dist}} + \langle E_{\text{dist}}(\mathbf{s}) \rangle\ $：</p>
+<ol>
+<li>平均能量为：$ \langle E_{\text{dist}} \rangle = -\sum_{n=1}^N h_n \langle s_n \rangle + N \langle U(\varphi) \rangle\ $。</li>
+<li>包含一圈涨落修正的配分函数为：$ \ln Z_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}}) - \frac{1}{2} \ln \det H\ $。</li>
+</ol>
+<p>将其与完全独立神经元模型的熵 $ S_0 = N \ln 2 + \sum_{n=1}^N [\ln \cosh h_n - h_n \langle s_n \rangle]\ $ 相减，得到扩展平均场模型带来的**熵减（Entropy Reduction）**表达式：
+$ \delta S_{\text{dist}} = S_{\text{dist}} - S_0 \approx N \left[ \langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) \right] - \frac{1}{2} \ln \left[ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \right]\ $</p>
+<p>这表明，约束单个低维投影的概率分布不仅消除了朴素模型的双峰假相变，还能捕获高阶统计依赖，带来显著的熵减。</p>
+</div>
+        
+    </div><div class="tab-content" id="tab-results">
+        <div class="prose-content"><p>基于论文《Extended Mean-Field Theories for Networks of Real Neurons》的研究内容，以下是该研究的主要结果、理论意义及实际价值：</p>
+<hr>
+<h3 id="一-主要结果main-results">一、 主要结果（Main Results）</h3>
+<ol>
+<li><strong>证实朴素平均场理论（Naïve Mean-Field Theory）在真实神经网络中失效</strong><br>
+传统的朴素平均场模型仅试图匹配网络总体活动的均值与方差。论文对比了小鼠海马体、视网膜以及 Neuropixels 记录的单脑区与多脑区神经元数据，发现所有真实数据点的涨落（磁化率 $ \chi\ $）都<strong>显著突破了朴素平均场理论所允许的上限</strong> $ \chi_{\text{max}}(\mu)\ $。</li>
+<li><strong>揭示朴素模型拟合数据时产生的“假相变”与错误双峰</strong><br>
+当强行用朴素模型去匹配实验测得的均值与方差时，模型的局部自由能曲线会出现两个随着网络规模 $ N\ $ 增大而趋于简并的极小值，表现出<strong>一阶相变</strong>的特征。这会导致模型错误地预测神经总体活动呈双峰分布，与实际观测严重不符。</li>
+<li><strong>成功构建扩展平均场理论（Extended Mean-Field Theory）</strong><br>
+通过<strong>同时约束单个神经元的平均活动以及沿着特定低维投影（Projection）的完整概率分布 $ P(\varphi)\ $</strong>，论文建立了扩展平均场模型。该模型不仅消除了假的双峰相变，还能精准预测总体活动的非高斯重尾特征（包括多达 4.2% 神经元同时放电的极罕见事件），并成功预测了未被显式约束的成对相关性矩阵变化趋势。</li>
+<li><strong>证明真实神经网络处于“临界点边缘”（Poised near a Critical Point）</strong><br>
+扩展平均场理论推导出的相变临界条件为 $ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}})\Delta = 0\ $。在沿相关矩阵最大特征向量方向进行投影时，实验数据的指标距离临界界限<strong>仅相差约 8%</strong>。对数据进行时间随机打乱（弱化相关性）后，系统会迅速远离临界线，证实真实的生物神经网络处于接近临界状态的平衡点。</li>
+</ol>
+<hr>
+<h3 id="二-理论意义theoretical-significance">二、 理论意义（Theoretical Significance）</h3>
+<ol>
+<li><strong>解决超大规模神经数据下的“维度灾难”与“满秩失效”</strong><br>
+传统的成对最大熵模型（如 Ising 模型或 Boltzmann 机）需要拟合 $ O(N^2)\ $ 个成对相互作用参数，在神经元数量 $ N\ $ 极大而录制时间有限时，观测到的相关性矩阵会因秩不足而失效。扩展平均场框架只需要 <strong>$ O(N)\ $ 个约束</strong>，即可精确捕捉高维相空间中的高阶集体效应。</li>
+<li><strong>连接统计物理平均场与低维神经流形（Neural Manifolds）</strong><br>
+成功将神经科学中“低维流形/隐场”的直观假设与统计物理中的“隐场积分/鞍点近似”方法融为一体，证明了非二次势能 $ U(\varphi)\ $ 能够用标量场解耦高维复杂的神经元相互作用。</li>
+<li><strong>为“大脑临界性假说”提供严格的统计物理证据</strong><br>
+不需要假设具体的动力学规则，仅从平稳的统计分布出发，就验证了神经网络处于临界点边缘。这为解释大脑如何利用临界状态实现信息传输最大化、动态范围最大化等计算优势提供了坚实的物理基础。</li>
+</ol>
+<hr>
+<h3 id="三-实际价值与应用practical-value--applications">三、 实际价值与应用（Practical Value &amp; Applications）</h3>
+<ol>
+<li><strong>为前沿神经网络录制技术提供可扩展的分析工具</strong><br>
+随着 Neuropixels 2.0、大规模钙成像等技术能够同时记录成千上万个神经元，传统分析工具面临巨大的计算开销。扩展平均场方法极大地降低了模型拟合的计算复杂度，为解析大规模神经群体的时空放电模式提供了可扩展的高效拟合框架。</li>
+<li><strong>揭示神经元集群的高阶同步与突发放电现象</strong><br>
+该模型能够精准重现网络中罕见的大规模同步放电长尾事件，对于理解神经元集群放电（Assembly Firing）、癫痫样突发放电以及记忆检索等高阶协同机制具有重要的应用价值。</li>
+<li><strong>启发新型类脑计算与现代 Hopfield 网络（Modern Hopfield Networks）设计</strong><br>
+扩展平均场模型中引入的非二次势能 $ U(\varphi)\ $ 与现代 Hopfield 网络（Modern Hopfield Networks / Dense Associative Memories）在数学形式上紧密契合，为设计高容量类脑记忆模型和神经形态芯片提供了统计物理学启示。</li>
+</ol></div>
+        
+    </div><div class="tab-content" id="tab-figures">
+        <div class="prose-content"><p>论文中共包含 <strong>8 张图表（正文 5 张，补充说明/End Matter 3 张）</strong>，它们完整展示了朴素平均场理论的失效原因、扩展平均场理论的建立与验证，以及神经网络接近临界点的物理事实：</p>
+<hr>
+<h3 id="1-正文图表figures-15">1. 正文图表（Figures 1–5）</h3>
+<ul>
+<li>
+<p><strong>Figure 1：朴素平均理论的理论上限与真实神经数据对比</strong></p>
+<ul>
+<li><strong>图像内容</strong>：绘制了磁化率 $ \chi\ $（代表总体放电的方差/涨落）随平均磁化强度 $ \mu\ $（代表平均放电率）变化的散点图。红线表示朴素平均场理论所能容许的最大涨落上限 $ \chi_{\text{max}}(\mu)\ $。数据点涵盖视网膜（橙色、$ N=160\ $）、小鼠海马体 CA1 区域（紫色、$ N=1416\ $）以及 Neuropixels 记录的单脑区（蓝色）和多脑区（绿色）神经元活动。</li>
+<li><strong>物理意义</strong>：所有真实神经元数据集的涨落均<strong>显著高于红线</strong>（落入禁区），直接证明了朴素平均场理论无法描述真实神经网络的集体活动。</li>
+</ul>
+</li>
+<li>
+<p><strong>Figure 2：朴素平均场模型导致的假一阶相变</strong></p>
+<ul>
+<li><strong>图像内容</strong>：主图展示了强行用朴素模型拟合数据时，单个神经元的局部自由能 $ f(\psi)\ $ 曲线。随着网络规模 $ N\ $ 增大（$ N=50, 100, 200\ $），曲线形成了两个几乎简并（能量差按 $ 1/N\ $ 衰减）的局部极小值。插图展示了固定平均放电率时，参数 $ h^*(\lambda)\ $ 和磁化率 $ \chi\ $ 随耦合强度 $ \lambda\ $ 的变化轨迹，其与实验测量值 $ \chi_{\text{exp}}\ $ 的交点精确锁定了拟合参数。</li>
+<li><strong>物理意义</strong>：揭示了朴素模型在拟合数据时会产生人工引发的“双峰相变”（假一阶相变），导致模型错误地预测神经总体活动呈现双峰分布。</li>
+</ul>
+</li>
+<li>
+<p><strong>Figure 3：扩展平均场模型及其拟合表现</strong></p>
+<ul>
+<li><strong>图像内容</strong>：小鼠海马体 CA1 数据（$ N=1416\ $）在扩展平均场模型下的表现。
+<ul>
+<li><strong>图 3(a)</strong>：沿主成分方向的势能函数 $ U(\varphi)\ $（红实线），在大 $ |\varphi|\ $ 处显著偏离传统二次型势能（黑虚线）。</li>
+<li><strong>图 3(b)</strong>：活动在主成分投影上的分布 $ P(\varphi)\ $。模型预测（红线）精准重现了实验数据（灰色阴影）的非高斯重尾特征，并消除了假的双峰现象。插图显示模型预测的单神经元平均活动与实验值完美对齐。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Figure 4：神经网络接近临界点（Criticality）的证据</strong></p>
+<ul>
+<li><strong>图像内容</strong>：
+<ul>
+<li><strong>图 4(a)</strong>：不同投影方向下，势能曲率指标 $ N U&rsquo;&rsquo;(\varphi_{\text{sp}})\ $ 与独立方差 $ \Delta\ $ 的散点图。随机投影（绿点/橙点）远离红色的相变临界线 $ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}})\Delta = 0\ $；而沿相关矩阵最大特征值方向的投影（浅灰点）紧贴临界线，距离临界界限仅约 8%。</li>
+<li><strong>图 4(b)</strong>：对数据进行时间打乱（Shuffle）弱化相关性后的演化轨迹。随着打乱比例增加，$ N U&rsquo;&rsquo;(\varphi_{\text{sp}})\ $（绿线）与 $ -\Delta^{-1}\ $（紫线）逐渐分离远离，说明打乱相关性会使系统偏离临界状态。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Figure 5：不同投影方向带来的熵减</strong></p>
+<ul>
+<li><strong>图像内容</strong>：展示了约束前 500 个特征值最大的投影方向所带来的熵减少量 $ \delta S\ $（绿点，颜色越深代表特征值越大），并与约束总体活动时的熵减（红正方形）以及单神经元独立熵（黑虚线，约 0.13 bits）进行对比。</li>
+<li><strong>物理意义</strong>：仅约束单个主主成分方向就能带来约 5% 的熵减，且网络中有约 200 个低维投影方向各自贡献的熵减均超过了单神经元的独立熵。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-补充材料图表end-matter-figures-68">2. 补充材料图表（End Matter, Figures 6–8）</h3>
+<ul>
+<li>
+<p><strong>Figure 6：实验观测量的时空平稳性检验</strong></p>
+<ul>
+<li><strong>图像内容</strong>：将每个数据集在时间上平分为前、后两个独立时段，分别计算平均放电率 $ \mu_{\text{exp}}\ $（图 6a）和磁化率 $ \chi_{\text{exp}}\ $（图 6b）。</li>
+<li><strong>物理意义</strong>：所有数据集的前后半程测段数据均紧密落在 1:1 对角线上，证实慢非平稳性（Slow Nonstationarities）不会显著影响研究中所采用的物理观测量。</li>
+</ul>
+</li>
+<li>
+<p><strong>Figure 7：模型对未约束宏观量的预测能力</strong></p>
+<ul>
+<li><strong>图像内容</strong>：
+<ul>
+<li><strong>图 7(a)</strong>：模型对总体放电活动 $ m = \frac{1}{N}\sum s_n\ $ 分布的预测。扩展平均场模型（红线）准确预测了实验数据（灰色）中高达 4.2% 神经元同时放电的极罕见非高斯长尾事件，远优于独立模型（黑虚线）。</li>
+<li><strong>图 7(b)</strong>：模型对<em>第二</em>主成分方向 $ \varphi_2\ $ 分布的预测。由于各主成分在最低阶互相独立，模型在 $ \varphi_2\ $ 方向上的预测退化为接近独立神经元模型。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Figure 8：未直接约束的成对相关性预测</strong></p>
+<ul>
+<li><strong>图像内容</strong>：模型预测的连接成对相关性 $ \langle s_n s_m \rangle^{(c)}<em>{\text{model}}\ $ 与实验测量值 $ \langle s_n s_m \rangle^{(c)}</em>{\text{exp}}\ $ 的散点对比图。</li>
+<li><strong>物理意义</strong>：尽管模型仅约束了单个投影方向，但势能函数 $ U(\varphi)\ $ 中的非二次非线性项使得模型能够成功捕获整个矩阵的总体趋势，并准确重现了多个较强的成对相关性数值。</li>
+</ul>
+</li>
+</ul>
+</div>
+        
+    </div><div class="tab-content" id="tab-code">
+        <div class="prose-content">全局变量、数据结构、输入输出
+运行逻辑、选择循环分支、终止条件</div>
+        
+    </div><div class="tab-content" id="tab-mindmap"><div class="pdf-container" style="grid-template-columns: 1fr;">
+            
+            <div class="mindmap-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p style="font-size:0.95rem;">请将推导过程 PDF 放入 <code>static/derivation/</code></p>
+                <p style="font-size:0.8rem;">命名规则: <code>RealNeurons.pdf</code></p>
+            </div>
+            
+        </div>
+    </div><div class="tab-content" id="tab-translation">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="languages" style="width:16px;height:16px;"></i>
+                    翻译
+                </div>
+                <div class="pdf-panel-body"><p>[第1页，第1段]
+真实神经元网络的扩展平均场理论</p>
+<p>[第1页，第2段]
+Luca Di Carlo, Francesco Mignacco, Christopher W. Lynn, and William Bialek</p>
+<p>[第1页，第3段]
+1普林斯顿大学物理系约瑟夫·亨利实验室与刘易斯-西格勒研究所，美国新泽西州普林斯顿市，邮编08544</p>
+<p>[第1页，第4段]
+2纽约城市大学研究生中心理论科学倡议项目，美国纽约州纽约市第五大道365号，邮编10016</p>
+<p>[第1页，第5段]
+3耶鲁大学物理系、定量生物学研究所与吴蔡研究所，美国康涅狄格州纽黑文市，邮编06510</p>
+<p>[第1页，第6段]
+（2025年9月10日收到；2026年5月8日接受；2026年6月30日发表）</p>
+<p>[第1页，第7段]
+如果一个具有大量自由度的系统的行为能够被少数集体变量所刻画，那么很可能存在一个底层的平均场理论。我们表明，这一思想的简单版本无法描述真实神经元网络中的活动模式。一个与集体变量分布相匹配的扩展平均场理论至少是自洽的，尽管它显示出这些网络似乎处于临界点附近的迹象，这与其他观测结果一致。这些结果为分析日益增大的神经元数量所产生的新兴数据提供了一条路径。</p>
+<p>[第1页，第8段]
+DOI: 10.1103/nr71-phqw</p>
+<p>[第1页，第9段]
+大脑中的神经元产生离散的动作电位或脉冲；在短时间窗口内，响应本质上是二值的，因为每个细胞要么产生一个脉冲，要么保持静默。因此，神经群体的瞬时状态等价于一个伊辛模型（Ising model）的构型，我们希望了解这些自旋构型所服从的分布。利用统计物理学的思想来处理这一问题有着悠久的历史[1]；里程碑式的工作包括霍普菲尔德模型（Hopfield model）[2–4]和玻尔兹曼机（Boltzmann machine）[5]，尽管它们在生物学上的真实性有限。这两个模型都由伊辛自旋之间的成对相互作用来描述，学习规则通过调整这些相互作用来达到期望的行为。</p>
+<p>[第1页，第10段]
+从实验数据到成对伊辛模型有一条直接的路径[1,6]。具体而言，我们将每个神经元的状态记为$ s_n $，当细胞活跃时$ s_n = +1 $，当细胞静默时$ s_n = -1 $；网络的状态为$ \mathbf{s} \equiv {s_1, s_2, \ldots, s_N} $。我们寻找概率分布$ P(\mathbf{s}) $，并要求它与观测到的均值和关联相匹配，</p>
+<p>[第1页，第11段]
+$
+\langle s_n \rangle_P = \langle s_n \rangle_{\text{exp}}, \quad \langle s_n s_m \rangle_P = \langle s_n s_m \rangle_{\text{exp}}, \tag{1}
+$</p>
+<p>[第1页，第12段]
+其中$ \langle \cdot \cdot \cdot \rangle_P $表示对分布$ P $的平均，$ \langle \cdot \cdot \cdot \rangle_{\text{exp}} $表示对数据的平均。无穷多个分布满足这些约束，但有一个是特殊的，因为它生成的状态尽可能随机，因此除了匹配式(1)中的期望值所必需的结构外，不引入任何额外的知识或结构；这就是最大熵分布[7,8]</p>
+<p>[第1页，第13段]
+$
+P_{\text{pairs}}(\mathbf{s}) = \frac{1}{Z_{\text{pairs}}} \exp[-E_{\text{pairs}}(\mathbf{s})], \tag{2}
+$</p>
+<p>[第1页，第14段]
+$
+E_{\text{pairs}}(\mathbf{s}) = -\sum_n h_n s_n - \frac{1}{2} \sum_{n,m=1}^{N} s_n J_{nm} s_m. \tag{3}
+$</p>
+<p>[第1页，第15段]
+我们认识到这是一个特定伊辛自旋玻璃的玻尔兹曼分布，其中场$ {h_n} $和耦合$ {J_{nm}} $通过式(1)由数据确定；一旦我们求解这些方程，所有进一步的预测都是无参数的。这些定量预测在若干不同的系统中取得了非常大的成功[1]。</p>
+<p>[第1页，第16段]
+成对最大熵模型从数据中取$ \sim N^2 $个期望值。但当前的实验方法允许$ N $急剧增加，而实验持续时间$ T $却不会成比例增加；最终，测量到的成对关联矩阵不再满秩，受限于$ T $而非$ N $。当$ N \to \infty $而$ T $固定时，我们有足够的数据来测量$ M \propto N $个期望值，然后构建与这些测量一致的最大熵模型。作为一个例子，在具有局域相互作用的伊辛模型中，我们通过求解与近邻关联一致的最大熵模型来恢复正确的玻尔兹曼分布，即使没有平移不变性，这些约束也有$ \mathcal{O}(N) $个；从局域关联进行重构在鸟群中同样有效[9,10]。在没有对称性或局域性指导的情况下，我们如何选择$ \mathcal{O}(N) $个约束？关于神经元群体活动的文献提供了若干直觉。</p>
+<p>[第1页，第17段]
+群体活动——有人提出，神经元网络中的集体效应可以通过追踪求和活动来刻画[11–13]，</p>
+<p>[第1页，第18段]
+$
+\phi = \sum_{n=1}^{N} s_n. \tag{4}
+$</p>
+<p>[第2页，第1段]
+与$\phi$的均值和方差一致的最大熵模型具有能量函数</p>
+<p>[第2页，第2段]
+$$E_{\text{pop}}(s) = -h\phi - \frac{\lambda}{2N}\phi^2,$$  \hspace{1cm} (5)</p>
+<p>[第2页，第3段]
+我们将其识别为平均场铁磁体[14–16]。回想一下，在求解这个模型时，我们将其（精确地）重写为自旋与辅助场相互作用。这与以下直觉相联系：网络的高维动力学由少数“潜在场”控制，细胞对这些场独立响应[17,18]；在这里，潜在场是涌现的而非外部强加的。在大$N$极限下，场的涨落被抑制，我们称之为朴素平均场近似。</p>
+<p>[第2页，第4段]
+均值与投影——关注总和活动会丢失神经元的身份信息。另一种方法是寻求一个模型，使其匹配每个单独细胞的平均活动，但仅通过沿一个或少数几个投影方向来捕捉集体效应</p>
+<p>[第2页，第5段]
+$$\phi_{\alpha} = \frac{1}{\sqrt{N}}\sum_{n=1}^{N}W_{\alpha n}s_n, \quad \alpha = 1, \ldots, K,$$  \hspace{1cm} (6)</p>
+<p>[第2页，第6段]
+其中$W \in \mathbb{R}^{K \times N}$。匹配所有平均活动$\langle s_n \rangle$和协方差矩阵$\langle \phi_{\alpha} \phi_{\beta} \rangle$的最大熵模型同样是一个玻尔兹曼分布[19–21]。这与以下直觉相联系：网络的高维动力学由低维流形主导[22–24]。求解该模型同样引入了辅助场，每个投影$\phi_{\alpha}$对应一个共轭场，因此这是一个（略微）广义的平均场模型[19]。对于$K \ll N$，在大$N$极限下这些场的涨落被抑制，我们再次称之为朴素平均场。如果$K \propto N$，则应该存在一个更复杂的平均场理论，类似于接近饱和的Hopfield网络[25]。</p>
+<p>[第2页，第7段]
+投影的分布——强调沿特定投影方向活动的方差可能过于局限。另一种方法是匹配沿神经活动高维空间中有限方向集的活动分布；为简单起见，我们这里只考虑一个投影$\phi$。此时最大熵模型是一个玻尔兹曼分布，其能量为</p>
+<p>[第2页，第8段]
+$$E_{\text{dist}}(s) = -\sum_{n=1}^{N}h_n s_n + NU(\phi).$$  \hspace{1cm} (7)</p>
+<p>[第2页，第9段]
+按照惯例，场${h_n}$被调整以匹配每个神经元测量到的平均活动，势$U(\phi)$被调整以匹配观测到的分布$P_{\text{exp}}(\phi)$；因子$N$使势保持为一阶量。这等价于让一个具有任意分布的单一潜在场作用于所有神经元。它也与密集联想记忆模型或“现代Hopfield”网络[26]相联系。</p>
+<p>[第2页，第10段]
+我们的主要成果是为这类模型构建了广义平均场理论，并证明了真实网络处于该近似有效的区域。相比之下，我们将看到更简单的平均场理论会失效。</p>
+<p>[第2页，第11段]
+计算群体活动模型[式(5)]的配分函数是一个标准练习[14–16]。配分函数可以精确地重写为</p>
+<p>[第2页，第12段]
+$$Z_{\text{pop}}(h, \lambda) = \sqrt{\frac{N}{2\pi\lambda}}2^N \int d\psi e^{-Nf(\psi)},$$  \hspace{1cm} (8)</p>
+<p>[第2页，第13段]
+$$f(\psi) = \frac{1}{2\lambda}\psi^2 - \ln \cosh(h + \psi).$$  \hspace{1cm} (9)</p>
+<p>[第2页，第14段]
+在大$N$极限下，式(8)中的积分应由$\psi = \psi_*$主导，该值使局域自由能$f(\psi)$最小化，这导致朴素平均场近似</p>
+<p>[第2页，第15段]
+$$\ln Z(h, \lambda) = -Nf(\psi_<em>) + N\ln 2 - \frac{1}{2}\ln[2\pi\lambda f&rsquo;&rsquo;(\psi_</em>)] + \ldots,$$  \hspace{1cm} (10)</p>
+<p>[第2页，第16段]
+其中$\ldots$为$\sim 1/N$的项。在此近似下</p>
+<p>[第2页，第17段]
+$$\langle \phi \rangle \equiv \mu = \tanh(h + \lambda\mu) + \mathcal{O}(N^{-1}),$$  \hspace{1cm} (11)</p>
+<p>[第2页，第18段]
+$$\frac{1}{N}\langle (\delta\phi)^2 \rangle \equiv \chi = \frac{1 - \mu^2}{1 - \lambda(1 - \mu^2)} + \mathcal{O}(N^{-1}).$$  \hspace{1cm} (12)</p>
+<p>[第2页，第19段]
+这些方程意味着在固定均值$\mu$下存在最大方差$\chi$，</p>
+<p>[第2页，第20段]
+$$\chi_{\text{max}}(\mu) = \frac{\mu(1 - \mu^2)}{\mu - \tanh(\mu)(1 - \mu^2)}.$$  \hspace{1cm} (13)</p>
+<p>[第2页，第21段]
+在图1中，我们展示了来自多个系统数据的$\chi$对$\mu$的关系，我们看到式(13)的界限被一致地违反。这些结果对潜在非平稳性的鲁棒性在末尾材料中进行了明确评估。</p>
+<p>[第2页，第22段]
+图1的结论是，真实神经元与朴素平均场理论不一致。但最大熵问题会发生什么？我们仍然可以找到式(5)中$h$和$\lambda$的值，使得预测的$\mu$和$\chi$与测量值一致，但这必须非常小心地进行[20,21]。我们可以利用式(8)中$Z_{\text{pop}}$的精确积分表示，数值构造一条轨迹$h_<em>(\lambda)$，沿此轨迹$\mu = \mu_{\text{exp}}$（图2，插图）。该轨迹始于$h_</em>(\lambda = 0) = \tanh(\mu_{\text{exp}})$，随着$\lambda$增大，$h_<em>$向$h_</em> = 0$移动。轨迹停滞，$dh_*/d\lambda$在临界$\lambda$处几乎为零，此时磁化率$\chi$迅速上升；在图1的例子中，$\chi_{\text{exp}}$与此陡峭上升相交，因此$\lambda$由数据非常精确地确定。</p>
+<p>[第3页，第1段]
+在找到与群体活动 $\phi$ 的均值和方差相匹配的 $h$ 和 $\lambda$ 后，我们可以直接查看式 (9) 中的局部自由能 $f(\psi)$；结果如图 2 所示，针对小鼠海马体 [28,29] 中的神经元群体。存在两个局部极小值，几乎简并。这里分析的海马神经元群体生活在一个平面内，因此我们可以通过扩大圆的半径来改变 $N$ [31,32]。随着 $N$ 增加，局部自由能的两个极小值变得更加近乎简并，并且局部自由能差按 $1/N$ 缩放 [20,21]。这是一阶相变的定义性特征。我们强调，这完全由实验观测 $\mu_{\text{exp}}$ 和 $\chi_{\text{exp}}$ 驱动。</p>
+<p>[第3页，第2段]
+数据驱动这些最小结构模型趋向一阶相变这一事实是引人深思的。这一结果解释了朴素平均场近似的失败，并暗示了一个在宏观有序活动模式之间平衡的网络。不幸的是，$f(\psi)$ 中两个局部极小值的存在预测总和活动的分布将是双峰的，而这在定性上是错误的。</p>
+<p>[第3页，第3段]
+这些在匹配群体活动均值和方差方面的问题，在匹配单个神经元平均活动和任意投影方差的模型中依然存在，尽管细节取决于我们对投影的选择。如果我们选择一个由独立高斯随机数给出的系数 $W_n$ 的单一投影，那么朴素平均场近似有效，但所得模型的熵仅略低于完全独立神经元的熵，且当 $N \to \infty$ 时差距消失 [20,21]。</p>
+<p>[第3页，第4段]
+为了对投影系数的可能选择进行排序，考虑相关矩阵是有用的</p>
+<p>[第3页，第5段]
+$$\tilde{C}_{nm} \equiv \frac{\langle s_n s_m \rangle - \langle s_n \rangle \langle s_m \rangle}{[(1 - \langle s_n \rangle^2)(1 - \langle s_m \rangle^2)]^{1/2}}.$$  (14)</p>
+<p>[第3页，第6段]
+该矩阵具有特征向量 $\tilde{W}$ 和特征值 $\rho$。如果我们选择系数为</p>
+<p>[第3页，第7段]
+$$W_{an} = \frac{1}{\sqrt{1 - \langle s_n \rangle^2}} \tilde{W}_{an},$$  (15)</p>
+<p>[第3页，第8段]
+的投影，那么遵循导致式 (10) 的相同朴素平均场近似，得到熵 [19–21]，</p>
+<p>[第3页，第9段]
+$$S = S_0 - \frac{1}{2} \sum_{\alpha} [\rho_{\alpha} - 1 - \ln(\rho_{\alpha})],$$  (16)</p>
+<p>[第3页，第10段]
+其中 $S_0$ 是独立神经元的熵。因此，最具信息量的投影是与相关矩阵的最大或最小特征值相关的那些投影。但如果我们选择这些优化投影，我们又被带回简并局部极小值的问题 [20,21]。</p>
+<p>[第3页，第11段]
+为了驯服多重极小值，我们坚持同时匹配单个神经元的平均活动和沿投影的活动分布，从而得到式 (7)。</p>
+<p>[第4页，第1段]
+配分函数（见文末补充材料），</p>
+<p>[第4页，第2段]
+$
+Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi \exp[-Nf_{\text{dist}}(\varphi; z)], \tag{17}
+$</p>
+<p>[第4页，第3段]
+其中自由能为</p>
+<p>[第4页，第4段]
+$
+f_{\text{dist}}(\varphi; z) = U(\varphi) + \frac{1}{N} \left[ iz\varphi - \sum_{n=1}^{N} \ln \cosh \left( h_n + iz \frac{W_n}{\sqrt{N}} \right) \right]. \tag{18}
+$</p>
+<p>[第4页，第5段]
+按照通常做法，我们寻找使$ f_{\text{dist}}(\varphi; z) $取极值的鞍点$ \varphi_{\text{sp}}, z_{\text{sp}}) $；我们得到</p>
+<p>[第4页，第6段]
+$
+\varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^{N} W_n \tanh \left( h_n + iz_{\text{sp}} \frac{W_n}{\sqrt{N}} \right), \tag{19}
+$</p>
+<p>[第4页，第7段]
+$
+z_{\text{sp}} = iNU&rsquo;(\varphi_{\text{sp}}), \tag{20}
+$</p>
+<p>[第4页，第8段]
+并近似有$ \ln Z_{\text{dist}} \approx -Nf_{\text{dist}}(\varphi_{\text{sp}}; z_{\text{sp}}) $。注意$ E_{\text{dist}}(s) $在规范变换$ U(\varphi) \to U(\varphi) - \varphi U&rsquo;(\varphi_{\text{sp}}) $和$ h_n \to h_n + \sqrt{N}U&rsquo;(\varphi_{\text{sp}})W_n $下保持不变，因此我们可以令$ U&rsquo;(\varphi_{\text{sp}}) = 0 $。这固定了$ z_{\text{sp}} = 0 $，并得到</p>
+<p>[第4页，第9段]
+$
+\langle s_n \rangle = \frac{\partial Z_{\text{dist}}}{\partial h_n} = \tanh h_n, \tag{21}
+$</p>
+<p>[第4页，第10段]
+就好像神经元独立地响应外场</p>
+<p>[第4页，第11段]
+$
+h_n = \tanh(\langle s_n \rangle_{\text{exp}}). \tag{22}
+$</p>
+<p>[第4页，第12段]
+沿投影方向的活动分布为</p>
+<p>[第4页，第13段]
+$
+P(\varphi) = \frac{2^N}{Z_{\text{dist}}} \int \frac{dz}{2\pi} \exp[-Nf_{\text{dist}}(\varphi; z)]. \tag{23}
+$</p>
+<p>[第4页，第14段]
+鞍点近似为</p>
+<p>[第4页，第15段]
+$
+P(\varphi) \propto \exp[-Nf_{\text{dist}}(\varphi; z_{\star}(\varphi))], \tag{24}
+$</p>
+<p>[第4页，第16段]
+其中$ z_{\star} $依赖于$ \varphi $，并且是以下方程的解</p>
+<p>[第4页，第17段]
+$
+\sum_{n=1}^{N} \frac{W_n}{\sqrt{N}} \tanh \left[ h_n + i \frac{W_n}{\sqrt{N}} z_{\star}(\varphi) \right] = \varphi. \tag{25}
+$</p>
+<p>[第4页，第18段]
+给定权重$ {W_n} $和由式(22)得到的外场，我们数值求解式(25)以得到$ z_{\star}(\varphi) $。由式(24)，自由能$ f_{\text{dist}}[\varphi; z_{\star}(\varphi)] $可以直接从沿投影方向测得的活动估计；结合式(18)并求解$ U(\varphi) $，得到</p>
+<p>[第4页，第19段]
+$
+NU(\varphi) = \ln P_{\text{exp}} - i\varphi z_{\star}(\varphi) + \sum_{n=1}^{N} \ln \cosh \left( h_n + iz_{\star}(\varphi) \frac{W_n}{\sqrt{N}} \right). \tag{26}
+$</p>
+<p>[第4页，第20段]
+我们将这一分析应用于小鼠海马体的实验，选择对应于相关矩阵最大特征值的投影（图3）。我们看到，势函数$ U(\varphi) $在大的$ |\varphi| $处显著偏离二次形式，这暗示了即使如上所述固定沿投影方向活动的方差会失败，该模型仍然可以“工作”的方式。</p>
+<p>[第4页，第21段]
+为了检验我们的广义平均场理论，我们使用来自式(7)的能量、来自图3(a)的势函数以及来自式(22)的外场进行了蒙特卡洛模拟。图3(b)表明我们正确地重现了沿投影方向的活动分布；插图表明我们也恢复了正确的平均活动。那些麻烦的局部极小值已被消除。</p>
+<p>[第4页，第22段]
+对于某些参数值，自由能的曲率在鞍点处消失，标志着二阶相变。发生这种情况的条件并不简单地是$ U&rsquo;&rsquo;(\varphi_{\text{sp}}) = 0 $，因为自由能还包括熵的贡献（见文末补充材料）。该条件实际上是$ 1 + NU&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta = 0 $，其中$ \Delta $是如果神经元相互独立时我们会得到的沿投影方向活动的方差，</p>
+<p>[第4页，第23段]
+$
+\begin{align*}
+\text{(a)} &amp; \quad 0.00 \
+\text{(b)} &amp; \quad 0.02 \
+\text{(c)} &amp; \quad 0.04 \
+\text{(d)} &amp; \quad 0.06 \
+\text{(e)} &amp; \quad 0.08 \
+\text{(f)} &amp; \quad 0.10 \
+\end{align*}
+$</p>
+<p>[第4页，第24段]
+图3. 来自式(7)的分布最大熵模型，针对小鼠海马体中$ N = 1416 $个神经元。投影对应于相关矩阵的最大特征值。(a) 势函数$ U(\varphi) $（红色实线）与二次函数（黑色虚线）和三次函数（黑色实线）的比较。(b) 模型（红色）、数据（灰色）和独立神经元（虚线）的活动分布$ P(\varphi) $。实验分布用$ N_b = 32 $个柱的直方图近似；阴影表示数据十分位数之间的标准差。插图：每个神经元的平均活动，模型与数据的比较。</p>
+<p>[第5页，第1段]
+图4. 图3模型中的临界性趋近。(a) 对于不同投影：随机（绿色）、随机正（橙色）以及相关矩阵的特征向量（灰色，如式(15)所示），$NU&rsquo;&rsquo;(\varphi_{sp})$ 与 $\Delta$ 的散点图，较浅的颜色对应较大的 $\Delta S$。临界线 $1 + NU&rsquo;&rsquo;(\varphi_{sp})\Delta = 0$ 以红色表示。(b) 当我们考察每个神经元具有相同平均活动但相关性较弱的网络时，$NU&rsquo;&rsquo;(\varphi_{sp})$ 和 $-\Delta^{-1}$ 的轨迹，这些网络是通过对每个神经元独立地打乱一部分时间箱而生成的。</p>
+<p>[第5页，第2段]
+$
+\Delta = \frac{1}{N} \sum_{n=1}^{N} W_n^2 [1 - \langle s_n \rangle^2].
+$</p>
+<p>[第5页，第3段]
+对于随机投影，$NU&rsquo;&rsquo;(\varphi_{sp})$ 接近于零[20,21]，远离临界性[图4(a)]；对于随机正系数，$NU&rsquo;&rsquo;(\varphi_{sp})$ 始终为负，但仍不接近 $-\Delta^{-1}$。当沿相关矩阵的特征向量进行投影时[式(15)]，我们看到模式趋向临界线，其中方差最大的主成分位于临界性的约8%范围内。</p>
+<p>[第5页，第4段]
+趋近临界性取决于相关性的强度。我们可以设想这样的系统：每个神经元的平均活动相同，但神经元对之间的相关性较弱，我们可以通过对每个神经元独立地打乱一部分时间箱来生成此类数据。对于每个打乱后的数据集，我们重复上述构造，发现 $NU&rsquo;&rsquo;(\varphi_{sp})$ 和 $-\Delta^{-1}$ 逐渐分离[图4(b)]：合理的神经元群体比真实网络更远离临界性。这与近临界行为的其他特征[1]一致，包括这些相同数据在粗粒化下的标度行为[29]。</p>
+<p>[第5页，第5段]
+我们可以在平均场近似下计算式(7)中模型的熵（见文末材料），</p>
+<p>[第5页，第6段]
+$
+S = S_0 + N[\langle U(\varphi) \rangle - U(\varphi_{sp})] - \frac{1}{2} \ln [1 + NU&rsquo;&rsquo;(\varphi_{sp})\Delta],
+$</p>
+<p>[第5页，第7段]
+结果如图5所示，使用的是与图4相同的数据。仅沿一个投影匹配分布会导致熵减少约独立熵的5%。大约有200个投影各自提供的贡献超过每个神经元的独立熵。仅凭熵不足以评估模型的质量；一个好的模型应该捕捉超出其明确约束的可观测量的统计结构[1]。在这方面，该模型也是成功的（见文末材料）。</p>
+<p>[第5页，第8段]
+总之，为真实神经元网络中的活动模式构建一致的平均场理论被证明是出乎意料地困难。我们最终通过一个模型取得了成功，该模型匹配了单个神经元的平均活动以及沿一个投影的活动分布。但存在许多投影，沿这些投影约束分布会产生显著的熵减少。我们的方法对动力学不做假设，仅捕捉神经活动的稳态分布。一个重要的未来方向是将此框架扩展到约束整个轨迹的模型，这将不仅能够获得临界性的静态特征，还能获得动态特征[33]，例如相关时间的发散。因此，一个重要的未来方向是将此方法扩展到匹配多个投影的分布，从而提供一个描述具有 $\mathcal{O}(N)$ 个约束的 $N$ 个神经元网络的框架，并使得在更大的 $N$ 下分析数据成为可能。</p>
+<p>[第5页，第9段]
+致谢——我们感谢我们的实验同事MJ Berry II、CD Brody、JL Gauthier、O Marre和DW Tank。这项工作部分得到了美国国家科学基金会的支持，通过生物功能物理中心（资助号PHY–1734030）；以及人类前沿科学计划（F. M.）、J. S. McDonnell基金会（C. W. L.）、J. S. Guggenheim纪念基金会（W. B.）和Simons基金会（W. B.和F. M.）的资助。</p>
+<p>[第6页，第1段]
+数据可用性——支持本文研究结果的部分数据已公开可用 [34]。支持图1–4的CA1小鼠脑区钙成像记录未公开，因其归第三方所有，且使用条款禁止公开分发。这些数据可在合理请求下向作者获取。</p>
+<p>[第6页，第2段]
+[1] L. Meshulam and W. Bialek, Rev. Mod. Phys. 97, 045002 (2025).
+[2] J. J. Hopfield, Proc. Natl. Acad. Sci. U.S.A. 79, 2554 (1982).
+[3] J. J. Hopfield and D. W. Tank, Biol. Cybern. 52, 141 (1985).
+[4] J. J. Hopfield and D. W. Tank, Science 233, 625 (1986).
+[5] D. H. Ackley, G. E. Hinton, and T. J. Sejnowski, Cogn. Sci. 9, 147 (1985).
+[6] E. Schneidman, M. J. Berry II, R. Segev, and W. Bialek, Nature (London) 440, 1007 (2006).
+[7] E. T. Jaynes, Phys. Rev. 106, 620 (1957).
+[8] E. T. Jaynes, Proc. IEEE 70, 939 (1982).
+[9] W. Bialek, A. Cavagna, I. Giardina, T. Mora, E. Silvestri, M. Viale, and A. M. Walczak, Proc. Natl. Acad. Sci. U.S.A. 109, 4786 (2012).
+[10] A. Cavagna, L. Del Castello, S. Dey, I. Giardina, S. Melillo, L. Parisi, and M. Viale, Phys. Rev. E 92, 012705 (2015).
+[11] M. Okun, P. Yger, S. L. Marguet, F. Gerard-Mercier, A. Benucci, S. Katzner, L. Busse, M. Carandini, and K. D. Harris, J Neurosci 32, 17108 (2012).
+[12] G. Tkačik, O. Marre, T. Mora, D. Amodei, M. J. Berry II, and W. Bialek, J. Stat. Mech. (2013) P03011.
+[13] C. Gardella, O. Marre, and T. Mora, eNeuro 3, 4 (2016).
+[14] G. Parisi, Statistical Field Theory (Frontiers in Physics, Addison-Wesley, 1988).
+[15] J. Sethna, Statistical Mechanics: Entropy, Order Parameters, and Complexity (Oxford University Press, Oxford, 2021).
+[16] S. A. Kivelson, J. M. Jiang, and J. Chang, Statistical Mechanics of Phases and Phase Transitions (Princeton University Press, Princeton, 2024).
+[17] M. Sahani, Ph.D. thesis, California Institute of Technology, Pasadena, CA, 1999.</p>
+<p>[第6页，第3段]
+[18] M. R. Whiteway and D. A. Butts, Curr. Opin. Neurobiol. 58, 86 (2019).
+[19] S. Cocco, R. Monasson, and V. Sessak, Phys. Rev. E 83, 051123 (2011).
+[20] 技术细节与推导见 <a href="http://link.aps.org/supplemental/10.1103/nr71-phqw">http://link.aps.org/supplemental/10.1103/nr71-phqw</a> 处的补充材料。
+[21] L. Di Carlo, F. Mignacco, C. W. Lynn, and W. Bialek, arXiv:2508.02633.
+[22] J. P. Cunningham and B. M. Yu, Nat. Neurosci. 17, 1500 (2014).
+[23] J. A. Gallego, M. G. Perich, L. E. Miller, and S. A. Solla, Neuron 94, 978 (2017).
+[24] E. H. Nieh, M. Schottdorf, N. W. Freeman, R. J. Low, S. Lewallen, S. A. Koay, L. Pinto, J. L. Gauthier, C. D. Brody, and D. W. Tank, Nature (London) 595, 80 (2021).
+[25] D. J. Amit, H. Gutfreund, and H. Sompolinsky, Ann. Phys. (N.Y.) 173, 30 (1987).
+[26] D. Krotov and J. J. Hopfield, in Advances in Neural Information Processing Systems, edited by D. Lee, M. Sugiyama, U. Luxburg, I. Guyon, and R. Garnett (Curran Associates, Inc., Barcelona Spain, 2016), Vol. 29, pp. 1172–1180.
+[27] G. Tkačik, O. Marre, D. Amodei, E. Schneidman, W. Bialek, and M. J. Berry, PLoS Comput. Biol. 10, e1003408 (2014).
+[28] J. L. Gauthier and D. W. Tank, Neuron 99, 179 (2018).
+[29] L. Meshulam, J. L. Gauthier, C. D. Brody, D. W. Tank, and W. Bialek, Phys. Rev. Lett. 123, 178103 (2019).
+[30] Allen Institute MindScope Program Allen Brain Observatory, Neuropixels visual coding (dataset), 2019, <a href="https://brain-map.org/explore/circuits">https://brain-map.org/explore/circuits</a>.
+[31] L. Meshulam, J. L. Gauthier, C. D. Brody, D. W. Tank, and W. Bialek, arXiv:2112.14735.
+[32] C. W. Lynn, Q. Yu, R. Pang, S. E. Palmer, and W. Bialek, Phys. Rev. E 111, 054411 (2025).
+[33] P. C. Hohenberg and B. I. Halperin, Rev. Mod. Phys. 49, 435 (1977).
+[34] Allen Institute MindScope Program Allen Brain Observatory, Neuropixels Visual Coding (Dataset) (2019), <a href="https://brain-map.org/explore/circuits">https://brain-map.org/explore/circuits</a>.</p>
+<p>[第6页，第4段]
+结束语</p>
+<p>[第6页，第5段]
+平稳性考量——在本文中，我们始终假设所记录的神经活动在每个数据集的持续时间内是平稳且遍历的。为从经验上评估这些假设的有效性，我们将每次记录划分为两个连续且等长的时间段。对于每个时间段，我们独立计算了实验测得的可观测量 $\chi_{\text{exp}}$ 和 $\mu_{\text{exp}}$。如图6所示，我们发现，在所有数据集中，由记录的前半段和后半段计算得到的 $\chi_{\text{exp}}$ 和 $\mu_{\text{exp}}$ 值之间存在强相关性。这种一致性表明，缓慢的非平稳性不会显著影响此处所考虑的可观测量。</p>
+<p>[第6页，第6段]
+$E_{\text{dist}}$ 的配分函数——在此我们计算匹配单个神经元平均活动以及沿选定投影分布的模型的配分函数，从而得到式(7)。配分函数定义为，</p>
+<p>[第6页，第7段]
+$$Z_{\text{dist}} \equiv \sum_s \exp \left[ \sum_{n=1}^N h_n s_n - NU \left( \sum_{n=1}^N \frac{W_n}{\sqrt{N}} s_n \right) \right].$$  (B1)</p>
+<p>[第6页，第8段]
+为计算配分函数 $Z_{\text{dist}}$，我们首先引入以下积分，</p>
+<p>[第7页，第1段]
+图6. 观测值在不同时间分段上的一致性。每个数据集被划分为两个连续且大小相等的时间分段。实验测量的观测值 $\mu_{\text{exp}}$ (a) 和 $\chi_{\text{exp}}$ (b) 分别对每个分段独立计算。颜色和大小标识数据集，并遵循正文图1中使用的相同颜色编码。沿恒等线的强相关性表明这些观测值在不同时间上是稳定的。</p>
+<p>[第7页，第2段]
+$
+Z_{\text{dist}} = \sum_s \int d\varphi \delta \left( \varphi - \sum_n \frac{W_n}{\sqrt{N}} s_n \right) \exp[-E_{\text{dist}}(s)].
+$</p>
+<p>[第7页，第3段]
+这允许我们将 $U\left(\sum_n s_n W_n / \sqrt{N}\right)$ 对构型 $s$ 的复杂依赖关系重写为 $U(\varphi)$。然后，我们利用 delta 函数的积分表示来解耦变量 ${s_n}$，得到，</p>
+<p>[第7页，第4段]
+$
+Z_{\text{dist}} = \sum_s \int \frac{dz}{2\pi} \int d\varphi \exp^{-NU(\varphi) - iz\varphi + \sum_n s_n \left( h_n + iz \frac{W_n}{\sqrt{N}} \right)}.
+$</p>
+<p>[第7页，第5段]
+对 $2^N$ 个构型 ${s_n}$ 求和，得到正文式(17)中出现的积分表达式。</p>
+<p>[第7页，第6段]
+熵的计算——式(7)中分布模型的熵为</p>
+<p>[第7页，第7段]
+$
+S_{\text{dist}} = \ln Z_{\text{dist}} + \langle E_{\text{dist}}(\mathbf{s}) \rangle.
+$</p>
+<p>[第7页，第8段]
+平均能量的计算是直接的</p>
+<p>[第7页，第9段]
+$
+\langle E_{\text{dist}} \rangle = \sum_n h_n \mu_n + N \langle U(\varphi) \rangle.
+$</p>
+<p>[第7页，第10段]
+在 $1/N$ 的领头阶，配分函数为，</p>
+<p>[第7页，第11段]
+$
+\ln Z_{\text{dist}} = N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}}) - \frac{1}{2} \ln \det H + \mathcal{O}(1/N),
+$</p>
+<p>[第7页，第12段]
+其中 $H$ 是 Hessian 矩阵（黑塞矩阵），即在鞍点处计算的 $f_{\text{dist}}(\varphi, z)$ 的二阶导数矩阵，</p>
+<p>[第7页，第13段]
+$
+H = \begin{pmatrix} \frac{1}{N} \sum_n W_n^2 \left[ 1 - \tanh^2 \left( h_n + i \frac{W_n}{\sqrt{N}} z_{\text{sp}} \right) \right] &amp; i \ i &amp; NU&rsquo;&rsquo;(\varphi_{\text{sp}}) \end{pmatrix}.
+$</p>
+<p>[第7页，第14段]
+自由能的曲率，由 $H$ 的行列式给出，</p>
+<p>[第7页，第15段]
+$
+\det H = 1 + U&rsquo;&rsquo;(\varphi_{\text{sp}}) \sum_n W_n^2 \left[ 1 - \tanh^2 \left( h_n + i \frac{W_n}{\sqrt{N}} z_{\text{sp}} \right) \right]
+$</p>
+<p>[第7页，第16段]
+决定了鞍点近似的稳定性，其中 $\det H = 0$ 对应于临界相变。</p>
+<p>[第7页，第17段]
+利用式(C3)中 $1/N$ 领头阶的平均场近似，我们有</p>
+<p>[第8页，第1段]
+$  S_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}} (\varphi_{\text{sp}}, z_{\text{sp}}) - \frac{1}{2} \ln \det H  $
+$  - \sum_{n} h_n \mu_n + N \langle U(\varphi) \rangle.  $
+(C6)</p>
+<p>[第8页，第2段]
+如果我们分离出对应于独立模型熵的项，$  S_0 = N \ln 2 + \sum_n [\ln \cosh(h_n) - h_n \mu_n]  $，则熵差 $  \delta S_{\text{dist}} = S_{\text{dist}} - S_0  $ 为，</p>
+<p>[第8页，第3段]
+$  \delta S_{\text{dist}} \approx N [\langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) ] - \frac{1}{2} \ln [1 + NU&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta ],  $
+(C7)</p>
+<p>[第8页，第4段]
+其中 $  \Delta  $ 如式 (27) 所定义。最后，det $  H  $ 的逆与磁化率 $  \chi  $ 相关，</p>
+<p>[第8页，第5段]
+$  \chi = \frac{\Delta}{1 + NU&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta}  $
+(C8)</p>
+<p>[第8页，第6段]
+与数值模拟的比较——在此我们检验正文中讨论的模型能在多大程度上捕捉最大熵构造中所约束的可观测量之外的特征。我们考虑总群体活动 $  m = (1/N) \sum s_n  $ 的分布，以及沿协方差矩阵第二特征向量投影的活动分布；结果分别见图 7(a) 和 7(b)。</p>
+<p>[第8页，第7段]
+从图 7(a) 中可以看出，我们的模型很好地描述了总群体活动的实验分布。特别是，它准确地再现了高度非高斯的右侧尾部，这对应于高活动状态相对于神经元独立时预期值的巨大过剩。这种匹配一直延伸到约 $  \sim 4.2%  $ 的神经元同时活跃的状态，而这种情况仅以 0.038% 的概率发生。这一成功不仅仅是因为权重 $  W  $ 与均匀向量重叠，因为随机化 $  W  $ 的分量会保持这种重叠但破坏一致性。</p>
+<p>[第8页，第8段]
+与总活动的情况相反，该模型在预测沿第二主成分的活动分布方面表现非常差 [图 7(b)]。实际上，预测分布与神经元完全独立时我们所看到的非常相似。这也许并不令人惊讶，因为主成分按定义在主导阶上是不相关的，因此我们预期了解一个成分的信息对其他成分相对没有信息量；这并不完全正确，因为分布并非高斯分布。</p>
+<p>[第8页，第9段]
+尽管仅使用协方差矩阵来选择方差最大的方向，但势 $  U(\varphi)  $ 的非二次形式使我们能够对所有 $  \sim N^2/2  $ 个相关性做出非平凡的预测。如图 8 所示，该模型捕捉到了实验数据的总体趋势，并在误差棒范围内再现了相关矩阵中的若干大元素，尽管这些并未被显式约束。我们强调，这并不是因为协方差矩阵是低秩的——朴素近似 $  C \sim \Delta WW^T  $ 完全失败。我们得出结论，$  U(\varphi)  $ 中的非二次项使得一个专注于单一投影的模型能够做出超越协方差秩一近似的粗略但非平凡的预测。</p>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var tabId = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        document.getElementById('tab-' + tabId).classList.add('active');
+        history.replaceState(null, '', '#tab-' + tabId);
+        lucide.createIcons();
+    });
+});
+
+var hash = window.location.hash.replace('#tab-', '');
+if (hash) {
+    var btn = document.querySelector('.tab-btn[data-tab="' + hash + '"]');
+    if (btn) btn.click();
+}
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 论文库</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            lucide.createIcons();
+        });
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
+
