@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>论文库</title>
-		<link>http://127.0.0.1:1313/my_paper/</link>
+		<link>https://henocturne.github.io/my_paper/</link>
 		<description>Recent content on 论文库</description>
 		<generator>Hugo</generator>
 		<language>zh-Hans</language>
@@ -12,33 +12,33 @@
 		
 			<lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://127.0.0.1:1313/my_paper/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://henocturne.github.io/my_paper/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Extended Mean-Field Theories for Networks of Real Neurons</title>
-				<link>http://127.0.0.1:1313/my_paper/paper/realneurons/</link>
+				<link>https://henocturne.github.io/my_paper/paper/realneurons/</link>
 				<pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-				<guid>http://127.0.0.1:1313/my_paper/paper/realneurons/</guid>
+				<guid>https://henocturne.github.io/my_paper/paper/realneurons/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Dynamical Phase Transitions in Nonequilibrium Networks</title>
-				<link>http://127.0.0.1:1313/my_paper/paper/dpt/</link>
+				<link>https://henocturne.github.io/my_paper/paper/dpt/</link>
 				<pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-				<guid>http://127.0.0.1:1313/my_paper/paper/dpt/</guid>
+				<guid>https://henocturne.github.io/my_paper/paper/dpt/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Heavy-tailed neuronal connectivity arises from Hebbian self-organization</title>
-				<link>http://127.0.0.1:1313/my_paper/paper/hebso/</link>
+				<link>https://henocturne.github.io/my_paper/paper/hebso/</link>
 				<pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-				<guid>http://127.0.0.1:1313/my_paper/paper/hebso/</guid>
+				<guid>https://henocturne.github.io/my_paper/paper/hebso/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Emergence of Polarization in Coevolving Networks</title>
-				<link>http://127.0.0.1:1313/my_paper/paper/empolarization/</link>
+				<link>https://henocturne.github.io/my_paper/paper/empolarization/</link>
 				<pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-				<guid>http://127.0.0.1:1313/my_paper/paper/empolarization/</guid>
+				<guid>https://henocturne.github.io/my_paper/paper/empolarization/</guid>
 				<description></description>
 			</item>
 	</channel>

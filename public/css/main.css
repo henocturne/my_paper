@@ -456,7 +456,8 @@ a:hover { color: var(--primary-light); }
     max-height: none;
 }
 
-#tab-mindmap.active {
+#tab-mindmap.active,
+#tab-original.active {
     width: min(1152px, calc(100vw - 48px));
     margin-left: 50%;
     transform: translateX(-50%);

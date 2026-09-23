@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://127.0.0.1:1313/my_paper/en/</loc>
+    <loc>https://henocturne.github.io/my_paper/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-Hans"
-                href="http://127.0.0.1:1313/my_paper/"
+                href="https://henocturne.github.io/my_paper/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://127.0.0.1:1313/my_paper/en/"
+                href="https://henocturne.github.io/my_paper/en/"
                 />
   </url><url>
-    <loc>http://127.0.0.1:1313/my_paper/en/tags/</loc>
+    <loc>https://henocturne.github.io/my_paper/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-Hans"
-                href="http://127.0.0.1:1313/my_paper/tags/"
+                href="https://henocturne.github.io/my_paper/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://127.0.0.1:1313/my_paper/en/tags/"
+                href="https://henocturne.github.io/my_paper/en/tags/"
                 />
   </url>
 </urlset>

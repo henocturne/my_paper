@@ -236,14 +236,16 @@
     {{- /* === Original tab: shows the original paper PDF === */ -}}
     <div class="tab-content" id="tab-original">
         <div class="pdf-container" style="grid-template-columns: 1fr;">
-            {{ if .Params.pdf }}
+            {{- $originalPdf := "" -}}
+            {{- with .Params.pdf }}{{ $originalPdf = strings.TrimPrefix "/" . }}{{ end -}}
+            {{ if $originalPdf }}
             <div class="pdf-panel">
                 <div class="pdf-panel-header">
                     <i data-lucide="file-text" style="width:16px;height:16px;"></i>
                     原文
                 </div>
                 <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
-                    <embed src="{{ .Params.pdf | relURL }}" type="application/pdf" class="pdf-viewer">
+                    <embed src="{{ $originalPdf | relURL }}" type="application/pdf" class="pdf-viewer">
                 </div>
             </div>
             {{ else }}
