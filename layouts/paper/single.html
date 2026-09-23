@@ -56,6 +56,9 @@
         <button class="tab-btn" data-tab="translation">
             <i data-lucide="languages" style="width:16px;height:16px;"></i> 翻译
         </button>
+        <button class="tab-btn" data-tab="original">
+            <i data-lucide="file-text" style="width:16px;height:16px;"></i> 原文
+        </button>
     </nav>
 
     {{- /* === Citation tab: citation.md + abstract.md === */ -}}
@@ -227,6 +230,33 @@
                     {{- end -}}
                 </div>
             </div>
+        </div>
+    </div>
+
+    {{- /* === Original tab: shows the original paper PDF === */ -}}
+    <div class="tab-content" id="tab-original">
+        <div class="pdf-container" style="grid-template-columns: 1fr;">
+            {{ if .Params.pdf }}
+            <div class="pdf-panel">
+                <div class="pdf-panel-header">
+                    <i data-lucide="file-text" style="width:16px;height:16px;"></i>
+                    原文
+                </div>
+                <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
+                    <embed src="{{ .Params.pdf | relURL }}" type="application/pdf" class="pdf-viewer">
+                </div>
+            </div>
+            {{ else }}
+            <div class="mindmap-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p style="font-size:0.95rem;">请将原文 PDF 放入 <code>static/pdf/</code></p>
+                <p style="font-size:0.8rem;">并在页面配置中设置 <code>pdf</code> 参数</p>
+            </div>
+            {{ end }}
         </div>
     </div>
 </div>
