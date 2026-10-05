@@ -20,3 +20,13 @@ taxonomies:
 markup:
   highlight:
     lineNos: false
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['$$', '$$']
+          inline:
+            - ['$$', '$$']
+            - ['$', '$']
