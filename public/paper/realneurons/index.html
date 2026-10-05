@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh" data-theme="light">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Extended Mean-Field Theories for Networks of Real Neurons | 论文库</title>
@@ -220,35 +220,35 @@ $$ O(N) $$<p>量级约束刻画大规模神经元群体的高维统计结构。<
 <h3 id="一-论文-highlights核心亮点与主要发现">一、 论文 Highlights（核心亮点与主要发现）</h3>
 <ol>
 <li><strong>揭示朴素平均场理论（Naïve Mean-Field Theory）在真实神经网络中的失效</strong><br>
-论文表明，仅匹配网络总体活动 $ \phi\ $ 的均值与方差（或仅约束某些投影的方差）的传统朴素平均场模型，在拟合真实神经元数据（如小鼠海马体、视网膜及 Neuropixels 记录）时会彻底失效。真实神经元活动的涨落（磁化率 \$ \chi\ $）普遍突破了朴素平均场理论所允许的上限。</li>
+论文表明，仅匹配网络总体活动 $ \phi $ 的均值与方差（或仅约束某些投影的方差）的传统朴素平均场模型，在拟合真实神经元数据（如小鼠海马体、视网膜及 Neuropixels 记录）时会彻底失效。真实神经元活动的涨落（磁化率 $ \chi $）普遍突破了朴素平均场理论所允许的上限。</li>
 <li><strong>发现数据迫使朴素模型产生假相变（Spurious Phase Transition）</strong><br>
 当尝试使用朴素模型匹配实验数据的均值与方差时，模型的局部自由能曲线出现两个极其接近简并的极小值，表现出<strong>一阶相变</strong>的特征。这会导致模型错误地预测神经总体活动呈双峰分布，与实际观察严重不符。</li>
 <li><strong>成功构建扩展平均场理论（Extended Mean-Field Theory）</strong><br>
 作者提出了突破性的扩展平均场框架：<strong>同时约束单个神经元的平均活动以及沿着特定低维投影（Projection）的完整活动概率分布</strong>。该模型消除了假的双峰相变问题，精准重现了神经元活动沿投影的分布（包括非高斯的重尾现象）以及未被直接约束的非平凡两点相关性矩阵。</li>
 <li><strong>证明真实神经网络处于“临界点边缘”（Poised near a critical point）</strong><br>
-沿着相关矩阵最大特征值方向进行投影分析时，扩展平均场理论的稳定条件指标 $ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta\ $ 极其接近 0（处于临界线约 8% 的范围内）。若对数据进行时间随机打乱以弱化相关性，系统就会远离临界线，这证明真实生物神经网络系统处于接近临界状态的平衡点。</li>
+沿着相关矩阵最大特征值方向进行投影分析时，扩展平均场理论的稳定条件指标 $ 1 + N U''(\varphi_{\text{sp}}) \Delta $ 极其接近 0（处于临界线约 8% 的范围内）。若对数据进行时间随机打乱以弱化相关性，系统就会远离临界线，这证明真实生物神经网络系统处于接近临界状态的平衡点。</li>
 </ol>
 <hr>
 <h3 id="二-methodology方法论">二、 Methodology（方法论）</h3>
 <ul>
-<li><strong>超越成对相互作用与有限阶矩约束</strong>：以往的最大熵模型（如 Ising 模型或 Boltzmann 机器）依赖 $ O(N^2)\ $ 个成对相关性参数，在数据时间长度 \$ T\ $ 较短、神经元数 \$ N\ $ 极大时会出现满秩失效。扩展平均场方法只需 \$ O(N)\ $ 个约束，通过引入**非线性势能函数 \$ U(\varphi)\ $** 匹配投影的完整概率分布 \$ P_{\exp}(\varphi)\ $，捕获高阶集体效应。</li>
+<li><strong>超越成对相互作用与有限阶矩约束</strong>：以往的最大熵模型（如 Ising 模型或 Boltzmann 机器）依赖 $ O(N^2) $ 个成对相关性参数，在数据时间长度 $ T $ 较短、神经元数 $ N $ 极大时会出现满秩失效。扩展平均场方法只需 $ O(N) $ 个约束，通过引入<strong>非线性势能函数 $ U(\varphi) $</strong> 匹配投影的完整概率分布 $ P_{\exp}(\varphi) $，捕获高阶集体效应。</li>
 <li><strong>低维宏观投影与隐变量场（Latent Fields）的结合</strong>：将高维神经活动映射到低维流形投影上，利用标量/辅助场解耦神经元之间的复杂相互作用，将高维统计物理推导转化为可精确求解的鞍点近似（Saddle-point approximation）问题。</li>
 </ul>
 <hr>
 <h3 id="三-模型的基本定义basic-definitions">三、 模型的基本定义（Basic Definitions）</h3>
 <ol>
 <li><strong>神经元状态</strong>：<br>
-网络包含 $ N\ $ 个神经元，每个神经元在短时间窗口内的活动简化为二进制自旋变量 \$ s_n \in {+1, -1}\ $（\$ +1\ $ 表示放电，\$ -1\ $ 表示静息）。总体状态为组态矢量 \$ \mathbf{s} = {s_1, s_2, \dots, s_N}\ $。</li>
+网络包含 $ N $ 个神经元，每个神经元在短时间窗口内的活动简化为二进制自旋变量 $ s_n \in \{+1, -1\} $（$ +1 $ 表示放电，$ -1 $ 表示静息）。总体状态为组态矢量 $ \mathbf{s} = \{s_1, s_2, \dots, s_N\} $。</li>
 <li><strong>低维投影（Projection）</strong>：<br>
-定义活动在加权方向 $ \mathbf{W}\ $ 上的投影为：
-   \$ \varphi = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n\ $
-   其中 \$ W_n\ $ 为投影权重（通常选择相关矩阵主特征向量）。</li>
+定义活动在加权方向 $ \mathbf{W} $ 上的投影为：
+$ \varphi = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n $
+其中 $ W_n $ 为投影权重（通常选择相关矩阵主特征向量）。</li>
 <li><strong>最大熵能量函数（Energy Function）</strong>：<br>
-在满足所有单神经元平均放电率 $ \langle s_n \rangle_{\text{exp}}\ $ 以及投影分布 \$ P_{\exp}(\varphi)\ $ 的约束下，最大熵分布为玻尔兹曼分布，其能量函数定义为：
-   \$ E_{\text{dist}}(\mathbf{s}) = -\sum_{n=1}^N h_n s_n + N U(\varphi)\ $
+在满足所有单神经元平均放电率 $ \langle s_n \rangle_{\text{exp}} $ 以及投影分布 $ P_{\exp}(\varphi) $ 的约束下，最大熵分布为玻尔兹曼分布，其能量函数定义为：
+$ E_{\text{dist}}(\mathbf{s}) = -\sum_{n=1}^N h_n s_n + N U(\varphi) $
 <ul>
-<li>$ h_n\ $：局部外场，用于精确匹配单神经元平均放电率 \$ \langle s_n \rangle\ $。</li>
-<li>$ U(\varphi)\ $：非线性势能函数（Potential），用于匹配观察到的投影分布 \$ P_{\exp}(\varphi)\ $。</li>
+<li>$ h_n $：局部外场，用于精确匹配单神经元平均放电率 $ \langle s_n \rangle $。</li>
+<li>$ U(\varphi) $：非线性势能函数（Potential），用于匹配观察到的投影分布 $ P_{\exp}(\varphi) $。</li>
 </ul>
 </li>
 </ol>
@@ -256,31 +256,31 @@ $$ O(N) $$<p>量级约束刻画大规模神经元群体的高维统计结构。<
 <h3 id="四-主要推导方法与方程derivation-steps">四、 主要推导方法与方程（Derivation Steps）</h3>
 <h4 id="1-配分函数的场积分表象">1. 配分函数的场积分表象</h4>
 <p>配分函数定义为：
-$ Z_{\text{dist}} = \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N h_n s_n - N U\left( \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \right]\ $</p>
-<p>为了解耦非线性势能 $ U(\varphi)\ $ 对自旋组态 \$ \mathbf{s}\ $ 的依赖，引入 Dirac delta 函数并使用傅里叶积分变换 \$ \delta(x) = \int \frac{dz}{2\pi} e^{-i z x}\ $：
-\$ Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi , \exp\left[ -N f_{\text{dist}}(\varphi, z) \right]\ $</p>
+$ Z_{\text{dist}} = \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N h_n s_n - N U\left( \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \right] $</p>
+<p>为了解耦非线性势能 $ U(\varphi) $ 对自旋组态 $ \mathbf{s} $ 的依赖，引入 Dirac delta 函数并使用傅里叶积分变换 $ \delta(x) = \int \frac{dz}{2\pi} e^{-i z x} $：
+$ Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi \, \exp\left[ -N f_{\text{dist}}(\varphi, z) \right] $</p>
 <p>得到**有效自由能（Effective Free Energy）**表达式：
-$ f_{\text{dist}}(\varphi, z) = U(\varphi) + \frac{1}{N} \left[ i z \varphi - \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) \right]\ $</p>
+$ f_{\text{dist}}(\varphi, z) = U(\varphi) + \frac{1}{N} \left[ i z \varphi - \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) \right] $</p>
 <h4 id="2-鞍点近似saddle-point-approximation与参数求解">2. 鞍点近似（Saddle-Point Approximation）与参数求解</h4>
-<p>在 $ N \to \infty\ $ 极限下，积分由鞍点 \$ \varphi_{\text{sp}}, z_{\text{sp}})\ $ 统治。求极值条件 \$ \frac{\partial f_{\text{dist}}}{\partial \varphi} = 0, \frac{\partial f_{\text{dist}}}{\partial z} = 0\ $ 得到鞍点方程：
-\$ \varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right)\ $
-\$ z_{\text{sp}} = i N U&rsquo;(\varphi_{\text{sp}})\ $</p>
-<p>利用规范变换（Gauge transformation）设 $ U&rsquo;(\varphi_{\text{sp}}) = 0\ $，固定鞍点处 \$ z_{\text{sp}} = 0\ $：</p>
+<p>在 $ N \to \infty $ 极限下，积分由鞍点 $ \varphi_{\text{sp}}, z_{\text{sp}}) $ 统治。求极值条件 $ \frac{\partial f_{\text{dist}}}{\partial \varphi} = 0, \frac{\partial f_{\text{dist}}}{\partial z} = 0 $ 得到鞍点方程：
+$ \varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) $
+$ z_{\text{sp}} = i N U'(\varphi_{\text{sp}}) $</p>
+<p>利用规范变换（Gauge transformation）设 $ U'(\varphi_{\text{sp}}) = 0 $，固定鞍点处 $ z_{\text{sp}} = 0 $：</p>
 <ul>
 <li><strong>局部外场直接由平均活动显式确定</strong>：
-$ \langle s_n \rangle = \tanh h_n \implies h_n = \text{atanh}(\langle s_n \rangle_{\text{exp}})\ $</li>
-<li>**反解非线性势能 $ U(\varphi)\ $**：  
-  沿投影的概率分布满足 \$ P(\varphi) \propto \exp[-N f_{\text{dist}}(\varphi, z^<em>(\varphi))]\ $，其中 \$ z^</em>(\varphi)\ $ 是数值求解方程 \$ \frac{1}{\sqrt{N}} \sum_n W_n \tanh\left( h_n + \frac{i W_n z^<em>(\varphi)}{\sqrt{N}} \right) = \varphi\ $ 的解。结合实验测量的 \$ P_{\exp}(\varphi)\ $ 可反推得出势能 \$ U(\varphi)\ $：
-  \$ N U(\varphi) = \ln P_{\exp}(\varphi) - i \varphi z^</em>(\varphi) + \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z^*(\varphi) W_n}{\sqrt{N}} \right)\ $</li>
+$ \langle s_n \rangle = \tanh h_n \implies h_n = \text{atanh}(\langle s_n \rangle_{\text{exp}}) $</li>
+<li><strong>反解非线性势能 $ U(\varphi) $</strong>：<br>
+沿投影的概率分布满足 $ P(\varphi) \propto \exp[-N f_{\text{dist}}(\varphi, z^*(\varphi))] $，其中 $ z^*(\varphi) $ 是数值求解方程 $ \frac{1}{\sqrt{N}} \sum_n W_n \tanh\left( h_n + \frac{i W_n z^*(\varphi)}{\sqrt{N}} \right) = \varphi $ 的解。结合实验测量的 $ P_{\exp}(\varphi) $ 可反推得出势能 $ U(\varphi) $：
+$ N U(\varphi) = \ln P_{\exp}(\varphi) - i \varphi z^*(\varphi) + \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z^*(\varphi) W_n}{\sqrt{N}} \right) $</li>
 </ul>
 <h4 id="3-临界性条件与熵的计算">3. 临界性条件与熵的计算</h4>
 <ul>
-<li><strong>相变临界条件</strong>：对自由能展开计算 Hessian 矩阵的行列式 $ \det H = 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta\ $。当曲率消失时（\$ \det H = 0\ $），系统发生相变。其临界条件为：
-  \$ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta = 0\ $
-  其中 \$ \Delta = \frac{1}{N} \sum_{n=1}^N W_n^2 (1 - \langle s_n \rangle^2)\ $ 为独立神经元假设下的投影方差。</li>
+<li><strong>相变临界条件</strong>：对自由能展开计算 Hessian 矩阵的行列式 $ \det H = 1 + N U''(\varphi_{\text{sp}}) \Delta $。当曲率消失时（$ \det H = 0 $），系统发生相变。其临界条件为：
+$ 1 + N U''(\varphi_{\text{sp}}) \Delta = 0 $
+其中 $ \Delta = \frac{1}{N} \sum_{n=1}^N W_n^2 (1 - \langle s_n \rangle^2) $ 为独立神经元假设下的投影方差。</li>
 <li><strong>扩展平均场下的熵（Entropy）</strong>：
-模型相对于独立神经元模型（熵为 $ S_0\ $）的熵减为：
-  \$ S_{\text{dist}} - S_0 \approx N \left( \langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) \right) - \frac{1}{2} \ln \left[ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \right]\ $</li>
+模型相对于独立神经元模型（熵为 $ S_0 $）的熵减为：
+$ S_{\text{dist}} - S_0 \approx N \left( \langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) \right) - \frac{1}{2} \ln \left[ 1 + N U''(\varphi_{\text{sp}}) \Delta \right] $</li>
 </ul>
 
         </div>
@@ -401,97 +401,97 @@ $ \langle s_n \rangle = \tanh h_n \implies h_n = \text{atanh}(\langle s_n \rangl
 <ol>
 <li>
 <p><strong>神经元状态与低维投影</strong><br>
-考虑由 $ N\ $ 个二进制神经元组成的网络，每个神经元在短时间窗口内的状态为 \$ s_n \in {+1, -1}\ $（\$ +1\ $ 表示放电，\$ -1\ $ 表示静息），网络组态矢量记为 \$ \mathbf{s} = {s_1, s_2, \dots, s_N}\ $。  
-   定义网络沿权重矢量 \$ \mathbf{W} = (W_1, \dots, W_N)\ $ 的低维投影变量为：
-   \$ \varphi = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n\ $</p>
+考虑由 $ N $ 个二进制神经元组成的网络，每个神经元在短时间窗口内的状态为 $ s_n \in \{+1, -1\} $（$ +1 $ 表示放电，$ -1 $ 表示静息），网络组态矢量记为 $ \mathbf{s} = \{s_1, s_2, \dots, s_N\} $。<br>
+定义网络沿权重矢量 $ \mathbf{W} = (W_1, \dots, W_N) $ 的低维投影变量为：
+$ \varphi = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n $</p>
 </li>
 <li>
 <p><strong>约束条件与最大熵原理</strong><br>
-根据最大熵原理（Maximum Entropy Principle），在满足以下两项实验约束的条件下构造概率分布 $ P(\mathbf{s})\ $：</p>
+根据最大熵原理（Maximum Entropy Principle），在满足以下两项实验约束的条件下构造概率分布 $ P(\mathbf{s}) $：</p>
 <ul>
-<li>匹配每个神经元的平均放电率：$ \langle s_n \rangle_P = \langle s_n \rangle_{\text{exp}}\ $；</li>
-<li>匹配投影变量的完整实验概率分布：$ P(\varphi)<em>P = P</em>{\text{exp}}(\varphi)\ $。</li>
+<li>匹配每个神经元的平均放电率：$ \langle s_n \rangle_P = \langle s_n \rangle_{\text{exp}} $；</li>
+<li>匹配投影变量的完整实验概率分布：$ P(\varphi)_P = P_{\text{exp}}(\varphi) $。</li>
 </ul>
 </li>
 <li>
 <p><strong>能量函数与玻尔兹曼分布</strong><br>
 满足上述约束的最大熵分布为玻尔兹曼分布：
-$ P(\mathbf{s}) = \frac{1}{Z_{\text{dist}}} \exp[-E_{\text{dist}}(\mathbf{s})]\ $
-   能量函数定义为：
-   \$ E_{\text{dist}}(\mathbf{s}) = -\sum_{n=1}^N h_n s_n + N U(\varphi)\ $
+$ P(\mathbf{s}) = \frac{1}{Z_{\text{dist}}} \exp[-E_{\text{dist}}(\mathbf{s})] $
+能量函数定义为：
+$ E_{\text{dist}}(\mathbf{s}) = -\sum_{n=1}^N h_n s_n + N U(\varphi) $
 其中：</p>
 <ul>
-<li>$ h_n\ $ 为局部外场（拉格朗日乘子），用于精确匹配各神经元的平均放电率 \$ \langle s_n \rangle\ $；</li>
-<li>$ U(\varphi)\ $ 为非线性势能函数（Potential），用于匹配投影分布 \$ P_{\text{exp}}(\varphi)\ $；因子 \$ N\ $ 保证势能在热力学极限下保持 \$ O(1)\ $ 量级。</li>
+<li>$ h_n $ 为局部外场（拉格朗日乘子），用于精确匹配各神经元的平均放电率 $ \langle s_n \rangle $；</li>
+<li>$ U(\varphi) $ 为非线性势能函数（Potential），用于匹配投影分布 $ P_{\text{exp}}(\varphi) $；因子 $ N $ 保证势能在热力学极限下保持 $ O(1) $ 量级。</li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="二-配分函数--z_textdist--的场积分表象推导">二、 配分函数 $ Z_{\text{dist}}\ $ 的场积分表象推导</h3>
-<p>配分函数的原始定义为对所有 $ 2^N\ $ 种自旋组态求和：
-\$ Z_{\text{dist}} = \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N h_n s_n - N U\left( \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \right]\ $</p>
+<h3 id="二-配分函数--的场积分表象推导">二、 配分函数 $ Z_{\text{dist}} $ 的场积分表象推导</h3>
+<p>配分函数的原始定义为对所有 $ 2^N $ 种自旋组态求和：
+$ Z_{\text{dist}} = \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N h_n s_n - N U\left( \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \right] $</p>
 <h4 id="step-1-引入-delta-函数解耦非线性势能">Step 1: 引入 Delta 函数解耦非线性势能</h4>
-<p>为解耦自旋组态 $ \mathbf{s}\ $ 与非线性势能 \$ U(\varphi)\ $，引入 Dirac Delta 函数：
-\$ Z_{\text{dist}} = \sum_{\mathbf{s}} \int d\varphi , \delta\left( \varphi - \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \exp\left[ \sum_{n=1}^N h_n s_n - N U(\varphi) \right]\ $</p>
-<h4 id="step-2-傅里叶变换引入隐场--z-">Step 2: 傅里叶变换引入隐场 $ z\ $</h4>
-<p>使用 Delta 函数的傅里叶积分表示 $ \delta(x) = \int \frac{dz}{2\pi} e^{-i z x}\ $（其中 \$ z\ $ 为辅助场/隐场）：
-\$ Z_{\text{dist}} = \int \frac{dz}{2\pi} \int d\varphi , \exp[-N U(\varphi) - i z \varphi] \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N \left( h_n + \frac{i z W_n}{\sqrt{N}} \right) s_n \right]\ $</p>
+<p>为解耦自旋组态 $ \mathbf{s} $ 与非线性势能 $ U(\varphi) $，引入 Dirac Delta 函数：
+$ Z_{\text{dist}} = \sum_{\mathbf{s}} \int d\varphi \, \delta\left( \varphi - \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n s_n \right) \exp\left[ \sum_{n=1}^N h_n s_n - N U(\varphi) \right] $</p>
+<h4 id="step-2-傅里叶变换引入隐场">Step 2: 傅里叶变换引入隐场 $ z $</h4>
+<p>使用 Delta 函数的傅里叶积分表示 $ \delta(x) = \int \frac{dz}{2\pi} e^{-i z x} $（其中 $ z $ 为辅助场/隐场）：
+$ Z_{\text{dist}} = \int \frac{dz}{2\pi} \int d\varphi \, \exp[-N U(\varphi) - i z \varphi] \sum_{\mathbf{s}} \exp\left[ \sum_{n=1}^N \left( h_n + \frac{i z W_n}{\sqrt{N}} \right) s_n \right] $</p>
 <h4 id="step-3-对自旋组态显式求和">Step 3: 对自旋组态显式求和</h4>
-<p>由于指数项对各个自旋 $ s_n \in {+1, -1}\ $ 已完全解耦，可直接求和：
-\$ \sum_{s_n = \pm 1} \exp\left[ \left( h_n + \frac{i z W_n}{\sqrt{N}} \right) s_n \right] = 2 \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right)\ $</p>
+<p>由于指数项对各个自旋 $ s_n \in \{+1, -1\} $ 已完全解耦，可直接求和：
+$ \sum_{s_n = \pm 1} \exp\left[ \left( h_n + \frac{i z W_n}{\sqrt{N}} \right) s_n \right] = 2 \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) $</p>
 <p>将求和结果代回配分函数，得到配分函数的场积分精确表达式：
-$ Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi , \exp\left[ -N f_{\text{dist}}(\varphi, z) \right]\ $
-其中**有效自由能（Effective Free Energy）** \$ f_{\text{dist}}(\varphi, z)\ $ 定义为：
-\$ f_{\text{dist}}(\varphi, z) = U(\varphi) + \frac{1}{N} \left[ i z \varphi - \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) \right]\ $</p>
+$ Z_{\text{dist}} = 2^N \int \frac{dz}{2\pi} \int d\varphi \, \exp\left[ -N f_{\text{dist}}(\varphi, z) \right] $
+其中<strong>有效自由能（Effective Free Energy）</strong> $ f_{\text{dist}}(\varphi, z) $ 定义为：
+$ f_{\text{dist}}(\varphi, z) = U(\varphi) + \frac{1}{N} \left[ i z \varphi - \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z W_n}{\sqrt{N}} \right) \right] $</p>
 <hr>
 <h3 id="三-鞍点近似saddle-point-approximation与模型参数求解">三、 鞍点近似（Saddle-Point Approximation）与模型参数求解</h3>
-<p>在热力学极限 $ N \to \infty\ $ 下，配分函数积分由鞍点 \$ \varphi_{\text{sp}}, z_{\text{sp}})\ $ 统治：
-\$ \ln Z_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}})\ $</p>
+<p>在热力学极限 $ N \to \infty $ 下，配分函数积分由鞍点 $ \varphi_{\text{sp}}, z_{\text{sp}}) $ 统治：
+$ \ln Z_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}}) $</p>
 <h4 id="step-1-鞍点方程组">Step 1: 鞍点方程组</h4>
 <p>对自由能求偏导数并令其为 0：</p>
 <ol>
-<li>$ \frac{\partial f_{\text{dist}}}{\partial \varphi} = 0 \implies U&rsquo;(\varphi_{\text{sp}}) + \frac{i z_{\text{sp}}}{N} = 0 \implies z_{\text{sp}} = i N U&rsquo;(\varphi_{\text{sp}})\ $；</li>
-<li>$ \frac{\partial f_{\text{dist}}}{\partial z} = 0 \implies i \varphi_{\text{sp}} - \sum_{n=1}^N \frac{i W_n}{\sqrt{N}} \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) = 0\ $：
-   \$ \varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right)\ $</li>
+<li>$ \frac{\partial f_{\text{dist}}}{\partial \varphi} = 0 \implies U'(\varphi_{\text{sp}}) + \frac{i z_{\text{sp}}}{N} = 0 \implies z_{\text{sp}} = i N U'(\varphi_{\text{sp}}) $；</li>
+<li>$ \frac{\partial f_{\text{dist}}}{\partial z} = 0 \implies i \varphi_{\text{sp}} - \sum_{n=1}^N \frac{i W_n}{\sqrt{N}} \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) = 0 $：
+$ \varphi_{\text{sp}} = \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) $</li>
 </ol>
-<h4 id="step-2-规范变换与局部外场--h_n--的确定">Step 2: 规范变换与局部外场 $ h_n\ $ 的确定</h4>
-<p>能量函数 $ E_{\text{dist}}(\mathbf{s})\ $ 在规矩变换 \$ U(\varphi) \to U(\varphi) - \varphi U&rsquo;(\varphi_{\text{sp}})\ $ 和 \$ h_n \to h_n + \frac{W_n}{\sqrt{N}} N U&rsquo;(\varphi_{\text{sp}})\ $ 下保持不变。  
-利用该规范对称性，可固定 \$ U&rsquo;(\varphi_{\text{sp}}) = 0\ $，从而使得鞍点处的隐场 \$ z_{\text{sp}} = 0\ $。</p>
+<h4 id="step-2-规范变换与局部外场--的确定">Step 2: 规范变换与局部外场 $ h_n $ 的确定</h4>
+<p>能量函数 $ E_{\text{dist}}(\mathbf{s}) $ 在规矩变换 $ U(\varphi) \to U(\varphi) - \varphi U'(\varphi_{\text{sp}}) $ 和 $ h_n \to h_n + \frac{W_n}{\sqrt{N}} N U'(\varphi_{\text{sp}}) $ 下保持不变。<br>
+利用该规范对称性，可固定 $ U'(\varphi_{\text{sp}}) = 0 $，从而使得鞍点处的隐场 $ z_{\text{sp}} = 0 $。</p>
 <p>在此规范下，单个神经元的平均活动简化为：
-$ \langle s_n \rangle = \frac{\partial \ln Z_{\text{dist}}}{\partial h_n} = \tanh(h_n) \implies h_n = \text{atanh}(\langle s_n \rangle_{\text{exp}})\ $
-这表明局部外场 \$ h_n\ $ 仅由单个神经元的平均放电率直接决定，形式与独立神经元模型完全相同！</p>
-<h4 id="step-3-反演反解势能函数--uvarphi-">Step 3: 反演反解势能函数 $ U(\varphi)\ $</h4>
+$ \langle s_n \rangle = \frac{\partial \ln Z_{\text{dist}}}{\partial h_n} = \tanh(h_n) \implies h_n = \text{atanh}(\langle s_n \rangle_{\text{exp}}) $
+这表明局部外场 $ h_n $ 仅由单个神经元的平均放电率直接决定，形式与独立神经元模型完全相同！</p>
+<h4 id="step-3-反演反解势能函数">Step 3: 反演反解势能函数 $ U(\varphi) $</h4>
 <p>沿着投影方向的概率分布在鞍点近似下表示为：
-$ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \right]\ $
-对任意给定的 \$ \varphi\ $，\$ z^</em>(\varphi)\ $ 为下述实数代数方程的解：
-\$ \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i W_n z^*(\varphi)}{\sqrt{N}} \right) = \varphi\ $</p>
-<p>结合实验测量的分布 $ P_{\text{exp}}(\varphi)\ $，代回自由能表达式即可显式计算出非线性势能 \$ N U(\varphi)\ $：
-\$ N U(\varphi) = \ln P_{\text{exp}}(\varphi) - i \varphi z^<em>(\varphi) + \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z^</em>(\varphi) W_n}{\sqrt{N}} \right)\ $</p>
+$ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^*(\varphi)) \right] $
+对任意给定的 $ \varphi $，$ z^*(\varphi) $ 为下述实数代数方程的解：
+$ \frac{1}{\sqrt{N}} \sum_{n=1}^N W_n \tanh\left( h_n + \frac{i W_n z^*(\varphi)}{\sqrt{N}} \right) = \varphi $</p>
+<p>结合实验测量的分布 $ P_{\text{exp}}(\varphi) $，代回自由能表达式即可显式计算出非线性势能 $ N U(\varphi) $：
+$ N U(\varphi) = \ln P_{\text{exp}}(\varphi) - i \varphi z^*(\varphi) + \sum_{n=1}^N \ln \cosh\left( h_n + \frac{i z^*(\varphi) W_n}{\sqrt{N}} \right) $</p>
 <hr>
 <h3 id="四-涨落-hessian-矩阵与临界性判据">四、 涨落 Hessian 矩阵与临界性判据</h3>
-<p>为了确定鞍点解的稳定性及系统的相变临界点，计算自由能 $ f_{\text{dist}}(\varphi, z)\ $ 关于 \$ \varphi, z)\ $ 的二阶导数矩阵（Hessian 矩阵） \$ H\ $：
-\$ H = \begin{pmatrix} \frac{\partial^2 f}{\partial \varphi^2} &amp; \frac{\partial^2 f}{\partial \varphi \partial z} \ \frac{\partial^2 f}{\partial z \partial \varphi} &amp; \frac{\partial^2 f}{\partial z^2} \end{pmatrix} = \begin{pmatrix} U&rsquo;&rsquo;(\varphi_{\text{sp}}) &amp; \frac{i}{N} \ \frac{i}{N} &amp; \frac{1}{N^2} \sum_{n=1}^N W_n^2 \left[ 1 - \tanh^2\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) \right] \end{pmatrix}\ $</p>
-<p>在 $ z_{\text{sp}} = 0\ $ 鞍点处，计算 Hessian 矩阵的行列式（代表自由能曲率）：
-\$ \det H = U&rsquo;&rsquo;(\varphi_{\text{sp}}) \cdot \frac{1}{N^2} \sum_{n=1}^N W_n^2 [1 - \langle s_n \rangle^2] - \left( \frac{i}{N} \right)^2 = \frac{1}{N} \left[ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \right]\ $
-其中 \$ \Delta\ $ 定义为神经元互相独立假定下的投影活动方差：
-\$ \Delta = \frac{1}{N} \sum_{n=1}^N W_n^2 \left( 1 - \langle s_n \rangle^2 \right)\ $</p>
+<p>为了确定鞍点解的稳定性及系统的相变临界点，计算自由能 $ f_{\text{dist}}(\varphi, z) $ 关于 $ \varphi, z) $ 的二阶导数矩阵（Hessian 矩阵） $ H $：
+$ H = \begin{pmatrix} \frac{\partial^2 f}{\partial \varphi^2} & \frac{\partial^2 f}{\partial \varphi \partial z} \\ \frac{\partial^2 f}{\partial z \partial \varphi} & \frac{\partial^2 f}{\partial z^2} \end{pmatrix} = \begin{pmatrix} U''(\varphi_{\text{sp}}) & \frac{i}{N} \\ \frac{i}{N} & \frac{1}{N^2} \sum_{n=1}^N W_n^2 \left[ 1 - \tanh^2\left( h_n + \frac{i z_{\text{sp}} W_n}{\sqrt{N}} \right) \right] \end{pmatrix} $</p>
+<p>在 $ z_{\text{sp}} = 0 $ 鞍点处，计算 Hessian 矩阵的行列式（代表自由能曲率）：
+$ \det H = U''(\varphi_{\text{sp}}) \cdot \frac{1}{N^2} \sum_{n=1}^N W_n^2 [1 - \langle s_n \rangle^2] - \left( \frac{i}{N} \right)^2 = \frac{1}{N} \left[ 1 + N U''(\varphi_{\text{sp}}) \Delta \right] $
+其中 $ \Delta $ 定义为神经元互相独立假定下的投影活动方差：
+$ \Delta = \frac{1}{N} \sum_{n=1}^N W_n^2 \left( 1 - \langle s_n \rangle^2 \right) $</p>
 <h4 id="临界点条件与磁化率susceptibility">临界点条件与磁化率（Susceptibility）</h4>
 <ol>
-<li><strong>连续相变临界条件</strong>：当自由能曲率消失（$ \det H = 0\ $）时，鞍点失去稳定性，系统发生二阶相变：
-   \$ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta = 0 \implies N U&rsquo;&rsquo;(\varphi_{\text{sp}}) = -\Delta^{-1}\ $</li>
-<li>**涨落磁化率 $ \chi\ $**：网络总体响应易受性/磁化率与 Hessian 矩阵的逆成正比：
-   \$ \chi = \frac{\Delta}{1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta}\ $
-   当指标 \$ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \to 0\ $ 时，磁化率 \$ \chi \to \infty\ $，反映出系统处于临界发散边缘。</li>
+<li><strong>连续相变临界条件</strong>：当自由能曲率消失（$ \det H = 0 $）时，鞍点失去稳定性，系统发生二阶相变：
+$ 1 + N U''(\varphi_{\text{sp}}) \Delta = 0 \implies N U''(\varphi_{\text{sp}}) = -\Delta^{-1} $</li>
+<li><strong>涨落磁化率 $ \chi $</strong>：网络总体响应易受性/磁化率与 Hessian 矩阵的逆成正比：
+$ \chi = \frac{\Delta}{1 + N U''(\varphi_{\text{sp}}) \Delta} $
+当指标 $ 1 + N U''(\varphi_{\text{sp}}) \Delta \to 0 $ 时，磁化率 $ \chi \to \infty $，反映出系统处于临界发散边缘。</li>
 </ol>
 <hr>
 <h3 id="五-模型的熵entropy推导">五、 模型的熵（Entropy）推导</h3>
-<p>基于熵的定义 $ S_{\text{dist}} = \ln Z_{\text{dist}} + \langle E_{\text{dist}}(\mathbf{s}) \rangle\ $：</p>
+<p>基于熵的定义 $ S_{\text{dist}} = \ln Z_{\text{dist}} + \langle E_{\text{dist}}(\mathbf{s}) \rangle $：</p>
 <ol>
-<li>平均能量为：$ \langle E_{\text{dist}} \rangle = -\sum_{n=1}^N h_n \langle s_n \rangle + N \langle U(\varphi) \rangle\ $。</li>
-<li>包含一圈涨落修正的配分函数为：$ \ln Z_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}}) - \frac{1}{2} \ln \det H\ $。</li>
+<li>平均能量为：$ \langle E_{\text{dist}} \rangle = -\sum_{n=1}^N h_n \langle s_n \rangle + N \langle U(\varphi) \rangle $。</li>
+<li>包含一圈涨落修正的配分函数为：$ \ln Z_{\text{dist}} \approx N \ln 2 - N f_{\text{dist}}(\varphi_{\text{sp}}, z_{\text{sp}}) - \frac{1}{2} \ln \det H $。</li>
 </ol>
-<p>将其与完全独立神经元模型的熵 $ S_0 = N \ln 2 + \sum_{n=1}^N [\ln \cosh h_n - h_n \langle s_n \rangle]\ $ 相减，得到扩展平均场模型带来的**熵减（Entropy Reduction）**表达式：
-\$ \delta S_{\text{dist}} = S_{\text{dist}} - S_0 \approx N \left[ \langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) \right] - \frac{1}{2} \ln \left[ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}}) \Delta \right]\ $</p>
+<p>将其与完全独立神经元模型的熵 $ S_0 = N \ln 2 + \sum_{n=1}^N [\ln \cosh h_n - h_n \langle s_n \rangle] $ 相减，得到扩展平均场模型带来的**熵减（Entropy Reduction）**表达式：
+$ \delta S_{\text{dist}} = S_{\text{dist}} - S_0 \approx N \left[ \langle U(\varphi) \rangle - U(\varphi_{\text{sp}}) \right] - \frac{1}{2} \ln \left[ 1 + N U''(\varphi_{\text{sp}}) \Delta \right] $</p>
 <p>这表明，约束单个低维投影的概率分布不仅消除了朴素模型的双峰假相变，还能捕获高阶统计依赖，带来显著的熵减。</p>
 </div>
         
@@ -501,21 +501,21 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <h3 id="一-主要结果main-results">一、 主要结果（Main Results）</h3>
 <ol>
 <li><strong>证实朴素平均场理论（Naïve Mean-Field Theory）在真实神经网络中失效</strong><br>
-传统的朴素平均场模型仅试图匹配网络总体活动的均值与方差。论文对比了小鼠海马体、视网膜以及 Neuropixels 记录的单脑区与多脑区神经元数据，发现所有真实数据点的涨落（磁化率 $ \chi\ $）都**显著突破了朴素平均场理论所允许的上限** \$ \chi_{\text{max}}(\mu)\ $。</li>
+传统的朴素平均场模型仅试图匹配网络总体活动的均值与方差。论文对比了小鼠海马体、视网膜以及 Neuropixels 记录的单脑区与多脑区神经元数据，发现所有真实数据点的涨落（磁化率 $ \chi $）都<strong>显著突破了朴素平均场理论所允许的上限</strong> $ \chi_{\text{max}}(\mu) $。</li>
 <li><strong>揭示朴素模型拟合数据时产生的“假相变”与错误双峰</strong><br>
-当强行用朴素模型去匹配实验测得的均值与方差时，模型的局部自由能曲线会出现两个随着网络规模 $ N\ $ 增大而趋于简并的极小值，表现出<strong>一阶相变</strong>的特征。这会导致模型错误地预测神经总体活动呈双峰分布，与实际观测严重不符。</li>
+当强行用朴素模型去匹配实验测得的均值与方差时，模型的局部自由能曲线会出现两个随着网络规模 $ N $ 增大而趋于简并的极小值，表现出<strong>一阶相变</strong>的特征。这会导致模型错误地预测神经总体活动呈双峰分布，与实际观测严重不符。</li>
 <li><strong>成功构建扩展平均场理论（Extended Mean-Field Theory）</strong><br>
-通过<strong>同时约束单个神经元的平均活动以及沿着特定低维投影（Projection）的完整概率分布 $ P(\varphi)\ $</strong>，论文建立了扩展平均场模型。该模型不仅消除了假的双峰相变，还能精准预测总体活动的非高斯重尾特征（包括多达 4.2% 神经元同时放电的极罕见事件），并成功预测了未被显式约束的成对相关性矩阵变化趋势。</li>
+通过<strong>同时约束单个神经元的平均活动以及沿着特定低维投影（Projection）的完整概率分布 $ P(\varphi) $</strong>，论文建立了扩展平均场模型。该模型不仅消除了假的双峰相变，还能精准预测总体活动的非高斯重尾特征（包括多达 4.2% 神经元同时放电的极罕见事件），并成功预测了未被显式约束的成对相关性矩阵变化趋势。</li>
 <li><strong>证明真实神经网络处于“临界点边缘”（Poised near a Critical Point）</strong><br>
-扩展平均场理论推导出的相变临界条件为 $ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}})\Delta = 0\ $。在沿相关矩阵最大特征向量方向进行投影时，实验数据的指标距离临界界限<strong>仅相差约 8%</strong>。对数据进行时间随机打乱（弱化相关性）后，系统会迅速远离临界线，证实真实的生物神经网络处于接近临界状态的平衡点。</li>
+扩展平均场理论推导出的相变临界条件为 $ 1 + N U''(\varphi_{\text{sp}})\Delta = 0 $。在沿相关矩阵最大特征向量方向进行投影时，实验数据的指标距离临界界限<strong>仅相差约 8%</strong>。对数据进行时间随机打乱（弱化相关性）后，系统会迅速远离临界线，证实真实的生物神经网络处于接近临界状态的平衡点。</li>
 </ol>
 <hr>
 <h3 id="二-理论意义theoretical-significance">二、 理论意义（Theoretical Significance）</h3>
 <ol>
 <li><strong>解决超大规模神经数据下的“维度灾难”与“满秩失效”</strong><br>
-传统的成对最大熵模型（如 Ising 模型或 Boltzmann 机）需要拟合 $ O(N^2)\ $ 个成对相互作用参数，在神经元数量 \$ N\ $ 极大而录制时间有限时，观测到的相关性矩阵会因秩不足而失效。扩展平均场框架只需要 **\$ O(N)\ $ 个约束**，即可精确捕捉高维相空间中的高阶集体效应。</li>
+传统的成对最大熵模型（如 Ising 模型或 Boltzmann 机）需要拟合 $ O(N^2) $ 个成对相互作用参数，在神经元数量 $ N $ 极大而录制时间有限时，观测到的相关性矩阵会因秩不足而失效。扩展平均场框架只需要 <strong>$ O(N) $ 个约束</strong>，即可精确捕捉高维相空间中的高阶集体效应。</li>
 <li><strong>连接统计物理平均场与低维神经流形（Neural Manifolds）</strong><br>
-成功将神经科学中“低维流形/隐场”的直观假设与统计物理中的“隐场积分/鞍点近似”方法融为一体，证明了非二次势能 $ U(\varphi)\ $ 能够用标量场解耦高维复杂的神经元相互作用。</li>
+成功将神经科学中“低维流形/隐场”的直观假设与统计物理中的“隐场积分/鞍点近似”方法融为一体，证明了非二次势能 $ U(\varphi) $ 能够用标量场解耦高维复杂的神经元相互作用。</li>
 <li><strong>为“大脑临界性假说”提供严格的统计物理证据</strong><br>
 不需要假设具体的动力学规则，仅从平稳的统计分布出发，就验证了神经网络处于临界点边缘。这为解释大脑如何利用临界状态实现信息传输最大化、动态范围最大化等计算优势提供了坚实的物理基础。</li>
 </ol>
@@ -527,7 +527,7 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <li><strong>揭示神经元集群的高阶同步与突发放电现象</strong><br>
 该模型能够精准重现网络中罕见的大规模同步放电长尾事件，对于理解神经元集群放电（Assembly Firing）、癫痫样突发放电以及记忆检索等高阶协同机制具有重要的应用价值。</li>
 <li><strong>启发新型类脑计算与现代 Hopfield 网络（Modern Hopfield Networks）设计</strong><br>
-扩展平均场模型中引入的非二次势能 $ U(\varphi)\ $ 与现代 Hopfield 网络（Modern Hopfield Networks / Dense Associative Memories）在数学形式上紧密契合，为设计高容量类脑记忆模型和神经形态芯片提供了统计物理学启示。</li>
+扩展平均场模型中引入的非二次势能 $ U(\varphi) $ 与现代 Hopfield 网络（Modern Hopfield Networks / Dense Associative Memories）在数学形式上紧密契合，为设计高容量类脑记忆模型和神经形态芯片提供了统计物理学启示。</li>
 </ol></div>
         
     </div><div class="tab-content" id="tab-figures">
@@ -538,24 +538,24 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <li>
 <p><strong>Figure 1：朴素平均理论的理论上限与真实神经数据对比</strong></p>
 <ul>
-<li><strong>图像内容</strong>：绘制了磁化率 $ \chi\ $（代表总体放电的方差/涨落）随平均磁化强度 \$ \mu\ $（代表平均放电率）变化的散点图。红线表示朴素平均场理论所能容许的最大涨落上限 \$ \chi_{\text{max}}(\mu)\ $。数据点涵盖视网膜（橙色、\$ N=160\ $）、小鼠海马体 CA1 区域（紫色、\$ N=1416\ $）以及 Neuropixels 记录的单脑区（蓝色）和多脑区（绿色）神经元活动。</li>
+<li><strong>图像内容</strong>：绘制了磁化率 $ \chi $（代表总体放电的方差/涨落）随平均磁化强度 $ \mu $（代表平均放电率）变化的散点图。红线表示朴素平均场理论所能容许的最大涨落上限 $ \chi_{\text{max}}(\mu) $。数据点涵盖视网膜（橙色、$ N=160 $）、小鼠海马体 CA1 区域（紫色、$ N=1416 $）以及 Neuropixels 记录的单脑区（蓝色）和多脑区（绿色）神经元活动。</li>
 <li><strong>物理意义</strong>：所有真实神经元数据集的涨落均<strong>显著高于红线</strong>（落入禁区），直接证明了朴素平均场理论无法描述真实神经网络的集体活动。</li>
 </ul>
 </li>
 <li>
 <p><strong>Figure 2：朴素平均场模型导致的假一阶相变</strong></p>
 <ul>
-<li><strong>图像内容</strong>：主图展示了强行用朴素模型拟合数据时，单个神经元的局部自由能 $ f(\psi)\ $ 曲线。随着网络规模 \$ N\ $ 增大（\$ N=50, 100, 200\ $），曲线形成了两个几乎简并（能量差按 \$ 1/N\ $ 衰减）的局部极小值。插图展示了固定平均放电率时，参数 \$ h^*(\lambda)\ $ 和磁化率 \$ \chi\ $ 随耦合强度 \$ \lambda\ $ 的变化轨迹，其与实验测量值 \$ \chi_{\text{exp}}\ $ 的交点精确锁定了拟合参数。</li>
+<li><strong>图像内容</strong>：主图展示了强行用朴素模型拟合数据时，单个神经元的局部自由能 $ f(\psi) $ 曲线。随着网络规模 $ N $ 增大（$ N=50, 100, 200 $），曲线形成了两个几乎简并（能量差按 $ 1/N $ 衰减）的局部极小值。插图展示了固定平均放电率时，参数 $ h^*(\lambda) $ 和磁化率 $ \chi $ 随耦合强度 $ \lambda $ 的变化轨迹，其与实验测量值 $ \chi_{\text{exp}} $ 的交点精确锁定了拟合参数。</li>
 <li><strong>物理意义</strong>：揭示了朴素模型在拟合数据时会产生人工引发的“双峰相变”（假一阶相变），导致模型错误地预测神经总体活动呈现双峰分布。</li>
 </ul>
 </li>
 <li>
 <p><strong>Figure 3：扩展平均场模型及其拟合表现</strong></p>
 <ul>
-<li><strong>图像内容</strong>：小鼠海马体 CA1 数据（$ N=1416\ $）在扩展平均场模型下的表现。
+<li><strong>图像内容</strong>：小鼠海马体 CA1 数据（$ N=1416 $）在扩展平均场模型下的表现。
 <ul>
-<li><strong>图 3(a)</strong>：沿主成分方向的势能函数 $ U(\varphi)\ $（红实线），在大 \$ |\varphi|\ $ 处显著偏离传统二次型势能（黑虚线）。</li>
-<li><strong>图 3(b)</strong>：活动在主成分投影上的分布 $ P(\varphi)\ $。模型预测（红线）精准重现了实验数据（灰色阴影）的非高斯重尾特征，并消除了假的双峰现象。插图显示模型预测的单神经元平均活动与实验值完美对齐。</li>
+<li><strong>图 3(a)</strong>：沿主成分方向的势能函数 $ U(\varphi) $（红实线），在大 $ |\varphi| $ 处显著偏离传统二次型势能（黑虚线）。</li>
+<li><strong>图 3(b)</strong>：活动在主成分投影上的分布 $ P(\varphi) $。模型预测（红线）精准重现了实验数据（灰色阴影）的非高斯重尾特征，并消除了假的双峰现象。插图显示模型预测的单神经元平均活动与实验值完美对齐。</li>
 </ul>
 </li>
 </ul>
@@ -565,8 +565,8 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <ul>
 <li><strong>图像内容</strong>：
 <ul>
-<li><strong>图 4(a)</strong>：不同投影方向下，势能曲率指标 $ N U&rsquo;&rsquo;(\varphi_{\text{sp}})\ $ 与独立方差 \$ \Delta\ $ 的散点图。随机投影（绿点/橙点）远离红色的相变临界线 \$ 1 + N U&rsquo;&rsquo;(\varphi_{\text{sp}})\Delta = 0\ $；而沿相关矩阵最大特征值方向的投影（浅灰点）紧贴临界线，距离临界界限仅约 8%。</li>
-<li><strong>图 4(b)</strong>：对数据进行时间打乱（Shuffle）弱化相关性后的演化轨迹。随着打乱比例增加，$ N U&rsquo;&rsquo;(\varphi_{\text{sp}})\ $（绿线）与 \$ -\Delta^{-1}\ $（紫线）逐渐分离远离，说明打乱相关性会使系统偏离临界状态。</li>
+<li><strong>图 4(a)</strong>：不同投影方向下，势能曲率指标 $ N U''(\varphi_{\text{sp}}) $ 与独立方差 $ \Delta $ 的散点图。随机投影（绿点/橙点）远离红色的相变临界线 $ 1 + N U''(\varphi_{\text{sp}})\Delta = 0 $；而沿相关矩阵最大特征值方向的投影（浅灰点）紧贴临界线，距离临界界限仅约 8%。</li>
+<li><strong>图 4(b)</strong>：对数据进行时间打乱（Shuffle）弱化相关性后的演化轨迹。随着打乱比例增加，$ N U''(\varphi_{\text{sp}}) $（绿线）与 $ -\Delta^{-1} $（紫线）逐渐分离远离，说明打乱相关性会使系统偏离临界状态。</li>
 </ul>
 </li>
 </ul>
@@ -574,7 +574,7 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <li>
 <p><strong>Figure 5：不同投影方向带来的熵减</strong></p>
 <ul>
-<li><strong>图像内容</strong>：展示了约束前 500 个特征值最大的投影方向所带来的熵减少量 $ \delta S\ $（绿点，颜色越深代表特征值越大），并与约束总体活动时的熵减（红正方形）以及单神经元独立熵（黑虚线，约 0.13 bits）进行对比。</li>
+<li><strong>图像内容</strong>：展示了约束前 500 个特征值最大的投影方向所带来的熵减少量 $ \delta S $（绿点，颜色越深代表特征值越大），并与约束总体活动时的熵减（红正方形）以及单神经元独立熵（黑虚线，约 0.13 bits）进行对比。</li>
 <li><strong>物理意义</strong>：仅约束单个主主成分方向就能带来约 5% 的熵减，且网络中有约 200 个低维投影方向各自贡献的熵减均超过了单神经元的独立熵。</li>
 </ul>
 </li>
@@ -585,7 +585,7 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <li>
 <p><strong>Figure 6：实验观测量的时空平稳性检验</strong></p>
 <ul>
-<li><strong>图像内容</strong>：将每个数据集在时间上平分为前、后两个独立时段，分别计算平均放电率 $ \mu_{\text{exp}}\ $（图 6a）和磁化率 \$ \chi_{\text{exp}}\ $（图 6b）。</li>
+<li><strong>图像内容</strong>：将每个数据集在时间上平分为前、后两个独立时段，分别计算平均放电率 $ \mu_{\text{exp}} $（图 6a）和磁化率 $ \chi_{\text{exp}} $（图 6b）。</li>
 <li><strong>物理意义</strong>：所有数据集的前后半程测段数据均紧密落在 1:1 对角线上，证实慢非平稳性（Slow Nonstationarities）不会显著影响研究中所采用的物理观测量。</li>
 </ul>
 </li>
@@ -594,8 +594,8 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <ul>
 <li><strong>图像内容</strong>：
 <ul>
-<li><strong>图 7(a)</strong>：模型对总体放电活动 $ m = \frac{1}{N}\sum s_n\ $ 分布的预测。扩展平均场模型（红线）准确预测了实验数据（灰色）中高达 4.2% 神经元同时放电的极罕见非高斯长尾事件，远优于独立模型（黑虚线）。</li>
-<li><strong>图 7(b)</strong>：模型对<em>第二</em>主成分方向 $ \varphi_2\ $ 分布的预测。由于各主成分在最低阶互相独立，模型在 \$ \varphi_2\ $ 方向上的预测退化为接近独立神经元模型。</li>
+<li><strong>图 7(a)</strong>：模型对总体放电活动 $ m = \frac{1}{N}\sum s_n $ 分布的预测。扩展平均场模型（红线）准确预测了实验数据（灰色）中高达 4.2% 神经元同时放电的极罕见非高斯长尾事件，远优于独立模型（黑虚线）。</li>
+<li><strong>图 7(b)</strong>：模型对<em>第二</em>主成分方向 $ \varphi_2 $ 分布的预测。由于各主成分在最低阶互相独立，模型在 $ \varphi_2 $ 方向上的预测退化为接近独立神经元模型。</li>
 </ul>
 </li>
 </ul>
@@ -603,8 +603,8 @@ $ P(\varphi) \propto \exp\left[ -N f_{\text{dist}}(\varphi, z^<em>(\varphi)) \ri
 <li>
 <p><strong>Figure 8：未直接约束的成对相关性预测</strong></p>
 <ul>
-<li><strong>图像内容</strong>：模型预测的连接成对相关性 $ \langle s_n s_m \rangle^{(c)}<em>{\text{model}}\ $ 与实验测量值 \$ \langle s_n s_m \rangle^{(c)}</em>{\text{exp}}\ $ 的散点对比图。</li>
-<li><strong>物理意义</strong>：尽管模型仅约束了单个投影方向，但势能函数 $ U(\varphi)\ $ 中的非二次非线性项使得模型能够成功捕获整个矩阵的总体趋势，并准确重现了多个较强的成对相关性数值。</li>
+<li><strong>图像内容</strong>：模型预测的连接成对相关性 $ \langle s_n s_m \rangle^{(c)}_{\text{model}} $ 与实验测量值 $ \langle s_n s_m \rangle^{(c)}_{\text{exp}} $ 的散点对比图。</li>
+<li><strong>物理意义</strong>：尽管模型仅约束了单个投影方向，但势能函数 $ U(\varphi) $ 中的非二次非线性项使得模型能够成功捕获整个矩阵的总体趋势，并准确重现了多个较强的成对相关性数值。</li>
 </ul>
 </li>
 </ul>
