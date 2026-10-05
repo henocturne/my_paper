@@ -272,6 +272,9 @@ document.querySelectorAll('.tab-btn').forEach(function(btn) {
         this.classList.add('active');
         document.getElementById('tab-' + tabId).classList.add('active');
         history.replaceState(null, '', '#tab-' + tabId);
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('tab-' + tabId)]).catch(function() {});
+        }
         lucide.createIcons();
     });
 });

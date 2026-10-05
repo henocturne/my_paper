@@ -19,34 +19,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
+
     
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                typeset: true
+            }
+        };
     </script>
+    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="nav-container">
             <div class="nav-brand">
-                <a href="/my_paper/">
+                <a href="/">
                     <span class="brand-icon">📚</span>
                     <span class="brand-text">论文库</span>
                 </a>
             </div>
             <div class="nav-menu" id="navMenu">
                 
-                <a href="/my_paper/" class="nav-link">
+                <a href="/" class="nav-link">
                     首页
                 </a>
                 
-                <a href="/my_paper/paper/" class="nav-link">
+                <a href="/paper/" class="nav-link">
                     论文
                 </a>
                 
-                <a href="/my_paper/tags/" class="nav-link">
+                <a href="/tags/" class="nav-link">
                     标签
                 </a>
                 
@@ -279,7 +291,7 @@
 与本文关联：本文配套补充材料；包含SD方程完整推导、度分布生成函数求解、仿真参数、稳态与Strauss模型对应关系，是本文理论推导完整支撑文档。</p>
 <h2 id="39">[39]</h2>
 <p>发表信息：R. Lambiotte, P. L. Krapivsky, U. Bhat, S. Redner, Physical Review Letters, 117, 218301 (2016)
-与本文关联：网络致密化（densification）动力学；本文描述的$ t&gt;t_c $稀疏转稠密拓扑跃迁，属于网络致密化的一类时间驱动临界过程。</p>
+与本文关联：网络致密化（densification）动力学；本文描述的$ t>t_c $稀疏转稠密拓扑跃迁，属于网络致密化的一类时间驱动临界过程。</p>
 <h2 id="40">[40]</h2>
 <p>发表信息：G. Palla, I. Derényi, I. Farkas, T. Vicsek, Nature, 435, 814 (2005)
 与本文关联：团渗流相变理论；本文一阶稀疏-稠密网络相变与其团簇突现行为相似，但本文相变由有限时间临界点驱动，而非参数调控。</p>
@@ -354,15 +366,17 @@
 <p>模型考虑一个由 $N$ 个顶点组成的有向网络，其核心演化规则如下：</p>
 <ol>
 <li><strong>边生成率 (Birth Rate $\gamma^+_{ij}$):</strong> 包含线性项和<strong>非线性相互作用项</strong>：
-$$\gamma^+<em>{ij} = \frac{\alpha}{N} + \beta(A^2)</em>{ij}$$
+
+$$\gamma^+_{ij} = \frac{\alpha}{N} + \beta(A^2)_{ij}$$
 其中，$\alpha$ 是自发生成率，$\beta$ 是耦合常数。</li>
-<li><strong>非线性机制：</strong> 关键项 $(A^2)<em>{ij} = \sum_k A</em>{ik}A_{kj}$ 代表**三元闭合（Triadic Closure）**机制，即如果节点 $i$ 和 $j$ 拥有共同邻居 $k$，则它们成边的概率会额外增加。</li>
+<li><strong>非线性机制：</strong> 关键项 $(A^2)_{ij} = \sum_k A_{ik}A_{kj}$ 代表**三元闭合（Triadic Closure）**机制，即如果节点 $i$ 和 $j$ 拥有共同邻居 $k$，则它们成边的概率会额外增加。</li>
 <li><strong>边移除率 (Death Rate $\gamma^-$):</strong> 为常数 $\gamma$。</li>
-<li><strong>相变判据：</strong> 当 $\beta &gt; \gamma^2/(4\alpha)$ 时，系统进入非平衡相，并在有限时间 $t_c$ 发生发散；反之则处于平衡相，收敛至稳态。</li>
+<li><strong>相变判据：</strong> 当 $\beta > \gamma^2/(4\alpha)$ 时，系统进入非平衡相，并在有限时间 $t_c$ 发生发散；反之则处于平衡相，收敛至稳态。</li>
 </ol>
 <h3 id="四-主要推导方法"><strong>四、 主要推导方法</strong></h3>
 <ul>
 <li><strong>Schwinger-Dyson (SD) 方程：</strong> 论文推导了子图密度 $\rho(G)$ 的演化方程。对于平均度 $z$，其演化遵循：
+
 $$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta)$$
 其中 $\Delta$ 为三角形密度。</li>
 <li><strong>树状微扰截断 (Tree-level Truncation):</strong> 由于 $\Delta$ 依赖于更高阶的子图，形成无穷级数，研究者忽略了 $O(\beta^3)$ 的高阶项，从而获得 $z(t)$ 的闭合解析解。</li>
@@ -455,43 +469,46 @@ $$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta)$$
 <ol>
 <li>
 <p><strong>边添加率 (Birth Rate $\gamma^+_{ij}$):</strong> 包含自发生成项和由相互作用驱动的非线性项：
-$$\gamma^+<em>{ij} = \frac{\alpha}{N} + \beta(A^2)</em>{ij} \tag{S6, 10}$$</p>
-<ul>
+</p>
+$$\gamma^+_{ij} = \frac{\alpha}{N} + \beta(A^2)_{ij} \tag{S6, 10}$$<ul>
 <li>$\alpha$：自发边生成的速率常数。</li>
 <li>$1/N$：确保网络稀疏性的缩放因子。</li>
 <li>$\beta$：非线性耦合常数。</li>
-<li>$(A^2)<em>{ij} = \sum_k A</em>{ik}A_{kj}$：代表**三元闭合（Triadic Closure）**机制，即节点 $i$ 和 $j$ 如果拥有共同邻居 $k$，则成边概率增加。</li>
+<li>$(A^2)_{ij} = \sum_k A_{ik}A_{kj}$：代表**三元闭合（Triadic Closure）**机制，即节点 $i$ 和 $j$ 如果拥有共同邻居 $k$，则成边概率增加。</li>
 </ul>
 </li>
 <li>
 <p><strong>边移除率 (Death Rate $\gamma^-$):</strong> 假定为常数 $\gamma$：
-$$\gamma^-_{ij} = \gamma \tag{10, S6}$$</p>
-</li>
+</p>
+$$\gamma^-_{ij} = \gamma \tag{10, S6}$$</li>
 </ol>
 <h3 id="二-数学推导过程"><strong>二、 数学推导过程</strong></h3>
 <h4 id="1-基础演化方程-master-equations"><strong>1. 基础演化方程 (Master Equations)</strong></h4>
 <p>推导从描述边状态（$s=0$ 或 $1$）切换的生灭过程开始。对于任何物理观测值 $O(A)$，其期望值的演化遵循以下通用方程：
-$$\frac{d\langle O(A)\rangle}{dt} = \sum_{e \in E} \langle [(1-A_e)\gamma^+_e(A) - A_e\gamma^-_e(A)] (O(A|A_e=1) - O(A|A_e=0)) \rangle \tag{S4}$$</p>
-<h4 id="2-schwinger-dyson-sd-方程的推导"><strong>2. Schwinger-Dyson (SD) 方程的推导</strong></h4>
+</p>
+$$\frac{d\langle O(A)\rangle}{dt} = \sum_{e \in E} \langle [(1-A_e)\gamma^+_e(A) - A_e\gamma^-_e(A)] (O(A|A_e=1) - O(A|A_e=0)) \rangle \tag{S4}$$<h4 id="2-schwinger-dyson-sd-方程的推导"><strong>2. Schwinger-Dyson (SD) 方程的推导</strong></h4>
 <p>为了量化网络的结构变化，研究者推导了连通子图密度 $\rho(G)$ 的演化方程。</p>
 <ul>
 <li>
 <p>对于最简单的子图——<strong>平均度 $z$</strong>（即单条边的密度），其演化方程为：
-$$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta) \tag{11, S10}$$
+</p>
+$$\frac{dz}{dt} = \alpha - \gamma z + \beta(z^2 - \Delta) \tag{11, S10}$$<p>
 其中，$\Delta$ 是<strong>三角形密度</strong>。非线性项 $\beta(z^2 - \Delta)$ 引入了一个放大集群化的反馈循环。</p>
 </li>
 <li>
 <p>由于 $\Delta$ 的演化又取决于更高阶的四顶点子图密度，产生了一个无穷方程链（SD 方程的特征）。三角形密度的演化大致遵循：
-$$\frac{d\Delta}{dt} = \beta(z^2 - \Delta) - 3\gamma\Delta + O(\beta^3) \tag{12, S14}$$</p>
-</li>
+</p>
+$$\frac{d\Delta}{dt} = \beta(z^2 - \Delta) - 3\gamma\Delta + O(\beta^3) \tag{12, S14}$$</li>
 </ul>
 <h4 id="3-树图级截断与解析解-tree-level-truncation"><strong>3. 树图级截断与解析解 (Tree-level Truncation)</strong></h4>
 <p>在弱相互作用极限下，应用微扰截断方案，忽略三角形密度 $\Delta$ 的贡献（即 $\Delta \sim O(\beta)$）。</p>
 <ul>
-<li>当处于非平衡相（$\beta &gt; \gamma^2/4\alpha$）时，平均度 $z(t)$ 的解析解为：
+<li>当处于非平衡相（$\beta > \gamma^2/4\alpha$）时，平均度 $z(t)$ 的解析解为：
+
 $$z(t) = \frac{\gamma}{2\beta} + \frac{\omega}{\beta} \cot(\omega(t_c - t)) \tag{S15}$$
 其中 $\omega = \sqrt{|\alpha\beta - \gamma^2/4|}$。</li>
 <li>这导致了在<strong>有限临界时间 $t_c$</strong> 处的<strong>双曲发散</strong>（Hyperbolic Divergence）：
+
 $$z(t) \sim (t_c - t)^{-1} \tag{4, 14}$$
 临界时间 $t_c$ 定义为 $t_c = \omega^{-1}[\text{acot}(2\omega) + \pi/2]$。</li>
 </ul>
@@ -499,9 +516,11 @@ $$z(t) \sim (t_c - t)^{-1} \tag{4, 14}$$
 <p>为了研究临界点附近的度分布 $P(k, t)$，研究者使用<strong>生成函数法</strong>求解主方程。</p>
 <ul>
 <li>定义生成函数 $G(x, t) = \sum_k x^k P(k, t)$，将其转化为偏微分方程：
+
 $$\frac{\partial G(x, t)}{\partial t} = (x-1) \left( \alpha G(x, t) - (\gamma - \beta z(t)x) \frac{\partial G(x, t)}{\partial x} \right) \tag{S17}$$</li>
 <li>通过变量替换和积分，求得 $G(x, t)$ 的显式解。</li>
 <li>当 $t \to t_c$ 时，对生成函数进行逆傅里叶变换，证明了度分布会自发演化为<strong>无标度形式</strong>：
+
 $$P(k, t \to t_c) \sim k^{-1} \tag{23, 53}$$</li>
 </ul>
 <h3 id="三-模型的进一步修正与验证"><strong>三、 模型的进一步修正与验证</strong></h3>
@@ -557,9 +576,9 @@ $$P(k, t \to t_c) \sim k^{-1} \tag{23, 53}$$</li>
 <li><strong>内容：</strong> 展示了在耦合常数 $\beta = 0.5$、速率 $\alpha = \gamma = 1$ 且节点数 $N = 300$ 时，网络随时间 $t$ 演化的三个阶段。</li>
 <li><strong>三个阶段：</strong>
 <ul>
-<li><strong>(a) $t &lt; t_c$（临界时间前）：</strong> 网络呈现<strong>稀疏结构</strong>，类似于随机图。</li>
+<li><strong>(a) $t < t_c$（临界时间前）：</strong> 网络呈现<strong>稀疏结构</strong>，类似于随机图。</li>
 <li><strong>(b) $t \to t_c$（接近临界时间）：</strong> 网络发生突变，演化为具有中心节点的<strong>无标度拓扑（Scale-free topology）</strong>。</li>
-<li><strong>(c) $t &gt; t_c$（临界时间后）：</strong> 网络迅速致密化，呈现出类似于**完全图（Complete graph）**的致密状态。</li>
+<li><strong>(c) $t > t_c$（临界时间后）：</strong> 网络迅速致密化，呈现出类似于**完全图（Complete graph）**的致密状态。</li>
 </ul>
 </li>
 <li><strong>下方箭头：</strong> 表示时间轴，$t_c$ 是发生动力学相变的关键点。</li>
@@ -632,7 +651,7 @@ $$P(k, t \to t_c) \sim k^{-1} \tag{23, 53}$$</li>
                     推导过程
                 </div>
                 <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
-                    <embed src="/my_paper/derivation/dpt.pdf" type="application/pdf" class="pdf-viewer">
+                    <embed src="/derivation/dpt.pdf" type="application/pdf" class="pdf-viewer">
                 </div>
             </div>
             
@@ -651,7 +670,8 @@ $$P(k, t \to t_c) \sim k^{-1} \tag{23, 53}$$</li>
 <p>[第1页，第3段]
 更近期，关于社交网络（social networks）的研究为经典情境中DPTs的涌现提供了有力证据[19–22]。这些实验揭示，某些物理可观测量$z(t)$在临界时间$t_c$处根据普适双曲标度（hyperbolic scaling）发散：</p>
 <p>[第1页，第4段]
-$$z(t) \sim (t_c - t)^{-1}.$$  (1)</p>
+</p>
+$$z(t) \sim (t_c - t)^{-1}.$$<p>  (1)</p>
 <p>[第1页，第5段]
 与量子DPTs（非解析性出现但不发散）不同，这种经典双曲标度揭示了时间临界性（temporal criticality）的独特特征，且似乎在不同领域中普遍存在。例如，经济学中观察到的双曲贴现（hyperbolic discounting）[23–26]（可解释拖延行为和截止日期效应）也遵循此标度，这从截止日期前学术投稿量的激增中得到证实[27]。尽管这种现象普遍存在，但其普适性的理论基础仍未被充分理解。</p>
 <p>[第1页，第6段]
@@ -663,67 +683,67 @@ $$z(t) \sim (t_c - t)^{-1}.$$  (1)</p>
 <p>[第2页，第2段]
 <strong>理论框架</strong>——我们考虑一个有向网络，包含$N$个顶点，经历随机边的添加和移除。具体来说，顶点$i$以概率速率$\alpha/N$连接到顶点$j$形成新边，而边以速率$\gamma$被移除。参数$\alpha$和$\gamma$分别表征边形成和移除的速率，因子$1/N$确保了网络的稀疏性。期望平均度$\bar{z}(t) = (1/N) \left\langle \sum_{ij} A_{ij} \right\rangle$的演化，其中$\left\langle \ldots \right\rangle = \int \ldots P(A, t) dA$，遵循线性微分方程，</p>
 <p>[第2页，第3段]
-$$\frac{dz}{dt} = \alpha - \gamma z,$$</p>
-<p>[第2页，第4段]
+</p>
+$$\frac{dz}{dt} = \alpha - \gamma z,$$<p>[第2页，第4段]
 其稳态解为$z(t \to \infty) = \alpha/\gamma$。在这种非相互作用场景中，网络保持为随机图，不表现出DPT。</p>
 <p>[第2页，第5段]
 接下来我们将证明，DPT的出现需要非线性相互作用。一种自然的方法是将边添加速率修改为$\alpha/N + U_{\text{int}}$，其中$U_{\text{int}}(A)$表示依赖于布尔邻接矩阵（adjacency matrix）$A$的相互作用项。虽然边移除速率也可以类似修改，但为简单起见，我们保持该参数不变。相互作用项可以展开为$U_{\text{int}}(A) = \beta_0 A + \beta A^2 + O(A^3)$。为了隔离非线性效应，我们忽略线性项，仅保留主要的非线性贡献，得到$U_{\text{int}}(A) \approx \beta A^2$，其中$\beta$是耦合常数（coupling constant）。这些相互作用自然被解释为三角闭合机制（triadic closure mechanism）[37]：两个共享共同邻居的顶点$i$和$j$更可能形成直接连接。这以与$\sum_k A_{ik} A_{kj} = (A^2)_{ij}$成比例的额外速率发生，导致以下网络动力学：</p>
 <p>[第2页，第6段]
-$$W[A_{ij}(0 \to 1)] = \left(\frac{\alpha}{N} + \beta (A^2)_{ij}\right), \tag{2a}$$</p>
-<p>[第2页，第7段]
-$$W[A_{ij}(1 \to 0)] = \gamma. \tag{2b}$$</p>
-<p>[第2页，第8段]
+</p>
+$$W[A_{ij}(0 \to 1)] = \left(\frac{\alpha}{N} + \beta (A^2)_{ij}\right), \tag{2a}$$<p>[第2页，第7段]
+</p>
+$$W[A_{ij}(1 \to 0)] = \gamma. \tag{2b}$$<p>[第2页，第8段]
 虽然三角闭合通常与社会网络相关，但我们的理论将其视为主要的非线性相互作用，将其适用性扩展到社会背景之外。</p>
 <p>[第2页，第9段]
 在弱相互作用区域（$\beta$较小），网络表现为随机图，没有DPT。然而，随着$\beta$增加，非线性相互作用显著改变了动力学，导致边聚类（edge clustering）和有限时间奇点（finite-time singularities）。图1展示了所提出模型在$\beta = 0.5$、$\alpha = \gamma = 1$时网络的时间演化，这表明存在一个临界时间$t_c$，此时网络结构发生显著变化。</p>
 <p>[第2页，第10段]
 为了量化这种快速变化，我们推导了任意连通子图（connected subgraph）密度$\rho(G)$的时间演化，这由稀疏性条件下的Schwinger-Dyson（SD）方程给出（见补充材料[38]，第1.1节）。对于最简单的子图，即两个顶点之间的连接，密度对应于平均度$z$，遵循</p>
 <p>[第2页，第11段]
-$$\frac{dz}{dt} = \alpha - \gamma z + \beta (z^2 - \Delta), \tag{3}$$</p>
-<p>[第2页，第12段]
+</p>
+$$\frac{dz}{dt} = \alpha - \gamma z + \beta (z^2 - \Delta), \tag{3}$$<p>[第2页，第12段]
 其中$\Delta = (1/N) \left\langle \sum_{ijk} A_{ij} A_{jk} A_{ik} \right\rangle$测量网络中的三角形密度（triangle density）。动力学项$\alpha - \gamma z$与非相互作用随机图模型相同，而相互作用项$\beta (z^2 - \Delta)$引入了一个放大聚类的反馈回路。</p>
 <p>[第2页，第13段]
 这个微分方程不是封闭的，因为$\Delta$依赖于四顶点矩形形状的数量。这些四顶点矩形形状又依赖于五顶点形状的数量，依此类推。这种层级结构创建了一个无限方程塔，这是SD方程的一个标志。例如，</p>
 <p>[第2页，第14段]
-$$\frac{d\Delta}{dt} = \beta (z^2 - \Delta) - 3\gamma \Delta + O(\beta^3), \tag{4}$$</p>
-<p>[第2页，第15段]
+</p>
+$$\frac{d\Delta}{dt} = \beta (z^2 - \Delta) - 3\gamma \Delta + O(\beta^3), \tag{4}$$<p>[第2页，第15段]
 其中$O(\beta^3)$表示更高阶项，如四顶点形状。对SD方程应用标准的微扰截断方案（perturbative truncation scheme），并注意到$\Delta \sim O(\beta)$，我们可以在公式(3)中忽略它，得到</p>
 <p>[第2页，第16段]
-$$z(t) \sim \begin{cases} \text{常数} &amp; (\beta \leq \frac{\gamma^2}{4\alpha}, t \to \infty), \ 1/(t - t_c) &amp; (\beta &gt; \frac{\gamma^2}{4\alpha}, t \to t_c), \end{cases} \tag{5}$$</p>
-<p>[第3页，第1段]
-其中临界时间 $  t_c  $ 由 $  t_c = \omega^{-1}[\text{acot}(2\omega) + (\pi/2)]  $ 给出，且 $  \omega = \sqrt{\alpha\beta - (\gamma^2/4)}  $。因此，$  t_c  $ 仅通过 $  \omega  $ 依赖于 $  (\alpha, \beta, \gamma)  $，且有限时间奇点仅出现在超临界区域 $  \beta &gt; \gamma^2/(4\alpha)  $（参见补充材料[38]第1.1节）。此外，方程(5)识别出两个不同相：在“平衡相”（equilibrium phase）中，当 $  \beta \leq (\gamma^2/4\alpha)  $ 时，$  z(t)  $ 在 $  t \to \infty  $ 时趋近于常数，表明网络收敛到稳态（stationary state）。在“非平衡相”（nonequilibrium phase）中，当 $  \beta &gt; (\gamma^2/4\alpha)  $ 时，模型预测了动态相变（DPT, dynamical phase transition），其中 $  z(t)  $ 在 $  t \to t_c  $ 时呈双曲发散，与方程(1)中的经验定律一致。重要的是，除平均度（average degree）外的可观测量以不同指数发散，反映了其结构序（structural order）。例如，三角形密度（triangle density）按 $  \Delta \sim z^2 \sim [1/(t_c - t)^2]  $ 标度，捕捉了其次近邻特性。更一般地，高阶子图密度（higher-order subgraph density）以 $  z  $ 的幂次发散，其指数由有效邻域阶数（effective neighborhood order）决定。</p>
+</p>
+$$z(t) \sim \begin{cases} \text{常数} & (\beta \leq \frac{\gamma^2}{4\alpha}, t \to \infty), \\ 1/(t - t_c) & (\beta > \frac{\gamma^2}{4\alpha}, t \to t_c), \end{cases} \tag{5}$$<p>[第3页，第1段]
+其中临界时间 $  t_c  $ 由 $  t_c = \omega^{-1}[\text{acot}(2\omega) + (\pi/2)]  $ 给出，且 $  \omega = \sqrt{\alpha\beta - (\gamma^2/4)}  $。因此，$  t_c  $ 仅通过 $  \omega  $ 依赖于 $  (\alpha, \beta, \gamma)  $，且有限时间奇点仅出现在超临界区域 $  \beta > \gamma^2/(4\alpha)  $（参见补充材料[38]第1.1节）。此外，方程(5)识别出两个不同相：在“平衡相”（equilibrium phase）中，当 $  \beta \leq (\gamma^2/4\alpha)  $ 时，$  z(t)  $ 在 $  t \to \infty  $ 时趋近于常数，表明网络收敛到稳态（stationary state）。在“非平衡相”（nonequilibrium phase）中，当 $  \beta > (\gamma^2/4\alpha)  $ 时，模型预测了动态相变（DPT, dynamical phase transition），其中 $  z(t)  $ 在 $  t \to t_c  $ 时呈双曲发散，与方程(1)中的经验定律一致。重要的是，除平均度（average degree）外的可观测量以不同指数发散，反映了其结构序（structural order）。例如，三角形密度（triangle density）按 $  \Delta \sim z^2 \sim [1/(t_c - t)^2]  $ 标度，捕捉了其次近邻特性。更一般地，高阶子图密度（higher-order subgraph density）以 $  z  $ 的幂次发散，其指数由有效邻域阶数（effective neighborhood order）决定。</p>
 <p>[第3页，第2段]
-上述推导代表了施温格-戴森方程（Schwinger-Dyson equation）无穷级数的一个特例，该方程将邻接矩阵（adjacency matrix）$  A(t)  $ 视为量子场论中的场变量，并忽略了高阶项 $  \square \sim O(\beta^3)  $（参见补充材料[38]第1.1节）。注意，添加高阶项不会改变上述物理图像，但会引入耦合常数（coupling constant）的修正。例如，考虑方程(4)中 $  \Delta  $ 的贡献，同时忽略 $  O(\beta^3)  $ 项并应用绝热近似（adiabatic approximation），得到修正 $  \beta \to \beta&rsquo; := (3\beta\gamma/3\gamma + \beta) = \beta - \beta^2/(3\gamma) + O(\beta^3)  $。这可解释为由高阶修正产生的重整化耦合常数（dressed coupling constant）。将方程(5)中的 $  \beta  $ 替换为重整化值 $  \beta&rsquo;  $，可精确预测 $  z(t)  $，如图2(a)所示。尽管绝热近似在快速变化（尤其是 $  t \to t_c  $ 时）下预期失效，但我们发现即使这种简单近似也与平衡相和非平衡相的数值模拟结果吻合良好。上述理论分析可总结为以 $  \alpha/\gamma  $ 和 $  \beta/\gamma  $ 为变量的相图（phase diagram），其中相边界 $  \beta&rsquo;(\beta)/\gamma = (4\alpha/\gamma)^{-1}  $ 分隔了平衡相和非平衡相。图3(a)比较了我们的理论预测与数值模拟结果，虚线表示树图层次（tree level）的理论预测 $  (\beta&rsquo; = \beta)  $，实线则包含了三角形修正 $  (\beta&rsquo; = (3\beta\gamma/3\gamma + \beta))  $。我们发现两种预测在小 $  \beta  $ 值时均与数值结果吻合良好，而三角形修正即使在相对较大的 $  \beta  $ 值下也与数值结果一致。</p>
+上述推导代表了施温格-戴森方程（Schwinger-Dyson equation）无穷级数的一个特例，该方程将邻接矩阵（adjacency matrix）$  A(t)  $ 视为量子场论中的场变量，并忽略了高阶项 $  \square \sim O(\beta^3)  $（参见补充材料[38]第1.1节）。注意，添加高阶项不会改变上述物理图像，但会引入耦合常数（coupling constant）的修正。例如，考虑方程(4)中 $  \Delta  $ 的贡献，同时忽略 $  O(\beta^3)  $ 项并应用绝热近似（adiabatic approximation），得到修正 $  \beta \to \beta' := (3\beta\gamma/3\gamma + \beta) = \beta - \beta^2/(3\gamma) + O(\beta^3)  $。这可解释为由高阶修正产生的重整化耦合常数（dressed coupling constant）。将方程(5)中的 $  \beta  $ 替换为重整化值 $  \beta'  $，可精确预测 $  z(t)  $，如图2(a)所示。尽管绝热近似在快速变化（尤其是 $  t \to t_c  $ 时）下预期失效，但我们发现即使这种简单近似也与平衡相和非平衡相的数值模拟结果吻合良好。上述理论分析可总结为以 $  \alpha/\gamma  $ 和 $  \beta/\gamma  $ 为变量的相图（phase diagram），其中相边界 $  \beta'(\beta)/\gamma = (4\alpha/\gamma)^{-1}  $ 分隔了平衡相和非平衡相。图3(a)比较了我们的理论预测与数值模拟结果，虚线表示树图层次（tree level）的理论预测 $  (\beta' = \beta)  $，实线则包含了三角形修正 $  (\beta' = (3\beta\gamma/3\gamma + \beta))  $。我们发现两种预测在小 $  \beta  $ 值时均与数值结果吻合良好，而三角形修正即使在相对较大的 $  \beta  $ 值下也与数值结果一致。</p>
 <p>[第3页，第3段]
 令人惊讶的是，我们的理论表明，只要动力学速率（kinetic rate）$  \alpha  $ 足够大，即使很小的 $  \beta  $ 值也能导致非平衡相。这意味着向随机图模型（random graph model）引入任意小的非线性相互作用，可以从根本上改变底层网络演化的性质，并可能引发动态相变。</p>
 <p>[第3页，第4段]
 <strong>图2.</strong> (a) 平均度 $  z(t)  $ 和 (b) 序参量（order parameter）$  q(t)  $ 的理论预测与数值模拟对比，参数为 $  \alpha = 1  $，$  \gamma = 1  $，$  \beta = 1/4  $（绿色）和 $  \beta = 1/2  $（红色）。实线表示理论预测，散点对应 $  N = 2000  $ 的模拟结果。对于 $  \beta = 1/4  $（绿色），平均度 $  z(t)  $ 收敛，而序参量 $  q(t)  $ 趋于零，表明处于平衡相。对于 $  \beta = 1/2  $（红色），$  z(t)  $ 呈现双曲标度并在有限临界时间 $  t_c \approx 5.9  $ 处发散。相应地，$  q(t)  $ 在 $  t_c  $ 处出现尖锐跳变，标志着从稀疏网络到稠密网络的一阶动态相变（first-order DPT）。</p>
 <p>[第3页，第5段]
-<strong>一阶相变（First-order phase transition）</strong>——为进一步表征非平衡相，我们定义序参量 $  q = \lim_{N \to \infty} z/N  $，表示边数相对于完全图（complete graph）的比例。根据定义，$  0 \leq q \leq 1  $。在稀疏图（sparse graph）区域 $  [z \sim O(1)]  $ 中，有 $  q = 0  $，这既适用于平衡相，也适用于非平衡相中临界时间之前 $  t &lt; t_c  $ 的情况。然而，对于</p>
+<strong>一阶相变（First-order phase transition）</strong>——为进一步表征非平衡相，我们定义序参量 $  q = \lim_{N \to \infty} z/N  $，表示边数相对于完全图（complete graph）的比例。根据定义，$  0 \leq q \leq 1  $。在稀疏图（sparse graph）区域 $  [z \sim O(1)]  $ 中，有 $  q = 0  $，这既适用于平衡相，也适用于非平衡相中临界时间之前 $  t < t_c  $ 的情况。然而，对于</p>
 <p>[第3页，第6段]
 <strong>图3.</strong> (a) 模型在 $  \alpha-\beta  $ 参数空间中的相图，显示两个不同相：平衡相和非平衡相（灰色区域）。曲线表示理论预测，散点对应相边界的模拟结果。(b) 相图展示了从稀疏图相到稠密图相（dense graph phase）的转变。彩色曲面量化了相边界。此处，$  \alpha  $、$  \beta  $ 和 $  t  $ 均通过 $  \gamma  $ 重新标度以使其无量纲化。</p>
 <p>[第4页，第1段]
-当 $  t &gt; t_c  $ 时，网络变得稠密，导致 $  q &gt; 0  $。这种稀疏-稠密网络相变已在理论模型和现实世界系统中被观察到，包括网络致密化（network densification）[39]和团簇渗流（clique percolation）[40]。这些系统共享类似于三角闭合（triangle closure）的聚类机制，当聚类强度超过临界阈值时，稀疏性会崩溃。然而，传统模型展示的相变由外部参数控制。相比之下，在我们的模型中，这种相变由有限临界时间决定，标志着它是一个DPT。方程(5)中 $  t = t_c  $ 处的奇异性表明这是一级相变（first-order phase transition），其特征是 $  q(t = t_c)  $ 从零到非零值的不连续性，即潜热（latent heat）。这种行为如图2(b)所示。</p>
+当 $  t > t_c  $ 时，网络变得稠密，导致 $  q > 0  $。这种稀疏-稠密网络相变已在理论模型和现实世界系统中被观察到，包括网络致密化（network densification）[39]和团簇渗流（clique percolation）[40]。这些系统共享类似于三角闭合（triangle closure）的聚类机制，当聚类强度超过临界阈值时，稀疏性会崩溃。然而，传统模型展示的相变由外部参数控制。相比之下，在我们的模型中，这种相变由有限临界时间决定，标志着它是一个DPT。方程(5)中 $  t = t_c  $ 处的奇异性表明这是一级相变（first-order phase transition），其特征是 $  q(t = t_c)  $ 从零到非零值的不连续性，即潜热（latent heat）。这种行为如图2(b)所示。</p>
 <p>[第4页，第2段]
-方程(4)中的解析结果仅对 $  (t &lt; t_c)  $ 有效，因为稀疏条件在临界时间之后失效。为了确定 $  t &gt; t_c  $ 时的 $  q(t)  $，我们需要更好地理解所观察到的DPT。对于足够大的耦合，网络初始时是稀疏的，动力学项主导着演化过程。随着连接的增长，由三角闭合驱动的非线性相互作用（nonlinear interaction）变得越来越显著，在动力学项与非线性相互作用之间产生了竞争。一旦非线性相互作用占据主导地位，就会发生边形成的快速级联（rapid cascade），导致DPT。</p>
+方程(4)中的解析结果仅对 $  (t < t_c)  $ 有效，因为稀疏条件在临界时间之后失效。为了确定 $  t > t_c  $ 时的 $  q(t)  $，我们需要更好地理解所观察到的DPT。对于足够大的耦合，网络初始时是稀疏的，动力学项主导着演化过程。随着连接的增长，由三角闭合驱动的非线性相互作用（nonlinear interaction）变得越来越显著，在动力学项与非线性相互作用之间产生了竞争。一旦非线性相互作用占据主导地位，就会发生边形成的快速级联（rapid cascade），导致DPT。</p>
 <p>[第4页，第3段]
 在DPT之后，网络凝聚成一个紧密连接的核心，形成一个完全图（complete graph），同时伴有少数度为零的孤立顶点（isolated vertex）。假设孤立顶点的比例为 $  p  $，则完全图核心的比例为 $  [1 - p(t)]N  $，因此 $  q(t) = [1 - p(t)]^2  $。一旦一个孤立顶点与核心建立了一条边，它会立即连接到核心中的所有其他顶点，因为共同邻居的数量为 $  O(N)  $，这是发散的。因此，孤立顶点连接到核心中一个顶点的速率会增加。这意味着 $  p(t) = p_0 e^{-a(t-t_c)}  $ 由于与核心的随机连接而呈指数衰减，其中 $  p_0  $ 是 $  t = t_c  $ 时孤立顶点的比例。由此，我们得到</p>
 <p>[第4页，第4段]
-$
+$ 
 q(t) = \left( 1 - p_0 e^{-a(t-t_c)} \right)^2,
-$</p>
+ $</p>
 <p>[第4页，第5段]
 (6)</p>
 <p>[第4页，第6段]
 对于 $  t \geq t_c  $。这一预测与数值模拟结果吻合良好[图2(b)]。潜热 $  q(t_c) = (1 - p_0)^2  $ 与孤立顶点的临界比例 $  p_0  $ 相关，我们将在稍后讨论。</p>
 <p>[第4页，第7段]
-总之，对于平衡相（equilibrium phase），网络在任何 $  t  $ 下都将保持稀疏。对于非平衡相（nonequilibrium phase），临界时间 $  t_c  $ 进一步将状态区分为稀疏网络 $  (t &lt; t_c)  $ 和稠密网络 $  (t &gt; t_c)  $。临界时间 $  t_c  $ 取决于 $  \alpha  $、$  \beta  $ 和 $  \gamma  $，其中相对较大的 $  \beta  $ 对应较小的 $  t_c  $，即系统更早达到临界时间。图3(b)在三维相图中展示了这些发现。着色的相边界曲面将稀疏网络和稠密网络对应的区域分隔开来。</p>
+总之，对于平衡相（equilibrium phase），网络在任何 $  t  $ 下都将保持稀疏。对于非平衡相（nonequilibrium phase），临界时间 $  t_c  $ 进一步将状态区分为稀疏网络 $  (t < t_c)  $ 和稠密网络 $  (t > t_c)  $。临界时间 $  t_c  $ 取决于 $  \alpha  $、$  \beta  $ 和 $  \gamma  $，其中相对较大的 $  \beta  $ 对应较小的 $  t_c  $，即系统更早达到临界时间。图3(b)在三维相图中展示了这些发现。着色的相边界曲面将稀疏网络和稠密网络对应的区域分隔开来。</p>
 <p>[第4页，第8段]
 <strong>临界行为（Critical behavior）</strong>——为了研究DPT附近的临界行为，我们特别关注度分布（degree distribution）。对于非相互作用模型（$  \beta = 0  $），度遵循泊松分布（Poisson distribution）。对于有限非线性耦合，在树级近似（tree level）下，我们发现时间依赖的度分布 $  P(k, t)  $ 满足</p>
 <p>[第4页，第9段]
-$
+$ 
 \frac{\partial}{\partial t} P(k, t) = [\alpha + \beta(k - 1)z(t)]P(k - 1, t) - [\alpha + \beta k z(t) + \gamma k]P(k, t) + \gamma (k + 1)P(k + 1, t).
-$</p>
+ $</p>
 <p>[第4页，第10段]
 (7)</p>
 <p>[第4页，第11段]
@@ -735,7 +755,7 @@ $</p>
 <p>[第5页，第1段]
 DPT（动力学相变）的临界行为自然遵循相同的规律。</p>
 <p>[第5页，第2段]
-<strong>讨论</strong>——我们在非平衡网络动力学中发现了一种DPT，这种现象在已知的增长模型（如三元闭包模型[47]和复制模型[48]）中并不存在，这些模型未表现出有限时间奇异性。虽然我们主要关注非平衡动力学，但系统在$t \to \infty$时达到的渐近稳态与常见的平衡系综密切相关。在最简单的线性情况（$\beta = 0$）下，稳态分布与Erdős-Rényi系综一致；而在非线性相互作用（$\beta &gt; 0$）下，则与包含三角形项（triangle terms）的Strauss型模型[49–51]相关联（参见补充材料[38]第1.3节）。这些渐近态从稀疏到稠密的转变与Strauss凝聚（Strauss condensation）现象一致。</p>
+<strong>讨论</strong>——我们在非平衡网络动力学中发现了一种DPT，这种现象在已知的增长模型（如三元闭包模型[47]和复制模型[48]）中并不存在，这些模型未表现出有限时间奇异性。虽然我们主要关注非平衡动力学，但系统在$t \to \infty$时达到的渐近稳态与常见的平衡系综密切相关。在最简单的线性情况（$\beta = 0$）下，稳态分布与Erdős-Rényi系综一致；而在非线性相互作用（$\beta > 0$）下，则与包含三角形项（triangle terms）的Strauss型模型[49–51]相关联（参见补充材料[38]第1.3节）。这些渐近态从稀疏到稠密的转变与Strauss凝聚（Strauss condensation）现象一致。</p>
 <p>[第5页，第3段]
 另一方面，Strauss型模型通常会坍缩为均匀稠密结构，仅在临界点附近表现出异质性。相比之下，在我们的模型中，异质性在达到平衡之前就动态出现，并在临界时间$t_c$处导致有限时间奇异性，这与先前在平衡或增长模型[47–53]中研究的转变有本质区别。</p>
 <p>[第5页，第4段]
@@ -817,7 +837,7 @@ J. L. 和 N. A. 对本文贡献相同。</p>
                     原文
                 </div>
                 <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
-                    <embed src="/my_paper/pdf/dpt.pdf" type="application/pdf" class="pdf-viewer">
+                    <embed src="/pdf/dpt.pdf" type="application/pdf" class="pdf-viewer">
                 </div>
             </div>
             
@@ -834,6 +854,9 @@ document.querySelectorAll('.tab-btn').forEach(function(btn) {
         this.classList.add('active');
         document.getElementById('tab-' + tabId).classList.add('active');
         history.replaceState(null, '', '#tab-' + tabId);
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('tab-' + tabId)]).catch(function() {});
+        }
         lucide.createIcons();
     });
 });

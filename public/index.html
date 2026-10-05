@@ -20,34 +20,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
+
     
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                typeset: true
+            }
+        };
     </script>
+    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="nav-container">
             <div class="nav-brand">
-                <a href="/my_paper/">
+                <a href="/">
                     <span class="brand-icon">📚</span>
                     <span class="brand-text">论文库</span>
                 </a>
             </div>
             <div class="nav-menu" id="navMenu">
                 
-                <a href="/my_paper/" class="nav-link">
+                <a href="/" class="nav-link">
                     首页
                 </a>
                 
-                <a href="/my_paper/paper/" class="nav-link">
+                <a href="/paper/" class="nav-link">
                     论文
                 </a>
                 
-                <a href="/my_paper/tags/" class="nav-link">
+                <a href="/tags/" class="nav-link">
                     标签
                 </a>
                 
@@ -107,25 +119,25 @@ var PAPERS = [{
     a: ["Luca Di Carlo","Francesca Mignacco","Christopher W. Lynn","William Bialek"],
     v: "Physical Review Letters",
     g: ["Statistical Physics","Mean-Field Theory","Computational Neuroscience","Maximum Entropy Models","Criticality"],
-    u: "\/my_paper\/paper\/realneurons\/"
+    u: "\/paper\/realneurons\/"
 },{
     t: "Dynamical Phase Transitions in Nonequilibrium Networks",
     a: ["Jiazhen Liu","Nathaniel M. Aden","Debasish Sarker","Chaoming Song"],
     v: "Physical Review Letters",
     g: ["Dynamical Phase Transitions (DPTs)","Nonequilibrium Networks","Statistical Physics","Triadic Closure","Hyperbolic Scaling"],
-    u: "\/my_paper\/paper\/dpt\/"
+    u: "\/paper\/dpt\/"
 },{
     t: "Heavy-tailed neuronal connectivity arises from Hebbian self-organization",
     a: ["Christopher W. Lynn","Caroline M. Holmes","Stephanie E. Palmer"],
     v: "Nature Physics",
     g: ["Hebbian self-organization","Heavy-tailed connectivity","Neuronal connectomes","Statistical physics","Scale-free networks","Clustering"],
-    u: "\/my_paper\/paper\/hebso\/"
+    u: "\/paper\/hebso\/"
 },{
     t: "Emergence of Polarization in Coevolving Networks",
     a: ["Jiazhen Liu","Shengda Huang","Nathaniel M. Aden","Neil F. Johnson","Chaoming Song"],
     v: "Physical Review Letters",
     g: ["Polarization","Coevolving Networks","Opinion Dynamics","Statistical Physics"],
-    u: "\/my_paper\/paper\/empolarization\/"
+    u: "\/paper\/empolarization\/"
 }];
 
 (function() {

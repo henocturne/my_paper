@@ -19,34 +19,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
+
     
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                typeset: true
+            }
+        };
     </script>
+    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="nav-container">
             <div class="nav-brand">
-                <a href="/my_paper/">
+                <a href="/">
                     <span class="brand-icon">📚</span>
                     <span class="brand-text">论文库</span>
                 </a>
             </div>
             <div class="nav-menu" id="navMenu">
                 
-                <a href="/my_paper/" class="nav-link">
+                <a href="/" class="nav-link">
                     首页
                 </a>
                 
-                <a href="/my_paper/paper/" class="nav-link">
+                <a href="/paper/" class="nav-link">
                     论文
                 </a>
                 
-                <a href="/my_paper/tags/" class="nav-link">
+                <a href="/tags/" class="nav-link">
                     标签
                 </a>
                 
@@ -516,24 +528,27 @@
 <p>将上述项合并得到主方程：
 $P_{t+1}(s) - P_t(s) = \frac{1}{n(n-1)} [-P(s) + p((s-1)P(s-1) - sP(s)) + \bar{s}(1-p)(P(s-1) - P(s))]$</p>
 <p>在稳态下（$P_{t+1} = P_t$），通过求解该递归关系，得到解析分布公式：
-$$P(s) \propto \frac{\Gamma [s + \bar{s}(\frac{1}{p}-1)]}{\Gamma [s + \bar{s}(\frac{1}{p}-1) + 1 + \frac{1}{p}]}$$</p>
-<p>其中 $\Gamma$ 是欧拉伽马函数。在强连接极限（$s \gg \bar{s}/p$）下，该分布渐近服从<strong>幂律分布</strong> $P(s) \approx s^{-\gamma}$，其幂律指数为：
-$$\gamma = 1 + \frac{1}{p}$$
+</p>
+$$P(s) \propto \frac{\Gamma [s + \bar{s}(\frac{1}{p}-1)]}{\Gamma [s + \bar{s}(\frac{1}{p}-1) + 1 + \frac{1}{p}]}$$<p>其中 $\Gamma$ 是欧拉伽马函数。在强连接极限（$s \gg \bar{s}/p$）下，该分布渐近服从<strong>幂律分布</strong> $P(s) \approx s^{-\gamma}$，其幂律指数为：
+</p>
+$$\gamma = 1 + \frac{1}{p}$$<p>
 这证明了<strong>重尾特征仅取决于偏好增长在总增长中所占的比例 $p$</strong>。</p>
 <h3 id="3-活动相关模型的数学推导网络的聚类性">3. 活动相关模型的数学推导（网络的聚类性）</h3>
 <p>为了引入赫布学习（Hebbian plasticity），模型引入了神经元活动。</p>
 <h4 id="神经元活动定义">神经元活动定义：</h4>
 <p>神经元的稳态活动 $x_i$ 由自洽方程定义：
-$$x = \tanh(\beta Ax)$$
+</p>
+$$x = \tanh(\beta Ax)$$<p>
 其中 $\beta$ 是相互作用强度（对应统计物理中的逆温度）。该系统等价于平均场伊辛模型。</p>
 <h4 id="协方差推导">协方差推导：</h4>
 <p>利用<strong>涨落-耗散定理（Fluctuation-dissipation Theorem）</strong>，可以推导出神经元活动之间的协方差矩阵 $C$：
-$$C = \beta(I - \beta DA)^{-1}D$$
+</p>
+$$C = \beta(I - \beta DA)^{-1}D$$<p>
 其中 $D$ 是对角矩阵，$D_{ii} = 1 - x_i^2$。</p>
 <h4 id="弱相互作用下的级数展开">弱相互作用下的级数展开：</h4>
 <p>在弱相互作用极限（$\beta \ll 1, x=0$）下，$D=I$，协方差可展开为：
-$$C = \beta(I + \beta A + \beta^2 A^2 + \beta^3 A^3 + \dots)$$</p>
-<p>这一推导揭示了赫布学习如何通过协方差驱动网络自组织：</p>
+</p>
+$$C = \beta(I + \beta A + \beta^2 A^2 + \beta^3 A^3 + \dots)$$<p>这一推导揭示了赫布学习如何通过协方差驱动网络自组织：</p>
 <ol>
 <li><strong>一阶项（$\beta A$）</strong>：协方差正比于现有连接强度。此时赫布增长等同于偏好增长，从而产生重尾分布。</li>
 <li><strong>二阶项（$\beta^2 A^2$）</strong>：协方差与共享邻居的神经元对相关（长度为2的路径）。赫布增长会强化这些对，从而<strong>形成三角形（聚类特征）</strong>。</li>
@@ -616,7 +631,7 @@ $$C = \beta(I + \beta A + \beta^2 A^2 + \beta^3 A^3 + \dots)$$</p>
                     推导过程
                 </div>
                 <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
-                    <embed src="/my_paper/derivation/hebso.pdf" type="application/pdf" class="pdf-viewer">
+                    <embed src="/derivation/hebso.pdf" type="application/pdf" class="pdf-viewer">
                 </div>
             </div>
             
@@ -657,19 +672,19 @@ Christopher W. Lynn 1,2,3,4,5, Caroline M. Holmes 2,6 &amp; Stephanie E. Palmer 
 <p>[第3页，第3段]
 上述结果表明，重尾连接是神经元网络的一个普遍特征。因此，人们很自然地寻求一个同样普遍的解释。在复杂系统研究中，重尾分布通常源于优先连接（preferential attachment）或富者愈富（rich-get-richer）机制。然而，现有的网络模型侧重于度（degree）或节点强度（node strength）的分布\textsuperscript{33,34}，而这里我们研究的是连接强度。在突触连接（synaptic connectivity）的背景下，一种优先连接形式已经处于网络形成的核心：赫布可塑性（Hebbian plasticity），其中强连接的神经元更可能反映幂律（power law），其预测指数为 $\gamma = 1 + \frac{1}{p}$，c–d。连接异质性（c）和密度（d）作为 $p$ 的函数，通过数值模拟（数据点）和分析分布（线条）计算得出。连接密度是所有 $n(n-1)$ 个可能连接中非零强度连接的比例。e–i。来自方程（1）的分析模型预测，其中 $\bar{s} = 1$（以匹配面板b–d中的模拟），$p$ 拟合到果蝇中央脑（e）\textsuperscript{5}、果蝇视髓质（f）\textsuperscript{19}、秀丽隐杆线虫连接组（g）\textsuperscript{25,30}、沙蚕感觉运动回路（h）\textsuperscript{26}和小鼠视网膜（i）\textsuperscript{18}的连接分布（方法）。</p>
 <p>[第3页，第4段]
-为了回答这个问题，我们在此提出一个网络形成的最小模型，其中连接在优先和随机动态的混合作用下自组织。具体来说，我们从 $n$ 个神经元开始，它们由 $S$ 个连接强度单位连接（例如，每个单位可以代表一个突触、$1 \mu m^2$ 的接触面积，甚至非整数强度度量）。网络由连接矩阵 $A$ 定义，其中 $A_{ij}$ 是从神经元 $i$ 到神经元 $j$ 的有向连接强度，使得 $\sum_j A_{ij} = S$。在每个时间点，随机选择一个连接进行修剪，导致 $A_{ij} &gt; 0$（图2a，左）。然后，每个修剪后的强度单位独立地重新分配给一对新的神经元（使得 $A_{ij} \rightarrow A_{ij} + 1$），方式有两种：（1）以概率 $p$，一个连接被优先选择用于增长，概率为 $A_{ij}/S$，与其当前强度成正比（图2a，顶部）；或（2）以概率 $1 - p$，随机选择一对神经元用于增长（图2a，底部）。这样，总连接强度 $S$ 保持不变，神经元之间的布线仅随时间重新排列。此外，我们注意到，在指定神经元数量后</p>
+为了回答这个问题，我们在此提出一个网络形成的最小模型，其中连接在优先和随机动态的混合作用下自组织。具体来说，我们从 $n$ 个神经元开始，它们由 $S$ 个连接强度单位连接（例如，每个单位可以代表一个突触、$1 \mu m^2$ 的接触面积，甚至非整数强度度量）。网络由连接矩阵 $A$ 定义，其中 $A_{ij}$ 是从神经元 $i$ 到神经元 $j$ 的有向连接强度，使得 $\sum_j A_{ij} = S$。在每个时间点，随机选择一个连接进行修剪，导致 $A_{ij} > 0$（图2a，左）。然后，每个修剪后的强度单位独立地重新分配给一对新的神经元（使得 $A_{ij} \rightarrow A_{ij} + 1$），方式有两种：（1）以概率 $p$，一个连接被优先选择用于增长，概率为 $A_{ij}/S$，与其当前强度成正比（图2a，顶部）；或（2）以概率 $1 - p$，随机选择一对神经元用于增长（图2a，底部）。这样，总连接强度 $S$ 保持不变，神经元之间的布线仅随时间重新排列。此外，我们注意到，在指定神经元数量后</p>
 <p>[第4页，第1段]
 n 和总连接强度 $  S  $，该模型仅包含一个参数 $  p  $，表示优先增长（preferential growth）而非随机增长（random growth）的概率。</p>
 <p>[第4页，第2段]
 最终，我们希望理解上述动力学如何影响连接强度 $  s  $ 的分布 $  P(s)  $。利用主方程方法（master equation method）（此前已被用于研究度分布 $ ^{33}  $），可以证明随着网络演化，连接强度趋近于一个解析稳态分布。</p>
 <p>[第4页，第3段]
-$
+$ 
 P(s) \propto \frac{\Gamma \left[ s + \delta \left( \frac{1}{p} - 1 \right) \right]}{\Gamma \left[ s + \delta \left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p} \right]},
-$</p>
+ $</p>
 <p>[第4页，第4段]
-其中 $  \delta = \frac{s}{n(n-1)}  $ 是平均连接强度，$  \Gamma(\cdot)  $ 是欧拉伽马函数（Euler&rsquo;s gamma function）（方法）。在本文中，我们将所有分布归一化到正连接强度 $  s &gt; 0  $（即排除 $  s = 0  $ 的空连接）。在强连接极限 $  s \gg \delta/p  $ 下，上述分布以幂律（power law）$  P(s) \approx s^{-\gamma}  $ 衰减，其无标度指数（scale-free exponent）$  \gamma = 1 + \frac{1}{p}  $ 仅取决于优先增长概率 $  P  $（方法）。我们通过数值模拟（图 2b）确认了方程 (1) 中的解析分布和幂律尾部。</p>
+其中 $  \delta = \frac{s}{n(n-1)}  $ 是平均连接强度，$  \Gamma(\cdot)  $ 是欧拉伽马函数（Euler&rsquo;s gamma function）（方法）。在本文中，我们将所有分布归一化到正连接强度 $  s > 0  $（即排除 $  s = 0  $ 的空连接）。在强连接极限 $  s \gg \delta/p  $ 下，上述分布以幂律（power law）$  P(s) \approx s^{-\gamma}  $ 衰减，其无标度指数（scale-free exponent）$  \gamma = 1 + \frac{1}{p}  $ 仅取决于优先增长概率 $  P  $（方法）。我们通过数值模拟（图 2b）确认了方程 (1) 中的解析分布和幂律尾部。</p>
 <p>[第4页，第5段]
-随着优先增长比例 $  p  $ 减小，网络变得更加随机，从而限制了 $  P(s)  $ 的重尾（heavy tail）并增加了指数 $  \gamma  $（图 2b，左）。相反，如果优先增长占主导，强连接更可能变得更强，从而产生更重的尾部和更低的指数 $  \gamma  $（图 2b，右）。为了量化幂律类分布的重尾性，常用度量是异质性（heterogeneity）$  \frac{1}{2} \langle |s - s&rsquo;| \rangle \langle s \rangle  $，其中 $  \langle \cdot \rangle  $ 表示对 $  P(s)  $ 的平均，$  \langle |s - s&rsquo;| \rangle  $ 是连接强度的平均绝对差 $ ^{37-39}  $。虽然幂律分布的方差在 $  \gamma \leq 3  $（或我们模型中的 $  p \geq 0.5  $）时发散，但异质性（归一化到 0 和 1 之间）对所有 $  \gamma &gt; 2  $（即所有 $  p &lt; 1  $ 的值）都有良好定义。随着 $  p  $ 增加，我们看到连接强度变得更加异质（图 2c），而连接密度下降（图 2d）。因此，优先动力学导致形成具有重尾连接强度的稀疏网络——这正是真实连接组（connectomes）中观察到的特征 $ ^{5,11,12,18,19,25,26,29}  $。</p>
+随着优先增长比例 $  p  $ 减小，网络变得更加随机，从而限制了 $  P(s)  $ 的重尾（heavy tail）并增加了指数 $  \gamma  $（图 2b，左）。相反，如果优先增长占主导，强连接更可能变得更强，从而产生更重的尾部和更低的指数 $  \gamma  $（图 2b，右）。为了量化幂律类分布的重尾性，常用度量是异质性（heterogeneity）$  \frac{1}{2} \langle |s - s'| \rangle \langle s \rangle  $，其中 $  \langle \cdot \rangle  $ 表示对 $  P(s)  $ 的平均，$  \langle |s - s'| \rangle  $ 是连接强度的平均绝对差 $ ^{37-39}  $。虽然幂律分布的方差在 $  \gamma \leq 3  $（或我们模型中的 $  p \geq 0.5  $）时发散，但异质性（归一化到 0 和 1 之间）对所有 $  \gamma > 2  $（即所有 $  p < 1  $ 的值）都有良好定义。随着 $  p  $ 增加，我们看到连接强度变得更加异质（图 2c），而连接密度下降（图 2d）。因此，优先动力学导致形成具有重尾连接强度的稀疏网络——这正是真实连接组（connectomes）中观察到的特征 $ ^{5,11,12,18,19,25,26,29}  $。</p>
 <p>[第4页，第6段]
 我们甚至可以将优先概率 $  p  $（模型中唯一的自由参数）拟合到单个连接组的连接分布；例如，果蝇（Drosophila）中央脑最好被描述为 60% 优先增长和 40% 随机增长的组合（图 2e）。事实上，尽管只拟合了一个参数，我们的简单模型对所有考虑的网络都提供了令人惊讶的良好描述（图 2e–i），优先增长比例从秀丽隐杆线虫（C. elegans）的 40%（图 2g）到果蝇视髓（optic medulla）（图 2f）和沙蚕（Platynereis）感觉运动回路（图 2h）的 100%。考虑到每个网络对网络结构都有不同的遗传约束，我们模型的成功更加令人惊讶。总之，这些结果表明，模型神经元可以在一个最小的“富者愈富”（rich-get-richer）机制下自组织，产生在真实连接组中观察到的稀疏、重尾网络。</p>
 <p>[第4页，第7段]
@@ -679,9 +694,9 @@ $</p>
 <p>[第4页，第9段]
 我们现在准备将网络动力学扩展到包含活动依赖性可塑性（activity-dependent plasticity）。随机修剪（random pruning）（图 2a，左）和随机增长（图 2a，下）保持不变，但我们将优先增长替换为赫布增长（Hebbian growth）：不是以与当前强度 $  A_{ij}  $ 成比例的概率选择连接（图 2a，上），而是以与协方差 $  C_{ij}  $ 成比例的概率选择一对神经元（方法）。为了直观理解这个活动依赖性模型，我们注意到在弱相互作用极限 $  \beta \ll 1  $ 下，$  x_i = 0  $，产生协方差</p>
 <p>[第4页，第10段]
-$
+$ 
 C = \beta \left( \beta A + \beta^2 A^2 + \beta^3 A^3 + \cdots \right) = \beta \sum_{n=1}^{\infty} \left( \beta A \right)^n \quad \text{对于} \quad i \neq j.
-$</p>
+ $</p>
 <p>[第4页，第11段]
 在 $  \beta  $ 的最低阶，协方差与连接强度成正比 $  C \propto A  $，因此赫布可塑性强化了现有连接；也就是说，赫布增长的作用恰好等同于原始模型中的优先增长（图 3a，上）。因此，原始的活动无关动力学（图 2）正是更一般的活动依赖性模型的弱相互作用极限。</p>
 <p>[第4页，第12段]
@@ -827,37 +842,40 @@ Springer Nature或其许可方（例如学会或其他合作伙伴）根据与�
 <p>[第9页，第10段]
 结合上述贡献，我们得到以下主方程，</p>
 <p>[第9页，第11段]
-$$P_{t+1}(s) - P_t(s) = \frac{1}{n(n-1)} [-P_t(s) + p((s-1)P_t(s-1) - sp(s)) + s(1-p)(P_t(s-1) - P_t(s))]$$ \hspace{1cm} (3)</p>
+</p>
+$$P_{t+1}(s) - P_t(s) = \frac{1}{n(n-1)} [-P_t(s) + p((s-1)P_t(s-1) - sp(s)) + s(1-p)(P_t(s-1) - P_t(s))]$$<p> \hspace{1cm} (3)</p>
 <p>[第9页，第12段]
 随着网络的演化，连接强度趋近于稳态分布$P_{t+1}(s) = P_t(s) = P(s)$，这将方程(3)转化为以下递归关系：</p>
 <p>[第9页，第13段]
-$$P(s) = \frac{p(s-1) + s(1-p)}{1 + ps + s(1-p)} P(s-1).$$ \hspace{1cm} (4)</p>
+</p>
+$$P(s) = \frac{p(s-1) + s(1-p)}{1 + ps + s(1-p)} P(s-1).$$<p> \hspace{1cm} (4)</p>
 <p>[第9页，第14段]
-求解$P(s)$，我们得到方程(1)中的分布，我们注意到在整篇论文中，该分布被归一化以覆盖正连接强度$s &gt; 0$（即排除强度为零的连接）。在强连接极限$s \gg s/p$下，我们有近似</p>
+求解$P(s)$，我们得到方程(1)中的分布，我们注意到在整篇论文中，该分布被归一化以覆盖正连接强度$s > 0$（即排除强度为零的连接）。在强连接极限$s \gg s/p$下，我们有近似</p>
 <p>[第9页，第15段]
-$$\Gamma \left[ s + s \left( \frac{1}{p} - 1 \right) \right] \approx \Gamma(s) s^{\left( \frac{1}{p} - 1 \right)} \text{ 和 } \Gamma \left[ s + s \left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p} \right] \approx \Gamma(s) s^{\left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p}}.$$</p>
-<p>[第9页，第16段]
+</p>
+$$\Gamma \left[ s + s \left( \frac{1}{p} - 1 \right) \right] \approx \Gamma(s) s^{\left( \frac{1}{p} - 1 \right)} \text{ 和 } \Gamma \left[ s + s \left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p} \right] \approx \Gamma(s) s^{\left( \frac{1}{p} - 1 \right) + 1 + \frac{1}{p}}.$$<p>[第9页，第16段]
 因此，分布$P(s)$渐近地按$s^\gamma$缩放，其中$\gamma = 1 + \frac{1}{p}$。方程(1)中的解析稳态分布和幂律尾部（power-law tail）在图2b中得到数值确认。为了计算最能描述给定连接组的优先概率$p$（如图2e–i所示），我们在对数概率的均方根误差上运行梯度下降（gradient descent）（使用方程(1)中的解析分布）。</p>
 <p>[第9页，第17段]
 神经元活动中的协方差</p>
 <p>[第9页，第18段]
-为了研究活动依赖可塑性（activity-dependent plasticity），我们实现了模型神经元，这些神经元在每次网络更新之间达到由非线性方程$x = \tanh[\beta(Ax + b)]$定义的稳态活动$x_i$，其中$\beta$是相互作用强度，$b$是偏置（这里假设为零以简化），并且$\tanh(\cdot)$是逐分量应用的。此外，如常见做法，我们隐式地将连接$A_{ij}$除以$ns$进行归一化，使得对于大型网络，每个神经元的总相互作用强度趋近于一。该系统等价于一个平均场伊辛模型（mean-field Ising model），具有逆温度$\beta$、相互作用$A_{ij}$和外场$b_i = 0$。此外，我们可以将该模型映射到一个等价系统$\tilde{x} = \sigma[\beta(\tilde{A}\tilde{x} + \tilde{b})]$，其中状态$\tilde{x}<em>i = (x_i + 1)/2 \in [0, 1]$代表发放率，$\sigma(\cdot)$是逻辑函数（logistic function），新参数由$\tilde{A}</em>{ij} = 4A_{ij}$和$\tilde{b}<em>i = 2(b_i - \sum_j A</em>{ij})$给出。</p>
+为了研究活动依赖可塑性（activity-dependent plasticity），我们实现了模型神经元，这些神经元在每次网络更新之间达到由非线性方程$x = \tanh[\beta(Ax + b)]$定义的稳态活动$x_i$，其中$\beta$是相互作用强度，$b$是偏置（这里假设为零以简化），并且$\tanh(\cdot)$是逐分量应用的。此外，如常见做法，我们隐式地将连接$A_{ij}$除以$ns$进行归一化，使得对于大型网络，每个神经元的总相互作用强度趋近于一。该系统等价于一个平均场伊辛模型（mean-field Ising model），具有逆温度$\beta$、相互作用$A_{ij}$和外场$b_i = 0$。此外，我们可以将该模型映射到一个等价系统$\tilde{x} = \sigma[\beta(\tilde{A}\tilde{x} + \tilde{b})]$，其中状态$\tilde{x}_i = (x_i + 1)/2 \in [0, 1]$代表发放率，$\sigma(\cdot)$是逻辑函数（logistic function），新参数由$\tilde{A}_{ij} = 4A_{ij}$和$\tilde{b}_i = 2(b_i - \sum_j A_{ij})$给出。</p>
 <p>[第9页，第19段]
 对于对称连接$A = A^T$，可以使用涨落-耗散定理（fluctuation–dissipation theorem）计算活动中的协方差，</p>
 <p>[第9页，第20段]
-$$C_{ij} = \frac{dx_i}{db_j} = \beta \text{sech} \left[ \beta \left( \sum_k A_{ik} x_k + b_i \right) \right]^2 \left( \sum_k A_{ik} \frac{dx_k}{db_j} + \delta_{ij} \right)$$ \hspace{1cm} (5)</p>
+</p>
+$$C_{ij} = \frac{dx_i}{db_j} = \beta \text{sech} \left[ \beta \left( \sum_k A_{ik} x_k + b_i \right) \right]^2 \left( \sum_k A_{ik} \frac{dx_k}{db_j} + \delta_{ij} \right)$$<p> \hspace{1cm} (5)</p>
 <p>[第9页，第21段]
-$$= \beta(1 - x_i^2) \left( \sum_k A_{ik} C_{kj} + \delta_{ij} \right)$$</p>
-<p>[第9页，第22段]
+</p>
+$$= \beta(1 - x_i^2) \left( \sum_k A_{ik} C_{kj} + \delta_{ij} \right)$$<p>[第9页，第22段]
 给定网络活动的稳定解$x$，可以求解协方差$C = \beta(I - \beta DA)^{-1}D$，其中$D_{ij} = (1 - x_i^2)\delta_{ij}$，$I$是单位矩阵。</p>
 <p>[第9页，第23段]
 上述协方差表达式适用于任意相互作用强度$\beta$和偏置$b$。然而，对于零偏置$b = 0$，情况有所不同。</p>
 <p>[第10页，第1段]
-进一步简化：当相互作用足够弱时，即 $\beta &lt; \rho(A)$，其中 $\rho(\cdot)$ 为谱半径（即最大特征值的模长），自洽方程的唯一解为 $x = 0$。此时有 $D = I$，从而得到弱相互作用展开式。</p>
+进一步简化：当相互作用足够弱时，即 $\beta < \rho(A)$，其中 $\rho(\cdot)$ 为谱半径（即最大特征值的模长），自洽方程的唯一解为 $x = 0$。此时有 $D = I$，从而得到弱相互作用展开式。</p>
 <p>[第10页，第2段]
-$$C = \beta(I - \beta A)^{-1} = \beta \sum_{n=0}^{\infty} (\beta A)^n = \beta (I + \beta A + \beta^2 A^2 + \ldots). \tag{6}$$</p>
-<p>[第10页，第3段]
-当相互作用强度 $\beta$ 趋近于 $\rho(A)$ 时，解 $x = 0$ 变得不稳定，且方程(6)中的协方差发散；在此意义上，$\rho(A)$ 定义了临界相互作用强度。例如，若连接强度 $S$ 随机分布，则可证明在极限 $n \to \infty$ 下 $\rho(A) = 1$（补充信息第3节）。因此，对于随机连接性，弱相互作用展开对所有 $\beta &lt; 1$ 均成立。</p>
+</p>
+$$C = \beta(I - \beta A)^{-1} = \beta \sum_{n=0}^{\infty} (\beta A)^n = \beta (I + \beta A + \beta^2 A^2 + \ldots). \tag{6}$$<p>[第10页，第3段]
+当相互作用强度 $\beta$ 趋近于 $\rho(A)$ 时，解 $x = 0$ 变得不稳定，且方程(6)中的协方差发散；在此意义上，$\rho(A)$ 定义了临界相互作用强度。例如，若连接强度 $S$ 随机分布，则可证明在极限 $n \to \infty$ 下 $\rho(A) = 1$（补充信息第3节）。因此，对于随机连接性，弱相互作用展开对所有 $\beta < 1$ 均成立。</p>
 <p>[第10页，第4段]
 <strong>模拟活动依赖性模型</strong></p>
 <p>[第10页，第5段]
@@ -921,7 +939,7 @@ C.W.L.和S.E.P.构思了该项目。C.W.L.设计了模型，C.W.L.和C.M.H.在S.
                     原文
                 </div>
                 <div class="pdf-panel-body pdf-panel-body--pdf-viewer">
-                    <embed src="/my_paper/pdf/hebso.pdf" type="application/pdf" class="pdf-viewer">
+                    <embed src="/pdf/hebso.pdf" type="application/pdf" class="pdf-viewer">
                 </div>
             </div>
             
@@ -938,6 +956,9 @@ document.querySelectorAll('.tab-btn').forEach(function(btn) {
         this.classList.add('active');
         document.getElementById('tab-' + tabId).classList.add('active');
         history.replaceState(null, '', '#tab-' + tabId);
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise([document.getElementById('tab-' + tabId)]).catch(function() {});
+        }
         lucide.createIcons();
     });
 });

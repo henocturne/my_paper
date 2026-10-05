@@ -19,34 +19,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
+
     
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                typeset: true
+            }
+        };
     </script>
+    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="nav-container">
             <div class="nav-brand">
-                <a href="/my_paper/">
+                <a href="/">
                     <span class="brand-icon">📚</span>
                     <span class="brand-text">论文库</span>
                 </a>
             </div>
             <div class="nav-menu" id="navMenu">
                 
-                <a href="/my_paper/" class="nav-link">
+                <a href="/" class="nav-link">
                     首页
                 </a>
                 
-                <a href="/my_paper/paper/" class="nav-link">
+                <a href="/paper/" class="nav-link">
                     论文
                 </a>
                 
-                <a href="/my_paper/tags/" class="nav-link">
+                <a href="/tags/" class="nav-link">
                     标签
                 </a>
                 
@@ -71,87 +83,87 @@
 
 <div class="tag-cloud">
     
-    <a href="/my_paper/tags/statistical-physics/">
+    <a href="/tags/statistical-physics/">
         Statistical Physics
         <span class="count">(4)</span>
     </a>
     
-    <a href="/my_paper/tags/clustering/">
+    <a href="/tags/clustering/">
         Clustering
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/coevolving-networks/">
+    <a href="/tags/coevolving-networks/">
         Coevolving Networks
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/computational-neuroscience/">
+    <a href="/tags/computational-neuroscience/">
         Computational Neuroscience
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/criticality/">
+    <a href="/tags/criticality/">
         Criticality
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/dynamical-phase-transitions-dpts/">
+    <a href="/tags/dynamical-phase-transitions-dpts/">
         Dynamical Phase Transitions (DPTs)
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/heavy-tailed-connectivity/">
+    <a href="/tags/heavy-tailed-connectivity/">
         Heavy-Tailed Connectivity
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/hebbian-self-organization/">
+    <a href="/tags/hebbian-self-organization/">
         Hebbian Self-Organization
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/hyperbolic-scaling/">
+    <a href="/tags/hyperbolic-scaling/">
         Hyperbolic Scaling
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/maximum-entropy-models/">
+    <a href="/tags/maximum-entropy-models/">
         Maximum Entropy Models
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/mean-field-theory/">
+    <a href="/tags/mean-field-theory/">
         Mean-Field Theory
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/neuronal-connectomes/">
+    <a href="/tags/neuronal-connectomes/">
         Neuronal Connectomes
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/nonequilibrium-networks/">
+    <a href="/tags/nonequilibrium-networks/">
         Nonequilibrium Networks
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/opinion-dynamics/">
+    <a href="/tags/opinion-dynamics/">
         Opinion Dynamics
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/polarization/">
+    <a href="/tags/polarization/">
         Polarization
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/scale-free-networks/">
+    <a href="/tags/scale-free-networks/">
         Scale-Free Networks
         <span class="count">(1)</span>
     </a>
     
-    <a href="/my_paper/tags/triadic-closure/">
+    <a href="/tags/triadic-closure/">
         Triadic Closure
         <span class="count">(1)</span>
     </a>
@@ -184,7 +196,7 @@
             
         </div>
         
-        <h3><a href="/my_paper/paper/dpt/">Dynamical Phase Transitions in Nonequilibrium Networks</a></h3>
+        <h3><a href="/paper/dpt/">Dynamical Phase Transitions in Nonequilibrium Networks</a></h3>
         
         <div class="authors">Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song</div>
         
@@ -194,7 +206,7 @@
         <div class="summary"></div>
         <div class="card-footer">
             <div class="links">
-                <a href="/my_paper/paper/dpt/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
+                <a href="/paper/dpt/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
                 
                 <a href="/pdf/dpt.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
                 

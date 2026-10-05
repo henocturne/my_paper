@@ -19,34 +19,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
+
     
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                typeset: true
+            }
+        };
     </script>
+    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header class="site-header">
         <nav class="nav-container">
             <div class="nav-brand">
-                <a href="/my_paper/en/">
+                <a href="/en/">
                     <span class="brand-icon">📚</span>
                     <span class="brand-text">Paper Library</span>
                 </a>
             </div>
             <div class="nav-menu" id="navMenu">
                 
-                <a href="/en/my_paper/" class="nav-link">
+                <a href="/en/" class="nav-link">
                     Home
                 </a>
                 
-                <a href="/en/my_paper/paper/" class="nav-link">
+                <a href="/en/paper/" class="nav-link">
                     Papers
                 </a>
                 
-                <a href="/en/my_paper/tags/" class="nav-link">
+                <a href="/en/tags/" class="nav-link">
                     Tags
                 </a>
                 
