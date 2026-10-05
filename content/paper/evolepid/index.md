@@ -1,13 +1,19 @@
 ---
-title: "title"
-date: 2026-07-10
+title: "Interplay between Evolutionary and Epidemic Timescales Challenges the Outcome of Control Policies"
+date: 2026-09-22
 authors:
-  - "auhtor 2"
-  - "author 1"
-venue: "publication"
+  - "Santiago Lamata-Otín"
+  - "Alex Arenas"
+  - "Jesús Gómez-Gardeñes"
+  - "David Soriano-Paños"
+venue: "Physical Review Letters, Vol. 137, Article 137401"
 tags:
-  - tag1
-  - tag2
+  - "evolutionary epidemiology"
+  - "viral infectivity evolution"
+  - "SIR epidemic model"
+  - "epidemic control policies"
+  - "reaction-diffusion dynamics"
 pdf: "/pdf/evolepid.pdf"
 draft: false
+
 ---

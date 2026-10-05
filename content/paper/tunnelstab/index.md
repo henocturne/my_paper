@@ -1,13 +1,18 @@
 ---
-title: "title"
-date: 2026-07-10
+title: "Singular Basins in Multiscale Systems: Tunneling between Stable States"
+date: 2026-09-28
 authors:
-  - "auhtor 2"
-  - "author 1"
-venue: "publication"
+  - "S. Yanchuk"
+  - "S. Wieczorek"
+  - "H. Jardón-Kojakhmetov"
+  - "H. Alkhayuon"
+venue: "Physical Review Letters 137, 147202 (2026)"
 tags:
-  - tag1
-  - tag2
+  - Multiscale dynamical systems
+  - Singular basins
+  - Basin of attraction
+  - Geometric singular perturbation
+  - Multistability
 pdf: "/pdf/tunnelstab.pdf"
 draft: false
 ---
