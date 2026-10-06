@@ -1,309 +1,46 @@
-<!DOCTYPE html>
-<html lang="zh" data-theme="light">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>论文列表 | 论文库</title>
-    <meta name="description" content="收录和管理学术论文">
-    
-    <script>
-        (function() {
-            var theme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-    
-    <link rel="stylesheet" href="/my_paper/css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                tags: 'ams'
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            },
-            startup: {
-                typeset: true
-            }
-        };
-    </script>
-    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-    <header class="site-header">
-        <nav class="nav-container">
-            <div class="nav-brand">
-                <a href="/">
-                    <span class="brand-icon">📚</span>
-                    <span class="brand-text">论文库</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                
-                <a href="/" class="nav-link">
-                    首页
-                </a>
-                
-                <a href="/paper/" class="nav-link">
-                    论文
-                </a>
-                
-                <a href="/tags/" class="nav-link">
-                    标签
-                </a>
-                
-            </div>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle">
-                    <i data-lucide="moon" class="icon-moon"></i>
-                    <i data-lucide="sun" class="icon-sun"></i>
-                </button>
-                <button class="menu-toggle" id="menuToggle">
-                    <i data-lucide="menu"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        
-<div class="page-header">
-    <h1>论文列表</h1>
-    <p>收录和管理学术论文</p>
-</div><div class="filter-bar" id="filterBar">
-    <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
-        <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
-    </button>
-</div>
-
-
-
-<div class="filter-info" id="filterInfo">共 4 篇论文</div>
-
-<div class="paper-grid" id="paperGrid">
-    
-    <article class="paper-card" data-tags="Statistical Physics,Mean-Field Theory,Computational Neuroscience,Maximum Entropy Models,Criticality">
-        
-        <div class="tags">
-            
-            <span class="tag">Statistical Physics</span>
-            
-            <span class="tag">Mean-Field Theory</span>
-            
-            <span class="tag">Computational Neuroscience</span>
-            
-            <span class="tag">Maximum Entropy Models</span>
-            
-            <span class="tag">Criticality</span>
-            
-        </div>
-        
-        <h3><a href="/paper/realneurons/">Extended Mean-Field Theories for Networks of Real Neurons</a></h3>
-        
-        <div class="authors">Luca Di Carlo, Francesca Mignacco, Christopher W. Lynn, William Bialek</div>
-        
-        
-        <div class="venue">Physical Review Letters</div>
-        
-        <div class="summary"></div>
-        <div class="card-footer">
-            <div class="links">
-                <a href="/paper/realneurons/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
-                
-                <a href="/pdf/RealNeurons.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
-                
-            </div>
-        </div>
-    </article>
-    
-    <article class="paper-card" data-tags="Dynamical Phase Transitions (DPTs),Nonequilibrium Networks,Statistical Physics,Triadic Closure,Hyperbolic Scaling">
-        
-        <div class="tags">
-            
-            <span class="tag">Dynamical Phase Transitions (DPTs)</span>
-            
-            <span class="tag">Nonequilibrium Networks</span>
-            
-            <span class="tag">Statistical Physics</span>
-            
-            <span class="tag">Triadic Closure</span>
-            
-            <span class="tag">Hyperbolic Scaling</span>
-            
-        </div>
-        
-        <h3><a href="/paper/dpt/">Dynamical Phase Transitions in Nonequilibrium Networks</a></h3>
-        
-        <div class="authors">Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song</div>
-        
-        
-        <div class="venue">Physical Review Letters</div>
-        
-        <div class="summary"></div>
-        <div class="card-footer">
-            <div class="links">
-                <a href="/paper/dpt/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
-                
-                <a href="/pdf/dpt.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
-                
-            </div>
-        </div>
-    </article>
-    
-    <article class="paper-card" data-tags="Hebbian self-organization,Heavy-tailed connectivity,Neuronal connectomes,Statistical physics,Scale-free networks,Clustering">
-        
-        <div class="tags">
-            
-            <span class="tag">Hebbian self-organization</span>
-            
-            <span class="tag">Heavy-tailed connectivity</span>
-            
-            <span class="tag">Neuronal connectomes</span>
-            
-            <span class="tag">Statistical physics</span>
-            
-            <span class="tag">Scale-free networks</span>
-            
-            <span class="tag">Clustering</span>
-            
-        </div>
-        
-        <h3><a href="/paper/hebso/">Heavy-tailed neuronal connectivity arises from Hebbian self-organization</a></h3>
-        
-        <div class="authors">Christopher W. Lynn, Caroline M. Holmes, Stephanie E. Palmer</div>
-        
-        
-        <div class="venue">Nature Physics</div>
-        
-        <div class="summary"></div>
-        <div class="card-footer">
-            <div class="links">
-                <a href="/paper/hebso/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
-                
-                <a href="/pdf/hebso.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
-                
-            </div>
-        </div>
-    </article>
-    
-    <article class="paper-card" data-tags="Polarization,Coevolving Networks,Opinion Dynamics,Statistical Physics">
-        
-        <div class="tags">
-            
-            <span class="tag">Polarization</span>
-            
-            <span class="tag">Coevolving Networks</span>
-            
-            <span class="tag">Opinion Dynamics</span>
-            
-            <span class="tag">Statistical Physics</span>
-            
-        </div>
-        
-        <h3><a href="/paper/empolarization/">Emergence of Polarization in Coevolving Networks</a></h3>
-        
-        <div class="authors">Jiazhen Liu, Shengda Huang, Nathaniel M. Aden, Neil F. Johnson, Chaoming Song</div>
-        
-        
-        <div class="venue">Physical Review Letters</div>
-        
-        <div class="summary"></div>
-        <div class="card-footer">
-            <div class="links">
-                <a href="/paper/empolarization/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
-                
-                <a href="/pdf/EMPolarization.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
-                
-            </div>
-        </div>
-    </article>
-    
-</div>
-
-
-<script>
-var selectedTags = new Set();
-
-function toggleTag(tag, btn) {
-    if (selectedTags.has(tag)) { selectedTags.delete(tag); btn.classList.remove("active"); }
-    else { selectedTags.add(tag); btn.classList.add("active"); }
-    applyFilters();
-}
-
-function applyFilters() {
-    var info = document.getElementById("filterInfo");
-    var clearBtn = document.getElementById("clearFiltersBtn");
-    var visible = 0;
-    document.querySelectorAll(".paper-card").forEach(function(card) {
-        var cardTags = (card.dataset.tags || "").split(",").map(function(t) { return t.trim(); }).filter(Boolean);
-        var match = selectedTags.size === 0 || Array.from(selectedTags).every(function(t) { return cardTags.indexOf(t) >= 0; });
-        card.style.display = match ? "flex" : "none";
-        if (match) visible++;
-    });
-    var tagInfo = selectedTags.size > 0 ? Array.from(selectedTags).join(" + ") + " — " : "";
-    info.textContent = tagInfo ? "已筛选: " + tagInfo + "共 " + visible + " 篇论文" : "共 " + document.querySelectorAll(".paper-card").length + " 篇论文";
-    clearBtn.style.display = selectedTags.size > 0 ? "inline-block" : "none";
-    lucide.createIcons();
-}
-
-function clearFilters() {
-    selectedTags.clear();
-    document.querySelectorAll(".tag-btn").forEach(function(b) { b.classList.remove("active"); });
-    applyFilters();
-}
-
-
-(function() {
-    var tags = new Set();
-    document.querySelectorAll(".paper-card").forEach(function(card) {
-        (card.dataset.tags || "").split(",").forEach(function(t) { if (t) tags.add(t.trim()); });
-    });
-    var filterBar = document.getElementById("filterBar");
-    Array.from(tags).sort().forEach(function(tag) {
-        var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
-        var btn = document.createElement("button");
-        btn.className = "tag-btn";
-        btn.dataset.tag = tag;
-        btn.innerHTML = tag + ' <span class="tag-count">' + count + "</span>";
-        btn.onclick = function() { toggleTag(tag, btn); };
-        filterBar.appendChild(btn);
-    });
-})();
-</script>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p>&copy; 2026 论文库</p>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        
-        document.getElementById('themeToggle').addEventListener('click', function() {
-            var html = document.documentElement;
-            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            lucide.createIcons();
-        });
-        
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('open');
-        });
-    </script>
-</body>
-</html>
-
+<!doctype html><html lang=zh data-theme=light><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>论文列表 | 论文库</title><meta name=description content="收录和管理学术论文"><script>(function(){var e=localStorage.getItem("theme")||"light";document.documentElement.setAttribute("data-theme",e)})()</script><link rel=stylesheet href=/my_paper/css/main.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel=stylesheet><script src=https://unpkg.com/lucide@latest></script><script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,tags:"ams"},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{typeset:!0}}</script><script defer id=MathJax-script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></head><body data-page-title=论文列表><header class=site-header><nav class=nav-container><div class=nav-brand><a href=/my_paper/><span class=brand-icon>📚</span>
+<span class=brand-text>论文库</span></a></div><div class=nav-menu id=navMenu><a href=/my_paper/ class=nav-link>首页
+</a><a href=/my_paper/paper/ class=nav-link>论文
+</a><a href=/my_paper/tags/ class=nav-link>标签</a></div><div class=nav-actions><button class=notes-toggle id=notesToggle type=button title=便笺 aria-label=便笺>
+<i data-lucide=sticky-note></i>
+<span class=notes-badge id=notesBadge hidden></span>
+</button>
+<button class=theme-toggle id=themeToggle>
+<i data-lucide=moon class=icon-moon></i>
+<i data-lucide=sun class=icon-sun></i>
+</button>
+<button class=menu-toggle id=menuToggle>
+<i data-lucide=menu></i></button></div></nav></header><div class=notes-panel id=notesPanel hidden><div class=notes-panel-header><span class=notes-panel-title><i data-lucide=sticky-note></i> 便笺
+</span><button class=notes-close id=notesClose type=button title=关闭 aria-label=关闭>
+<i data-lucide=x></i></button></div><div class=notes-list id=notesList></div></div><main class=main-content><div class=page-header><h1>论文列表</h1><p>收录和管理学术论文</p></div><div class=filter-bar id=filterBar><button class=clear-filters onclick=clearFilters() id=clearFiltersBtn style=display:none>
+<i data-lucide=x style=width:14px;height:14px></i> 清除筛选</button></div><div class=filter-info id=filterInfo>共 6 篇论文</div><div class=paper-grid id=paperGrid><article class=paper-card data-tags="Multiscale dynamical systems,Singular basins,Basin of attraction,Geometric singular perturbation,Multistability"><div class=tags><span class=tag>Multiscale dynamical systems</span>
+<span class=tag>Singular basins</span>
+<span class=tag>Basin of attraction</span>
+<span class=tag>Geometric singular perturbation</span>
+<span class=tag>Multistability</span></div><h3><a href=/my_paper/paper/tunnelstab/>Singular Basins in Multiscale Systems: Tunneling between Stable States</a></h3><div class=authors>S. Yanchuk, S. Wieczorek, H. Jardón-Kojakhmetov, H. Alkhayuon</div><div class=venue>Physical Review Letters 137, 147202 (2026)</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/tunnelstab/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/tunnelstab.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article><article class=paper-card data-tags="evolutionary epidemiology,viral infectivity evolution,SIR epidemic model,epidemic control policies,reaction-diffusion dynamics"><div class=tags><span class=tag>evolutionary epidemiology</span>
+<span class=tag>viral infectivity evolution</span>
+<span class=tag>SIR epidemic model</span>
+<span class=tag>epidemic control policies</span>
+<span class=tag>reaction-diffusion dynamics</span></div><h3><a href=/my_paper/paper/evolepid/>Interplay between Evolutionary and Epidemic Timescales Challenges the Outcome of Control Policies</a></h3><div class=authors>Santiago Lamata-Otín, Alex Arenas, Jesús Gómez-Gardeñes, David Soriano-Paños</div><div class=venue>Physical Review Letters, Vol. 137, Article 137401</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/evolepid/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/evolepid.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article><article class=paper-card data-tags="Statistical Physics,Mean-Field Theory,Computational Neuroscience,Maximum Entropy Models,Criticality"><div class=tags><span class=tag>Statistical Physics</span>
+<span class=tag>Mean-Field Theory</span>
+<span class=tag>Computational Neuroscience</span>
+<span class=tag>Maximum Entropy Models</span>
+<span class=tag>Criticality</span></div><h3><a href=/my_paper/paper/realneurons/>Extended Mean-Field Theories for Networks of Real Neurons</a></h3><div class=authors>Luca Di Carlo, Francesca Mignacco, Christopher W. Lynn, William Bialek</div><div class=venue>Physical Review Letters</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/realneurons/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/RealNeurons.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article><article class=paper-card data-tags="Dynamical Phase Transitions (DPTs),Nonequilibrium Networks,Statistical Physics,Triadic Closure,Hyperbolic Scaling"><div class=tags><span class=tag>Dynamical Phase Transitions (DPTs)</span>
+<span class=tag>Nonequilibrium Networks</span>
+<span class=tag>Statistical Physics</span>
+<span class=tag>Triadic Closure</span>
+<span class=tag>Hyperbolic Scaling</span></div><h3><a href=/my_paper/paper/dpt/>Dynamical Phase Transitions in Nonequilibrium Networks</a></h3><div class=authors>Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song</div><div class=venue>Physical Review Letters</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/dpt/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/dpt.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article><article class=paper-card data-tags="Hebbian self-organization,Heavy-tailed connectivity,Neuronal connectomes,Statistical physics,Scale-free networks,Clustering"><div class=tags><span class=tag>Hebbian self-organization</span>
+<span class=tag>Heavy-tailed connectivity</span>
+<span class=tag>Neuronal connectomes</span>
+<span class=tag>Statistical physics</span>
+<span class=tag>Scale-free networks</span>
+<span class=tag>Clustering</span></div><h3><a href=/my_paper/paper/hebso/>Heavy-tailed neuronal connectivity arises from Hebbian self-organization</a></h3><div class=authors>Christopher W. Lynn, Caroline M. Holmes, Stephanie E. Palmer</div><div class=venue>Nature Physics</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/hebso/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/hebso.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article><article class=paper-card data-tags="Polarization,Coevolving Networks,Opinion Dynamics,Statistical Physics"><div class=tags><span class=tag>Polarization</span>
+<span class=tag>Coevolving Networks</span>
+<span class=tag>Opinion Dynamics</span>
+<span class=tag>Statistical Physics</span></div><h3><a href=/my_paper/paper/empolarization/>Emergence of Polarization in Coevolving Networks</a></h3><div class=authors>Jiazhen Liu, Shengda Huang, Nathaniel M. Aden, Neil F. Johnson, Chaoming Song</div><div class=venue>Physical Review Letters</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/empolarization/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/EMPolarization.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article></div><script>var selectedTags=new Set;function toggleTag(e,t){selectedTags.has(e)?(selectedTags.delete(e),t.classList.remove("active")):(selectedTags.add(e),t.classList.add("active")),applyFilters()}function applyFilters(){var e,n=document.getElementById("filterInfo"),s=document.getElementById("clearFiltersBtn"),t=0;document.querySelectorAll(".paper-card").forEach(function(e){var s=(e.dataset.tags||"").split(",").map(function(e){return e.trim()}).filter(Boolean),n=selectedTags.size===0||Array.from(selectedTags).every(function(e){return s.indexOf(e)>=0});e.style.display=n?"flex":"none",n&&t++}),e=selectedTags.size>0?Array.from(selectedTags).join(" + ")+" — ":"",n.textContent=e?"已筛选: "+e+"共 "+t+" 篇论文":"共 "+document.querySelectorAll(".paper-card").length+" 篇论文",s.style.display=selectedTags.size>0?"inline-block":"none",lucide.createIcons()}function clearFilters(){selectedTags.clear(),document.querySelectorAll(".tag-btn").forEach(function(e){e.classList.remove("active")}),applyFilters()}(function(){var t,e=new Set;document.querySelectorAll(".paper-card").forEach(function(t){(t.dataset.tags||"").split(",").forEach(function(t){t&&e.add(t.trim())})}),t=document.getElementById("filterBar"),Array.from(e).sort().forEach(function(e){var s=document.querySelectorAll('.paper-card[data-tags*="'+e+'"]').length,n=document.createElement("button");n.className="tag-btn",n.dataset.tag=e,n.innerHTML=e+' <span class="tag-count">'+s+"</span>",n.onclick=function(){toggleTag(e,n)},t.appendChild(n)})})()</script></main><footer class=site-footer><div class=footer-container><p>&copy; 2026 论文库</p></div></footer><script>lucide.createIcons(),document.getElementById("themeToggle").addEventListener("click",function(){var e=document.documentElement,t=e.getAttribute("data-theme")==="light"?"dark":"light";e.setAttribute("data-theme",t),localStorage.setItem("theme",t),lucide.createIcons()}),document.getElementById("menuToggle").addEventListener("click",function(){document.getElementById("navMenu").classList.toggle("open")})</script><script>(function(){var e,n,s,r,v="paperNotes",h=(document.body.getAttribute("data-page-title")||"").trim()||document.title,a=document.getElementById("notesToggle"),c=document.getElementById("notesBadge"),i=document.getElementById("notesPanel"),d=document.getElementById("notesList"),p=document.getElementById("notesClose");if(!a||!i||!d)return;s=w(),e=null,n=null,r=!1;function w(){try{var t=localStorage.getItem(v),e=t?JSON.parse(t):[];return Array.isArray(e)?e.filter(function(e){return e&&typeof e.text=="string"}):[]}catch{return[]}}function m(){try{localStorage.setItem(v,JSON.stringify(s))}catch{}}function y(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}function j(e){if(!e)return"";var t=new Date(e);function n(e){return(e<10?"0":"")+e}return t.getFullYear()+"-"+n(t.getMonth()+1)+"-"+n(t.getDate())+" "+n(t.getHours())+":"+n(t.getMinutes())}function o(){if(!c)return;s.length>0?(c.hidden=!1,c.textContent=s.length>99?"99+":String(s.length)):c.hidden=!0}function b(){return s.slice().sort(function(e,t){return(t.updatedAt||0)-(e.updatedAt||0)})}function f(){if(!e)return!1;var t=e.text.trim();return!!t&&(s.push({id:e.id,label:e.label,text:t,createdAt:e.createdAt,updatedAt:Date.now()}),m(),e=null,!0)}function g(e,t){var s=(t||"").trim();return!!s&&(e.text=s,e.updatedAt=Date.now(),m(),n=null,!0)}function u(e,t,n){var s=document.createElement("button");return s.type="button",s.className="note-action"+(n?" danger":""),s.title=t,s.setAttribute("aria-label",t),s.innerHTML='<i data-lucide="'+e+'"></i>',s}function _(i,a){var c,l,d,v,b,y,_,w,O,x,C,E,k,p=document.createElement("div");return p.className="note-item"+(a?" note-draft":""),d=document.createElement("div"),d.className="note-head",v=document.createElement("span"),v.className="note-label",v.textContent=i.label||h,v.title=i.label||h,d.appendChild(v),y=document.createElement("span"),y.className="note-time",y.textContent=a?"新建":j(i.updatedAt),d.appendChild(y),l=document.createElement("div"),l.className="note-actions",d.appendChild(l),p.appendChild(d),k=a||i.id===n,k?(c=document.createElement("textarea"),c.className="note-editor",c.rows=3,c.value=i.text||"",c.placeholder="写下便笺内容...",a&&c.addEventListener("input",function(){i.text=c.value}),b=u("check","保存"),b.addEventListener("mousedown",function(e){e.preventDefault()}),b.addEventListener("click",function(){a?f()&&(o(),t()):g(i,c.value)&&(o(),t())}),l.appendChild(b),_=u("x",a?"删除":"取消",a),_.addEventListener("mousedown",function(e){e.preventDefault()}),_.addEventListener("click",function(){a?e=null:n=null,t()}),l.appendChild(_),c.addEventListener("keydown",function(e){e.key==="Enter"&&(e.ctrlKey||e.metaKey)?(e.preventDefault(),b.click()):e.key==="Escape"&&!a&&(n=null,t())}),c.addEventListener("blur",function(){setTimeout(function(){a?f()&&(o(),t()):i.id===n&&g(i,c.value)&&(o(),t())},120)}),p.appendChild(c),w=document.createElement("div"),w.className="note-foot",O=document.createElement("span"),O.className="note-hint",O.textContent="Ctrl+Enter 保存",w.appendChild(O),p.appendChild(w),r&&(r=!1,requestAnimationFrame(function(){c.focus(),c.selectionStart=c.selectionEnd=c.value.length}))):(x=document.createElement("div"),x.className="note-text",x.textContent=i.text,p.appendChild(x),C=u("pencil","编辑"),C.addEventListener("click",function(){n=i.id,r=!0,t()}),l.appendChild(C),E=u("trash-2","删除",!0),E.addEventListener("click",function(){if(!window.confirm("删除这条便笺？"))return;s=s.filter(function(e){return e.id!==i.id}),m(),o(),t()}),l.appendChild(E)),p}function t(){d.innerHTML="";var n,t=b();if(e&&(t=[e].concat(t)),!t.length){n=document.createElement("div"),n.className="note-empty",n.textContent="还没有便笺",d.appendChild(n);return}t.forEach(function(t){d.appendChild(_(t,t===e))}),window.lucide&&lucide.createIcons&&lucide.createIcons()}function O(){i.hidden=!1,a.classList.add("active"),n=null,e||(e={id:y(),label:h,text:"",createdAt:Date.now(),updatedAt:Date.now()}),r=!0,t(),o()}function l(){if(i.hidden)return;i.hidden=!0,a.classList.remove("active"),e&&(f()?o():e=null),n=null,t()}a.addEventListener("click",function(e){e.stopPropagation(),i.hidden?O():l()}),p&&p.addEventListener("click",l),document.addEventListener("mousedown",function(e){if(i.hidden)return;if(i.contains(e.target)||a.contains(e.target))return;l()}),document.addEventListener("keydown",function(e){e.key==="Escape"&&!i.hidden&&l()}),o(),t()})()</script></body></html>

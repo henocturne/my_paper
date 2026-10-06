@@ -39,7 +39,7 @@
     </script>
     <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
+<body data-page-title="{{ .Title }}">
     <header class="site-header">
         <nav class="nav-container">
             <div class="nav-brand">
@@ -56,6 +56,10 @@
                 {{ end }}
             </div>
             <div class="nav-actions">
+                <button class="notes-toggle" id="notesToggle" type="button" title="便笺" aria-label="便笺">
+                    <i data-lucide="sticky-note"></i>
+                    <span class="notes-badge" id="notesBadge" hidden></span>
+                </button>
                 <button class="theme-toggle" id="themeToggle">
                     <i data-lucide="moon" class="icon-moon"></i>
                     <i data-lucide="sun" class="icon-sun"></i>
@@ -66,6 +70,18 @@
             </div>
         </nav>
     </header>
+
+    <div class="notes-panel" id="notesPanel" hidden>
+        <div class="notes-panel-header">
+            <span class="notes-panel-title">
+                <i data-lucide="sticky-note"></i> 便笺
+            </span>
+            <button class="notes-close" id="notesClose" type="button" title="关闭" aria-label="关闭">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="notes-list" id="notesList"></div>
+    </div>
 
     <main class="main-content">
         {{ block "main" . }}{{ end }}
@@ -91,6 +107,292 @@
         document.getElementById('menuToggle').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('open');
         });
+    </script>
+
+    <script>
+    (function() {
+        var STORAGE_KEY = 'paperNotes';
+        var pageTitle = (document.body.getAttribute('data-page-title') || '').trim() || document.title;
+
+        var toggleBtn = document.getElementById('notesToggle');
+        var badge = document.getElementById('notesBadge');
+        var panel = document.getElementById('notesPanel');
+        var listEl = document.getElementById('notesList');
+        var closeBtn = document.getElementById('notesClose');
+        if (!toggleBtn || !panel || !listEl) return;
+
+        var notes = loadNotes();
+        var draft = null;
+        var editingId = null;
+        var focusNext = false;
+
+        function loadNotes() {
+            try {
+                var raw = localStorage.getItem(STORAGE_KEY);
+                var parsed = raw ? JSON.parse(raw) : [];
+                if (!Array.isArray(parsed)) return [];
+                return parsed.filter(function(n) { return n && typeof n.text === 'string'; });
+            } catch (e) { return []; }
+        }
+
+        function saveNotes() {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(notes)); } catch (e) {}
+        }
+
+        function uid() {
+            return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+        }
+
+        function formatTime(ts) {
+            if (!ts) return '';
+            var d = new Date(ts);
+            function p(n) { return (n < 10 ? '0' : '') + n; }
+            return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) +
+                ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+        }
+
+        function updateBadge() {
+            if (!badge) return;
+            if (notes.length > 0) {
+                badge.hidden = false;
+                badge.textContent = notes.length > 99 ? '99+' : String(notes.length);
+            } else {
+                badge.hidden = true;
+            }
+        }
+
+        function sortedNotes() {
+            return notes.slice().sort(function(a, b) {
+                return (b.updatedAt || 0) - (a.updatedAt || 0);
+            });
+        }
+
+        function saveDraft() {
+            if (!draft) return false;
+            var text = draft.text.trim();
+            if (!text) return false;
+            notes.push({
+                id: draft.id,
+                label: draft.label,
+                text: text,
+                createdAt: draft.createdAt,
+                updatedAt: Date.now()
+            });
+            saveNotes();
+            draft = null;
+            return true;
+        }
+
+        function commitEdit(note, value) {
+            var text = (value || '').trim();
+            if (!text) return false;
+            note.text = text;
+            note.updatedAt = Date.now();
+            saveNotes();
+            editingId = null;
+            return true;
+        }
+
+        function makeAction(icon, title, danger) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'note-action' + (danger ? ' danger' : '');
+            btn.title = title;
+            btn.setAttribute('aria-label', title);
+            btn.innerHTML = '<i data-lucide="' + icon + '"></i>';
+            return btn;
+        }
+
+        function createItem(note, isDraft) {
+            var item = document.createElement('div');
+            item.className = 'note-item' + (isDraft ? ' note-draft' : '');
+
+            var head = document.createElement('div');
+            head.className = 'note-head';
+
+            var label = document.createElement('span');
+            label.className = 'note-label';
+            label.textContent = note.label || pageTitle;
+            label.title = note.label || pageTitle;
+            head.appendChild(label);
+
+            var time = document.createElement('span');
+            time.className = 'note-time';
+            time.textContent = isDraft ? '新建' : formatTime(note.updatedAt);
+            head.appendChild(time);
+
+            var actions = document.createElement('div');
+            actions.className = 'note-actions';
+            head.appendChild(actions);
+            item.appendChild(head);
+
+            var isEditing = isDraft || note.id === editingId;
+
+            if (isEditing) {
+                var ta = document.createElement('textarea');
+                ta.className = 'note-editor';
+                ta.rows = 3;
+                ta.value = note.text || '';
+                ta.placeholder = '写下便笺内容...';
+                if (isDraft) {
+                    ta.addEventListener('input', function() { note.text = ta.value; });
+                }
+
+                var saveBtn = makeAction('check', '保存');
+                saveBtn.addEventListener('mousedown', function(e) { e.preventDefault(); });
+                saveBtn.addEventListener('click', function() {
+                    if (isDraft) {
+                        if (saveDraft()) { updateBadge(); render(); }
+                    } else if (commitEdit(note, ta.value)) {
+                        updateBadge(); render();
+                    }
+                });
+                actions.appendChild(saveBtn);
+
+                var cancelBtn = makeAction('x', isDraft ? '删除' : '取消', isDraft);
+                cancelBtn.addEventListener('mousedown', function(e) { e.preventDefault(); });
+                cancelBtn.addEventListener('click', function() {
+                    if (isDraft) { draft = null; } else { editingId = null; }
+                    render();
+                });
+                actions.appendChild(cancelBtn);
+
+                ta.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                        e.preventDefault();
+                        saveBtn.click();
+                    } else if (e.key === 'Escape' && !isDraft) {
+                        editingId = null;
+                        render();
+                    }
+                });
+                ta.addEventListener('blur', function() {
+                    // Let any action-button click run before committing.
+                    setTimeout(function() {
+                        if (isDraft) {
+                            if (saveDraft()) { updateBadge(); render(); }
+                        } else if (note.id === editingId && commitEdit(note, ta.value)) {
+                            updateBadge(); render();
+                        }
+                    }, 120);
+                });
+
+                item.appendChild(ta);
+
+                var foot = document.createElement('div');
+                foot.className = 'note-foot';
+                var hint = document.createElement('span');
+                hint.className = 'note-hint';
+                hint.textContent = 'Ctrl+Enter 保存';
+                foot.appendChild(hint);
+                item.appendChild(foot);
+
+                if (focusNext) {
+                    focusNext = false;
+                    requestAnimationFrame(function() {
+                        ta.focus();
+                        ta.selectionStart = ta.selectionEnd = ta.value.length;
+                    });
+                }
+            } else {
+                var text = document.createElement('div');
+                text.className = 'note-text';
+                text.textContent = note.text;
+                item.appendChild(text);
+
+                var editBtn = makeAction('pencil', '编辑');
+                editBtn.addEventListener('click', function() {
+                    editingId = note.id;
+                    focusNext = true;
+                    render();
+                });
+                actions.appendChild(editBtn);
+
+                var delBtn = makeAction('trash-2', '删除', true);
+                delBtn.addEventListener('click', function() {
+                    if (!window.confirm('删除这条便笺？')) return;
+                    notes = notes.filter(function(n) { return n.id !== note.id; });
+                    saveNotes();
+                    updateBadge();
+                    render();
+                });
+                actions.appendChild(delBtn);
+            }
+
+            return item;
+        }
+
+        function render() {
+            listEl.innerHTML = '';
+            var items = sortedNotes();
+            if (draft) items = [draft].concat(items);
+
+            if (!items.length) {
+                var empty = document.createElement('div');
+                empty.className = 'note-empty';
+                empty.textContent = '还没有便笺';
+                listEl.appendChild(empty);
+                return;
+            }
+
+            items.forEach(function(note) {
+                listEl.appendChild(createItem(note, note === draft));
+            });
+
+            if (window.lucide && lucide.createIcons) lucide.createIcons();
+        }
+
+        function openPanel() {
+            panel.hidden = false;
+            toggleBtn.classList.add('active');
+            editingId = null;
+            if (!draft) {
+                draft = {
+                    id: uid(),
+                    label: pageTitle,
+                    text: '',
+                    createdAt: Date.now(),
+                    updatedAt: Date.now()
+                };
+            }
+            focusNext = true;
+            render();
+            updateBadge();
+        }
+
+        function closePanel() {
+            if (panel.hidden) return;
+            panel.hidden = true;
+            toggleBtn.classList.remove('active');
+            if (draft) {
+                if (saveDraft()) updateBadge();
+                else draft = null;
+            }
+            editingId = null;
+            render();
+        }
+
+        toggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (panel.hidden) openPanel();
+            else closePanel();
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closePanel);
+
+        document.addEventListener('mousedown', function(e) {
+            if (panel.hidden) return;
+            if (panel.contains(e.target) || toggleBtn.contains(e.target)) return;
+            closePanel();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !panel.hidden) closePanel();
+        });
+
+        updateBadge();
+        render();
+    })();
     </script>
 </body>
 </html>

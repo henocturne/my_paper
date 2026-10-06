@@ -1,295 +1,74 @@
-<!DOCTYPE html>
-<html lang="zh" data-theme="light">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hyperbolic Scaling | 论文库</title>
-    <meta name="description" content="学术论文管理与阅读平台">
-    
-    <script>
-        (function() {
-            var theme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-    
-    <link rel="stylesheet" href="/my_paper/css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                tags: 'ams'
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            },
-            startup: {
-                typeset: true
-            }
-        };
-    </script>
-    <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-    <header class="site-header">
-        <nav class="nav-container">
-            <div class="nav-brand">
-                <a href="/">
-                    <span class="brand-icon">📚</span>
-                    <span class="brand-text">论文库</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                
-                <a href="/" class="nav-link">
-                    首页
-                </a>
-                
-                <a href="/paper/" class="nav-link">
-                    论文
-                </a>
-                
-                <a href="/tags/" class="nav-link">
-                    标签
-                </a>
-                
-            </div>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle">
-                    <i data-lucide="moon" class="icon-moon"></i>
-                    <i data-lucide="sun" class="icon-sun"></i>
-                </button>
-                <button class="menu-toggle" id="menuToggle">
-                    <i data-lucide="menu"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        
-<div class="page-header">
-    <h1>标签: Hyperbolic Scaling</h1>
-</div>
-
-<div class="tag-cloud">
-    
-    <a href="/tags/statistical-physics/">
-        Statistical Physics
-        <span class="count">(4)</span>
-    </a>
-    
-    <a href="/tags/clustering/">
-        Clustering
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/coevolving-networks/">
-        Coevolving Networks
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/computational-neuroscience/">
-        Computational Neuroscience
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/criticality/">
-        Criticality
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/dynamical-phase-transitions-dpts/">
-        Dynamical Phase Transitions (DPTs)
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/heavy-tailed-connectivity/">
-        Heavy-Tailed Connectivity
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/hebbian-self-organization/">
-        Hebbian Self-Organization
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/hyperbolic-scaling/">
-        Hyperbolic Scaling
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/maximum-entropy-models/">
-        Maximum Entropy Models
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/mean-field-theory/">
-        Mean-Field Theory
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/neuronal-connectomes/">
-        Neuronal Connectomes
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/nonequilibrium-networks/">
-        Nonequilibrium Networks
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/opinion-dynamics/">
-        Opinion Dynamics
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/polarization/">
-        Polarization
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/scale-free-networks/">
-        Scale-Free Networks
-        <span class="count">(1)</span>
-    </a>
-    
-    <a href="/tags/triadic-closure/">
-        Triadic Closure
-        <span class="count">(1)</span>
-    </a>
-    
-</div>
-
-<div class="filter-bar" id="filterBar">
-    <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
-        <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
-    </button>
-</div>
-
-<div class="filter-info" id="filterInfo">共 1 篇论文</div>
-
-<div class="paper-grid" id="paperGrid">
-    
-    <article class="paper-card" data-tags="Dynamical Phase Transitions (DPTs),Nonequilibrium Networks,Statistical Physics,Triadic Closure,Hyperbolic Scaling">
-        
-        <div class="tags">
-            
-            <span class="tag">Dynamical Phase Transitions (DPTs)</span>
-            
-            <span class="tag">Nonequilibrium Networks</span>
-            
-            <span class="tag">Statistical Physics</span>
-            
-            <span class="tag">Triadic Closure</span>
-            
-            <span class="tag">Hyperbolic Scaling</span>
-            
-        </div>
-        
-        <h3><a href="/paper/dpt/">Dynamical Phase Transitions in Nonequilibrium Networks</a></h3>
-        
-        <div class="authors">Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song</div>
-        
-        
-        <div class="venue">Physical Review Letters</div>
-        
-        <div class="summary"></div>
-        <div class="card-footer">
-            <div class="links">
-                <a href="/paper/dpt/"><i data-lucide="eye" style="width:14px;height:14px;"></i> 查看详情</a>
-                
-                <a href="/pdf/dpt.pdf"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
-                
-            </div>
-        </div>
-    </article>
-    
-</div>
-
-<script>
-
-var currentTag = 'Hyperbolic Scaling';
-var tags = new Set();
-document.querySelectorAll('.paper-card').forEach(function(card) {
-    (card.dataset.tags || '').split(',').forEach(function(t) { if (t && t !== currentTag) tags.add(t.trim()); });
-});
-
-var filterBar = document.getElementById('filterBar');
-var sortedTags = [...tags].sort();
-sortedTags.forEach(function(tag) {
-    var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
-    var btn = document.createElement('button');
-    btn.className = 'tag-btn';
-    btn.dataset.tag = tag;
-    btn.innerHTML = tag + ' <span class="tag-count">' + count + '</span>';
-    btn.onclick = function() { toggleTag(tag, btn); };
-    filterBar.appendChild(btn);
-});
-
-var selectedTags = new Set();
-
-function toggleTag(tag, btn) {
-    if (selectedTags.has(tag)) { selectedTags.delete(tag); btn.classList.remove('active'); }
-    else { selectedTags.add(tag); btn.classList.add('active'); }
-    applyFilters();
-}
-
-function applyFilters() {
-    document.getElementById('clearFiltersBtn').style.display = selectedTags.size > 0 ? 'inline-block' : 'none';
-    var info = document.getElementById('filterInfo');
-    var visible = 0;
-    document.querySelectorAll('.paper-card').forEach(function(card) {
-        var cardTags = (card.dataset.tags || '').split(',').map(function(t) { return t.trim(); }).filter(function(t) { return t; });
-        var match = selectedTags.size === 0 || [...selectedTags].every(function(t) { return cardTags.indexOf(t) >= 0; });
-        card.style.display = match ? 'flex' : 'none';
-        if (match) visible++;
-    });
-    info.textContent = selectedTags.size > 0
-        ? '已筛选: ' + [...selectedTags].join(' + ') + ' — 共 ' + visible + ' 篇论文'
-        : '共 ' + document.querySelectorAll('.paper-card').length + ' 篇论文';
-    lucide.createIcons();
-}
-
-function clearFilters() {
-    selectedTags.clear();
-    document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('active'); });
-    applyFilters();
-}
-</script>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p>&copy; 2026 论文库</p>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        
-        document.getElementById('themeToggle').addEventListener('click', function() {
-            var html = document.documentElement;
-            var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            lucide.createIcons();
-        });
-        
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('open');
-        });
-    </script>
-</body>
-</html>
-
+<!doctype html><html lang=zh data-theme=light><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Hyperbolic Scaling | 论文库</title><meta name=description content="学术论文管理与阅读平台"><script>(function(){var e=localStorage.getItem("theme")||"light";document.documentElement.setAttribute("data-theme",e)})()</script><link rel=stylesheet href=/my_paper/css/main.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel=stylesheet><script src=https://unpkg.com/lucide@latest></script><script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,tags:"ams"},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{typeset:!0}}</script><script defer id=MathJax-script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></head><body data-page-title="Hyperbolic Scaling"><header class=site-header><nav class=nav-container><div class=nav-brand><a href=/my_paper/><span class=brand-icon>📚</span>
+<span class=brand-text>论文库</span></a></div><div class=nav-menu id=navMenu><a href=/my_paper/ class=nav-link>首页
+</a><a href=/my_paper/paper/ class=nav-link>论文
+</a><a href=/my_paper/tags/ class=nav-link>标签</a></div><div class=nav-actions><button class=notes-toggle id=notesToggle type=button title=便笺 aria-label=便笺>
+<i data-lucide=sticky-note></i>
+<span class=notes-badge id=notesBadge hidden></span>
+</button>
+<button class=theme-toggle id=themeToggle>
+<i data-lucide=moon class=icon-moon></i>
+<i data-lucide=sun class=icon-sun></i>
+</button>
+<button class=menu-toggle id=menuToggle>
+<i data-lucide=menu></i></button></div></nav></header><div class=notes-panel id=notesPanel hidden><div class=notes-panel-header><span class=notes-panel-title><i data-lucide=sticky-note></i> 便笺
+</span><button class=notes-close id=notesClose type=button title=关闭 aria-label=关闭>
+<i data-lucide=x></i></button></div><div class=notes-list id=notesList></div></div><main class=main-content><div class=page-header><h1>标签: Hyperbolic Scaling</h1></div><div class=tag-cloud><a href=/my_paper/tags/statistical-physics/>Statistical Physics
+<span class=count>(4)</span>
+</a><a href=/my_paper/tags/basin-of-attraction/>Basin of Attraction
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/clustering/>Clustering
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/coevolving-networks/>Coevolving Networks
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/computational-neuroscience/>Computational Neuroscience
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/criticality/>Criticality
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/dynamical-phase-transitions-dpts/>Dynamical Phase Transitions (DPTs)
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/epidemic-control-policies/>Epidemic Control Policies
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/evolutionary-epidemiology/>Evolutionary Epidemiology
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/geometric-singular-perturbation/>Geometric Singular Perturbation
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/heavy-tailed-connectivity/>Heavy-Tailed Connectivity
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/hebbian-self-organization/>Hebbian Self-Organization
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/hyperbolic-scaling/>Hyperbolic Scaling
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/maximum-entropy-models/>Maximum Entropy Models
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/mean-field-theory/>Mean-Field Theory
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/multiscale-dynamical-systems/>Multiscale Dynamical Systems
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/multistability/>Multistability
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/neuronal-connectomes/>Neuronal Connectomes
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/nonequilibrium-networks/>Nonequilibrium Networks
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/opinion-dynamics/>Opinion Dynamics
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/polarization/>Polarization
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/reaction-diffusion-dynamics/>Reaction-Diffusion Dynamics
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/scale-free-networks/>Scale-Free Networks
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/singular-basins/>Singular Basins
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/sir-epidemic-model/>SIR Epidemic Model
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/triadic-closure/>Triadic Closure
+<span class=count>(1)</span>
+</a><a href=/my_paper/tags/viral-infectivity-evolution/>Viral Infectivity Evolution
+<span class=count>(1)</span></a></div><div class=filter-bar id=filterBar><button class=clear-filters onclick=clearFilters() id=clearFiltersBtn style=display:none>
+<i data-lucide=x style=width:14px;height:14px></i> 清除筛选</button></div><div class=filter-info id=filterInfo>共 1 篇论文</div><div class=paper-grid id=paperGrid><article class=paper-card data-tags="Dynamical Phase Transitions (DPTs),Nonequilibrium Networks,Statistical Physics,Triadic Closure,Hyperbolic Scaling"><div class=tags><span class=tag>Dynamical Phase Transitions (DPTs)</span>
+<span class=tag>Nonequilibrium Networks</span>
+<span class=tag>Statistical Physics</span>
+<span class=tag>Triadic Closure</span>
+<span class=tag>Hyperbolic Scaling</span></div><h3><a href=/my_paper/paper/dpt/>Dynamical Phase Transitions in Nonequilibrium Networks</a></h3><div class=authors>Jiazhen Liu, Nathaniel M. Aden, Debasish Sarker, Chaoming Song</div><div class=venue>Physical Review Letters</div><div class=summary></div><div class=card-footer><div class=links><a href=/my_paper/paper/dpt/><i data-lucide=eye style=width:14px;height:14px></i> 查看详情</a>
+<a href=/pdf/dpt.pdf><i data-lucide=file-text style=width:14px;height:14px></i> PDF</a></div></div></article></div><script>var filterBar,sortedTags,selectedTags,currentTag="Hyperbolic Scaling",tags=new Set;document.querySelectorAll(".paper-card").forEach(function(e){(e.dataset.tags||"").split(",").forEach(function(e){e&&e!==currentTag&&tags.add(e.trim())})}),filterBar=document.getElementById("filterBar"),sortedTags=[...tags].sort(),sortedTags.forEach(function(e){var n=document.querySelectorAll('.paper-card[data-tags*="'+e+'"]').length,t=document.createElement("button");t.className="tag-btn",t.dataset.tag=e,t.innerHTML=e+' <span class="tag-count">'+n+"</span>",t.onclick=function(){toggleTag(e,t)},filterBar.appendChild(t)}),selectedTags=new Set;function toggleTag(e,t){selectedTags.has(e)?(selectedTags.delete(e),t.classList.remove("active")):(selectedTags.add(e),t.classList.add("active")),applyFilters()}function applyFilters(){document.getElementById("clearFiltersBtn").style.display=selectedTags.size>0?"inline-block":"none";var t=document.getElementById("filterInfo"),e=0;document.querySelectorAll(".paper-card").forEach(function(t){var s=(t.dataset.tags||"").split(",").map(function(e){return e.trim()}).filter(function(e){return e}),n=selectedTags.size===0||[...selectedTags].every(function(e){return s.indexOf(e)>=0});t.style.display=n?"flex":"none",n&&e++}),t.textContent=selectedTags.size>0?"已筛选: "+[...selectedTags].join(" + ")+" — 共 "+e+" 篇论文":"共 "+document.querySelectorAll(".paper-card").length+" 篇论文",lucide.createIcons()}function clearFilters(){selectedTags.clear(),document.querySelectorAll(".tag-btn").forEach(function(e){e.classList.remove("active")}),applyFilters()}</script></main><footer class=site-footer><div class=footer-container><p>&copy; 2026 论文库</p></div></footer><script>lucide.createIcons(),document.getElementById("themeToggle").addEventListener("click",function(){var e=document.documentElement,t=e.getAttribute("data-theme")==="light"?"dark":"light";e.setAttribute("data-theme",t),localStorage.setItem("theme",t),lucide.createIcons()}),document.getElementById("menuToggle").addEventListener("click",function(){document.getElementById("navMenu").classList.toggle("open")})</script><script>(function(){var e,n,s,r,v="paperNotes",h=(document.body.getAttribute("data-page-title")||"").trim()||document.title,a=document.getElementById("notesToggle"),c=document.getElementById("notesBadge"),i=document.getElementById("notesPanel"),d=document.getElementById("notesList"),p=document.getElementById("notesClose");if(!a||!i||!d)return;s=w(),e=null,n=null,r=!1;function w(){try{var t=localStorage.getItem(v),e=t?JSON.parse(t):[];return Array.isArray(e)?e.filter(function(e){return e&&typeof e.text=="string"}):[]}catch{return[]}}function m(){try{localStorage.setItem(v,JSON.stringify(s))}catch{}}function y(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}function j(e){if(!e)return"";var t=new Date(e);function n(e){return(e<10?"0":"")+e}return t.getFullYear()+"-"+n(t.getMonth()+1)+"-"+n(t.getDate())+" "+n(t.getHours())+":"+n(t.getMinutes())}function o(){if(!c)return;s.length>0?(c.hidden=!1,c.textContent=s.length>99?"99+":String(s.length)):c.hidden=!0}function b(){return s.slice().sort(function(e,t){return(t.updatedAt||0)-(e.updatedAt||0)})}function f(){if(!e)return!1;var t=e.text.trim();return!!t&&(s.push({id:e.id,label:e.label,text:t,createdAt:e.createdAt,updatedAt:Date.now()}),m(),e=null,!0)}function g(e,t){var s=(t||"").trim();return!!s&&(e.text=s,e.updatedAt=Date.now(),m(),n=null,!0)}function u(e,t,n){var s=document.createElement("button");return s.type="button",s.className="note-action"+(n?" danger":""),s.title=t,s.setAttribute("aria-label",t),s.innerHTML='<i data-lucide="'+e+'"></i>',s}function _(i,a){var c,l,d,v,b,y,_,w,O,x,C,E,k,p=document.createElement("div");return p.className="note-item"+(a?" note-draft":""),d=document.createElement("div"),d.className="note-head",v=document.createElement("span"),v.className="note-label",v.textContent=i.label||h,v.title=i.label||h,d.appendChild(v),y=document.createElement("span"),y.className="note-time",y.textContent=a?"新建":j(i.updatedAt),d.appendChild(y),l=document.createElement("div"),l.className="note-actions",d.appendChild(l),p.appendChild(d),k=a||i.id===n,k?(c=document.createElement("textarea"),c.className="note-editor",c.rows=3,c.value=i.text||"",c.placeholder="写下便笺内容...",a&&c.addEventListener("input",function(){i.text=c.value}),b=u("check","保存"),b.addEventListener("mousedown",function(e){e.preventDefault()}),b.addEventListener("click",function(){a?f()&&(o(),t()):g(i,c.value)&&(o(),t())}),l.appendChild(b),_=u("x",a?"删除":"取消",a),_.addEventListener("mousedown",function(e){e.preventDefault()}),_.addEventListener("click",function(){a?e=null:n=null,t()}),l.appendChild(_),c.addEventListener("keydown",function(e){e.key==="Enter"&&(e.ctrlKey||e.metaKey)?(e.preventDefault(),b.click()):e.key==="Escape"&&!a&&(n=null,t())}),c.addEventListener("blur",function(){setTimeout(function(){a?f()&&(o(),t()):i.id===n&&g(i,c.value)&&(o(),t())},120)}),p.appendChild(c),w=document.createElement("div"),w.className="note-foot",O=document.createElement("span"),O.className="note-hint",O.textContent="Ctrl+Enter 保存",w.appendChild(O),p.appendChild(w),r&&(r=!1,requestAnimationFrame(function(){c.focus(),c.selectionStart=c.selectionEnd=c.value.length}))):(x=document.createElement("div"),x.className="note-text",x.textContent=i.text,p.appendChild(x),C=u("pencil","编辑"),C.addEventListener("click",function(){n=i.id,r=!0,t()}),l.appendChild(C),E=u("trash-2","删除",!0),E.addEventListener("click",function(){if(!window.confirm("删除这条便笺？"))return;s=s.filter(function(e){return e.id!==i.id}),m(),o(),t()}),l.appendChild(E)),p}function t(){d.innerHTML="";var n,t=b();if(e&&(t=[e].concat(t)),!t.length){n=document.createElement("div"),n.className="note-empty",n.textContent="还没有便笺",d.appendChild(n);return}t.forEach(function(t){d.appendChild(_(t,t===e))}),window.lucide&&lucide.createIcons&&lucide.createIcons()}function O(){i.hidden=!1,a.classList.add("active"),n=null,e||(e={id:y(),label:h,text:"",createdAt:Date.now(),updatedAt:Date.now()}),r=!0,t(),o()}function l(){if(i.hidden)return;i.hidden=!0,a.classList.remove("active"),e&&(f()?o():e=null),n=null,t()}a.addEventListener("click",function(e){e.stopPropagation(),i.hidden?O():l()}),p&&p.addEventListener("click",l),document.addEventListener("mousedown",function(e){if(i.hidden)return;if(i.contains(e.target)||a.contains(e.target))return;l()}),document.addEventListener("keydown",function(e){e.key==="Escape"&&!i.hidden&&l()}),o(),t()})()</script></body></html>
