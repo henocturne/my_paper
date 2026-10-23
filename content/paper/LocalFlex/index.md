@@ -1,5 +1,5 @@
 ---
-title: "title"
+title: "LocalFlex"
 date: 2026-07-10
 authors:
   - "auhtor 2"
