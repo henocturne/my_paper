@@ -69,7 +69,7 @@
         <div class="citation-block">{{ $cite.RawContent | $.Page.RenderString }}</div>
         {{ else }}
         <div class="citation-block">
-            <p>{{ .Params.authors | delimit ", " }} ({{ with .Date }}{{ .Format "2006" }}{{ end }}). <em>{{ $.Title }}</em>. {{ with $.Params.venue }}{{ . }}{{ end }}.</p>
+            <p>{{ delimit .Params.authors ", " }} ({{ with .Date }}{{ .Format "2006" }}{{ end }}). <em>{{ $.Title }}</em>. {{ with $.Params.venue }}{{ . }}{{ end }}.</p>
         </div>
         {{ end }}
         {{ if $abstract }}

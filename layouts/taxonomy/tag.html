@@ -46,29 +46,35 @@
                 {{ end }}
             </div>
         </div>
+        {{ partial "paper-delete.html" . }}
     </article>
     {{ end }}
 </div>
 
 <script>
 // Build tag filter from current papers, excluding current tag
-var currentTag = '{{ .Title }}';
-var tags = new Set();
-document.querySelectorAll('.paper-card').forEach(function(card) {
-    (card.dataset.tags || '').split(',').forEach(function(t) { if (t && t !== currentTag) tags.add(t.trim()); });
-});
-
+var currentTag = {{ .Title | jsonify }};
 var filterBar = document.getElementById('filterBar');
-var sortedTags = [...tags].sort();
-sortedTags.forEach(function(tag) {
-    var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
-    var btn = document.createElement('button');
-    btn.className = 'tag-btn';
-    btn.dataset.tag = tag;
-    btn.innerHTML = tag + ' <span class="tag-count">' + count + '</span>';
-    btn.onclick = function() { toggleTag(tag, btn); };
-    filterBar.appendChild(btn);
-});
+
+function buildTagFilters() {
+    filterBar.querySelectorAll('.tag-btn').forEach(function(b) { b.remove(); });
+    var tags = new Set();
+    document.querySelectorAll('.paper-card').forEach(function(card) {
+        (card.dataset.tags || '').split(',').forEach(function(t) {
+            t = t.trim();
+            if (t && t !== currentTag) tags.add(t);
+        });
+    });
+    [...tags].sort().forEach(function(tag) {
+        var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
+        var btn = document.createElement('button');
+        btn.className = 'tag-btn';
+        btn.dataset.tag = tag;
+        btn.innerHTML = tag + ' <span class="tag-count">' + count + '</span>';
+        btn.onclick = function() { toggleTag(tag, btn); };
+        filterBar.appendChild(btn);
+    });
+}
 
 var selectedTags = new Set();
 
@@ -99,5 +105,23 @@ function clearFilters() {
     document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('active'); });
     applyFilters();
 }
+
+window.refreshPaperFilters = function() {
+    var present = new Set();
+    document.querySelectorAll('.paper-card').forEach(function(card) {
+        (card.dataset.tags || '').split(',').forEach(function(t) {
+            t = t.trim();
+            if (t && t !== currentTag) present.add(t);
+        });
+    });
+    [...selectedTags].forEach(function(tag) {
+        if (!present.has(tag)) selectedTags.delete(tag);
+    });
+    buildTagFilters();
+    applyFilters();
+};
+
+buildTagFilters();
 </script>
+{{ partial "paper-delete-script.html" . }}
 {{ end }}

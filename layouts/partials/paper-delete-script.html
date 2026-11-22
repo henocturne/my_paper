@@ -1,0 +1,97 @@
+<script>
+(function() {
+    var apiBase = "{{ (urls.Parse site.BaseURL).Path }}api";
+    var buttons = document.querySelectorAll('.paper-delete');
+    if (!buttons.length) return;
+
+    function updateCounts() {
+        if (typeof window.refreshPaperFilters === 'function') {
+            window.refreshPaperFilters();
+            return;
+        }
+        var info = document.getElementById('filterInfo');
+        if (info) {
+            info.textContent = '共 ' + document.querySelectorAll('.paper-card').length + ' 篇论文';
+        }
+    }
+
+    function showToast(message, isError) {
+        var toast = document.createElement('div');
+        toast.className = 'paper-toast' + (isError ? ' error' : '');
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        requestAnimationFrame(function() { toast.classList.add('show'); });
+        setTimeout(function() {
+            toast.classList.remove('show');
+            setTimeout(function() { toast.remove(); }, 250);
+        }, 3400);
+    }
+
+    function setBusy(btn, busy) {
+        if (busy) {
+            btn.dataset.originalHtml = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i data-lucide="loader-2" style="width:14px;height:14px;"></i> 正在删除...';
+        } else {
+            btn.disabled = false;
+            if (btn.dataset.originalHtml) btn.innerHTML = btn.dataset.originalHtml;
+        }
+        if (window.lucide && lucide.createIcons) lucide.createIcons();
+    }
+
+    function deletePaper(btn) {
+        var dir = btn.getAttribute('data-paper-dir');
+        var title = btn.getAttribute('data-paper-title') || dir;
+        if (!dir) return;
+
+        var confirmed = window.confirm(
+            '确定删除《' + title + '》吗？\n\n' +
+            '论文内容目录和本地 PDF 文件都会被删除，此操作无法撤销。'
+        );
+        if (!confirmed) return;
+
+        setBusy(btn, true);
+        fetch(apiBase + '/delete-paper', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ dir: dir })
+        }).then(function(res) {
+            return res.json().then(function(data) {
+                return { status: res.status, data: data };
+            });
+        }).then(function(result) {
+            if (!result.data || !result.data.ok) {
+                throw new Error((result.data && result.data.message) || '删除失败');
+            }
+            var card = btn.closest('.paper-card');
+            if (card) {
+                card.classList.add('paper-card-removing');
+                setTimeout(function() {
+                    card.remove();
+                    updateCounts();
+                    showToast(result.data.deletedPdf
+                        ? '论文已删除，本地 PDF 文件也已删除。'
+                        : '论文已删除。');
+                }, 220);
+            } else {
+                updateCounts();
+                showToast('论文已删除。');
+            }
+        }).catch(function(err) {
+            setBusy(btn, false);
+            showToast('删除失败：' + (err && err.message ? err.message : '未知错误'), true);
+        });
+    }
+
+    fetch(apiBase + '/ping', { cache: 'no-store' })
+        .then(function(res) { return res.ok ? res.json() : null; })
+        .then(function(data) {
+            if (!data || !data.ok) return;
+            document.body.classList.add('local-admin');
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function() { deletePaper(btn); });
+            });
+        })
+        .catch(function() {});
+})();
+</script>

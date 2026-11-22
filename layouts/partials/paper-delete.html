@@ -1,0 +1,10 @@
+{{- if .File -}}
+<div class="card-delete-row">
+    <button class="paper-delete" type="button"
+            data-paper-dir="{{ path.Base .File.Dir }}"
+            data-paper-title="{{ .Title }}">
+        <i data-lucide="trash-2" style="width:14px;height:14px;"></i>
+        删除论文
+    </button>
+</div>
+{{- end -}}

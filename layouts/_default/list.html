@@ -42,6 +42,7 @@
                 {{ end }}
             </div>
         </div>
+        {{ partial "paper-delete.html" . }}
     </article>
     {{ end }}
 </div>
@@ -78,13 +79,13 @@ function clearFilters() {
     applyFilters();
 }
 
-// Build tag filter buttons
-(function() {
+function buildTagFilters() {
+    var filterBar = document.getElementById("filterBar");
+    filterBar.querySelectorAll(".tag-btn").forEach(function(b) { b.remove(); });
     var tags = new Set();
     document.querySelectorAll(".paper-card").forEach(function(card) {
         (card.dataset.tags || "").split(",").forEach(function(t) { if (t) tags.add(t.trim()); });
     });
-    var filterBar = document.getElementById("filterBar");
     Array.from(tags).sort().forEach(function(tag) {
         var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
         var btn = document.createElement("button");
@@ -94,6 +95,24 @@ function clearFilters() {
         btn.onclick = function() { toggleTag(tag, btn); };
         filterBar.appendChild(btn);
     });
-})();
+}
+
+window.refreshPaperFilters = function() {
+    var present = new Set();
+    document.querySelectorAll(".paper-card").forEach(function(card) {
+        (card.dataset.tags || "").split(",").forEach(function(t) {
+            t = t.trim();
+            if (t) present.add(t);
+        });
+    });
+    Array.from(selectedTags).forEach(function(tag) {
+        if (!present.has(tag)) selectedTags.delete(tag);
+    });
+    buildTagFilters();
+    applyFilters();
+};
+
+buildTagFilters();
 </script>
+{{ partial "paper-delete-script.html" . }}
 {{ end }}
