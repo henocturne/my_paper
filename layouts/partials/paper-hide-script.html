@@ -1,0 +1,96 @@
+<script>
+(function() {
+    var STORAGE_KEY = 'paperHidden';
+    var hideButtons = document.querySelectorAll('.paper-hide');
+    if (!hideButtons.length) return;
+
+    function loadHidden() {
+        try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            var parsed = raw ? JSON.parse(raw) : [];
+            return new Set(Array.isArray(parsed) ? parsed : []);
+        } catch (e) {
+            return new Set();
+        }
+    }
+
+    function saveHidden() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(hidden)));
+        } catch (e) {}
+    }
+
+    function showToast(message) {
+        var toast = document.createElement('div');
+        toast.className = 'paper-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        requestAnimationFrame(function() { toast.classList.add('show'); });
+        setTimeout(function() {
+            toast.classList.remove('show');
+            setTimeout(function() { toast.remove(); }, 250);
+        }, 2600);
+    }
+
+    var hidden = loadHidden();
+    var toggleBtn = document.getElementById('hiddenToggleBtn');
+    var toggleText = document.getElementById('hiddenToggleText');
+    var toggleCount = document.getElementById('hiddenToggleCount');
+
+    function refresh() {
+        if (typeof window.refreshPaperFilters === 'function') {
+            window.refreshPaperFilters();
+        }
+        updateToggle();
+        if (window.lucide && lucide.createIcons) lucide.createIcons();
+    }
+
+    function updateToggle() {
+        var hiddenCards = document.querySelectorAll('.paper-card.is-hidden-paper').length;
+        if (!toggleBtn) return;
+        toggleBtn.style.display = hiddenCards > 0 ? 'inline-flex' : 'none';
+        if (toggleCount) toggleCount.textContent = hiddenCards > 0 ? '(' + hiddenCards + ')' : '';
+        var showing = document.body.classList.contains('show-hidden-papers');
+        if (toggleText) toggleText.textContent = showing ? '收起已隐藏' : '显示已隐藏';
+    }
+
+    function applyState() {
+        document.querySelectorAll('.paper-card').forEach(function(card) {
+            var btn = card.querySelector('.paper-hide');
+            if (!btn) return;
+            var key = btn.getAttribute('data-paper-key');
+            var isHidden = hidden.has(key);
+            card.classList.toggle('is-hidden-paper', isHidden);
+            var label = btn.querySelector('span');
+            if (label) label.textContent = isHidden ? '取消隐藏' : '隐藏';
+            btn.title = isHidden ? '取消隐藏这篇论文' : '在列表里隐藏这篇论文';
+        });
+        refresh();
+    }
+
+    function setHidden(key, shouldHide) {
+        if (shouldHide) hidden.add(key);
+        else hidden.delete(key);
+        saveHidden();
+        applyState();
+        showToast(shouldHide ? '论文已隐藏（仅当前浏览器）' : '论文已恢复显示');
+    }
+
+    hideButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var key = btn.getAttribute('data-paper-key');
+            if (!key) return;
+            setHidden(key, !hidden.has(key));
+        });
+    });
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('show-hidden-papers');
+            refresh();
+        });
+    }
+
+    applyState();
+})();
+</script>

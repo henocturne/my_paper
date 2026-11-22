@@ -1,0 +1,9 @@
+{{- if .File -}}
+<button class="paper-hide" type="button"
+        data-paper-key="{{ path.Base .File.Dir }}"
+        data-paper-title="{{ .Title }}"
+        title="在列表里隐藏这篇论文">
+    <i data-lucide="eye-off" style="width:14px;height:14px;"></i>
+    <span>隐藏</span>
+</button>
+{{- end -}}

@@ -16,6 +16,11 @@
     <button class="clear-filters" onclick="clearFilters()" id="clearFiltersBtn" style="display:none;">
         <i data-lucide="x" style="width:14px;height:14px;"></i> 清除筛选
     </button>
+    <button class="hidden-toggle" id="hiddenToggleBtn" type="button" style="display:none;">
+        <i data-lucide="eye-off" style="width:14px;height:14px;"></i>
+        <span id="hiddenToggleText">显示已隐藏</span>
+        <span id="hiddenToggleCount"></span>
+    </button>
 </div>
 
 <div class="filter-info" id="filterInfo">共 {{ len .Pages }} 篇论文</div>
@@ -45,6 +50,7 @@
                 <a href="{{ . | relURL }}"><i data-lucide="file-text" style="width:14px;height:14px;"></i> PDF</a>
                 {{ end }}
             </div>
+            {{ partial "paper-hide.html" . }}
         </div>
         {{ partial "paper-delete.html" . }}
     </article>
@@ -56,17 +62,30 @@
 var currentTag = {{ .Title | jsonify }};
 var filterBar = document.getElementById('filterBar');
 
+function isPaperHidden(card) {
+    return card.classList.contains('is-hidden-paper') && !document.body.classList.contains('show-hidden-papers');
+}
+
+function visiblePaperCount() {
+    return Array.from(document.querySelectorAll('.paper-card')).filter(function(card) {
+        return !isPaperHidden(card);
+    }).length;
+}
+
 function buildTagFilters() {
     filterBar.querySelectorAll('.tag-btn').forEach(function(b) { b.remove(); });
     var tags = new Set();
     document.querySelectorAll('.paper-card').forEach(function(card) {
+        if (isPaperHidden(card)) return;
         (card.dataset.tags || '').split(',').forEach(function(t) {
             t = t.trim();
             if (t && t !== currentTag) tags.add(t);
         });
     });
     [...tags].sort().forEach(function(tag) {
-        var count = document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]').length;
+        var count = Array.from(document.querySelectorAll('.paper-card[data-tags*="' + tag + '"]')).filter(function(card) {
+            return !isPaperHidden(card);
+        }).length;
         var btn = document.createElement('button');
         btn.className = 'tag-btn';
         btn.dataset.tag = tag;
@@ -90,13 +109,13 @@ function applyFilters() {
     var visible = 0;
     document.querySelectorAll('.paper-card').forEach(function(card) {
         var cardTags = (card.dataset.tags || '').split(',').map(function(t) { return t.trim(); }).filter(function(t) { return t; });
-        var match = selectedTags.size === 0 || [...selectedTags].every(function(t) { return cardTags.indexOf(t) >= 0; });
+        var match = !isPaperHidden(card) && (selectedTags.size === 0 || [...selectedTags].every(function(t) { return cardTags.indexOf(t) >= 0; }));
         card.style.display = match ? 'flex' : 'none';
         if (match) visible++;
     });
     info.textContent = selectedTags.size > 0
         ? '已筛选: ' + [...selectedTags].join(' + ') + ' — 共 ' + visible + ' 篇论文'
-        : '共 ' + document.querySelectorAll('.paper-card').length + ' 篇论文';
+        : '共 ' + visiblePaperCount() + ' 篇论文';
     lucide.createIcons();
 }
 
@@ -109,6 +128,7 @@ function clearFilters() {
 window.refreshPaperFilters = function() {
     var present = new Set();
     document.querySelectorAll('.paper-card').forEach(function(card) {
+        if (isPaperHidden(card)) return;
         (card.dataset.tags || '').split(',').forEach(function(t) {
             t = t.trim();
             if (t && t !== currentTag) present.add(t);
@@ -124,4 +144,5 @@ window.refreshPaperFilters = function() {
 buildTagFilters();
 </script>
 {{ partial "paper-delete-script.html" . }}
+{{ partial "paper-hide-script.html" . }}
 {{ end }}

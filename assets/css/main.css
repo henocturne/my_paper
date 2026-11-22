@@ -1205,3 +1205,62 @@ body.local-admin .card-delete-row {
 }
 
 
+/* ===== Paper hide (per-browser) ===== */
+.paper-hide {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.paper-hide:hover {
+    color: var(--primary);
+    background: var(--bg-secondary);
+}
+
+.hidden-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.hidden-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+body.show-hidden-papers .hidden-toggle {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+body:not(.show-hidden-papers) .paper-card.is-hidden-paper {
+    display: none !important;
+}
+body.show-hidden-papers .paper-card.is-hidden-paper {
+    opacity: 0.62;
+    border-style: dashed;
+}
+body.show-hidden-papers .paper-card.is-hidden-paper:hover {
+    opacity: 1;
+}
+body.show-hidden-papers .paper-card.is-hidden-paper .paper-hide {
+    color: var(--primary);
+}
+
+
