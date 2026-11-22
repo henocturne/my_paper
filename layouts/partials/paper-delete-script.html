@@ -76,6 +76,10 @@
             } else {
                 updateCounts();
                 showToast('论文已删除。');
+                var redirect = btn.getAttribute('data-redirect');
+                if (redirect) {
+                    setTimeout(function() { window.location.href = redirect; }, 800);
+                }
             }
         }).catch(function(err) {
             setBusy(btn, false);

@@ -28,6 +28,17 @@
             </span>
             {{ end }}
         </div>
+        {{ if .File }}
+        <div class="card-delete-row">
+            <button class="paper-delete" type="button"
+                    data-paper-dir="{{ path.Base .File.Dir }}"
+                    data-paper-title="{{ .Title }}"
+                    data-redirect="{{ "paper/" | relLangURL }}">
+                <i data-lucide="trash-2" style="width:14px;height:14px;"></i>
+                删除论文
+            </button>
+        </div>
+        {{ end }}
     </div>
 
     <nav class="tab-nav" id="tabNav">
@@ -285,5 +296,6 @@ if (hash) {
     if (btn) btn.click();
 }
 </script>
+{{ partial "paper-delete-script.html" . }}
 {{ end }}
 
