@@ -15,3 +15,4 @@ tags:
   - "Data Manifold" 
   - "Random Feature Models" 
 pdf: "/pdf/Explaining neural scaling laws.pdf"
+draft: false ---
